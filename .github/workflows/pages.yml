@@ -1,0 +1,52 @@
+name: Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "portfolio/**"
+      - "artifacts/duopod_walk_forward_v6/**"
+      - "tools/verify_publication.py"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  verify-and-deploy:
+    name: Verify and deploy evidence dashboard
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out sources
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify publication integrity
+        run: python tools/verify_publication.py
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload static dashboard
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: portfolio
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
