@@ -1,3 +1,7 @@
+// Portions derived from The Simulated Project build configuration.
+// Copyright (c) The Simulated Team / The Creators of Aeronautics.
+// Used under the MIT License; see THIRD_PARTY_NOTICES.md.
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -21,7 +25,7 @@ rootProject.name = "minecraft-machines"
 
 val simulatedProject = file(
     providers.gradleProperty("simulatedProjectDir")
-        .orElse("vendor/Simulated-Project")
+        .orElse("external/Simulated-Project")
         .get()
 )
 
