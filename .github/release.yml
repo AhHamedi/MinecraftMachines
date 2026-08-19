@@ -1,0 +1,20 @@
+changelog:
+  exclude:
+    labels:
+      - ignore-for-release
+  categories:
+    - title: Highlights
+      labels:
+        - feature
+        - enhancement
+    - title: Fixes
+      labels:
+        - bug
+        - fix
+    - title: Documentation and evidence
+      labels:
+        - documentation
+        - evidence
+    - title: Other changes
+      labels:
+        - "*"

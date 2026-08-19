@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use Minecraft Machines or its Duopod evidence pipeline, please cite this software."
+title: "Minecraft Machines"
+type: software
+version: 0.1.0
+date-released: 2026-08-19
+authors:
+  - family-names: Hamed
+    given-names: Ahmed
+repository-code: "https://github.com/AhHamedi/MinecraftMachines"
+url: "https://ahhamedi.github.io/MinecraftMachines/"
+license: MIT
+keywords:
+  - embodied AI
+  - reinforcement learning
+  - robotics
+  - Minecraft
+  - reproducible research

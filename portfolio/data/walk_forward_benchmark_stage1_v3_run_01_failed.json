@@ -1,0 +1,582 @@
+{
+  "format": "minecraft_machines_duopod_walk_forward_benchmark_v3",
+  "format_version": 3,
+  "generated_at": "2026-08-03T14:45:56.441827Z",
+  "code_revision": null,
+  "code_revision_status": "unavailable_in_runtime_artifact",
+  "protocol": {
+    "controllers": [
+      "learned",
+      "neutral",
+      "scripted_alternating_sine"
+    ],
+    "requested_forward_speeds": [
+      0.5,
+      0.8,
+      1.1
+    ],
+    "episode_count": 9,
+    "controller_batch_count": 3,
+    "lanes_per_batch": 3,
+    "control_ticks": 4,
+    "spawn_warmup_ticks": 20,
+    "chunk_activation_timeout_ticks": 200,
+    "maximum_control_steps": 200,
+    "slot_spacing_blocks": 12,
+    "arena_id": "minecraft_machines:temporary_flat_duopod_lanes_v1",
+    "arena_changed_block_count": 2178,
+    "arena_support_y": 79,
+    "arena_lane_half_width_blocks": 5,
+    "arena_minimum_forward_offset": -8,
+    "arena_maximum_forward_offset": 57,
+    "physical_pairing": "controllers run sequentially over the same three speed-indexed lanes",
+    "post_warmup_pairing_tolerance_blocks": 1.0E-6,
+    "post_warmup_pairing_validation": "same-lane world origin and spawn-frame displacement baseline must match across controllers",
+    "batch_cleanup": "each controller environment is destroyed before the next batch spawns",
+    "lanes": [
+      {
+        "lane": 0,
+        "requested_forward_speed": 0.5,
+        "episode_id": 8100000,
+        "seed": 8200000,
+        "requested_origin": {
+          "x": 31,
+          "y": 80,
+          "z": 63
+        },
+        "expected_spawn_center": {
+          "x": 31,
+          "y": 83,
+          "z": 63
+        }
+      },
+      {
+        "lane": 1,
+        "requested_forward_speed": 0.8,
+        "episode_id": 8100001,
+        "seed": 8200001,
+        "requested_origin": {
+          "x": 43,
+          "y": 80,
+          "z": 63
+        },
+        "expected_spawn_center": {
+          "x": 43,
+          "y": 83,
+          "z": 63
+        }
+      },
+      {
+        "lane": 2,
+        "requested_forward_speed": 1.1,
+        "episode_id": 8100002,
+        "seed": 8200002,
+        "requested_origin": {
+          "x": 55,
+          "y": 80,
+          "z": 63
+        },
+        "expected_spawn_center": {
+          "x": 55,
+          "y": 83,
+          "z": 63
+        }
+      }
+    ],
+    "world": {
+      "level_name": "world",
+      "seed": -3368720904110701394,
+      "dimension": "minecraft:overworld"
+    },
+    "initial_action_ramp_control_steps": 5,
+    "action_saturation_threshold": 0.98,
+    "scripted_amplitude": 0.65,
+    "scripted_policy": "left\u003d0.65*sin(phase), right\u003d-left",
+    "coordinate_frame": "per-episode Duopod spawn frame rebased at the post-warmup controller handoff",
+    "displacement_measurement": "terminal spawn-frame displacement minus post-warmup spawn-frame baseline",
+    "vertical_excursion_measurement": "absolute base-height excursion from the post-warmup controller-handoff origin",
+    "arena_escape_measurement": "post-warmup raw spawn-frame position outside the assigned flat-lane extents",
+    "terminal_snapshot": "first terminal or truncation state is frozen",
+    "seed_schedule": "same fixed seed for all controllers at each requested speed",
+    "acceptance_rule": "post_warmup_stability_adjusted_anti_ballistic_v2",
+    "acceptance_rule_version": 2
+  },
+  "policy": {
+    "policy_type": "duopod_phase_gait_v2",
+    "morphology_id": "minecraft_machines:duopod",
+    "observation_schema_hash": "614beeacdca0545900f97b88e65289ac243f55eba23b56b67f77c54480021266",
+    "action_schema_hash": "68d0a6c53c368cd9f398677a80d35e6e2c511d34f61155b004475d5736a3d077",
+    "genome_size": 7,
+    "genome_sha256": "d1b4c61538cfb5ee8444bd027d6b267e8fb946a94513736146389ae2eefabe1e",
+    "genome_sha256_encoding": "concatenated IEEE-754 binary64 big-endian values",
+    "checkpoint_genome_sha256": "d1b4c61538cfb5ee8444bd027d6b267e8fb946a94513736146389ae2eefabe1e",
+    "checkpoint_run_id": "5ee78209-a663-4c2a-b768-ba65fff632a3",
+    "checkpoint_generation": 1,
+    "checkpoint_aggregate_fitness": -5.131429659646129,
+    "checkpoint_failure_rate": 0.0,
+    "checkpoint_created_at": "2026-08-03T14:43:16.893191Z",
+    "checkpoint_fitness_contract": "minecraft_machines:duopod_cem_fitness_v3",
+    "checkpoint_training_arena": {
+      "arena_id": "minecraft_machines:temporary_flat_duopod_lanes_v1",
+      "slot_spacing_blocks": 12,
+      "control_ticks": 4,
+      "spawn_warmup_ticks": 20,
+      "maximum_control_steps": 200
+    }
+  },
+  "summary_by_controller": {
+    "learned": {
+      "episodes": 3,
+      "failures": 0,
+      "arena_escapes": 0,
+      "mean_return": 0.014167105072689997,
+      "mean_forward_displacement_blocks": 6.206230163574219,
+      "mean_lateral_displacement_blocks": 1.3123416900634766,
+      "mean_absolute_lateral_displacement_blocks": 1.3940804799397786,
+      "minimum_body_up": 0.34249594634007163,
+      "peak_vertical_excursion_blocks": 2.0932464599609375,
+      "mean_action_total_variation": 44.202051918363644,
+      "mean_action_saturation_fraction": 0.0
+    },
+    "neutral": {
+      "episodes": 3,
+      "failures": 0,
+      "arena_escapes": 0,
+      "mean_return": -7.492902902890244,
+      "mean_forward_displacement_blocks": -2.160552978515625,
+      "mean_lateral_displacement_blocks": 0.0069497426350911455,
+      "mean_absolute_lateral_displacement_blocks": 0.007886886596679688,
+      "minimum_body_up": 0.5625237833979361,
+      "peak_vertical_excursion_blocks": 2.0666046142578125,
+      "mean_action_total_variation": 0.0,
+      "mean_action_saturation_fraction": 0.0
+    },
+    "scripted_alternating_sine": {
+      "episodes": 3,
+      "failures": 1,
+      "arena_escapes": 1,
+      "mean_return": -7.111508821853285,
+      "mean_forward_displacement_blocks": 4.446533203125,
+      "mean_lateral_displacement_blocks": -1.9159056345621746,
+      "mean_absolute_lateral_displacement_blocks": 2.3702589670817056,
+      "minimum_body_up": -0.42097219585296264,
+      "peak_vertical_excursion_blocks": 7.005615234375,
+      "mean_action_total_variation": 58.47448215142871,
+      "mean_action_saturation_fraction": 0.0
+    }
+  },
+  "acceptance": {
+    "rule": "post_warmup_stability_adjusted_anti_ballistic_v2",
+    "rule_version": 2,
+    "accepted": false,
+    "coverage_valid": true,
+    "invariants_valid": true,
+    "thresholds": {
+      "required_learned_margin_over_stronger_baseline_blocks": 0.5,
+      "required_minimum_body_up": 0.6,
+      "maximum_learned_peak_vertical_excursion_blocks": 3.0,
+      "required_learned_failures": 0,
+      "required_learned_arena_escapes": 0,
+      "require_positive_progress_at_every_speed": true,
+      "unstable_baseline_positive_forward_credit_capped_at_zero": true,
+      "baseline_publication_stability": "no machine failure, no arena escape, minimum body-up and maximum vertical-excursion thresholds satisfied"
+    },
+    "observed": {
+      "learned_mean_forward_blocks": 6.206230163574219,
+      "neutral_stability_adjusted_comparison_mean_forward_blocks": -2.160552978515625,
+      "scripted_stability_adjusted_comparison_mean_forward_blocks": 0.0,
+      "stronger_baseline_stability_adjusted_comparison_mean_forward_blocks": 0.0,
+      "learned_minus_neutral_stability_adjusted_comparison_blocks": 8.366783142089844,
+      "learned_minus_scripted_stability_adjusted_comparison_blocks": 6.206230163574219,
+      "learned_minus_stronger_baseline_stability_adjusted_comparison_blocks": 6.206230163574219,
+      "learned_failures": 0,
+      "learned_minimum_body_up": 0.34249594634007163,
+      "learned_maximum_peak_vertical_excursion_blocks": 2.0932464599609375,
+      "learned_arena_escapes": 0
+    },
+    "criteria": {
+      "coverage_complete": true,
+      "metrics_finite_and_bounded": true,
+      "learned_forward_margin_over_stronger_baseline": true,
+      "learned_no_failures": true,
+      "learned_positive_at_each_speed": true,
+      "learned_minimum_body_up": false,
+      "learned_anti_ballistic_peak_vertical_excursion": true,
+      "no_learned_arena_escape": true
+    },
+    "failed_criteria": [
+      "learned_minimum_body_up"
+    ]
+  },
+  "episodes": [
+    {
+      "slot": 0,
+      "lane": 0,
+      "controller": "learned",
+      "requested_forward_speed": 0.5,
+      "episode_id": 8100000,
+      "seed": 8200000,
+      "spawn_origin": {
+        "x": 31.5,
+        "y": 83.58,
+        "z": 63.84482758119702
+      },
+      "post_warmup_origin": {
+        "x": 31.50001335144043,
+        "y": 83.29843139648438,
+        "z": 64.4096450805664
+      },
+      "post_warmup_baseline": {
+        "forward_displacement_from_spawn_blocks": -0.5648174993693829,
+        "lateral_displacement_from_spawn_blocks": 1.33514404296875E-5
+      },
+      "terminal_spawn_relative_displacement": {
+        "forward_displacement_blocks": 3.2261218316853046,
+        "lateral_displacement_blocks": 1.9997634887695312
+      },
+      "control_steps": 200,
+      "return": -4.039383511506647,
+      "forward_displacement_blocks": 3.7909393310546875,
+      "lateral_displacement_blocks": 1.9997501373291016,
+      "machine_failure": false,
+      "arena_escape": false,
+      "termination_reason": "TIME_LIMIT",
+      "terminated": false,
+      "truncated": true,
+      "health_message": "ok",
+      "minimum_body_up": 0.3879061637096201,
+      "peak_vertical_excursion_blocks": 2.0867156982421875,
+      "action_total_variation": 42.080440836656365,
+      "action_saturation_fraction": 0.0,
+      "terminal_captured": true
+    },
+    {
+      "slot": 1,
+      "lane": 1,
+      "controller": "learned",
+      "requested_forward_speed": 0.8,
+      "episode_id": 8100001,
+      "seed": 8200001,
+      "spawn_origin": {
+        "x": 43.49999999627471,
+        "y": 83.58,
+        "z": 63.844827584922314
+      },
+      "post_warmup_origin": {
+        "x": 43.499996185302734,
+        "y": 83.29927062988281,
+        "z": 64.40768432617188
+      },
+      "post_warmup_baseline": {
+        "forward_displacement_from_spawn_blocks": -0.5628567412495613,
+        "lateral_displacement_from_spawn_blocks": -3.810971975326538E-6
+      },
+      "terminal_spawn_relative_displacement": {
+        "forward_displacement_blocks": 2.3511142060160637,
+        "lateral_displacement_blocks": 2.059879306703806
+      },
+      "control_steps": 200,
+      "return": -5.1742581235238,
+      "forward_displacement_blocks": 2.913970947265625,
+      "lateral_displacement_blocks": 2.0598831176757812,
+      "machine_failure": false,
+      "arena_escape": false,
+      "termination_reason": "TIME_LIMIT",
+      "terminated": false,
+      "truncated": true,
+      "health_message": "ok",
+      "minimum_body_up": 0.3624623225842163,
+      "peak_vertical_excursion_blocks": 2.0932464599609375,
+      "action_total_variation": 44.20205191836364,
+      "action_saturation_fraction": 0.0,
+      "terminal_captured": true
+    },
+    {
+      "slot": 2,
+      "lane": 2,
+      "controller": "learned",
+      "requested_forward_speed": 1.1,
+      "episode_id": 8100002,
+      "seed": 8200002,
+      "spawn_origin": {
+        "x": 55.49999999627471,
+        "y": 83.58,
+        "z": 63.844827584922314
+      },
+      "post_warmup_origin": {
+        "x": 55.50000762939453,
+        "y": 83.29846954345703,
+        "z": 64.4095687866211
+      },
+      "post_warmup_baseline": {
+        "forward_displacement_from_spawn_blocks": -0.5647412016987801,
+        "lateral_displacement_from_spawn_blocks": 7.633119821548462E-6
+      },
+      "terminal_spawn_relative_displacement": {
+        "forward_displacement_blocks": 11.349039010703564,
+        "lateral_displacement_blocks": -0.12260055169463158
+      },
+      "control_steps": 200,
+      "return": 9.256142950248517,
+      "forward_displacement_blocks": 11.913780212402344,
+      "lateral_displacement_blocks": -0.12260818481445312,
+      "machine_failure": false,
+      "arena_escape": false,
+      "termination_reason": "TIME_LIMIT",
+      "terminated": false,
+      "truncated": true,
+      "health_message": "ok",
+      "minimum_body_up": 0.34249594634007163,
+      "peak_vertical_excursion_blocks": 2.070556640625,
+      "action_total_variation": 46.32366300007093,
+      "action_saturation_fraction": 0.0,
+      "terminal_captured": true
+    },
+    {
+      "slot": 3,
+      "lane": 0,
+      "controller": "neutral",
+      "requested_forward_speed": 0.5,
+      "episode_id": 8100000,
+      "seed": 8200000,
+      "spawn_origin": {
+        "x": 31.5,
+        "y": 83.58,
+        "z": 63.84482758119702
+      },
+      "post_warmup_origin": {
+        "x": 31.50001335144043,
+        "y": 83.29843139648438,
+        "z": 64.4096450805664
+      },
+      "post_warmup_baseline": {
+        "forward_displacement_from_spawn_blocks": -0.5648174993693829,
+        "lateral_displacement_from_spawn_blocks": 1.33514404296875E-5
+      },
+      "terminal_spawn_relative_displacement": {
+        "forward_displacement_blocks": -2.725919794291258,
+        "lateral_displacement_blocks": -5.60760498046875E-4
+      },
+      "control_steps": 200,
+      "return": -7.581005783138719,
+      "forward_displacement_blocks": -2.161102294921875,
+      "lateral_displacement_blocks": -5.741119384765625E-4,
+      "machine_failure": false,
+      "arena_escape": false,
+      "termination_reason": "TIME_LIMIT",
+      "terminated": false,
+      "truncated": true,
+      "health_message": "ok",
+      "minimum_body_up": 0.5663530634494207,
+      "peak_vertical_excursion_blocks": 2.0665359497070312,
+      "action_total_variation": 0.0,
+      "action_saturation_fraction": 0.0,
+      "terminal_captured": true
+    },
+    {
+      "slot": 4,
+      "lane": 1,
+      "controller": "neutral",
+      "requested_forward_speed": 0.8,
+      "episode_id": 8100001,
+      "seed": 8200001,
+      "spawn_origin": {
+        "x": 43.49999999627471,
+        "y": 83.58,
+        "z": 63.844827584922314
+      },
+      "post_warmup_origin": {
+        "x": 43.499996185302734,
+        "y": 83.29927062988281,
+        "z": 64.40768432617188
+      },
+      "post_warmup_baseline": {
+        "forward_displacement_from_spawn_blocks": -0.5628567412495613,
+        "lateral_displacement_from_spawn_blocks": -3.810971975326538E-6
+      },
+      "terminal_spawn_relative_displacement": {
+        "forward_displacement_blocks": -2.7220974639058113,
+        "lateral_displacement_blocks": 0.022251132875680923
+      },
+      "control_steps": 200,
+      "return": -7.471686860688671,
+      "forward_displacement_blocks": -2.15924072265625,
+      "lateral_displacement_blocks": 0.02225494384765625,
+      "machine_failure": false,
+      "arena_escape": false,
+      "termination_reason": "TIME_LIMIT",
+      "terminated": false,
+      "truncated": true,
+      "health_message": "ok",
+      "minimum_body_up": 0.5625237833979361,
+      "peak_vertical_excursion_blocks": 2.0662307739257812,
+      "action_total_variation": 0.0,
+      "action_saturation_fraction": 0.0,
+      "terminal_captured": true
+    },
+    {
+      "slot": 5,
+      "lane": 2,
+      "controller": "neutral",
+      "requested_forward_speed": 1.1,
+      "episode_id": 8100002,
+      "seed": 8200002,
+      "spawn_origin": {
+        "x": 55.49999999627471,
+        "y": 83.58,
+        "z": 63.844827584922314
+      },
+      "post_warmup_origin": {
+        "x": 55.50000762939453,
+        "y": 83.29846954345703,
+        "z": 64.4095687866211
+      },
+      "post_warmup_baseline": {
+        "forward_displacement_from_spawn_blocks": -0.5647412016987801,
+        "lateral_displacement_from_spawn_blocks": 7.633119821548462E-6
+      },
+      "terminal_spawn_relative_displacement": {
+        "forward_displacement_blocks": -2.72605711966753,
+        "lateral_displacement_blocks": -8.239708840847015E-4
+      },
+      "control_steps": 200,
+      "return": -7.426016064843344,
+      "forward_displacement_blocks": -2.16131591796875,
+      "lateral_displacement_blocks": -8.3160400390625E-4,
+      "machine_failure": false,
+      "arena_escape": false,
+      "termination_reason": "TIME_LIMIT",
+      "terminated": false,
+      "truncated": true,
+      "health_message": "ok",
+      "minimum_body_up": 0.5663497066867311,
+      "peak_vertical_excursion_blocks": 2.0666046142578125,
+      "action_total_variation": 0.0,
+      "action_saturation_fraction": 0.0,
+      "terminal_captured": true
+    },
+    {
+      "slot": 6,
+      "lane": 0,
+      "controller": "scripted_alternating_sine",
+      "requested_forward_speed": 0.5,
+      "episode_id": 8100000,
+      "seed": 8200000,
+      "spawn_origin": {
+        "x": 31.5,
+        "y": 83.58,
+        "z": 63.84482758119702
+      },
+      "post_warmup_origin": {
+        "x": 31.50001335144043,
+        "y": 83.29843139648438,
+        "z": 64.4096450805664
+      },
+      "post_warmup_baseline": {
+        "forward_displacement_from_spawn_blocks": -0.5648174993693829,
+        "lateral_displacement_from_spawn_blocks": 1.33514404296875E-5
+      },
+      "terminal_spawn_relative_displacement": {
+        "forward_displacement_blocks": 3.7900866754353046,
+        "lateral_displacement_blocks": -4.53582763671875
+      },
+      "control_steps": 89,
+      "return": -12.029274175858154,
+      "forward_displacement_blocks": 4.3549041748046875,
+      "lateral_displacement_blocks": -4.53584098815918,
+      "machine_failure": true,
+      "arena_escape": true,
+      "termination_reason": "MACHINE_FAILURE",
+      "terminated": true,
+      "truncated": false,
+      "health_message": "Duopod remained tipped with a collapsed center of mass",
+      "minimum_body_up": -0.42097219585296264,
+      "peak_vertical_excursion_blocks": 7.005615234375,
+      "action_total_variation": 32.07743950474337,
+      "action_saturation_fraction": 0.0,
+      "terminal_captured": true
+    },
+    {
+      "slot": 7,
+      "lane": 1,
+      "controller": "scripted_alternating_sine",
+      "requested_forward_speed": 0.8,
+      "episode_id": 8100001,
+      "seed": 8200001,
+      "spawn_origin": {
+        "x": 43.49999999627471,
+        "y": 83.58,
+        "z": 63.844827584922314
+      },
+      "post_warmup_origin": {
+        "x": 43.499996185302734,
+        "y": 83.29927062988281,
+        "z": 64.40768432617188
+      },
+      "post_warmup_baseline": {
+        "forward_displacement_from_spawn_blocks": -0.5628567412495613,
+        "lateral_displacement_from_spawn_blocks": -3.810971975326538E-6
+      },
+      "terminal_spawn_relative_displacement": {
+        "forward_displacement_blocks": 5.823797158896923,
+        "lateral_displacement_blocks": 0.6815261878073215
+      },
+      "control_steps": 200,
+      "return": 3.785455215846316,
+      "forward_displacement_blocks": 6.386653900146484,
+      "lateral_displacement_blocks": 0.6815299987792969,
+      "machine_failure": false,
+      "arena_escape": false,
+      "termination_reason": "TIME_LIMIT",
+      "terminated": false,
+      "truncated": true,
+      "health_message": "ok",
+      "minimum_body_up": 0.49789481131140073,
+      "peak_vertical_excursion_blocks": 2.0654449462890625,
+      "action_total_variation": 71.67300347477138,
+      "action_saturation_fraction": 0.0,
+      "terminal_captured": true
+    },
+    {
+      "slot": 8,
+      "lane": 2,
+      "controller": "scripted_alternating_sine",
+      "requested_forward_speed": 1.1,
+      "episode_id": 8100002,
+      "seed": 8200002,
+      "spawn_origin": {
+        "x": 55.49999999627471,
+        "y": 83.58,
+        "z": 63.844827584922314
+      },
+      "post_warmup_origin": {
+        "x": 55.50000762939453,
+        "y": 83.29846954345703,
+        "z": 64.4095687866211
+      },
+      "post_warmup_baseline": {
+        "forward_displacement_from_spawn_blocks": -0.5647412016987801,
+        "lateral_displacement_from_spawn_blocks": 7.633119821548462E-6
+      },
+      "terminal_spawn_relative_displacement": {
+        "forward_displacement_blocks": 2.033300332725048,
+        "lateral_displacement_blocks": -1.893398281186819
+      },
+      "control_steps": 200,
+      "return": -13.090707505548016,
+      "forward_displacement_blocks": 2.598041534423828,
+      "lateral_displacement_blocks": -1.8934059143066406,
+      "machine_failure": false,
+      "arena_escape": false,
+      "termination_reason": "TIME_LIMIT",
+      "terminated": false,
+      "truncated": true,
+      "health_message": "ok",
+      "minimum_body_up": 0.4987142570863215,
+      "peak_vertical_excursion_blocks": 2.1466445922851562,
+      "action_total_variation": 71.67300347477138,
+      "action_saturation_fraction": 0.0,
+      "terminal_captured": true
+    }
+  ]
+}

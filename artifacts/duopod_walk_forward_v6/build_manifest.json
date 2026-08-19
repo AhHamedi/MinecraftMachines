@@ -1,0 +1,19 @@
+{
+  "format": "minecraft_machines_verified_build_v1",
+  "minecraft_version": "1.21.1",
+  "mod_version": "0.1.0",
+  "jar": {
+    "path": "runnable/minecraft_machines-neoforge-1.21.1-0.1.0.jar",
+    "sha256": "e17f2a845fdbfed7736fd16a68625bc44720624413b527c25db5182171a77624",
+    "bytes": 633613
+  },
+  "verification": {
+    "common_java_tests_passed": 93,
+    "python_tests_passed": 75,
+    "python_optional_tests_skipped": 7,
+    "neoforge_gametests_passed": 29,
+    "evidence_bundle_verified": true
+  },
+  "runtime_evidence_code_revision": null,
+  "runtime_evidence_code_revision_status": "unavailable_in_runtime_artifact"
+}

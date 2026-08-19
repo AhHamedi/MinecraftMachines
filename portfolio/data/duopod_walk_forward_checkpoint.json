@@ -1,0 +1,135 @@
+{
+  "format": "minecraft_machines_duopod_cem_checkpoint_v3",
+  "formatVersion": 3,
+  "createdAt": "2026-08-03T12:01:00.083499Z",
+  "policyType": "duopod_phase_gait_v1",
+  "morphologyId": "minecraft_machines:duopod",
+  "observationSpec": {
+    "schemaId": "minecraft_machines:duopod_locomotion",
+    "schemaVersion": 6,
+    "size": 45,
+    "compatibilityHash": "614beeacdca0545900f97b88e65289ac243f55eba23b56b67f77c54480021266"
+  },
+  "actionSpec": {
+    "schemaId": "minecraft_machines:duopod_servo_targets",
+    "schemaVersion": 3,
+    "size": 2,
+    "compatibilityHash": "68d0a6c53c368cd9f398677a80d35e6e2c511d34f61155b004475d5736a3d077"
+  },
+  "observationSchemaHash": "614beeacdca0545900f97b88e65289ac243f55eba23b56b67f77c54480021266",
+  "actionSchemaHash": "68d0a6c53c368cd9f398677a80d35e6e2c511d34f61155b004475d5736a3d077",
+  "curriculumStage": "walk_forward",
+  "meanScore": 2.166484365338852,
+  "worstScore": 1.5648023369466122,
+  "successRate": 0.0,
+  "failureRate": 0.0,
+  "aggregateFitness": 2.5576849495755054,
+  "runId": "d7d82d07-7c9b-4350-82e8-4d0886f29637",
+  "generation": 14,
+  "trainingConfig": {
+    "populationSize": 16,
+    "eliteCount": 2,
+    "maximumGenerations": 20,
+    "episodeTicks": 160,
+    "controlTicks": 4,
+    "episodesPerCandidate": 3,
+    "spacingBlocks": 0,
+    "maxConcurrentSlots": 16,
+    "activeSlotCount": 15,
+    "totalScenarioCount": 48,
+    "curriculumStage": "walk_forward",
+    "pointGoalNearDistanceBlocks": 4.0,
+    "pointGoalFarDistanceBlocks": 8.0,
+    "spawnWarmupTicks": 20,
+    "maximumControlSteps": 40,
+    "cemSettings": {
+      "populationSize": 16,
+      "eliteCount": 2,
+      "episodesPerCandidate": 3,
+      "smoothingOld": 0.35,
+      "smoothingElite": 0.65,
+      "initialWeightStd": 0.18,
+      "initialBiasStd": 0.45,
+      "minimumStd": 0.02,
+      "maximumStd": 1.25,
+      "stagnationWindow": 5,
+      "stagnationMinimumImprovement": 0.1,
+      "minimumActionDiversity": 0.035,
+      "explorationExpansionMultiplier": 1.25,
+      "maximumSaturationForExpansion": 0.65
+    }
+  },
+  "distribution": {
+    "mean": [
+      -0.09049113392928466,
+      -0.739179703377258,
+      -0.6678400475051985,
+      -0.12187769449743667,
+      -0.4302538570591682,
+      -0.41346145871494633,
+      0.1858310320695722
+    ],
+    "standardDeviation": [
+      0.028660302545340632,
+      0.023089803804212335,
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.02
+    ],
+    "lowerBounds": [
+      -3.0,
+      -3.0,
+      -3.0,
+      -3.0,
+      -3.0,
+      -3.0,
+      -3.0
+    ],
+    "upperBounds": [
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0
+    ],
+    "minimumStandardDeviation": [
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.02
+    ],
+    "maximumStandardDeviation": [
+      1.25,
+      1.25,
+      1.25,
+      1.25,
+      1.25,
+      1.25,
+      1.25
+    ],
+    "seed": 8529805549041,
+    "generation": 14,
+    "bestFitness": 2.5576849495755054
+  },
+  "evaluationMetadata": {
+    "heldOutManifestId": "duopod_held_out_point_goals_v2",
+    "heldOutManifestHash": "8b6e46d6aa706a94987e45c034e96ded096bdde0189aeb006d8259a019321854",
+    "latestEvaluationPath": "minecraft_machines/duopod_cem_evaluation_latest.json"
+  },
+  "genome": [
+    -0.12381467630673179,
+    -0.763558913330678,
+    -0.6754625339642778,
+    -0.12847345861423928,
+    -0.43861520470227705,
+    -0.4280259270260252,
+    0.18838495627387536
+  ]
+}

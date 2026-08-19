@@ -1,0 +1,4 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "minecraft_machines:blocks/servo_joint_link"
+}

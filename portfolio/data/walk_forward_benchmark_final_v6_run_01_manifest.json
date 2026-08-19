@@ -1,0 +1,51 @@
+{
+  "format": "minecraft_machines_duopod_walk_forward_benchmark_latest_manifest_v1",
+  "format_version": 1,
+  "benchmark_id": "c647d862-f7e4-4d34-8b69-2fcd0591edaf",
+  "generated_at": "2026-08-03T17:23:45.447903Z",
+  "hash_algorithm": "SHA-256",
+  "commit_complete": true,
+  "commit_semantics": "written atomically after immutable and compatibility JSON/CSV files; readers must verify both hashes and benchmark IDs",
+  "contract": {
+    "benchmark_format": "minecraft_machines_duopod_walk_forward_benchmark_v3",
+    "benchmark_format_version": 3,
+    "acceptance_rule": "post_warmup_stability_adjusted_anti_ballistic_v2",
+    "acceptance_rule_version": 2
+  },
+  "immutable_artifacts": {
+    "json": {
+      "filename": "duopod_cem_walk_forward_benchmark_c647d862-f7e4-4d34-8b69-2fcd0591edaf.json",
+      "sha256": "4b5b2d4459ea8b81b15a863635a41b88080abffd879205379c9611643365d69e",
+      "bytes": 22186
+    },
+    "csv": {
+      "filename": "duopod_cem_walk_forward_benchmark_c647d862-f7e4-4d34-8b69-2fcd0591edaf.csv",
+      "sha256": "15d1c0bcc9442ff47316ec0d916ae8c74677fec1958e4ebc1c7763097a3675d3",
+      "bytes": 3695
+    }
+  },
+  "compatibility_latest": {
+    "json": {
+      "filename": "duopod_cem_walk_forward_benchmark_latest.json",
+      "sha256": "4b5b2d4459ea8b81b15a863635a41b88080abffd879205379c9611643365d69e",
+      "bytes": 22186
+    },
+    "csv": {
+      "filename": "duopod_cem_walk_forward_benchmark_latest.csv",
+      "sha256": "15d1c0bcc9442ff47316ec0d916ae8c74677fec1958e4ebc1c7763097a3675d3",
+      "bytes": 3695
+    }
+  },
+  "provenance": {
+    "genome_sha256": "6762d9ede735d81b1d7e7dd19ba7d8714d979f9953d3b7c500200dc1a6f0195f",
+    "checkpoint_run_id": "7bf2b216-3414-4030-88a8-3e6316823358",
+    "checkpoint_generation": 5,
+    "checkpoint_fitness_contract": "minecraft_machines:duopod_cem_fitness_v6",
+    "world": {
+      "level_name": "world",
+      "seed": -3368720904110701394,
+      "dimension": "minecraft:overworld"
+    },
+    "arena_id": "minecraft_machines:temporary_flat_duopod_lane_groups_v2"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "format": "minecraft_machines_duopod_fresh_search_evidence_v1",
+  "format_version": 1,
+  "selected_checkpoint": {
+    "filename": "checkpoint/duopod_cem_fresh_v6_seed2026080301_accepted.json",
+    "sha256": "fa753189199826a72779a5b4da534b226df5577b5115c2fe33258abb22c1256c",
+    "bytes": 5148,
+    "run_id": "7bf2b216-3414-4030-88a8-3e6316823358",
+    "run_seed": 2026080301,
+    "generation": 5,
+    "genome_sha256": "6762d9ede735d81b1d7e7dd19ba7d8714d979f9953d3b7c500200dc1a6f0195f"
+  },
+  "training_summary": {
+    "filename": "training_generations.csv",
+    "sha256": "80c1d3f772052e9309b9878c35eae9216167afd2186ad5bdb78ebd69e6238837",
+    "bytes": 676
+  },
+  "accepted_benchmarks": [
+    {
+      "directory": "benchmark_run_01",
+      "benchmark_id": "c647d862-f7e4-4d34-8b69-2fcd0591edaf",
+      "manifest_sha256": "b4d43d867b703bbc00efaa8ea1317227484fb1d568cf160d021ffe927f4fb86d"
+    },
+    {
+      "directory": "benchmark_run_02",
+      "benchmark_id": "6b5506a5-e24b-4df2-b972-49cbe6ed1a51",
+      "manifest_sha256": "197f737a886c7df8f84430f07670b29c05816eff291fda0bf97a4ae177da5db3"
+    }
+  ]
+}

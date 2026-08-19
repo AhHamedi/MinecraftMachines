@@ -1,0 +1,1826 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Minecraft Machines Duopod locomotion case study: hardened v6 benchmark evidence, failure lineage, acceptance criteria, and reproducible provenance.">
+  <title>Minecraft Machines — Evidence Dashboard</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23151d23'/%3E%3Cpath d='M16 46V18h8l8 14 8-14h8v28h-8V31l-8 13-8-13v15z' fill='%23f2eadc'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --slate-950: #0d1216;
+      --slate-925: #11181d;
+      --slate-900: #151d23;
+      --slate-850: #1a242b;
+      --slate-800: #222e36;
+      --slate-700: #35434d;
+      --slate-500: #71808a;
+      --slate-350: #a4afb5;
+      --cream-100: #f2eadc;
+      --cream-200: #ded4c4;
+      --cream-300: #c4b9a8;
+      --copper-400: #cb8358;
+      --copper-500: #af6842;
+      --danger-400: #df756c;
+      --danger-900: #3a211f;
+      --success-400: #80a78d;
+      --success-900: #193027;
+      --neutral-400: #89959d;
+      --scripted-400: #60798b;
+      --shadow: 0 18px 42px rgb(0 0 0 / 24%);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --sidebar-width: 240px;
+      --topbar-height: 76px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--topbar-height) + 24px);
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--slate-950);
+      color: var(--cream-100);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--copper-400);
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: fixed;
+      inset: 12px auto auto 12px;
+      z-index: 100;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: var(--cream-100);
+      color: var(--slate-950);
+      transform: translateY(-160%);
+      transition: transform 160ms ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .sidebar {
+      position: fixed;
+      inset: 0 auto 0 0;
+      z-index: 30;
+      display: flex;
+      width: var(--sidebar-width);
+      flex-direction: column;
+      border-right: 1px solid var(--slate-800);
+      background: var(--slate-925);
+      box-shadow: 10px 0 28px rgb(0 0 0 / 14%);
+    }
+
+    .brand {
+      display: flex;
+      min-height: var(--topbar-height);
+      align-items: center;
+      gap: 12px;
+      padding: 0 22px;
+      border-bottom: 1px solid var(--slate-800);
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border: 1px solid var(--slate-700);
+      border-radius: 10px;
+      background: var(--slate-850);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .brand-copy {
+      min-width: 0;
+    }
+
+    .brand-name {
+      display: block;
+      overflow: hidden;
+      color: var(--cream-100);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .brand-subtitle {
+      color: var(--slate-350);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .sidebar-nav {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 5px;
+      padding: 18px 12px;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-height: 42px;
+      padding: 9px 12px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      color: var(--slate-350);
+      font-size: 13px;
+      font-weight: 650;
+      text-decoration: none;
+      transition: background 140ms ease, color 140ms ease, border-color 140ms ease;
+    }
+
+    .nav-link:hover {
+      border-color: var(--slate-700);
+      background: var(--slate-850);
+      color: var(--cream-100);
+    }
+
+    .nav-link[aria-current="page"] {
+      border-color: rgb(203 131 88 / 42%);
+      background: rgb(203 131 88 / 12%);
+      color: var(--copper-400);
+    }
+
+    .nav-link svg {
+      width: 17px;
+      height: 17px;
+      flex: 0 0 auto;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      fill: none;
+    }
+
+    .sidebar-foot {
+      padding: 16px 18px 20px;
+      border-top: 1px solid var(--slate-800);
+      color: var(--slate-350);
+      font-size: 11px;
+    }
+
+    .sidebar-foot strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--cream-200);
+      font-size: 12px;
+    }
+
+    .shell {
+      min-height: 100vh;
+      margin-left: var(--sidebar-width);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      min-height: var(--topbar-height);
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 12px clamp(20px, 3vw, 42px);
+      border-bottom: 1px solid var(--slate-800);
+      background: rgb(13 18 22 / 92%);
+      backdrop-filter: blur(14px);
+    }
+
+    .eyebrow {
+      margin: 0 0 2px;
+      color: var(--slate-350);
+      font-size: 10px;
+      font-weight: 750;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .topbar h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(20px, 2.2vw, 28px);
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .topbar-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+    }
+
+    .run-chip {
+      padding: 8px 11px;
+      border: 1px solid var(--slate-700);
+      border-radius: 999px;
+      color: var(--cream-200);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid rgb(223 117 108 / 44%);
+      border-radius: 999px;
+      background: var(--danger-900);
+      color: #f1aaa3;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .status-chip.pending {
+      border-color: rgb(203 131 88 / 48%);
+      background: rgb(203 131 88 / 12%);
+      color: var(--copper-400);
+    }
+
+    .status-chip.pending .status-dot {
+      background: var(--copper-400);
+      box-shadow: 0 0 0 4px rgb(203 131 88 / 13%);
+    }
+
+    .status-chip.accepted {
+      border-color: rgb(128 167 141 / 48%);
+      background: var(--success-900);
+      color: #a8c6b1;
+    }
+
+    .status-chip.accepted .status-dot {
+      background: var(--success-400);
+      box-shadow: 0 0 0 4px rgb(128 167 141 / 13%);
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--danger-400);
+      box-shadow: 0 0 0 4px rgb(223 117 108 / 13%);
+    }
+
+    main {
+      width: min(1280px, 100%);
+      min-width: 0;
+      margin: 0 auto;
+      padding: 28px clamp(20px, 3vw, 42px) 56px;
+    }
+
+    .result-banner {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 22px;
+      padding: 18px 20px;
+      border: 1px solid rgb(223 117 108 / 40%);
+      border-left: 4px solid var(--danger-400);
+      border-radius: var(--radius-md);
+      background: linear-gradient(105deg, var(--danger-900), var(--slate-900) 68%);
+      box-shadow: var(--shadow);
+    }
+
+    .result-icon {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid rgb(223 117 108 / 42%);
+      border-radius: 50%;
+      color: #f1aaa3;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .result-banner h2 {
+      margin: 0 0 3px;
+      font-size: 15px;
+      letter-spacing: 0.01em;
+    }
+
+    .result-banner p {
+      margin: 0;
+      color: var(--cream-300);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    .result-banner code {
+      color: #f1aaa3;
+      overflow-wrap: anywhere;
+    }
+
+    .result-banner.pending {
+      border-color: rgb(203 131 88 / 42%);
+      border-left-color: var(--copper-400);
+      background: linear-gradient(105deg, rgb(53 37 29), var(--slate-900) 68%);
+    }
+
+    .result-banner.pending .result-icon {
+      border-color: rgb(203 131 88 / 46%);
+      color: var(--copper-400);
+    }
+
+    .result-banner.pending code {
+      color: var(--copper-400);
+    }
+
+    .result-banner.accepted {
+      border-color: rgb(128 167 141 / 40%);
+      border-left-color: var(--success-400);
+      background: linear-gradient(105deg, var(--success-900), var(--slate-900) 68%);
+    }
+
+    .result-banner.accepted .result-icon {
+      border-color: rgb(128 167 141 / 46%);
+      color: #a8c6b1;
+    }
+
+    .result-banner.accepted code {
+      color: #a8c6b1;
+    }
+
+    .artifact-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 8px 12px;
+      border: 1px solid var(--slate-700);
+      border-radius: 9px;
+      background: var(--slate-850);
+      color: var(--cream-100);
+      font-size: 12px;
+      font-weight: 750;
+      text-decoration: none;
+    }
+
+    .artifact-link:hover {
+      border-color: var(--cream-300);
+    }
+
+    .demo-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.8fr);
+      gap: 0;
+      margin-bottom: 22px;
+      overflow: hidden;
+    }
+
+    .demo-media {
+      min-height: 280px;
+      background: var(--slate-950);
+    }
+
+    .demo-media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+    }
+
+    .demo-media .demo-still {
+      display: none;
+    }
+
+    .demo-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: clamp(22px, 4vw, 38px);
+      border-left: 1px solid var(--slate-800);
+      background: linear-gradient(145deg, var(--slate-900), var(--slate-925));
+    }
+
+    .demo-copy h2 {
+      margin: 8px 0 10px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(22px, 3vw, 34px);
+      line-height: 1.05;
+    }
+
+    .demo-copy p:not(.eyebrow) {
+      margin: 0 0 18px;
+      color: var(--cream-300);
+      font-size: 13px;
+    }
+
+    .section {
+      margin-top: 22px;
+      scroll-margin-top: calc(var(--topbar-height) + 18px);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 12px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 20px;
+      letter-spacing: -0.015em;
+    }
+
+    .section-heading p {
+      max-width: 620px;
+      margin: 0;
+      color: var(--slate-350);
+      font-size: 12px;
+      text-align: right;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      min-width: 0;
+      max-width: 100%;
+      border: 1px solid var(--slate-800);
+      border-radius: var(--radius-lg);
+      background: var(--slate-900);
+      box-shadow: var(--shadow);
+    }
+
+    .topbar > *,
+    .result-banner > *,
+    .performance-grid > *,
+    .two-col > *,
+    .metric-split > * {
+      min-width: 0;
+    }
+
+    .kpi-card {
+      position: relative;
+      min-height: 148px;
+      overflow: hidden;
+      padding: 18px;
+    }
+
+    .kpi-card::after {
+      position: absolute;
+      inset: auto -18px -32px auto;
+      width: 92px;
+      height: 92px;
+      border: 1px solid var(--slate-800);
+      border-radius: 50%;
+      content: "";
+      opacity: 0.7;
+    }
+
+    .kpi-card.reject {
+      border-color: rgb(223 117 108 / 42%);
+    }
+
+    .kpi-card.pending {
+      border-color: rgb(203 131 88 / 42%);
+    }
+
+    .kpi-label {
+      margin: 0 0 14px;
+      color: var(--slate-350);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .kpi-value {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(29px, 3vw, 39px);
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+      letter-spacing: -0.035em;
+    }
+
+    .kpi-value.word {
+      color: #f1aaa3;
+      font-family: inherit;
+      font-size: 25px;
+      font-weight: 850;
+      letter-spacing: -0.02em;
+    }
+
+    .kpi-value.pending-value {
+      overflow-wrap: anywhere;
+      color: var(--copper-400);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: clamp(14px, 1.7vw, 20px);
+      font-weight: 750;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .kpi-detail {
+      position: relative;
+      z-index: 1;
+      margin: 12px 0 0;
+      color: var(--cream-300);
+      font-size: 12px;
+    }
+
+    .kpi-detail .pass {
+      color: var(--success-400);
+      font-weight: 750;
+    }
+
+    .kpi-detail .fail {
+      color: var(--danger-400);
+      font-weight: 750;
+    }
+
+    .performance-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.75fr) minmax(280px, 0.75fr);
+      gap: 12px;
+    }
+
+    .chart-card,
+    .acceptance-card,
+    .table-card,
+    .timeline-card,
+    .architecture-card,
+    .provenance-card,
+    .tests-card {
+      padding: 20px;
+    }
+
+    .card-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 14px;
+    }
+
+    .card-head h3 {
+      margin: 0 0 3px;
+      font-size: 14px;
+      letter-spacing: 0.005em;
+    }
+
+    .card-head p {
+      margin: 0;
+      color: var(--slate-350);
+      font-size: 11px;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+      color: var(--slate-350);
+      font-size: 10px;
+    }
+
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .legend i {
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      background: currentColor;
+    }
+
+    .legend .learned {
+      color: var(--copper-400);
+    }
+
+    .legend .neutral {
+      color: var(--neutral-400);
+    }
+
+    .legend .scripted {
+      color: var(--scripted-400);
+    }
+
+    .chart-wrap {
+      margin: 0;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+
+    .chart-wrap svg {
+      display: block;
+      width: 100%;
+      min-width: 650px;
+      height: auto;
+    }
+
+    .chart-note {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--slate-800);
+      color: var(--cream-300);
+      font-size: 11px;
+    }
+
+    .chart-note::before {
+      width: 7px;
+      height: 7px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--danger-400);
+      content: "";
+    }
+
+    .checklist {
+      display: grid;
+      gap: 7px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .check-item {
+      display: grid;
+      grid-template-columns: 26px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 9px;
+      min-height: 47px;
+      padding: 8px 9px;
+      border: 1px solid var(--slate-800);
+      border-radius: 10px;
+      background: var(--slate-925);
+    }
+
+    .check-icon {
+      display: grid;
+      width: 24px;
+      height: 24px;
+      place-items: center;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .check-item.pass .check-icon {
+      background: var(--success-900);
+      color: var(--success-400);
+    }
+
+    .check-item.fail {
+      border-color: rgb(223 117 108 / 44%);
+      background: var(--danger-900);
+    }
+
+    .check-item.fail .check-icon {
+      background: rgb(223 117 108 / 18%);
+      color: #f1aaa3;
+    }
+
+    .check-copy strong {
+      display: block;
+      color: var(--cream-200);
+      font-size: 11px;
+    }
+
+    .check-copy small {
+      display: block;
+      color: var(--slate-350);
+      font-size: 10px;
+      line-height: 1.35;
+    }
+
+    .check-status {
+      color: var(--success-400);
+      font-size: 9px;
+      font-weight: 850;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .fail .check-status {
+      color: #f1aaa3;
+    }
+
+    .check-item.pending {
+      border-color: rgb(203 131 88 / 34%);
+      background: rgb(203 131 88 / 7%);
+    }
+
+    .check-item.pending .check-icon {
+      background: rgb(203 131 88 / 15%);
+      color: var(--copper-400);
+    }
+
+    .check-item.pending .check-status {
+      color: var(--copper-400);
+    }
+
+    .table-card {
+      overflow: hidden;
+    }
+
+    .data-table-wrap {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-variant-numeric: tabular-nums;
+    }
+
+    th,
+    td {
+      padding: 12px 13px;
+      border-bottom: 1px solid var(--slate-800);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    th:first-child,
+    td:first-child {
+      text-align: left;
+    }
+
+    th {
+      color: var(--slate-350);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    td {
+      color: var(--cream-200);
+      font-size: 12px;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    tbody tr:hover td {
+      background: var(--slate-850);
+    }
+
+    .controller-name {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 750;
+    }
+
+    .controller-name::before {
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      background: var(--neutral-400);
+      content: "";
+    }
+
+    .controller-name.learned::before {
+      background: var(--copper-400);
+    }
+
+    .controller-name.scripted::before {
+      background: var(--scripted-400);
+    }
+
+    .negative,
+    .failure-count {
+      color: #f1aaa3;
+    }
+
+    .positive {
+      color: var(--success-400);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: 12px;
+    }
+
+    .metric-split {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .axis-shell {
+      margin: 4px 0 14px;
+      padding: 0 13px;
+    }
+
+    .axis-line {
+      position: relative;
+      height: 22px;
+      border-top: 1px solid var(--slate-700);
+    }
+
+    .axis-line::before {
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      width: 1px;
+      height: 11px;
+      background: var(--cream-300);
+      content: "";
+    }
+
+    .axis-labels {
+      display: flex;
+      justify-content: space-between;
+      color: var(--slate-500);
+      font-size: 9px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .axis-labels span:nth-child(2) {
+      color: var(--cream-300);
+    }
+
+    .metric-note {
+      margin: 12px 0 0;
+      color: var(--slate-350);
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
+    .metric-note strong {
+      color: var(--cream-200);
+    }
+
+    .raw-adjusted-table td:nth-child(n + 2),
+    .per-speed-table td:nth-child(n + 2) {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 10px;
+    }
+
+    .placeholder {
+      color: var(--copper-400);
+      overflow-wrap: anywhere;
+      white-space: normal;
+    }
+
+    .lineage-label {
+      display: inline-flex;
+      margin-bottom: 4px;
+      color: var(--copper-400);
+      font-size: 8px;
+      font-weight: 850;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .artifact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 9px;
+    }
+
+    .artifact-tile {
+      display: flex;
+      min-height: 116px;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 13px;
+      padding: 14px;
+      border: 1px solid var(--slate-800);
+      border-radius: 11px;
+      background: var(--slate-925);
+    }
+
+    .artifact-tile.pending {
+      border-color: rgb(203 131 88 / 34%);
+    }
+
+    .artifact-tile.rejected {
+      border-color: rgb(223 117 108 / 40%);
+    }
+
+    .artifact-tile strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--cream-200);
+      font-size: 11px;
+    }
+
+    .artifact-tile p {
+      margin: 0;
+      color: var(--slate-350);
+      font-size: 10px;
+      line-height: 1.45;
+    }
+
+    .artifact-tile a {
+      color: var(--copper-400);
+      font-size: 10px;
+      font-weight: 750;
+      text-decoration: none;
+    }
+
+    .artifact-tile a:hover {
+      text-decoration: underline;
+    }
+
+    .hash-value {
+      overflow-wrap: anywhere;
+      white-space: normal !important;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .timeline::before {
+      position: absolute;
+      inset: 7px auto 9px 7px;
+      width: 1px;
+      background: var(--slate-700);
+      content: "";
+    }
+
+    .timeline li {
+      position: relative;
+      display: grid;
+      grid-template-columns: 16px minmax(0, 1fr);
+      gap: 12px;
+      padding: 0 0 17px;
+    }
+
+    .timeline li:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-marker {
+      z-index: 1;
+      width: 15px;
+      height: 15px;
+      margin-top: 3px;
+      border: 4px solid var(--slate-900);
+      border-radius: 50%;
+      background: var(--slate-500);
+      box-shadow: 0 0 0 1px var(--slate-700);
+    }
+
+    .timeline li:last-child .timeline-marker {
+      background: var(--danger-400);
+      box-shadow: 0 0 0 1px var(--danger-400);
+    }
+
+    .timeline h4 {
+      margin: 0 0 2px;
+      color: var(--cream-200);
+      font-size: 12px;
+    }
+
+    .timeline p {
+      margin: 0;
+      color: var(--slate-350);
+      font-size: 11px;
+    }
+
+    .architecture-flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 9px;
+    }
+
+    .architecture-node {
+      position: relative;
+      min-height: 88px;
+      padding: 13px;
+      border: 1px solid var(--slate-800);
+      border-radius: 11px;
+      background: var(--slate-925);
+    }
+
+    .architecture-node strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--cream-200);
+      font-size: 11px;
+    }
+
+    .architecture-node span {
+      display: block;
+      color: var(--slate-350);
+      font-size: 10px;
+      line-height: 1.4;
+    }
+
+    .architecture-node:not(:nth-child(3n))::after {
+      position: absolute;
+      top: 50%;
+      right: -8px;
+      z-index: 2;
+      color: var(--slate-500);
+      content: "→";
+      transform: translateY(-50%);
+    }
+
+    .provenance-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin: 0;
+    }
+
+    .provenance-grid div {
+      min-width: 0;
+      padding: 11px 12px;
+      border: 1px solid var(--slate-800);
+      border-radius: 10px;
+      background: var(--slate-925);
+    }
+
+    .provenance-grid dt {
+      margin-bottom: 3px;
+      color: var(--slate-350);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .provenance-grid dd {
+      overflow: hidden;
+      margin: 0;
+      color: var(--cream-200);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 10px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .evidence-list {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .evidence-item {
+      min-height: 126px;
+      padding: 14px;
+      border: 1px solid var(--slate-800);
+      border-radius: 11px;
+      background: var(--slate-925);
+    }
+
+    .evidence-type {
+      display: inline-block;
+      margin-bottom: 11px;
+      padding: 4px 7px;
+      border: 1px solid var(--slate-700);
+      border-radius: 999px;
+      color: var(--slate-350);
+      font-size: 8px;
+      font-weight: 850;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .evidence-item h3,
+    .evidence-item h4 {
+      margin: 0 0 5px;
+      color: var(--cream-200);
+      font-size: 11px;
+    }
+
+    .evidence-item p {
+      margin: 0;
+      color: var(--slate-350);
+      font-size: 10px;
+      line-height: 1.45;
+    }
+
+    .evidence-item.rejected {
+      border-color: rgb(223 117 108 / 40%);
+    }
+
+    .source-note {
+      margin: 14px 0 0;
+      padding: 11px 12px;
+      border-left: 2px solid var(--slate-700);
+      color: var(--slate-350);
+      font-size: 10px;
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid var(--slate-800);
+      color: var(--slate-500);
+      font-size: 10px;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.94em;
+    }
+
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    @media (max-width: 1120px) {
+      .kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .performance-grid,
+      .two-col,
+      .metric-split {
+        grid-template-columns: 1fr;
+      }
+
+      .evidence-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .artifact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 820px) {
+      :root {
+        --sidebar-width: 100%;
+      }
+
+      .sidebar {
+        position: relative;
+        width: 100%;
+        border-right: 0;
+        border-bottom: 1px solid var(--slate-800);
+      }
+
+      .brand {
+        min-height: 66px;
+      }
+
+      .sidebar-nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 12px;
+      }
+
+      .sidebar-foot {
+        display: none;
+      }
+
+      .shell {
+        margin-left: 0;
+      }
+
+      .topbar {
+        min-height: 68px;
+      }
+
+      .run-chip {
+        display: none;
+      }
+
+      .result-banner {
+        grid-template-columns: auto 1fr;
+      }
+
+      .demo-card {
+        grid-template-columns: 1fr;
+      }
+
+      .demo-copy {
+        border-top: 1px solid var(--slate-800);
+        border-left: 0;
+      }
+
+      .artifact-link {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 620px) {
+      main {
+        padding-inline: 14px;
+      }
+
+      .kpi-grid,
+      .evidence-list,
+      .architecture-flow,
+      .provenance-grid,
+      .artifact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .architecture-node:not(:nth-child(3n))::after {
+        display: none;
+      }
+
+      .section-heading,
+      .topbar,
+      footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .topbar {
+        padding-inline: 16px;
+      }
+
+      .topbar h1 {
+        overflow-wrap: anywhere;
+      }
+
+      .result-banner {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+        padding: 16px;
+      }
+
+      .result-icon {
+        width: 36px;
+        height: 36px;
+      }
+
+      .section-heading p {
+        text-align: left;
+      }
+
+      .topbar-meta {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .card-head {
+        flex-direction: column;
+      }
+
+      .legend {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+
+      .demo-media .demo-motion {
+        display: none;
+      }
+
+      .demo-media .demo-still {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to evidence</a>
+
+  <aside class="sidebar" aria-label="Dashboard navigation" data-od-id="sidebar-navigation">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">M</div>
+      <div class="brand-copy">
+        <span class="brand-name">Minecraft Machines</span>
+        <span class="brand-subtitle">Evidence console</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav" aria-label="Case study sections">
+      <a class="nav-link" href="#overview" aria-current="page">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        Overview
+      </a>
+      <a class="nav-link" href="#performance">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h16M7 15l4-5 3 2 5-7"/></svg>
+        Performance
+      </a>
+      <a class="nav-link" href="#acceptance">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7l8-4z"/><path d="M9 12l2 2 4-5"/></svg>
+        Acceptance
+      </a>
+      <a class="nav-link" href="#controllers">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 17h14M8 4v6M16 14v6"/></svg>
+        Controllers
+      </a>
+      <a class="nav-link" href="#repairs">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 6a4 4 0 01-5 5L4 16l4 4 5-5a4 4 0 005-5l-3 2-2-2 1-4z"/></svg>
+        Repair log
+      </a>
+      <a class="nav-link" href="#artifacts">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v5h5M10 13h6M10 17h6"/></svg>
+        Evidence files
+      </a>
+      <a class="nav-link" href="#provenance">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v5h5M10 13h6M10 17h6"/></svg>
+        Provenance
+      </a>
+      <a class="nav-link" href="#verification">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5z"/><path d="M8 9l2 2 4-4M8 15h8"/></svg>
+        Verification
+      </a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <strong>Evidence policy</strong>
+      No controller is promoted unless every fixed benchmark criterion passes.
+    </div>
+  </aside>
+
+  <div class="shell">
+    <header class="topbar" data-od-id="sticky-topbar">
+      <div>
+        <p class="eyebrow">Duopod · walk-forward · hardened v6 evidence</p>
+        <h1>Locomotion evidence dashboard</h1>
+      </div>
+      <div class="topbar-meta" aria-label="Run status">
+        <span class="run-chip">9 episodes · per-physics-tick pose capture</span>
+        <span class="status-chip accepted"><span class="status-dot" aria-hidden="true"></span>ACCEPTED</span>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section id="overview" class="section" aria-labelledby="overview-title" data-od-id="overview-alert">
+        <div class="result-banner accepted" role="status">
+          <div class="result-icon" aria-hidden="true">✓</div>
+          <div>
+            <h2 id="overview-title">Final v6 publication decision: <code>ACCEPTED</code></h2>
+            <p><code>Two manifest-verified v6 benchmark repeats passed all eight mandatory gates against the neutral and scripted baselines</code>. Promotion is backed by two verified final manifests, a checkpoint declaring the v6 fitness contract, and eight passing mandatory criteria in each repeat.</p>
+          </div>
+          <a class="artifact-link" href="./data/README.md">Open evidence catalog</a>
+        </div>
+
+        <article class="card demo-card" data-od-id="duopod-demo">
+          <div class="demo-media">
+            <img class="demo-motion" src="./media/duopod-demo.gif" alt="The two-servo Duopod crawling forward across a flat Minecraft test world">
+            <img class="demo-still" src="./media/duopod-demo.jpg" alt="The two-servo Duopod in its flat Minecraft test world">
+          </div>
+          <div class="demo-copy">
+            <p class="eyebrow">Physical policy replay · 13.5 seconds</p>
+            <h2>Motion through the mechanism</h2>
+            <p>The policy emits two bounded servo targets. Forward motion must emerge through three constrained rigid bodies; position and velocity are never written as actions.</p>
+            <a class="artifact-link" href="https://github.com/AhHamedi/MinecraftMachines/releases/download/v0.1.0/duopod_test.mov">Watch the full-quality capture</a>
+          </div>
+        </article>
+
+        <div class="kpi-grid" data-od-id="benchmark-kpis">
+          <article class="card kpi-card">
+            <p class="kpi-label">Publication gate</p>
+            <p class="kpi-value">ACCEPTED</p>
+            <p class="kpi-detail"><span>8</span> / 8 criteria passed</p>
+          </article>
+          <article class="card kpi-card">
+            <p class="kpi-label">Learned mean forward</p>
+            <p class="kpi-value">+3.0775</p>
+            <p class="kpi-detail">blocks · post-warmup · 3 speeds</p>
+          </article>
+          <article class="card kpi-card">
+            <p class="kpi-label">Adjusted baseline margin</p>
+            <p class="kpi-value">+3.0775</p>
+            <p class="kpi-detail">blocks · required ≥ +0.500</p>
+          </article>
+          <article class="card kpi-card">
+            <p class="kpi-label">Safety envelope</p>
+            <p class="kpi-value">0 fail · 0 escape</p>
+            <p class="kpi-detail">failures · posture · vertical · containment</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="performance" class="section" aria-labelledby="performance-title" data-od-id="performance-comparison">
+        <div class="section-heading">
+          <h2 id="performance-title">Per-speed displacement</h2>
+          <p>Post-warmup spawn-frame displacement in blocks. Negative values are backward of the fixed zero line; baseline credit is adjusted only after stability is evaluated.</p>
+        </div>
+
+        <div class="performance-grid">
+          <article class="card chart-card" data-od-id="zero-centered-chart">
+            <div class="card-head">
+              <div>
+                <h3>Learned vs. fixed baselines</h3>
+                <p>Three controllers × three requested forward speeds</p>
+              </div>
+              <div class="legend" aria-label="Chart legend">
+                <span class="learned"><i aria-hidden="true"></i>Learned</span>
+                <span class="neutral"><i aria-hidden="true"></i>Neutral</span>
+                <span class="scripted"><i aria-hidden="true"></i>Scripted sine</span>
+              </div>
+            </div>
+
+            <div class="axis-shell" role="img" aria-label="Zero-centered direction scale: negative displacement is backward, zero is the post-warmup origin, and positive displacement is forward">
+              <div class="axis-line" aria-hidden="true"></div>
+              <div class="axis-labels"><span>← backward</span><span>0 · post-warmup origin</span><span>forward →</span></div>
+            </div>
+
+            <div class="data-table-wrap">
+              <table class="per-speed-table">
+                <caption class="visually-hidden">Final v6 raw forward displacement by controller and requested speed</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Controller</th>
+                    <th scope="col">0.50</th>
+                    <th scope="col">0.80</th>
+                    <th scope="col">1.10</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="controller-name learned">Learned v6</span></td>
+                    <td>+3.6595</td>
+                    <td>+2.9411</td>
+                    <td>+2.6321</td>
+                  </tr>
+                  <tr>
+                    <td><span class="controller-name">Neutral</span></td>
+                    <td>−2.1611</td>
+                    <td>−2.1592</td>
+                    <td>−2.1613</td>
+                  </tr>
+                  <tr>
+                    <td><span class="controller-name scripted">Scripted sine</span></td>
+                    <td>+4.3549</td>
+                    <td>+6.3867</td>
+                    <td>+2.5980</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="metric-note"><strong>Zero-centered interpretation:</strong> every learned cell must be greater than zero. The fixed requested speeds are deterministic benchmark cells, not three independent statistical seeds.</p>
+          </article>
+
+          <article id="acceptance" class="card acceptance-card" aria-labelledby="acceptance-title" data-od-id="acceptance-checklist">
+            <div class="card-head">
+              <div>
+                <h3 id="acceptance-title">Acceptance checklist</h3>
+                <p>Every criterion is mandatory</p>
+              </div>
+            </div>
+            <ul class="checklist">
+              <li class="check-item pass">
+                <span class="check-icon" aria-hidden="true">✓</span>
+                <span class="check-copy"><strong>Coverage complete</strong><small>All 9 controller × speed cells and complete pose samples</small></span>
+                <span class="check-status">PASS</span>
+              </li>
+              <li class="check-item pass">
+                <span class="check-icon" aria-hidden="true">✓</span>
+                <span class="check-copy"><strong>Metrics valid</strong><small>Finite and bounded</small></span>
+                <span class="check-status">PASS</span>
+              </li>
+              <li class="check-item pass">
+                <span class="check-icon" aria-hidden="true">✓</span>
+                <span class="check-copy"><strong>Adjusted baseline margin</strong><small>Learned − stronger stable baseline ≥ +0.500 blocks</small></span>
+                <span class="check-status">PASS</span>
+              </li>
+              <li class="check-item pass">
+                <span class="check-icon" aria-hidden="true">✓</span>
+                <span class="check-copy"><strong>No learned failures</strong><small>0 machine failures</small></span>
+                <span class="check-status">PASS</span>
+              </li>
+              <li class="check-item pass">
+                <span class="check-icon" aria-hidden="true">✓</span>
+                <span class="check-copy"><strong>Positive at every speed</strong><small>Raw post-warmup forward displacement &gt; 0 in all 3 cells</small></span>
+                <span class="check-status">PASS</span>
+              </li>
+              <li class="check-item pass">
+                <span class="check-icon" aria-hidden="true">✓</span>
+                <span class="check-copy"><strong>Minimum body-up</strong><small>Worst per-physics-tick value ≥ 0.600</small></span>
+                <span class="check-status">PASS</span>
+              </li>
+              <li class="check-item pass">
+                <span class="check-icon" aria-hidden="true">✓</span>
+                <span class="check-copy"><strong>Anti-ballistic excursion</strong><small>Worst post-warmup peak vertical excursion ≤ 3.000 blocks</small></span>
+                <span class="check-status">PASS</span>
+              </li>
+              <li class="check-item pass">
+                <span class="check-icon" aria-hidden="true">✓</span>
+                <span class="check-copy"><strong>Arena containment</strong><small>0 learned arena escapes</small></span>
+                <span class="check-status">PASS</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="controllers" class="section" aria-labelledby="controllers-title" data-od-id="controller-evidence-table">
+        <div class="section-heading">
+          <h2 id="controllers-title">Controller evidence</h2>
+          <p>Raw motion is always preserved. “Adjusted” changes only the comparison credit of an unstable baseline; it never rewrites the learned controller’s motion or safety outcome.</p>
+        </div>
+        <div class="metric-split">
+          <article class="card table-card" data-od-id="raw-adjusted-comparison">
+            <div class="card-head">
+              <div><h3>Zero-centered raw → adjusted means</h3><p>Blocks forward from the post-warmup origin</p></div>
+            </div>
+            <div class="axis-shell" aria-hidden="true">
+              <div class="axis-line"></div>
+              <div class="axis-labels"><span>negative</span><span>0</span><span>positive</span></div>
+            </div>
+            <div class="data-table-wrap">
+              <table class="raw-adjusted-table">
+                <caption class="visually-hidden">Final v6 raw and stability-adjusted comparison means</caption>
+                <thead><tr><th scope="col">Controller</th><th scope="col">Raw mean</th><th scope="col">Adjusted credit</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="controller-name learned">Learned v6</span></td><td>+3.0775</td><td>+3.0775</td></tr>
+                  <tr><td><span class="controller-name">Neutral</span></td><td>−2.1606</td><td>−2.1606</td></tr>
+                  <tr><td><span class="controller-name scripted">Scripted sine</span></td><td>+4.4465</td><td>+0.0000</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="metric-note">If a baseline fails, escapes, tips below 0.600, or exceeds 3.000 vertical blocks, positive baseline credit is capped at zero. Its raw displacement remains visible.</p>
+          </article>
+
+          <article class="card table-card" data-od-id="learned-safety-summary">
+            <div class="card-head">
+              <div><h3>Learned safety envelope</h3><p>Worst case across the three required speeds</p></div>
+            </div>
+            <div class="data-table-wrap">
+              <table>
+                <caption class="visually-hidden">Final v6 learned controller safety metrics</caption>
+                <thead><tr><th scope="col">Measure</th><th scope="col">Observed</th><th scope="col">Gate</th></tr></thead>
+                <tbody>
+                  <tr><td>Machine failures</td><td>0</td><td>0</td></tr>
+                  <tr><td>Minimum body-up</td><td>0.6083</td><td>≥ 0.600</td></tr>
+                  <tr><td>Peak vertical excursion</td><td>2.1274</td><td>≤ 3.000</td></tr>
+                  <tr><td>Arena escapes</td><td>0</td><td>0</td></tr>
+                  <tr><td>Pose samples</td><td>800 / learned episode</td><td>steps × 4 / episode</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="metric-note">Extrema are sampled on every held-action physics tick, so a mid-control-step fall or launch cannot disappear behind a safe boundary pose.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="repairs" class="section" aria-labelledby="repairs-title" data-od-id="failure-repair-timeline">
+        <div class="section-heading">
+          <h2 id="repairs-title">Failure → repair timeline</h2>
+          <p>The project’s useful result is a causal chain: each attractive but invalid signal was retained, explained, and converted into a stronger training or evaluation contract.</p>
+        </div>
+        <div class="two-col">
+          <article class="card timeline-card">
+            <ol class="timeline">
+              <li>
+                <span class="timeline-marker" aria-hidden="true"></span>
+                <div><span class="lineage-label">v1 → v2</span><h4>Reward and coordinate shortcuts closed</h4><p>Physical progress moved into a fixed spawn frame, post-warmup baselines removed spawn settling, and reset state was synchronized across constrained bodies.</p></div>
+              </li>
+              <li>
+                <span class="timeline-marker" aria-hidden="true"></span>
+                <div><span class="lineage-label">v3 training signal</span><h4>A checkpoint appeared to walk reliably</h4><p>Generation 6 reported +4.172 / +5.323 / +6.018 blocks across its three training slots with no boundary-sampled failure. That checkpoint is preserved, not promoted.</p></div>
+              </li>
+              <li>
+                <span class="timeline-marker" aria-hidden="true"></span>
+                <div><span class="lineage-label">per-tick audit · rejected</span><h4>The apparent success was a sampling false positive</h4><p>At speed 0.50, the exact same genome moved +5.595 blocks but fell, escaped its lane, reached body-up −0.0048, and peaked 5.493 vertical blocks. Control-boundary sampling had missed the transient.</p></div>
+              </li>
+              <li>
+                <span class="timeline-marker" aria-hidden="true"></span>
+                <div><span class="lineage-label">v4 diagnosis</span><h4>Canonical lane replay exposed a topology confound</h4><p>The edge lane failed again while interior lanes passed. Adjacent training floors made interior candidate groups physically different from the benchmark triplet.</p></div>
+              </li>
+              <li>
+                <span class="timeline-marker" aria-hidden="true"></span>
+                <div><span class="lineage-label">v5 benchmark pass · not promotable</span><h4>The policy passed the gate; its training provenance did not</h4><p>Run 01 passed all eight benchmark criteria with +4.145 mean forward, 0 failures, 0 escapes, 0.659 minimum body-up, and 2.167 peak vertical blocks. A later audit found the grouped arena inserted blank lanes but the training spawner still used contiguous slot offsets. The accepted artifact is preserved as pre-fix evidence, not a final claim.</p></div>
+              </li>
+              <li>
+                <span class="timeline-marker" aria-hidden="true"></span>
+                <div><span class="lineage-label">v6 causal repair</span><h4>Arena construction and spawning now share one grouped offset</h4><p>The lane-groups-v2 arena remains, the spawner is aligned to its isolated triplets, and the fitness contract is bumped to <code>minecraft_machines:duopod_cem_fitness_v6</code> so contaminated v5 checkpoints cannot resume as current.</p></div>
+              </li>
+              <li>
+                <span class="timeline-marker" aria-hidden="true"></span>
+                <div><span class="lineage-label">fresh seeded v6 · final gate</span><h4>Immutable repeat evidence: ACCEPTED</h4><p>A fresh 12-generation search selected generation 5 after the higher-scoring generation 8 failed posture. Both fixed-world, fixed-protocol repeats passed 8/8 with an adjusted margin of +3.0775 blocks.</p></div>
+              </li>
+            </ol>
+          </article>
+
+          <article class="card timeline-card" data-od-id="decision-summary">
+            <div class="card-head">
+              <div>
+                <h3>Claims discipline</h3>
+              <p>What the completed evidence supports—and what it does not</p>
+              </div>
+            </div>
+            <ul class="checklist">
+              <li class="check-item pass">
+                <span class="check-icon" aria-hidden="true">✓</span>
+                <span class="check-copy"><strong>Defensible</strong><small>The v3 candidate was a false positive under control-boundary-only measurement.</small></span>
+                <span class="check-status">Yes</span>
+              </li>
+              <li class="check-item pass">
+                <span class="check-icon" aria-hidden="true">✓</span>
+                <span class="check-copy"><strong>Defensible</strong><small>The hardened pipeline detects mid-step instability, ballistic motion, and arena escape.</small></span>
+                <span class="check-status">Yes</span>
+              </li>
+              <li class="check-item pass">
+                <span class="check-icon" aria-hidden="true">✓</span>
+                <span class="check-copy"><strong>Final v6 locomotion claim</strong><small>Accepted for this exact checkpoint, world, and fixed benchmark protocol; not evidence of multi-world or multi-seed generalization.</small></span>
+                <span class="check-status">ACCEPTED</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="architecture" class="section" aria-labelledby="architecture-title" data-od-id="system-architecture">
+        <div class="section-heading">
+          <h2 id="architecture-title">Evidence-producing architecture</h2>
+          <p>Motion must emerge through the constrained mechanism, while every mutable world or model transition has an explicit recovery or commit boundary.</p>
+        </div>
+        <article class="card architecture-card">
+          <div class="architecture-flow" aria-label="Training and evaluation architecture">
+            <div class="architecture-node"><strong>CEM v6 search</strong><span>Seed-paired three-speed candidates under the same per-tick stability contract and grouped lane geometry used at publication.</span></div>
+            <div class="architecture-node"><strong>Isolated lane groups</strong><span>Each candidate gets a benchmark-shaped triplet plus a blank-lane gap; runtime chunk tickets cover the arena.</span></div>
+            <div class="architecture-node"><strong>Physical Duopod</strong><span>Bounded left/right servo targets drive three constrained rigid bodies—no position teleport as action.</span></div>
+            <div class="architecture-node"><strong>Per-tick observer</strong><span>Post-warmup progress, minimum body-up, peak vertical excursion, failure, and escape captured every physics tick.</span></div>
+            <div class="architecture-node"><strong>Recovery boundaries</strong><span>Atomic checkpoints heal from backup; a fsynced compressed-NBT arena journal is replayed at startup. A narrow post-restore, pre-chunk-save power-loss window remains documented.</span></div>
+            <div class="architecture-node"><strong>Immutable gate</strong><span>UUID JSON/CSV artifacts, manifest-last commit semantics, shared benchmark ID, SHA-256, and eight explicit criteria.</span></div>
+          </div>
+        </article>
+      </section>
+
+      <section id="provenance" class="section" aria-labelledby="provenance-title" data-od-id="artifact-provenance">
+        <div class="section-heading">
+          <h2 id="provenance-title">Artifact provenance</h2>
+          <p>Final values come from the manifest’s contract and provenance blocks. A missing or mismatched ID or hash would make the result non-verifiable.</p>
+        </div>
+        <article class="card provenance-card">
+          <dl class="provenance-grid">
+            <div><dt>Benchmark format</dt><dd>minecraft_machines_duopod_walk_forward_benchmark_v3</dd></div>
+            <div><dt>Acceptance rule</dt><dd>post_warmup_stability_adjusted_anti_ballistic_v2</dd></div>
+            <div><dt>Primary benchmark ID</dt><dd>c647d862-f7e4-4d34-8b69-2fcd0591edaf</dd></div>
+            <div><dt>Repeat benchmark ID</dt><dd>6b5506a5-e24b-4df2-b972-49cbe6ed1a51</dd></div>
+            <div><dt>Checkpoint run</dt><dd>7bf2b216-3414-4030-88a8-3e6316823358</dd></div>
+            <div><dt>Checkpoint generation</dt><dd>5</dd></div>
+            <div><dt>Checkpoint format</dt><dd>minecraft_machines_duopod_cem_checkpoint_v4</dd></div>
+            <div><dt>Fitness contract</dt><dd>minecraft_machines:duopod_cem_fitness_v6</dd></div>
+            <div><dt>Arena ID</dt><dd>minecraft_machines:temporary_flat_duopod_lane_groups_v2</dd></div>
+            <div><dt>Slot layout</dt><dd>minecraft_machines:isolated_three_lane_groups_v1</dd></div>
+            <div><dt>Genome SHA-256</dt><dd class="hash-value">6762d9ede735d81b1d7e7dd19ba7d8714d979f9953d3b7c500200dc1a6f0195f</dd></div>
+            <div><dt>Run 01 JSON SHA-256</dt><dd class="hash-value">4b5b2d4459ea8b81b15a863635a41b88080abffd879205379c9611643365d69e</dd></div>
+            <div><dt>Run 01 CSV SHA-256</dt><dd class="hash-value">15d1c0bcc9442ff47316ec0d916ae8c74677fec1958e4ebc1c7763097a3675d3</dd></div>
+            <div><dt>Run 02 JSON SHA-256</dt><dd class="hash-value">71ffc0583cb90ea4bf10d2700e4e18d4e9ba0ab8614278e977d04491727e380f</dd></div>
+            <div><dt>Run 02 CSV SHA-256</dt><dd class="hash-value">5a8747d1e4f622c0c8444f290af7b2cd13c79372e38e45a745b3c51f0135dbac</dd></div>
+            <div><dt>World / seed</dt><dd>world · seed −3368720904110701394 · minecraft:overworld</dd></div>
+            <div><dt>Code revision</dt><dd>unavailable · artifact records null</dd></div>
+            <div><dt>Benchmark cadence</dt><dd>4 ticks · 200 control steps · 20 warmup ticks</dd></div>
+            <div><dt>Sampling</dt><dd>every held-action server physics tick</dd></div>
+          </dl>
+        </article>
+      </section>
+
+      <section id="verification" class="section" aria-labelledby="verification-title" data-od-id="test-evidence">
+        <div class="section-heading">
+          <h2 id="verification-title">Verification layers</h2>
+          <p>Test coverage establishes implementation confidence. Only the fixed live benchmark establishes locomotion acceptance.</p>
+        </div>
+        <article class="card tests-card">
+          <ul class="evidence-list">
+            <li class="evidence-item">
+              <span class="evidence-type">Deterministic</span>
+              <h3>93 common Java tests</h3>
+              <p>Reward ordering, schemas, scenario rotation, CEM behavior, terminal capture, and gate criteria.</p>
+            </li>
+            <li class="evidence-item">
+              <span class="evidence-type">Protocol</span>
+              <h3>75 Python tests · 7 skipped</h3>
+              <p>Framing, schema checks, truncation semantics, evaluation invariants, comparison, and promotion rules. Skips are reported, not counted as passes.</p>
+            </li>
+            <li class="evidence-item">
+              <span class="evidence-type">Integration</span>
+              <h3>29 NeoForge GameTests</h3>
+              <p>Assembly, ownership, reset, cleanup, servo control, vector stepping, and lockstep bridge behavior.</p>
+            </li>
+            <li class="evidence-item">
+              <span class="evidence-type">Live gate</span>
+              <h3>Final v6 · ACCEPTED</h3>
+              <p>Both fixed-world, fixed-protocol repeats passed 8/8 with a learned adjusted margin of +3.0775 blocks. Unit and integration tests establish implementation confidence; only this fixed live benchmark can establish locomotion acceptance.</p>
+            </li>
+          </ul>
+          <p class="source-note">Counts shown here are the latest verified suite totals supplied by the project audit: 93 common Java tests, 75 Python passes with 7 skips, and 29 NeoForge GameTests. The three deterministic speed cells and two fixed-protocol repeats demonstrate operational repeatability only; they are not a statistical multi-seed robustness study.</p>
+        </article>
+      </section>
+
+      <section id="artifacts" class="section" aria-labelledby="artifacts-title" data-od-id="evidence-artifact-links">
+        <div class="section-heading">
+          <h2 id="artifacts-title">Evidence files</h2>
+          <p>Failed, contaminated, and final artifacts coexist. Nothing is deleted to make the story cleaner.</p>
+        </div>
+        <article class="card tests-card">
+          <div class="artifact-grid">
+            <div class="artifact-tile rejected">
+              <div><strong>v3 per-tick rejection</strong><p>The control-boundary false positive: +4.529 mean forward, but 1 fall, 1 escape, −0.0048 minimum body-up, and 5.493 peak vertical blocks.</p></div>
+              <div><a href="./data/walk_forward_benchmark_per_tick_candidate_01_failed.json">JSON</a> · <a href="./data/walk_forward_benchmark_per_tick_candidate_01_failed.csv">CSV</a> · <a href="./data/walk_forward_benchmark_per_tick_candidate_01_failed_manifest.json">manifest</a></div>
+            </div>
+            <div class="artifact-tile rejected">
+              <div><strong>v5 pre-fix benchmark passes</strong><p>Both exact runs passed all eight criteria, but the training topology provenance was later invalidated by the grouped arena/spawner mismatch. Retained for audit, not promotion.</p></div>
+              <div><a href="./data/walk_forward_benchmark_v5_pre_fix_run_01_accepted.json">run 01</a> · <a href="./data/walk_forward_benchmark_v5_pre_fix_run_02_accepted.json">run 02</a> · <a href="./data/walk_forward_benchmark_v5_pre_fix_run_01_accepted_manifest.json">manifest 01</a> · <a href="./data/walk_forward_benchmark_v5_pre_fix_run_02_accepted_manifest.json">manifest 02</a></div>
+            </div>
+            <div class="artifact-tile">
+              <div><strong>Final v6 certification</strong><p>Certified v6 checkpoint plus two accepted, manifest-verified JSON/CSV benchmark pairs. The catalog is the canonical map for both immutable benchmark repeats and their hashes.</p></div>
+              <a href="./data/README.md#final-v6-certification">Open final evidence catalog</a>
+            </div>
+            <div class="artifact-tile">
+              <div><strong>Checkpoint lineage</strong><p>Historical v1/v2/v3/v5 checkpoints are preserved alongside the eventual v6 checkpoint; the fitness contract prevents incompatible resume.</p></div>
+              <a href="./data/README.md#checkpoint-lineage">Inspect checkpoint lineage</a>
+            </div>
+            <div class="artifact-tile">
+              <div><strong>Earlier rejected attempts</strong><p>Legacy and stage-1 JSON/CSV pairs document backward motion, weak progress, and earlier gates without retroactive relabeling.</p></div>
+              <a href="./data/README.md#historical-benchmark-lineage">Inspect failed lineage</a>
+            </div>
+            <div class="artifact-tile">
+              <div><strong>Integrity model</strong><p>Immutable UUID artifacts are written first; the manifest is atomically committed last and records both SHA-256 hashes and the shared benchmark ID.</p></div>
+              <a href="./data/README.md#integrity-and-interpretation">Read verification notes</a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <footer data-od-id="dashboard-footer">
+        <span>Minecraft Machines · embodied-learning case study</span>
+        <span>Evidence snapshot: final v6 · ACCEPTED</span>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

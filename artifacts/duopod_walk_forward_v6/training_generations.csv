@@ -1,0 +1,13 @@
+generation,generation_best_aggregate,global_best_aggregate,new_global_champion,population_success_scenarios,population_falls,mean_parameter_std,hard_exploration_expansion
+1,-0.9641,-0.9641,true,1,58,0.6623,false
+2,13.7826,13.7826,true,7,49,0.6714,false
+3,10.4749,13.7826,false,8,47,0.6369,false
+4,16.6336,16.6336,true,16,28,0.5512,false
+5,30.2968,30.2968,true,23,18,0.4735,false
+6,25.6440,30.2968,false,26,13,0.3977,false
+7,25.9953,30.2968,false,41,10,0.4006,false
+8,36.5139,36.5139,true,66,2,0.3285,false
+9,33.1593,36.5139,false,76,1,0.2514,false
+10,36.2522,36.5139,false,75,2,0.2255,false
+11,31.4864,36.5139,false,80,4,0.2188,false
+12,29.5942,36.5139,false,82,4,0.3911,true

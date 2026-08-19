@@ -1,0 +1,604 @@
+{
+  "format": "minecraft_machines_duopod_walk_forward_benchmark_v3",
+  "format_version": 3,
+  "benchmark_id": "239f85b4-4fee-418c-906f-0ef770d74407",
+  "generated_at": "2026-08-03T15:41:37.854670Z",
+  "code_revision": null,
+  "code_revision_status": "unavailable_in_runtime_artifact",
+  "protocol": {
+    "controllers": [
+      "learned",
+      "neutral",
+      "scripted_alternating_sine"
+    ],
+    "requested_forward_speeds": [
+      0.5,
+      0.8,
+      1.1
+    ],
+    "episode_count": 9,
+    "controller_batch_count": 3,
+    "lanes_per_batch": 3,
+    "control_ticks": 4,
+    "spawn_warmup_ticks": 20,
+    "chunk_activation_timeout_ticks": 200,
+    "maximum_control_steps": 200,
+    "slot_spacing_blocks": 12,
+    "arena_id": "minecraft_machines:temporary_flat_duopod_lane_groups_v2",
+    "arena_changed_block_count": 2178,
+    "arena_support_y": 79,
+    "arena_lane_half_width_blocks": 5,
+    "arena_minimum_forward_offset": -8,
+    "arena_maximum_forward_offset": 57,
+    "physical_pairing": "controllers run sequentially over the same three speed-indexed lanes",
+    "post_warmup_pairing_tolerance_blocks": 1.0E-6,
+    "post_warmup_pairing_validation": "same-lane world origin and spawn-frame displacement baseline must match across controllers",
+    "batch_cleanup": "each controller environment is destroyed before the next batch spawns",
+    "lanes": [
+      {
+        "lane": 0,
+        "requested_forward_speed": 0.5,
+        "episode_id": 8100000,
+        "seed": 8200000,
+        "requested_origin": {
+          "x": 31,
+          "y": 80,
+          "z": 63
+        },
+        "expected_spawn_center": {
+          "x": 31,
+          "y": 83,
+          "z": 63
+        }
+      },
+      {
+        "lane": 1,
+        "requested_forward_speed": 0.8,
+        "episode_id": 8100001,
+        "seed": 8200001,
+        "requested_origin": {
+          "x": 43,
+          "y": 80,
+          "z": 63
+        },
+        "expected_spawn_center": {
+          "x": 43,
+          "y": 83,
+          "z": 63
+        }
+      },
+      {
+        "lane": 2,
+        "requested_forward_speed": 1.1,
+        "episode_id": 8100002,
+        "seed": 8200002,
+        "requested_origin": {
+          "x": 55,
+          "y": 80,
+          "z": 63
+        },
+        "expected_spawn_center": {
+          "x": 55,
+          "y": 83,
+          "z": 63
+        }
+      }
+    ],
+    "world": {
+      "level_name": "world",
+      "seed": -3368720904110701394,
+      "dimension": "minecraft:overworld"
+    },
+    "initial_action_ramp_control_steps": 5,
+    "action_saturation_threshold": 0.98,
+    "scripted_amplitude": 0.65,
+    "scripted_policy": "left\u003d0.65*sin(phase), right\u003d-left",
+    "coordinate_frame": "per-episode Duopod spawn frame rebased at the post-warmup controller handoff",
+    "displacement_measurement": "terminal spawn-frame displacement minus post-warmup spawn-frame baseline",
+    "vertical_excursion_measurement": "absolute base-height excursion from the post-warmup controller-handoff origin",
+    "arena_escape_measurement": "post-warmup raw spawn-frame position outside the assigned flat-lane extents",
+    "pose_metric_sampling_cadence": "every server physics tick during each held-action interval",
+    "pose_metric_samples_per_control_step": 4,
+    "pose_metric_sample_completeness": "each episode must contain control_steps * control_ticks held-action pose samples",
+    "terminal_snapshot": "first terminal or truncation state is frozen",
+    "seed_schedule": "same fixed seed for all controllers at each requested speed",
+    "acceptance_rule": "post_warmup_stability_adjusted_anti_ballistic_v2",
+    "acceptance_rule_version": 2
+  },
+  "policy": {
+    "policy_type": "duopod_phase_gait_v2",
+    "morphology_id": "minecraft_machines:duopod",
+    "observation_schema_hash": "614beeacdca0545900f97b88e65289ac243f55eba23b56b67f77c54480021266",
+    "action_schema_hash": "68d0a6c53c368cd9f398677a80d35e6e2c511d34f61155b004475d5736a3d077",
+    "genome_size": 7,
+    "genome_sha256": "be80280e365ebb756e2f9041655f11377e94e68674c68ab2db6b701c9abf2d3e",
+    "genome_sha256_encoding": "concatenated IEEE-754 binary64 big-endian values",
+    "checkpoint_genome_sha256": "be80280e365ebb756e2f9041655f11377e94e68674c68ab2db6b701c9abf2d3e",
+    "checkpoint_run_id": "c2726f76-e707-4e45-a0e4-fc365d354d97",
+    "checkpoint_generation": 2,
+    "checkpoint_aggregate_fitness": 48.04836946991769,
+    "checkpoint_failure_rate": 0.0,
+    "checkpoint_created_at": "2026-08-03T15:34:26.914700Z",
+    "checkpoint_fitness_contract": "minecraft_machines:duopod_cem_fitness_v5",
+    "checkpoint_training_arena": {
+      "arena_id": "minecraft_machines:temporary_flat_duopod_lane_groups_v2",
+      "slot_spacing_blocks": 12,
+      "control_ticks": 4,
+      "spawn_warmup_ticks": 20,
+      "maximum_control_steps": 200
+    }
+  },
+  "summary_by_controller": {
+    "learned": {
+      "episodes": 3,
+      "failures": 0,
+      "arena_escapes": 0,
+      "mean_return": 1.4267924062049016,
+      "mean_forward_displacement_blocks": 4.145460764567058,
+      "mean_lateral_displacement_blocks": -0.47673670450846356,
+      "mean_absolute_lateral_displacement_blocks": 0.47673670450846356,
+      "minimum_body_up": 0.6587075995568296,
+      "peak_vertical_excursion_blocks": 2.1672210693359375,
+      "mean_action_total_variation": 29.282408999328172,
+      "mean_action_saturation_fraction": 0.0
+    },
+    "neutral": {
+      "episodes": 3,
+      "failures": 0,
+      "arena_escapes": 0,
+      "mean_return": -7.492902902890244,
+      "mean_forward_displacement_blocks": -2.160552978515625,
+      "mean_lateral_displacement_blocks": 0.0069497426350911455,
+      "mean_absolute_lateral_displacement_blocks": 0.007886886596679688,
+      "minimum_body_up": 0.5536573387050703,
+      "peak_vertical_excursion_blocks": 2.0861129760742188,
+      "mean_action_total_variation": 0.0,
+      "mean_action_saturation_fraction": 0.0
+    },
+    "scripted_alternating_sine": {
+      "episodes": 3,
+      "failures": 1,
+      "arena_escapes": 1,
+      "mean_return": -7.111508821853285,
+      "mean_forward_displacement_blocks": 4.446533203125,
+      "mean_lateral_displacement_blocks": -1.9159056345621746,
+      "mean_absolute_lateral_displacement_blocks": 2.3702589670817056,
+      "minimum_body_up": -0.42097219585296264,
+      "peak_vertical_excursion_blocks": 7.005615234375,
+      "mean_action_total_variation": 58.47448215142871,
+      "mean_action_saturation_fraction": 0.0
+    }
+  },
+  "acceptance": {
+    "rule": "post_warmup_stability_adjusted_anti_ballistic_v2",
+    "rule_version": 2,
+    "accepted": true,
+    "coverage_valid": true,
+    "invariants_valid": true,
+    "thresholds": {
+      "required_learned_margin_over_stronger_baseline_blocks": 0.5,
+      "required_minimum_body_up": 0.6,
+      "maximum_learned_peak_vertical_excursion_blocks": 3.0,
+      "required_learned_failures": 0,
+      "required_learned_arena_escapes": 0,
+      "require_positive_progress_at_every_speed": true,
+      "unstable_baseline_positive_forward_credit_capped_at_zero": true,
+      "baseline_publication_stability": "no machine failure, no arena escape, minimum body-up and maximum vertical-excursion thresholds satisfied"
+    },
+    "observed": {
+      "learned_mean_forward_blocks": 4.145460764567058,
+      "neutral_stability_adjusted_comparison_mean_forward_blocks": -2.160552978515625,
+      "scripted_stability_adjusted_comparison_mean_forward_blocks": 0.0,
+      "stronger_baseline_stability_adjusted_comparison_mean_forward_blocks": 0.0,
+      "learned_minus_neutral_stability_adjusted_comparison_blocks": 6.306013743082683,
+      "learned_minus_scripted_stability_adjusted_comparison_blocks": 4.145460764567058,
+      "learned_minus_stronger_baseline_stability_adjusted_comparison_blocks": 4.145460764567058,
+      "learned_failures": 0,
+      "learned_minimum_body_up": 0.6587075995568296,
+      "learned_maximum_peak_vertical_excursion_blocks": 2.1672210693359375,
+      "learned_arena_escapes": 0
+    },
+    "criteria": {
+      "coverage_complete": true,
+      "metrics_finite_and_bounded": true,
+      "learned_forward_margin_over_stronger_baseline": true,
+      "learned_no_failures": true,
+      "learned_positive_at_each_speed": true,
+      "learned_minimum_body_up": true,
+      "learned_anti_ballistic_peak_vertical_excursion": true,
+      "no_learned_arena_escape": true
+    },
+    "failed_criteria": []
+  },
+  "episodes": [
+    {
+      "slot": 0,
+      "lane": 0,
+      "controller": "learned",
+      "requested_forward_speed": 0.5,
+      "episode_id": 8100000,
+      "seed": 8200000,
+      "spawn_origin": {
+        "x": 31.5,
+        "y": 83.58,
+        "z": 63.84482758119702
+      },
+      "post_warmup_origin": {
+        "x": 31.50001335144043,
+        "y": 83.29843139648438,
+        "z": 64.4096450805664
+      },
+      "post_warmup_baseline": {
+        "forward_displacement_from_spawn_blocks": -0.5648174993693829,
+        "lateral_displacement_from_spawn_blocks": 1.33514404296875E-5
+      },
+      "terminal_spawn_relative_displacement": {
+        "forward_displacement_blocks": 4.090978551656008,
+        "lateral_displacement_blocks": -0.4758586883544922
+      },
+      "control_steps": 200,
+      "physics_tick_pose_samples": 800,
+      "return": 1.1310944415218163,
+      "forward_displacement_blocks": 4.655796051025391,
+      "lateral_displacement_blocks": -0.4758720397949219,
+      "machine_failure": false,
+      "arena_escape": false,
+      "termination_reason": "TIME_LIMIT",
+      "terminated": false,
+      "truncated": true,
+      "health_message": "ok",
+      "minimum_body_up": 0.6774800693868066,
+      "peak_vertical_excursion_blocks": 2.1481399536132812,
+      "action_total_variation": 26.161779846166045,
+      "action_saturation_fraction": 0.0,
+      "terminal_captured": true
+    },
+    {
+      "slot": 1,
+      "lane": 1,
+      "controller": "learned",
+      "requested_forward_speed": 0.8,
+      "episode_id": 8100001,
+      "seed": 8200001,
+      "spawn_origin": {
+        "x": 43.49999999627471,
+        "y": 83.58,
+        "z": 63.844827584922314
+      },
+      "post_warmup_origin": {
+        "x": 43.499996185302734,
+        "y": 83.29927062988281,
+        "z": 64.40768432617188
+      },
+      "post_warmup_baseline": {
+        "forward_displacement_from_spawn_blocks": -0.5628567412495613,
+        "lateral_displacement_from_spawn_blocks": -3.810971975326538E-6
+      },
+      "terminal_spawn_relative_displacement": {
+        "forward_displacement_blocks": 2.1445750519633293,
+        "lateral_displacement_blocks": -0.10828399285674095
+      },
+      "control_steps": 200,
+      "physics_tick_pose_samples": 800,
+      "return": 0.14109223755845574,
+      "forward_displacement_blocks": 2.7074317932128906,
+      "lateral_displacement_blocks": -0.10828018188476562,
+      "machine_failure": false,
+      "arena_escape": false,
+      "termination_reason": "TIME_LIMIT",
+      "terminated": false,
+      "truncated": true,
+      "health_message": "ok",
+      "minimum_body_up": 0.6756700466195537,
+      "peak_vertical_excursion_blocks": 2.1497802734375,
+      "action_total_variation": 29.274482062827325,
+      "action_saturation_fraction": 0.0,
+      "terminal_captured": true
+    },
+    {
+      "slot": 2,
+      "lane": 2,
+      "controller": "learned",
+      "requested_forward_speed": 1.1,
+      "episode_id": 8100002,
+      "seed": 8200002,
+      "spawn_origin": {
+        "x": 55.49999999627471,
+        "y": 83.58,
+        "z": 63.844827584922314
+      },
+      "post_warmup_origin": {
+        "x": 55.50000762939453,
+        "y": 83.29846954345703,
+        "z": 64.4095687866211
+      },
+      "post_warmup_baseline": {
+        "forward_displacement_from_spawn_blocks": -0.5647412016987801,
+        "lateral_displacement_from_spawn_blocks": 7.633119821548462E-6
+      },
+      "terminal_spawn_relative_displacement": {
+        "forward_displacement_blocks": 4.508413247764111,
+        "lateral_displacement_blocks": -0.8460502587258816
+      },
+      "control_steps": 200,
+      "physics_tick_pose_samples": 800,
+      "return": 3.008190539534433,
+      "forward_displacement_blocks": 5.073154449462891,
+      "lateral_displacement_blocks": -0.8460578918457031,
+      "machine_failure": false,
+      "arena_escape": false,
+      "termination_reason": "TIME_LIMIT",
+      "terminated": false,
+      "truncated": true,
+      "health_message": "ok",
+      "minimum_body_up": 0.6587075995568296,
+      "peak_vertical_excursion_blocks": 2.1672210693359375,
+      "action_total_variation": 32.410965088991155,
+      "action_saturation_fraction": 0.0,
+      "terminal_captured": true
+    },
+    {
+      "slot": 3,
+      "lane": 0,
+      "controller": "neutral",
+      "requested_forward_speed": 0.5,
+      "episode_id": 8100000,
+      "seed": 8200000,
+      "spawn_origin": {
+        "x": 31.5,
+        "y": 83.58,
+        "z": 63.84482758119702
+      },
+      "post_warmup_origin": {
+        "x": 31.50001335144043,
+        "y": 83.29843139648438,
+        "z": 64.4096450805664
+      },
+      "post_warmup_baseline": {
+        "forward_displacement_from_spawn_blocks": -0.5648174993693829,
+        "lateral_displacement_from_spawn_blocks": 1.33514404296875E-5
+      },
+      "terminal_spawn_relative_displacement": {
+        "forward_displacement_blocks": -2.725919794291258,
+        "lateral_displacement_blocks": -5.60760498046875E-4
+      },
+      "control_steps": 200,
+      "physics_tick_pose_samples": 800,
+      "return": -7.581005783138719,
+      "forward_displacement_blocks": -2.161102294921875,
+      "lateral_displacement_blocks": -5.741119384765625E-4,
+      "machine_failure": false,
+      "arena_escape": false,
+      "termination_reason": "TIME_LIMIT",
+      "terminated": false,
+      "truncated": true,
+      "health_message": "ok",
+      "minimum_body_up": 0.5536573387050703,
+      "peak_vertical_excursion_blocks": 2.0861129760742188,
+      "action_total_variation": 0.0,
+      "action_saturation_fraction": 0.0,
+      "terminal_captured": true
+    },
+    {
+      "slot": 4,
+      "lane": 1,
+      "controller": "neutral",
+      "requested_forward_speed": 0.8,
+      "episode_id": 8100001,
+      "seed": 8200001,
+      "spawn_origin": {
+        "x": 43.49999999627471,
+        "y": 83.58,
+        "z": 63.844827584922314
+      },
+      "post_warmup_origin": {
+        "x": 43.499996185302734,
+        "y": 83.29927062988281,
+        "z": 64.40768432617188
+      },
+      "post_warmup_baseline": {
+        "forward_displacement_from_spawn_blocks": -0.5628567412495613,
+        "lateral_displacement_from_spawn_blocks": -3.810971975326538E-6
+      },
+      "terminal_spawn_relative_displacement": {
+        "forward_displacement_blocks": -2.7220974639058113,
+        "lateral_displacement_blocks": 0.022251132875680923
+      },
+      "control_steps": 200,
+      "physics_tick_pose_samples": 800,
+      "return": -7.471686860688671,
+      "forward_displacement_blocks": -2.15924072265625,
+      "lateral_displacement_blocks": 0.02225494384765625,
+      "machine_failure": false,
+      "arena_escape": false,
+      "termination_reason": "TIME_LIMIT",
+      "terminated": false,
+      "truncated": true,
+      "health_message": "ok",
+      "minimum_body_up": 0.5556944005060171,
+      "peak_vertical_excursion_blocks": 2.0820159912109375,
+      "action_total_variation": 0.0,
+      "action_saturation_fraction": 0.0,
+      "terminal_captured": true
+    },
+    {
+      "slot": 5,
+      "lane": 2,
+      "controller": "neutral",
+      "requested_forward_speed": 1.1,
+      "episode_id": 8100002,
+      "seed": 8200002,
+      "spawn_origin": {
+        "x": 55.49999999627471,
+        "y": 83.58,
+        "z": 63.844827584922314
+      },
+      "post_warmup_origin": {
+        "x": 55.50000762939453,
+        "y": 83.29846954345703,
+        "z": 64.4095687866211
+      },
+      "post_warmup_baseline": {
+        "forward_displacement_from_spawn_blocks": -0.5647412016987801,
+        "lateral_displacement_from_spawn_blocks": 7.633119821548462E-6
+      },
+      "terminal_spawn_relative_displacement": {
+        "forward_displacement_blocks": -2.72605711966753,
+        "lateral_displacement_blocks": -8.239708840847015E-4
+      },
+      "control_steps": 200,
+      "physics_tick_pose_samples": 800,
+      "return": -7.426016064843344,
+      "forward_displacement_blocks": -2.16131591796875,
+      "lateral_displacement_blocks": -8.3160400390625E-4,
+      "machine_failure": false,
+      "arena_escape": false,
+      "termination_reason": "TIME_LIMIT",
+      "terminated": false,
+      "truncated": true,
+      "health_message": "ok",
+      "minimum_body_up": 0.5538101430244116,
+      "peak_vertical_excursion_blocks": 2.0858535766601562,
+      "action_total_variation": 0.0,
+      "action_saturation_fraction": 0.0,
+      "terminal_captured": true
+    },
+    {
+      "slot": 6,
+      "lane": 0,
+      "controller": "scripted_alternating_sine",
+      "requested_forward_speed": 0.5,
+      "episode_id": 8100000,
+      "seed": 8200000,
+      "spawn_origin": {
+        "x": 31.5,
+        "y": 83.58,
+        "z": 63.84482758119702
+      },
+      "post_warmup_origin": {
+        "x": 31.50001335144043,
+        "y": 83.29843139648438,
+        "z": 64.4096450805664
+      },
+      "post_warmup_baseline": {
+        "forward_displacement_from_spawn_blocks": -0.5648174993693829,
+        "lateral_displacement_from_spawn_blocks": 1.33514404296875E-5
+      },
+      "terminal_spawn_relative_displacement": {
+        "forward_displacement_blocks": 3.7900866754353046,
+        "lateral_displacement_blocks": -4.53582763671875
+      },
+      "control_steps": 89,
+      "physics_tick_pose_samples": 356,
+      "return": -12.029274175858154,
+      "forward_displacement_blocks": 4.3549041748046875,
+      "lateral_displacement_blocks": -4.53584098815918,
+      "machine_failure": true,
+      "arena_escape": true,
+      "termination_reason": "MACHINE_FAILURE",
+      "terminated": true,
+      "truncated": false,
+      "health_message": "Duopod remained tipped with a collapsed center of mass",
+      "minimum_body_up": -0.42097219585296264,
+      "peak_vertical_excursion_blocks": 7.005615234375,
+      "action_total_variation": 32.07743950474337,
+      "action_saturation_fraction": 0.0,
+      "terminal_captured": true
+    },
+    {
+      "slot": 7,
+      "lane": 1,
+      "controller": "scripted_alternating_sine",
+      "requested_forward_speed": 0.8,
+      "episode_id": 8100001,
+      "seed": 8200001,
+      "spawn_origin": {
+        "x": 43.49999999627471,
+        "y": 83.58,
+        "z": 63.844827584922314
+      },
+      "post_warmup_origin": {
+        "x": 43.499996185302734,
+        "y": 83.29927062988281,
+        "z": 64.40768432617188
+      },
+      "post_warmup_baseline": {
+        "forward_displacement_from_spawn_blocks": -0.5628567412495613,
+        "lateral_displacement_from_spawn_blocks": -3.810971975326538E-6
+      },
+      "terminal_spawn_relative_displacement": {
+        "forward_displacement_blocks": 5.823797158896923,
+        "lateral_displacement_blocks": 0.6815261878073215
+      },
+      "control_steps": 200,
+      "physics_tick_pose_samples": 800,
+      "return": 3.785455215846316,
+      "forward_displacement_blocks": 6.386653900146484,
+      "lateral_displacement_blocks": 0.6815299987792969,
+      "machine_failure": false,
+      "arena_escape": false,
+      "termination_reason": "TIME_LIMIT",
+      "terminated": false,
+      "truncated": true,
+      "health_message": "ok",
+      "minimum_body_up": 0.48728451661481875,
+      "peak_vertical_excursion_blocks": 2.0743942260742188,
+      "action_total_variation": 71.67300347477138,
+      "action_saturation_fraction": 0.0,
+      "terminal_captured": true
+    },
+    {
+      "slot": 8,
+      "lane": 2,
+      "controller": "scripted_alternating_sine",
+      "requested_forward_speed": 1.1,
+      "episode_id": 8100002,
+      "seed": 8200002,
+      "spawn_origin": {
+        "x": 55.49999999627471,
+        "y": 83.58,
+        "z": 63.844827584922314
+      },
+      "post_warmup_origin": {
+        "x": 55.50000762939453,
+        "y": 83.29846954345703,
+        "z": 64.4095687866211
+      },
+      "post_warmup_baseline": {
+        "forward_displacement_from_spawn_blocks": -0.5647412016987801,
+        "lateral_displacement_from_spawn_blocks": 7.633119821548462E-6
+      },
+      "terminal_spawn_relative_displacement": {
+        "forward_displacement_blocks": 2.033300332725048,
+        "lateral_displacement_blocks": -1.893398281186819
+      },
+      "control_steps": 200,
+      "physics_tick_pose_samples": 800,
+      "return": -13.090707505548016,
+      "forward_displacement_blocks": 2.598041534423828,
+      "lateral_displacement_blocks": -1.8934059143066406,
+      "machine_failure": false,
+      "arena_escape": false,
+      "termination_reason": "TIME_LIMIT",
+      "terminated": false,
+      "truncated": true,
+      "health_message": "ok",
+      "minimum_body_up": 0.4935821870476382,
+      "peak_vertical_excursion_blocks": 2.1466445922851562,
+      "action_total_variation": 71.67300347477138,
+      "action_saturation_fraction": 0.0,
+      "terminal_captured": true
+    }
+  ],
+  "artifact_integrity": {
+    "hash_algorithm": "SHA-256",
+    "immutable_json_file": "duopod_cem_walk_forward_benchmark_239f85b4-4fee-418c-906f-0ef770d74407.json",
+    "immutable_csv_file": "duopod_cem_walk_forward_benchmark_239f85b4-4fee-418c-906f-0ef770d74407.csv",
+    "immutable_csv_sha256": "0360ba837581cb4f447f0d64d6084b84b2d99c3588e261b02bcd274b168491da",
+    "json_sha256_location": "duopod_cem_walk_forward_benchmark_latest_manifest.json",
+    "latest_manifest_file": "duopod_cem_walk_forward_benchmark_latest_manifest.json",
+    "latest_compatibility_json_file": "duopod_cem_walk_forward_benchmark_latest.json",
+    "latest_compatibility_csv_file": "duopod_cem_walk_forward_benchmark_latest.csv",
+    "pairing_contract": "benchmark_id must match JSON, every CSV row, and the latest manifest; manifest hashes both files"
+  }
+}
