@@ -1,0 +1,7 @@
+{
+  "parent": "create:block/creative_motor/block",
+  "textures": {
+    "6": "minecraft:block/blue_concrete",
+    "particle": "minecraft:block/blue_concrete"
+  }
+}

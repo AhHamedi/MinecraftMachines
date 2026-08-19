@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "minecraft_machines:block/servo_joint_link",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "minecraft_machines:block/servo_joint_link",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "minecraft_machines:block/servo_joint_link",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "minecraft_machines:block/servo_joint_link",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "minecraft_machines:block/servo_joint_link"
+    },
+    "facing=west": {
+      "model": "minecraft_machines:block/servo_joint_link",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

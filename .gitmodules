@@ -1,0 +1,3 @@
+[submodule "vendor/Simulated-Project"]
+	path = vendor/Simulated-Project
+	url = https://github.com/Creators-of-Aeronautics/Simulated-Project.git

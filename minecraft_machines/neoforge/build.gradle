@@ -1,0 +1,87 @@
+plugins {
+    id 'multiloader-loader'
+    id 'net.neoforged.moddev'
+}
+
+evaluationDependsOn(':simulated:neoforge')
+evaluationDependsOn(':aeronautics:neoforge')
+
+def generatedResources = project(":minecraft_machines:common").file("src/generated/resources")
+def commonResources = project(":minecraft_machines:common").file("src/main/resources")
+def minecraftRunHeapInitial = '16G'
+def minecraftRunHeapMax = '24G'
+def minecraftRunDirectMemory = '8G'
+
+neoForge {
+    version = neoforge_version
+
+    def at = project(':minecraft_machines:common').file('src/main/resources/META-INF/accesstransformer.cfg')
+    if (at.exists()) {
+        accessTransformers.from(at.absolutePath)
+    }
+
+    parchment {
+        minecraftVersion = parchment_minecraft
+        mappingsVersion = parchment_version
+    }
+
+    runs {
+        configureEach {
+            systemProperty('neoforge.enabledGameTestNamespaces', mod_id)
+            jvmArgument "-Xms${minecraftRunHeapInitial}"
+            jvmArgument "-Xmx${minecraftRunHeapMax}"
+            jvmArgument "-XX:MaxDirectMemorySize=${minecraftRunDirectMemory}"
+            ideName = "Minecraft Machines NeoForge ${it.name.capitalize()} (${project.path})"
+        }
+
+        client {
+            client()
+            gameDirectory = project.file('runs/client')
+        }
+
+        clientAuth {
+            client()
+            gameDirectory = project.file('runs/client')
+            devLogin = true
+        }
+
+        server {
+            server()
+            gameDirectory = project.file('runs/server')
+            programArgument 'nogui'
+        }
+
+        gameTest {
+            type = "gameTestServer"
+            gameDirectory = project.file('build/gametest')
+        }
+
+        data {
+            data()
+            gameDirectory = project.file('runs/data')
+            programArguments.addAll '--all',
+                    '--mod', 'minecraft_machines',
+                    '--output', generatedResources.absolutePath,
+                    '--existing', commonResources.absolutePath,
+                    '--existing-mod', 'create',
+                    '--existing-mod', 'simulated',
+                    '--existing-mod', 'aeronautics'
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
+        }
+        simulated {
+            sourceSet project(':simulated:neoforge').sourceSets.main
+        }
+        aeronautics {
+            sourceSet project(':aeronautics:neoforge').sourceSets.main
+        }
+    }
+}
+
+sourceSets.main.resources {
+    srcDir generatedResources.absolutePath
+}

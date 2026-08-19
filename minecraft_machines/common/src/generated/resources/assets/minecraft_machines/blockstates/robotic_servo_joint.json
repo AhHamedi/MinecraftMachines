@@ -1,0 +1,48 @@
+{
+  "variants": {
+    "assembled=false,facing=down": {
+      "model": "minecraft_machines:block/robotic_servo_joint/block_vertical",
+      "x": 180
+    },
+    "assembled=false,facing=east": {
+      "model": "minecraft_machines:block/robotic_servo_joint/block",
+      "y": 270
+    },
+    "assembled=false,facing=north": {
+      "model": "minecraft_machines:block/robotic_servo_joint/block",
+      "y": 180
+    },
+    "assembled=false,facing=south": {
+      "model": "minecraft_machines:block/robotic_servo_joint/block"
+    },
+    "assembled=false,facing=up": {
+      "model": "minecraft_machines:block/robotic_servo_joint/block_vertical"
+    },
+    "assembled=false,facing=west": {
+      "model": "minecraft_machines:block/robotic_servo_joint/block",
+      "y": 90
+    },
+    "assembled=true,facing=down": {
+      "model": "minecraft_machines:block/robotic_servo_joint/block_vertical",
+      "x": 180
+    },
+    "assembled=true,facing=east": {
+      "model": "minecraft_machines:block/robotic_servo_joint/block",
+      "y": 270
+    },
+    "assembled=true,facing=north": {
+      "model": "minecraft_machines:block/robotic_servo_joint/block",
+      "y": 180
+    },
+    "assembled=true,facing=south": {
+      "model": "minecraft_machines:block/robotic_servo_joint/block"
+    },
+    "assembled=true,facing=up": {
+      "model": "minecraft_machines:block/robotic_servo_joint/block_vertical"
+    },
+    "assembled=true,facing=west": {
+      "model": "minecraft_machines:block/robotic_servo_joint/block",
+      "y": 90
+    }
+  }
+}

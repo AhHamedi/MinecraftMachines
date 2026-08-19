@@ -1,0 +1,42 @@
+# Gradle / NeoForge
+.gradle/
+build/
+**/build/
+run/
+runs/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+out/
+bin/
+
+# OS / logs
+.DS_Store
+*.log
+hs_err_pid*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Data generation fingerprints
+**/src/generated/resources/.cache/
+
+# Local capture footage (large and may include private desktop context)
+MinecraftMachines/*.mov
+
+# Built artifacts
+*.jar
+*.war
+*.zip
+
+# Keep the wrapper jar even though jars are ignored.
+!gradle/wrapper/gradle-wrapper.jar
