@@ -19,3 +19,11 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Scope
+
+This license covers the original Minecraft Machines source code and assets in
+this repository. It does not relicense the external Simulated Project
+submodule, Sable, Sable Companion, Create, Minecraft, NeoForge, or any other
+third-party work. Those projects remain subject to their own licenses and
+copyright notices. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

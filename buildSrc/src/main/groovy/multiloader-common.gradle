@@ -1,3 +1,7 @@
+// Derived from The Simulated Project build configuration.
+// Copyright (c) The Simulated Team / The Creators of Aeronautics.
+// Used under the MIT License; see THIRD_PARTY_NOTICES.md.
+
 plugins {
     id 'java-library'
     id 'maven-publish'
@@ -95,10 +99,12 @@ if (project.path.endsWith(":common")) {
 
 sourcesJar {
     from(rootProject.file('LICENSE.md'))
+    from(rootProject.file('THIRD_PARTY_NOTICES.md'))
 }
 
 jar {
     from(rootProject.file('LICENSE.md'))
+    from(rootProject.file('THIRD_PARTY_NOTICES.md'))
 
     manifest {
         attributes([

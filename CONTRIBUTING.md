@@ -33,8 +33,12 @@ Changes to assembly, servo behavior, training lifecycle, world mutation, or clea
 - Keep changes scoped to one problem.
 - Add or update tests when behavior changes.
 - Preserve compatibility checks for observation, action, policy, and checkpoint formats.
-- Do not modify `vendor/Simulated-Project` directly. Update its pinned revision in a separate change.
+- Do not modify `external/Simulated-Project` directly. Update its pinned revision in a separate change.
+- Do not copy third-party code or assets into Minecraft Machines without confirming license compatibility and preserving the required notices.
+- Preserve attribution headers and update `THIRD_PARTY_NOTICES.md` when dependencies or derived build files change.
 - Treat training output and visual replays as diagnostics, not proof of general behavior.
 - Describe manual testing clearly when a change depends on live Minecraft physics.
 
-By contributing, you agree that your contribution is licensed under the repository's MIT License.
+By contributing, you agree that your original contribution is licensed under
+the repository's MIT License. Third-party work remains under its original
+license.
