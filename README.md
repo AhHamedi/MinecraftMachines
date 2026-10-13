@@ -2,12 +2,13 @@
 
 A Minecraft mod that adds an enemy inspired by the Leaper from ARC Raiders.
 It walks and jumps using Sable physics, patrols its surroundings, investigates
-sounds and hunts players it spots. Its charged shockwave throws players and
-breaks nearby blocks.
+sounds and hunts players it spots.
 
-![The Leaper charging its attack](docs/media/leaper-demo.gif)
+[![The Leaper walking](docs/media/leaper-walking.gif)](docs/media/leaper-movement.mp4)
 
 [Movement](docs/media/leaper-movement.mp4) · [Attack](docs/media/leaper-attack.mp4)
+
+Its charged shockwave throws players and breaks nearby blocks.
 
 ## Try it
 
