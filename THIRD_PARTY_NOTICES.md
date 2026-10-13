@@ -24,11 +24,8 @@ sampled third-party audio. The scripts preserve the original September 2026
 asset-generation algorithms. Their Python dependencies are listed in
 `tools/requirements-assets.txt` and retain their own licenses.
 
-The Leaper images and videos under `docs/media/` are actual Minecraft gameplay
-captures from September 2026, including the installed mods. They are examples
-of the add-on in use, not separately licensed Minecraft or dependency artwork.
-`docs/evidence/publication-manifest.json` records source checksums, selected
-excerpts, and encoding changes. No reference-game art, audio, or footage is
+The previews under `docs/media/` are Minecraft gameplay captures from September
+2026, showing the installed mods. No reference-game art, audio, or footage is
 redistributed with the Leaper assets or these previews.
 
 ## Simulated and Create Aeronautics

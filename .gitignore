@@ -35,7 +35,7 @@ htmlcov/
 MinecraftMachines/*.mov
 
 # Local gameplay profiles, worlds, captures, training runs and release builds.
-# Curated public demonstrations and evidence live under docs/.
+# Gameplay previews live under docs/media/.
 /MinecraftMachines/
 /artifacts/
 /release/
