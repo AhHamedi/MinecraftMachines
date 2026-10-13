@@ -48,3 +48,4 @@ project(":aeronautics:neoforge").projectDir = simulatedProject.resolve("aeronaut
 
 include("minecraft_machines:common")
 include("minecraft_machines:neoforge")
+include("minecraft_machines:leaper")

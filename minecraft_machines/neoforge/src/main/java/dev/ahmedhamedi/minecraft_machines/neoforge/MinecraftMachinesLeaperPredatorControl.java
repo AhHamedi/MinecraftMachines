@@ -67,7 +67,7 @@ final class MinecraftMachinesLeaperPredatorControl {
     boolean worldSwing, adaptiveFootholds, worldSwingHeight;
     final double[] commandedToeHeight = new double[4], boundedToeHeight = new double[4];
     final double[] rawRequestedAngles = new double[12];
-    final boolean agile = Boolean.getBoolean("minecraft_machines.leaperAgile");
+    final boolean agile = MinecraftMachinesLeaperRuntime.motionEnabled("leaperAgile");
     final Vector3d[] swingFrom = new Vector3d[4], swingTo = new Vector3d[4];
     int clearanceSwings, shoulderClamps;
     private boolean superHorrific;

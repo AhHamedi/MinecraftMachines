@@ -30,8 +30,13 @@ fi
 export RAYON_NUM_THREADS="${RAYON_NUM_THREADS:-4}"
 
 mm_options=()
+mm_run_task=':minecraft_machines:neoforge:runClient'
 while [[ $# -gt 0 ]]; do
   case "$1" in
+    --leaper)
+      mm_run_task=':minecraft_machines:leaper:runClient'
+      shift
+      ;;
     --preview)
       mm_python="${MM_PYTHON:-python3}"
       "$mm_python" tools/prepare_leaper_preview.py --target client
@@ -60,4 +65,4 @@ done
 if command -v caffeinate >/dev/null 2>&1; then
   caffeinate -d -u -t 90 >/dev/null 2>&1 &
 fi
-exec ./gradlew :minecraft_machines:neoforge:runClient "${mm_options[@]}"
+exec ./gradlew "$mm_run_task" "${mm_options[@]}"

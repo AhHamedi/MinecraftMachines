@@ -1,0 +1,28 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "minecraft_machines"
+version = "${modVersion}"
+displayName = "Minecraft Machines"
+authors = "Ahmed Hamed"
+description = '''A physical Leaper enemy with articulated movement, player hunting and charged shockwave attacks.'''
+
+[[dependencies.minecraft_machines]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1.228,)"
+side = "BOTH"
+
+[[dependencies.minecraft_machines]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1]"
+side = "BOTH"
+
+[[dependencies.minecraft_machines]]
+modId = "sable"
+type = "required"
+versionRange = "[2.0.1]"
+side = "BOTH"

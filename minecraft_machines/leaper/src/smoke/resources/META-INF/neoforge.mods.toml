@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "minecraft_machines_smoke"
+version = "1"
+displayName = "Leaper Installation Check"
+
+[[dependencies.minecraft_machines_smoke]]
+modId = "minecraft_machines"
+type = "required"
+versionRange = "*"
+side = "BOTH"

@@ -36,7 +36,7 @@ final class MinecraftMachinesLeaperPredatorPolicy {
     };
     static final int COUNT = LOW.length;
     final double[] genome, value;
-    com.google.gson.JsonObject qualifiedHighStepSettings;
+    com.google.gson.JsonObject packagedHighStepSettings;
 
     MinecraftMachinesLeaperPredatorPolicy(double[] p) {
         if (p.length != COUNT) throw new IllegalArgumentException("Predator policy dimension");
@@ -75,9 +75,11 @@ final class MinecraftMachinesLeaperPredatorPolicy {
     }
 
     static MinecraftMachinesLeaperPredatorPolicy load() {
-        if (MinecraftMachinesLeaperLearning.mode().equals("predator-preview")) {
+        if (MinecraftMachinesLeaperRuntime.mode().equals("bundled"))
+            return MinecraftMachinesLeaperRuntime.bundledPolicy();
+        if (MinecraftMachinesLeaperRuntime.mode().equals("predator-preview")) {
             try {
-                return MinecraftMachinesLeaperPredatorExperiments.candidate();
+                return MinecraftMachinesLeaperRuntime.previewPolicy();
             } catch (Exception e) {
                 throw new IllegalStateException("Cannot load preview candidate", e);
             }
@@ -141,7 +143,7 @@ final class MinecraftMachinesLeaperPredatorPolicy {
                 if (!data.has("highstep_settings") || !data.get("highstep_settings").isJsonObject())
                     throw new IllegalStateException(
                             "High-step model requires qualified gait settings");
-                result.qualifiedHighStepSettings =
+                result.packagedHighStepSettings =
                         data.getAsJsonObject("highstep_settings").deepCopy();
             }
             return result;

@@ -10,6 +10,10 @@ dependencies' Java classes or asset directories. They must be obtained and
 installed separately. The repository's animated preview depicts the mods in
 use but does not contain their original asset files.
 
+The standalone Leaper build requires Sable; Sable includes its own Veil,
+Companion and native physics libraries. The training development project also
+uses the separately licensed Create, Simulated and Create Aeronautics projects.
+
 ## Original Leaper assets and gameplay previews
 
 The Leaper geometry, glow sprite, sixteen-cloud mist atlas, and charge/blast

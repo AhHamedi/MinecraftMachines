@@ -12,12 +12,15 @@ Its charged shockwave throws players and breaks nearby blocks.
 
 ## Try it
 
-In development for Minecraft 1.21.1 and NeoForge. Requires Java 21 and Python 3.
+For Minecraft 1.21.1 with NeoForge 21.1.228 or newer.
+Put the Minecraft Machines JAR and Sable 2.0.1 in your instance's `mods` folder.
+
+To run from source, use Java 21:
 
 ```sh
 git clone --recursive https://github.com/AhHamedi/MinecraftMachines.git
 cd MinecraftMachines
-tools/run-client.sh --preview
+tools/run-client.sh --leaper
 ```
 
 Enable cheats in your world, then use:
@@ -40,8 +43,8 @@ after Stop.
 
 ## Development
 
-Build with `./gradlew :minecraft_machines:neoforge:build`.
-The JAR is written to `minecraft_machines/neoforge/build/libs/`.
+Build with `./gradlew :minecraft_machines:leaper:build`.
+The JAR is written to `minecraft_machines/leaper/build/libs/`.
 See [CONTRIBUTING.md](CONTRIBUTING.md) for tests and development setup.
 
 Original code and assets by Ahmed Hamed, licensed under [MIT](LICENSE.md).

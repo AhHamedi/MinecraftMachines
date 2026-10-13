@@ -33,7 +33,7 @@ final class MinecraftMachinesLeaperLeap {
 
     final MinecraftMachinesLeaperPredatorNavigator nav;
     final MinecraftMachinesLeaper rig;
-    final boolean enabled = Boolean.getBoolean("minecraft_machines.leaperLeap");
+    final boolean enabled = MinecraftMachinesLeaperRuntime.motionEnabled("leaperLeap");
     final dev.ahmedhamedi.minecraft_machines.content.training.morphology.LeaperSupportWindow
             footing =
                     new dev.ahmedhamedi.minecraft_machines.content.training.morphology

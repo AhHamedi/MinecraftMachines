@@ -33,7 +33,19 @@ jobs:
         uses: gradle/actions/setup-gradle@v6
 
       - name: Run deterministic tests and package NeoForge integration
-        run: ./gradlew :minecraft_machines:common:test :minecraft_machines:neoforge:jar --stacktrace
+        run: ./gradlew :minecraft_machines:common:test :minecraft_machines:neoforge:jar :minecraft_machines:leaper:jar --stacktrace
+
+      - name: Verify installed Leaper gameplay
+        env:
+          RAYON_NUM_THREADS: "4"
+        run: ./gradlew :minecraft_machines:leaper:runGameTest -PinstalledLeaper=true --stacktrace
+
+      - name: Upload Leaper mod
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: MinecraftMachines-Leaper
+          path: minecraft_machines/leaper/build/libs/*.jar
+          if-no-files-found: error
 
   python:
     name: Python protocol and evaluation

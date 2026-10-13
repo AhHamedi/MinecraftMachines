@@ -1,0 +1,170 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev'
+}
+
+base { archivesName = 'minecraft-machines-leaper-1.21.1' }
+java { toolchain.languageVersion = JavaLanguageVersion.of(21) }
+
+repositories {
+    exclusiveContent {
+        forRepositories(
+                maven { url = 'https://maven.parchmentmc.org/' },
+                maven { url = 'https://maven.neoforged.net/releases' })
+        filter { includeGroup 'org.parchmentmc.data' }
+    }
+}
+
+def commonJava = project(':minecraft_machines:common').file('src/main/java')
+def platformJava = project(':minecraft_machines:neoforge').file('src/main/java')
+def gameplaySources = [
+    '**/LeaperApexDrive.java',
+    '**/LeaperBallistics.java',
+    '**/LeaperBehaviour.java',
+    '**/LeaperClearanceClock.java',
+    '**/LeaperGait.java',
+    '**/LeaperMotionWindow.java',
+    '**/LeaperPartBlock.java',
+    '**/LeaperPointController.java',
+    '**/LeaperPredatorPlanner.java',
+    '**/LeaperPursuitTarget.java',
+    '**/LeaperScaledPartBlock.java',
+    '**/LeaperShockwaveClock.java',
+    '**/LeaperStuckDetector.java',
+    '**/LeaperSupportWindow.java',
+    '**/LeaperSwingClearance.java',
+    '**/LeaperTraversalPolicy.java',
+    '**/MinecraftMachinesLeaper.java',
+    '**/MinecraftMachinesLeaperAcoustics.java',
+    '**/MinecraftMachinesLeaperApexDrive.java',
+    '**/MinecraftMachinesLeaperBehaviour.java',
+    '**/MinecraftMachinesLeaperBehaviourMovement.java',
+    '**/MinecraftMachinesLeaperBehaviourRecovery.java',
+    '**/MinecraftMachinesLeaperClearance.java',
+    '**/MinecraftMachinesLeaperClearanceScan.java',
+    '**/MinecraftMachinesLeaperClimbAssist.java',
+    '**/MinecraftMachinesLeaperEscape.java',
+    '**/MinecraftMachinesLeaperFxShader.java',
+    '**/MinecraftMachinesLeaperHighStepSettings.java',
+    '**/MinecraftMachinesLeaperJumpFire.java',
+    '**/MinecraftMachinesLeaperLaunchPayload.java',
+    '**/MinecraftMachinesLeaperLeap.java',
+    '**/MinecraftMachinesLeaperManager.java',
+    '**/MinecraftMachinesLeaperModel.java',
+    '**/MinecraftMachinesLeaperNavigationSearch.java',
+    '**/MinecraftMachinesLeaperPerception.java',
+    '**/MinecraftMachinesLeaperPhysicsLease.java',
+    '**/MinecraftMachinesLeaperPredatorControl.java',
+    '**/MinecraftMachinesLeaperPredatorMap.java',
+    '**/MinecraftMachinesLeaperPredatorNavigator.java',
+    '**/MinecraftMachinesLeaperPredatorPolicy.java',
+    '**/MinecraftMachinesLeaperPursuitGround.java',
+    '**/MinecraftMachinesLeaperPursuitSight.java',
+    '**/MinecraftMachinesLeaperRecoveryJump.java',
+    '**/MinecraftMachinesLeaperRuntime.java',
+    '**/MinecraftMachinesLeaperScaling.java',
+    '**/MinecraftMachinesLeaperShockwave.java',
+    '**/MinecraftMachinesLeaperShockwaveClient.java',
+    '**/MinecraftMachinesLeaperShockwavePayload.java',
+    '**/MinecraftMachinesLeaperStick.java',
+    '**/MinecraftMachinesLeaperTerrainMap.java',
+    '**/MinecraftMachinesQuadrupedChunkLease.java',
+]
+tasks.named('compileJava', JavaCompile) {
+    source(fileTree(commonJava) { include gameplaySources })
+    source(fileTree(platformJava) { include gameplaySources })
+}
+
+sourceSets { smoke }
+configurations {
+    smokeImplementation.extendsFrom implementation
+    smokeRuntimeOnly.extendsFrom runtimeOnly
+}
+def installedCheck = providers.gradleProperty('installedLeaper').getOrElse('false') == 'true'
+def gameResources = layout.buildDirectory.dir('generated/gameplayResources')
+def profileDir = rootProject.file('tools/profiles/leaper-preview')
+
+tasks.register('generateGameplayResources') {
+    inputs.files(new File(profileDir, 'horrific-predator-candidate.json'),
+                 new File(profileDir, 'horrific-predator-highstep-settings.json'))
+    outputs.dir(gameResources)
+    doLast {
+        def parser = new groovy.json.JsonSlurper()
+        def data = [genome: parser.parse(new File(profileDir, 'horrific-predator-candidate.json')).genome,
+                    highstep_settings: parser.parse(new File(profileDir, 'horrific-predator-highstep-settings.json'))]
+        def output = gameResources.get().file('data/minecraft_machines/leaper/gameplay.json').asFile
+        output.parentFile.mkdirs()
+        output.text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(data)) + '\n'
+    }
+}
+sourceSets.main.resources.srcDir(gameResources)
+
+def commonResources = project(':minecraft_machines:common').file('src/main/resources')
+tasks.named('processResources') {
+    dependsOn 'generateGameplayResources'
+    from(commonResources) {
+        include 'assets/minecraft_machines/blockstates/leaper*.json'
+        include 'assets/minecraft_machines/models/block/leaper/**'
+        include 'assets/minecraft_machines/models/block/leaper_scaled/**'
+        include 'assets/minecraft_machines/shaders/**'
+        include 'assets/minecraft_machines/sounds.json'
+        include 'assets/minecraft_machines/sounds/leaper/**'
+        include 'assets/minecraft_machines/textures/particle/leaper*'
+        include 'data/minecraft_machines/leaper/*.json'
+        include 'data/minecraft_machines/physics_block_properties/leaper_pads.json'
+    }
+    from(rootProject.file('LICENSE.md'))
+    from(rootProject.file('THIRD_PARTY_NOTICES.md'))
+    filesMatching('META-INF/neoforge.mods.toml') { expand modVersion: project.version }
+}
+
+dependencies {
+    implementation("dev.ryanhcode.sable:sable-neoforge-${minecraft_version}:${sable_version}") { transitive = false }
+    compileOnly "dev.ryanhcode.sable-companion:sable-companion-common-${minecraft_version}:${sable_companion_version}"
+    compileOnly("foundry.veil:veil-neoforge-${minecraft_version}:${veil_version}") { transitive = false }
+    if (installedCheck) runtimeOnly files(tasks.named('jar'))
+}
+
+neoForge {
+    version = neoforge_version
+    addModdingDependenciesTo sourceSets.smoke
+    parchment {
+        minecraftVersion = parchment_minecraft
+        mappingsVersion = parchment_version
+    }
+    mods {
+        if (!installedCheck) {
+            minecraft_machines { sourceSet sourceSets.main }
+        }
+        minecraft_machines_smoke { sourceSet sourceSets.smoke }
+    }
+    runs {
+        client {
+            client()
+            gameDirectory = project.file('runs/client')
+            loadedMods = installedCheck ? [] : [mods.minecraft_machines]
+        }
+        server {
+            server()
+            gameDirectory = project.file('runs/server')
+            loadedMods = installedCheck ? [] : [mods.minecraft_machines]
+            programArgument 'nogui'
+        }
+        gameTest {
+            type = 'gameTestServer'
+            sourceSet = sourceSets.smoke
+            gameDirectory = project.file('build/installed-check')
+            loadedMods = installedCheck ? [mods.minecraft_machines_smoke] : [mods.minecraft_machines, mods.minecraft_machines_smoke]
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'minecraft_machines_smoke'
+        }
+        configureEach {
+            jvmArgument '-Xms1G'
+            jvmArgument '-Xmx4G'
+            jvmArgument '-XX:MaxDirectMemorySize=2G'
+        }
+    }
+}
+tasks.named('runGameTest') {
+    dependsOn 'smokeClasses', 'jar'
+    doFirst { delete project.file('build/installed-check/world') }
+}

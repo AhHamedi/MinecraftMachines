@@ -15,7 +15,7 @@ final class MinecraftMachinesLeaperHighStepSettings {
             var path =
                     Path.of(
                             "leaper_learning",
-                            MinecraftMachinesLeaperLearning.reportName("predator-highstep-settings")
+                            MinecraftMachinesLeaperRuntime.reportName("predator-highstep-settings")
                                     + ".json");
             cached = JsonParser.parseString(Files.readString(path)).getAsJsonObject();
             return cached.deepCopy();
@@ -25,10 +25,10 @@ final class MinecraftMachinesLeaperHighStepSettings {
     }
 
     static void applyPreview(MinecraftMachinesLeaperPredatorControl c) {
-        if (c.policy.qualifiedHighStepSettings != null)
-            apply(c, c.policy.qualifiedHighStepSettings);
+        if (c.policy.packagedHighStepSettings != null)
+            apply(c, c.policy.packagedHighStepSettings);
         if (!Boolean.getBoolean("minecraft_machines.leaperHighStepCandidate")) return;
-        if (MinecraftMachinesLeaperLearning.mode().equals("packaged"))
+        if (MinecraftMachinesLeaperRuntime.mode().equals("packaged"))
             throw new IllegalStateException(
                     "High-step candidate needs an explicit evaluation or preview mode");
         apply(c, read());
