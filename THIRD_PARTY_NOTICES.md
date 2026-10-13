@@ -10,6 +10,27 @@ dependencies' Java classes or asset directories. They must be obtained and
 installed separately. The repository's animated preview depicts the mods in
 use but does not contain their original asset files.
 
+## Original Leaper assets and gameplay previews
+
+The Leaper geometry, glow sprite, sixteen-cloud mist atlas, and charge/blast
+sounds are original Minecraft Machines assets covered by `LICENSE.md`. Geometry
+and materials reference Minecraft's built-in block textures by resource name;
+those Minecraft texture files are not copied into this repository or the JAR.
+
+The particle sprites are generated procedurally by
+`tools/generate_leaper_particles.py`. The sounds are synthesized from seeded
+noise and oscillators by `tools/generate_leaper_sounds.py`; they contain no
+sampled third-party audio. The scripts preserve the original September 2026
+asset-generation algorithms. Their Python dependencies are listed in
+`tools/requirements-assets.txt` and retain their own licenses.
+
+The Leaper images and videos under `docs/media/` are actual Minecraft gameplay
+captures from September 2026, including the installed mods. They are examples
+of the add-on in use, not separately licensed Minecraft or dependency artwork.
+`docs/evidence/publication-manifest.json` records source checksums, selected
+excerpts, and encoding changes. No reference-game art, audio, or footage is
+redistributed with the Leaper assets or these previews.
+
 ## Simulated and Create Aeronautics
 
 - Project: [Creators-of-Aeronautics/Simulated-Project](https://github.com/Creators-of-Aeronautics/Simulated-Project)
@@ -61,9 +82,9 @@ source or JAR.
 ## Sable
 
 - Project: [ryanhcode/sable](https://github.com/ryanhcode/sable)
-- Version used: `2.0.0` for Minecraft 1.21.1 / NeoForge
+- Version used: `2.0.1` for Minecraft 1.21.1 / NeoForge
 - Creator and copyright holder: RyanHCode
-- License: [PolyForm Shield License 1.0.0](https://github.com/ryanhcode/sable/blob/mc1.21.1-2.0.0-neoforge/LICENSE.md)
+- License: [PolyForm Shield License 1.0.0](https://github.com/ryanhcode/sable/blob/mc1.21.1-2.0.1-neoforge/LICENSE.md)
 
 Sable is an external build and runtime dependency. It is not authored,
 vendored, sublicensed, or bundled by Minecraft Machines.

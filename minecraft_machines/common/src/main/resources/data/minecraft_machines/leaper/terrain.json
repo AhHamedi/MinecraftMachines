@@ -1,0 +1,67 @@
+{
+  "validated": true,
+  "contract": "leaper_12dof_v1",
+  "policy": "leaper_perceptive_terrain_v5",
+  "genome": [
+    -0.4777557225137182,
+    2.220446049250313e-16,
+    -0.1438410362258904,
+    -0.10381968238912234,
+    0.11157177565710492,
+    -0.1438410362258905,
+    -0.16823611831060645,
+    0.3465735902799728
+  ],
+  "parameters": {
+    "climb_cadence": 1.5,
+    "swing_clearance": 0.65,
+    "step_clearance_gain": 0.4,
+    "height_tracking_rate": 1.0,
+    "landing_prediction": 0.5,
+    "rough_hold_seconds": 3.0,
+    "body_lift": 0.3,
+    "foothold_search_radius": 0.4
+  },
+  "resource_sha256": {
+    "geometry.json": "f37e8dc338c24af005c711ff5f249ee4fcc307398b8131ecdca5e858911447d5",
+    "navigation.json": "391628d03ec45ae84255ee7581e7214fa21425f7f635e01ff24bdb63797f5c19",
+    "fast_navigation.json": "08a7b91b2074df24a3c8cb3ef7310f467266e744144bc8bb3e1a858c1a691fd8",
+    "horrific_navigation.json": "d34406ca91bf04ae2b4ffa3e0881ecb09d099e3bd72759b008eefc3eb2701374"
+  },
+  "architecture": "collision-surface route planning and perceptive foot placement around fixed trained gait checkpoints",
+  "selection": {
+    "method": "qualified reference parameters; terrain search candidates did not improve independent robustness",
+    "completed_search_episodes": 192,
+    "search_seed": 2026090731,
+    "promoted_search_candidate": false
+  },
+  "physics": {
+    "control_seconds": 0.05,
+    "navigation_seconds": 0.1,
+    "free_bodies": 13,
+    "limited_joints": 12,
+    "foot_friction": 1.65,
+    "climb_power": 2,
+    "climb_slew_rad_s": 2.2,
+    "motor_force_cap": 300000
+  },
+  "qualification": {
+    "passed": 72,
+    "count": 72,
+    "suite_counts": {
+      "development": 24,
+      "qualification": 16,
+      "holdout": 24,
+      "routes": 8
+    },
+    "interaction_tests": 4,
+    "hold_seconds": 5,
+    "mean_error_blocks": 0.1944802691306241,
+    "max_error_blocks": 0.45141284667120524,
+    "maximum_tilt_degrees": 27.56128732957014,
+    "max_anchor_error_blocks": 0.01782119995348701,
+    "max_joint_violation_rad": 0.02261860686789563,
+    "scope": "broad steps up to one block per riser, tested total elevation changes up to six blocks, half slabs, broken ground, cross slopes and wall/pit detours",
+    "limitations": "no jumping, vertical wall climbing, swimming, narrow bridges or general stacked cave navigation"
+  }
+}

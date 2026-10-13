@@ -6,7 +6,7 @@ import dev.ahmedhamedi.minecraft_machines.content.training.cem.GenomePolicy;
 import java.util.Arrays;
 
 public final class DuopodPhaseGaitPolicy implements GenomePolicy {
-    public static final String POLICY_TYPE = "duopod_phase_gait_v2";
+    public static final String POLICY_TYPE = "duopod_phase_gait_v3_posture_range";
     public static final int GENOME_SIZE = 7;
 
     private static final int PHASE_SIN_INDEX = 0;
@@ -53,7 +53,11 @@ public final class DuopodPhaseGaitPolicy implements GenomePolicy {
                 -1.0,
                 1.0);
 
-        final double center = 0.35 * Math.tanh(genome[0]);
+        // The chassis is slightly front-heavy.  Give evolution enough static posture
+        // authority to place both feet behind (or ahead of) the neutral pose before it
+        // starts optimizing the stepping motion.  This is still bounded by the action
+        // clamp and therefore the physical +/-60 degree servo limits.
+        final double center = 0.60 * Math.tanh(genome[0]);
         final double centerDifferential = 0.25 * Math.tanh(genome[1]);
         final double baseAmplitude = 0.10 + 0.75 * normalizedTanh(genome[2]);
         final double amplitudeDifferential = 0.30 * Math.tanh(genome[3]);

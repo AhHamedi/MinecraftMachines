@@ -1,0 +1,33 @@
+{
+  "version": "leaper-apex-v1",
+  "implementation_sha256": "265683e5f65903e98ddfba52af810915b5a26c29c2cff71fb86fc3413ad0191d",
+  "jar": "MinecraftMachines-Leaper-Apex-Development.jar",
+  "jar_sha256": "4cb3dc549565920b41067fd40a2e9aa3b1d56492cbfab033f6af058e4fe36122",
+  "development_preview": true,
+  "verification_complete": true,
+  "unit_tests": {
+    "tests": 178,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "native_checks": 62,
+  "native_verification": "verification-20260914-124359/summary.json",
+  "launch": "tools/Run Leaper Apex.command",
+  "runtime_properties": {
+    "leaperMode": "predator-preview",
+    "leaperProfile": "horrific",
+    "leaperHighStepCandidate": true,
+    "leaperAgile": true,
+    "leaperLeap": true,
+    "leaperApex": true
+  },
+  "inputs": {
+    "horrific-predator-candidate.json": "e2bf8423a6abfd160ceb3bdc7b9eafb15f50325c2437126c1ab96cc3af932767",
+    "horrific-predator-highstep-settings.json": "5cbb82dd113e5ef2763bd3e8b5fe6310b0c2d6524cc23f3d328f571ff4662d6b"
+  },
+  "classic_regression_complete": true,
+  "classic_regression_native_cases": 31,
+  "classic_regression_summary": "artifacts/leaper-hunting/verification-20260914-124750/summary.json",
+  "total_native_checks": 93
+}

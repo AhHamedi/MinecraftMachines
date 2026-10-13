@@ -8,6 +8,7 @@ final class MinecraftMachinesLiveDuopod {
     private final int slotIndex;
     private final UUID batchId;
     private MinecraftMachinesDuopodControl control;
+    private MinecraftMachinesDuopodPlanarConstraint planarConstraint;
     private boolean freshFromSpawn = true;
     private double standingHeightReferenceY = Double.NaN;
     private Vec3 standingCenterOfMassReference = null;
@@ -20,6 +21,38 @@ final class MinecraftMachinesLiveDuopod {
         this.slotIndex = slotIndex;
         this.batchId = batchId;
         this.control = control;
+    }
+
+    void attachPlanarConstraint(final MinecraftMachinesDuopodPlanarConstraint planarConstraint) {
+        this.closePlanarConstraint();
+        this.planarConstraint = planarConstraint;
+    }
+
+    boolean isPlanarConstrained() {
+        return this.planarConstraint != null;
+    }
+
+    boolean isPlanarConstraintValid() {
+        return this.planarConstraint == null || this.planarConstraint.isValid();
+    }
+
+    int planarBodyConstraintCount() {
+        return this.planarConstraint == null ? 0 : this.planarConstraint.bodyConstraintCount();
+    }
+
+    int validPlanarBodyConstraintCount() {
+        return this.planarConstraint == null ? 0 : this.planarConstraint.validBodyConstraintCount();
+    }
+
+    String constrainedMotionModeId() {
+        return this.planarConstraint == null ? "unconstrained_3d" : this.planarConstraint.modeId();
+    }
+
+    void closePlanarConstraint() {
+        if (this.planarConstraint != null) {
+            this.planarConstraint.close();
+            this.planarConstraint = null;
+        }
     }
 
     int slotIndex() {

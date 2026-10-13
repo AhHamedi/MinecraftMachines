@@ -232,16 +232,16 @@ Comparison requires identical embedded manifest identity and episode order. It p
 The Java straight-crawl benchmark is separate from the Python point-goal evaluator and comparator. Its current contracts are:
 
 ```text
-benchmark format:  minecraft_machines_duopod_walk_forward_benchmark_v3
+benchmark format:  minecraft_machines_duopod_walk_forward_benchmark_v9_planar_chassis_floor_upright_survival
 policy type:       duopod_phase_gait_v2
-fitness contract:  minecraft_machines:duopod_cem_fitness_v6
+fitness contract:  minecraft_machines:duopod_cem_fitness_v12_planar_chassis_floor_upright_survival
 checkpoint format: minecraft_machines_duopod_cem_checkpoint_v4
 training arena:    minecraft_machines:temporary_flat_duopod_lane_groups_v2
-slot layout:       minecraft_machines:isolated_three_lane_groups_v1
+slot layout:       minecraft_machines:coincident_single_lane_v1
 acceptance rule:   post_warmup_stability_adjusted_anti_ballistic_v2
 ```
 
-Benchmark v3 runs learned, neutral, and scripted controllers over the same three speed-indexed temporary lanes. It samples posture, height, displacement, and lane escape on every physics tick during held actions. Pairing requires matching episode IDs, seeds, spawn origins, and post-warmup baselines.
+Walk-forward training and benchmark bodies are solver-locked to their spawn-frame forward/up planes: lateral translation, roll, and yaw are removed while forward/vertical translation and pitch remain free. All same-batch bodies share one exact spawn frame and smooth-stone lane; the training collision filter keeps them physically independent despite the coincident placement. Benchmark v5 runs learned, neutral, and scripted controllers through the same three speed-indexed trials. It samples posture, height, displacement, and lane escape on every physics tick during held actions. Pairing requires matching episode IDs, seeds, spawn origins, and post-warmup baselines.
 
 Before changing the world, the benchmark writes a recovery journal under `<world>/minecraft_machines/duopod_arena_recovery/`. Use a disposable development world and keep a backup. Do not pass walk-forward output to `minecraft_machines_training.compare`; that command validates the point-goal evaluation contract.
 

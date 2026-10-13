@@ -1,0 +1,36 @@
+newmtl armor
+map_Kd minecraft:block/polished_deepslate
+Kd 1 1 1
+Ka 0 0 0
+newmtl plate
+map_Kd minecraft:block/deepslate_tiles
+Kd 1 1 1
+Ka 0 0 0
+newmtl edge
+map_Kd minecraft:block/deepslate
+Kd 1 1 1
+Ka 0 0 0
+newmtl dark
+map_Kd minecraft:block/blackstone
+Kd 0.7 0.73 0.78
+Ka 0 0 0
+newmtl steel
+map_Kd minecraft:block/iron_block
+Kd 0.58 0.61 0.64
+Ka 0 0 0
+newmtl red
+map_Kd minecraft:block/red_terracotta
+Kd 0.9 0.65 0.57
+Ka 0 0 0
+newmtl light
+map_Kd minecraft:block/white_concrete
+Kd 1.0 0.4 0.035
+Ka 1 1 1
+newmtl ember
+map_Kd minecraft:block/redstone_block
+Kd 1 0.6 0.4
+Ka 0 0 0
+newmtl lens
+map_Kd minecraft:block/black_concrete
+Kd 0.7 0.5 0.5
+Ka 0 0 0

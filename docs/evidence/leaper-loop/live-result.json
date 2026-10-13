@@ -1,0 +1,36 @@
+{
+  "world": "Leaper Field Test 20260908",
+  "runtime_pid": 22132,
+  "live_method_patch": true,
+  "original_implementation": "bdaa6930346a4dc0e3498705c98b98f9673035b05ec2be463b1aeb0c5f7c8c7d",
+  "patched_class_sha256": "b1e30c9c2124f84ad0c1756ab3c3abbd9c592fe28619530dd77c23de9b51b065",
+  "original_goal": [
+    -318.81442677251005,
+    64.0,
+    20.022344617663666
+  ],
+  "final_goal": [
+    -318.81442677251005,
+    64.0,
+    20.022344617663666
+  ],
+  "arrived": true,
+  "final_distance": 0.2561162590720029,
+  "new_launches": 2,
+  "new_aborts": 0,
+  "final_position": [
+    -318.5622538940403,
+    68.09403101455565,
+    19.872099146304397
+  ],
+  "final_supports": 4,
+  "final_upright": 0.9935783081800165,
+  "final_anchor": 0.03030435474772786,
+  "player_world_terrain_edits": false,
+  "rig_teleported": false,
+  "fixture_note": "Scratch regression replays captured terrain and initializes all 13 body poses from a snapshot. Live fix only redefines the leap method and reissues the same destination.",
+  "fixtures": {
+    "shore-terrain.nbt": "03e069ec5cec2f953dbddee971d4ced63cdc809237503e90034bd53b27d8f090",
+    "live-replay.json": "85ef274842008f2dae0474764bfa7a530cff8ab09dba327901bcddf45459d687"
+  }
+}

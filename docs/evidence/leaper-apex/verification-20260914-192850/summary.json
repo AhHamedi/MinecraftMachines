@@ -1,0 +1,73 @@
+{
+  "implementation_sha256": "fee49c40c30364ade664dcb848196cfba50962427a4e5986339e57b11968f66d",
+  "version": "apex",
+  "suites": [
+    {
+      "mode": "predator-hunting-regression",
+      "expected": 5,
+      "passed": true,
+      "failed_cases": []
+    },
+    {
+      "mode": "predator-follow-regression",
+      "expected": 3,
+      "passed": true,
+      "failed_cases": []
+    },
+    {
+      "mode": "predator-pursuit-regression-candidate",
+      "expected": 9,
+      "passed": true,
+      "failed_cases": []
+    },
+    {
+      "mode": "predator-pounce-commands",
+      "expected": 8,
+      "passed": true,
+      "failed_cases": []
+    },
+    {
+      "mode": "predator-agile-walk",
+      "expected": 6,
+      "passed": true,
+      "failed_cases": []
+    },
+    {
+      "mode": "predator-apex-qualify",
+      "expected": 6,
+      "passed": true,
+      "failed_cases": []
+    },
+    {
+      "mode": "predator-pounce-elevation",
+      "expected": 12,
+      "passed": true,
+      "failed_cases": []
+    },
+    {
+      "mode": "predator-apex-collision",
+      "expected": 13,
+      "passed": true,
+      "failed_cases": []
+    },
+    {
+      "mode": "predator-partial-support",
+      "expected": 4,
+      "passed": true,
+      "failed_cases": []
+    },
+    {
+      "mode": "predator-shore-loop",
+      "expected": 1,
+      "passed": true,
+      "failed_cases": []
+    }
+  ],
+  "complete": true,
+  "unit_tests": {
+    "tests": 181,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  }
+}

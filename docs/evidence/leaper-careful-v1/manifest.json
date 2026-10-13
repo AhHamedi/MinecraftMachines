@@ -1,0 +1,16 @@
+{
+  "name": "Careful v1",
+  "preserved_on": "2026-09-07",
+  "reason": "User requested preservation before faster gait development",
+  "files": {
+    "model.json": "391628d03ec45ae84255ee7581e7214fa21425f7f635e01ff24bdb63797f5c19",
+    "fresh-qualification.json": "0b44ab25ae0b29cb2984a387a0e680dd2c0516583b9b8ff3f02805d53fe77921",
+    "packaged-qualification.json": "bf3d5467bbd1ee769103158e8637d54c5039ab88035d908c7bf1b00e1a335b80",
+    "source-and-resources.zip": "5d8637e9f6087b64db9092e94aeedb5781ef40b584432102fe7c4f1fbdc1c6aa",
+    "MinecraftMachines-Leaper-Careful-v1.jar": "761b9220272817d5f8a98447a581bd241b47ebfe18ff7afa91cb296931585c9b",
+    "packaged-routes.json": "477c188b6f69212f08281d825c8d5a0d554c39c8fa9ae79887db30c9c4ad38af",
+    "long-range.json": "d164f7521203c77dfed8c4cb4fce9eb1f02c6894a8bbe3872314ca39d155a580",
+    "verification.json": "27b31d1c01d15f597dee4ead09cddcc19f6b2b4cd1a9253ed0e401acee1f2c1a",
+    "gait-qualification.json": "ea18fb321da97518c99a0110e4255711b93e75517251ae774129f9c906d9120d"
+  }
+}

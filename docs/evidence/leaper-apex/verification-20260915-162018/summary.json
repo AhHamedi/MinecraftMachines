@@ -1,0 +1,19 @@
+{
+  "implementation_sha256": "28d6d6b0f64af7350fbae0b63c6c820ca8f2d1d26d52bd6e4a1dee38d2774e33",
+  "version": "apex",
+  "suites": [
+    {
+      "mode": "predator-hunting-regression",
+      "expected": 5,
+      "passed": true,
+      "failed_cases": []
+    }
+  ],
+  "complete": true,
+  "unit_tests": {
+    "tests": 228,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  }
+}

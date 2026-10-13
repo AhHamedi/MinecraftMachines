@@ -1,0 +1,404 @@
+{
+  "description": "Curated September 2026 native gameplay and development evidence, plus the fresh 13 October 2026 behavior verification. Historical source fingerprints remain intact; each snapshot is dated explicitly.",
+  "entries": [
+    {
+      "source": "artifacts/leaper-navigation/navigation-results.png",
+      "public": "docs/evidence/leaper-navigation/navigation-results.png",
+      "source_sha256": "6b715407c14545023f66ed90db3e99ee8a0f8d7d18aad1c985364ba2bfb5042c",
+      "public_sha256": "6b715407c14545023f66ed90db3e99ee8a0f8d7d18aad1c985364ba2bfb5042c",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/quadruped-navigation/navigation-results.png",
+      "public": "docs/evidence/quadruped-navigation/navigation-results.png",
+      "source_sha256": "6322464b8a2cf810781e8a255f0c9e3b2f65e67d2e74f6aa7c21bed27738fbc9",
+      "public_sha256": "6322464b8a2cf810781e8a255f0c9e3b2f65e67d2e74f6aa7c21bed27738fbc9",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/quadruped-navigation/routes.png",
+      "public": "docs/evidence/quadruped-navigation/routes.png",
+      "source_sha256": "17d3043e21be53727714ddaca621a17330701413c1ec5d873853fd307cbef755",
+      "public_sha256": "17d3043e21be53727714ddaca621a17330701413c1ec5d873853fd307cbef755",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/quadruped-navigation/packaged-qualification.json",
+      "public": "docs/evidence/quadruped-navigation/packaged-qualification.json",
+      "source_sha256": "ed94276137f483cbb3e5c5a46371c7035711b4072faeb2ebdb77b53e607770f6",
+      "public_sha256": "ed94276137f483cbb3e5c5a46371c7035711b4072faeb2ebdb77b53e607770f6",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/quadruped-navigation/packaged-routes.json",
+      "public": "docs/evidence/quadruped-navigation/packaged-routes.json",
+      "source_sha256": "73d2a513308ea5f119c77ff052b141994d95a26d51014f404d7e1847f8a4e86f",
+      "public_sha256": "73d2a513308ea5f119c77ff052b141994d95a26d51014f404d7e1847f8a4e86f",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/quadruped-navigation/training.json",
+      "public": "docs/evidence/quadruped-navigation/training.json",
+      "source_sha256": "3cbdb97371874e4f11b44d573943c052f9104206a059814f04522014857954ba",
+      "public_sha256": "3cbdb97371874e4f11b44d573943c052f9104206a059814f04522014857954ba",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-behaviour/verification-20260915-161816/summary.json",
+      "public": "docs/evidence/leaper-behaviour/verification-20260915-161816/summary.json",
+      "source_sha256": "4d696ca1371bbdfff12b59596e4ae013df5f413a9f416e01f282333e09272578",
+      "public_sha256": "4d696ca1371bbdfff12b59596e4ae013df5f413a9f416e01f282333e09272578",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-behaviour/verification-20260915-175546/summary.json",
+      "public": "docs/evidence/leaper-behaviour/verification-20260915-175546/summary.json",
+      "source_sha256": "0faa602bebaf666c2fb00bde8f31c402bfd6b5f8c6de7a43f4ce23cf53e0ee19",
+      "public_sha256": "0faa602bebaf666c2fb00bde8f31c402bfd6b5f8c6de7a43f4ce23cf53e0ee19",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-apex/verification-20260915-162018/summary.json",
+      "public": "docs/evidence/leaper-apex/verification-20260915-162018/summary.json",
+      "source_sha256": "caf1a9bbeedf107bada30cde0a8e06471097f6cd91a44329f91885954d38b57c",
+      "public_sha256": "caf1a9bbeedf107bada30cde0a8e06471097f6cd91a44329f91885954d38b57c",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-apex/verification-20260915-175728/summary.json",
+      "public": "docs/evidence/leaper-apex/verification-20260915-175728/summary.json",
+      "source_sha256": "0253162ceb39be0f90bf4f442d0a3dbc9729e2db9c8d5fab4eaad2ea9c1a2e45",
+      "public_sha256": "0253162ceb39be0f90bf4f442d0a3dbc9729e2db9c8d5fab4eaad2ea9c1a2e45",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-scale/verification-20260915-175707/summary.json",
+      "public": "docs/evidence/leaper-scale/verification-20260915-175707/summary.json",
+      "source_sha256": "d18c1a413a5a7bda4b588a9924e5fb1f1fab8aaaed89a1267abad1620b6825ea",
+      "public_sha256": "d18c1a413a5a7bda4b588a9924e5fb1f1fab8aaaed89a1267abad1620b6825ea",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-behaviour/live-launch-pursuit-patch.json",
+      "public": "docs/evidence/leaper-behaviour/live-launch-pursuit-patch.json",
+      "source_sha256": "f0079e922309e2141786f82d430995229efa9c43bc70062836982701b6c6a5dd",
+      "public_sha256": "f0079e922309e2141786f82d430995229efa9c43bc70062836982701b6c6a5dd",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-behaviour/build-manifest.json",
+      "public": "docs/evidence/leaper-behaviour/build-manifest.json",
+      "source_sha256": "799fdd6125d5f09a25f0f4563d960a9938fbdd4f88657f1ba0c1de57c2bd8045",
+      "public_sha256": "799fdd6125d5f09a25f0f4563d960a9938fbdd4f88657f1ba0c1de57c2bd8045",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-brisk/pace-comparison.png",
+      "public": "docs/evidence/leaper-brisk/pace-comparison.png",
+      "source_sha256": "eedaf72dbc08cd7fdec701651987a40360a043c8bbb0c810503d4301c386e469",
+      "public_sha256": "eedaf72dbc08cd7fdec701651987a40360a043c8bbb0c810503d4301c386e469",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-brisk/destination-comparison.png",
+      "public": "docs/evidence/leaper-brisk/destination-comparison.png",
+      "source_sha256": "f2e12a968dc748ca6a87925b5aa4c28775c6979aedf6163a640d16668782da11",
+      "public_sha256": "f2e12a968dc748ca6a87925b5aa4c28775c6979aedf6163a640d16668782da11",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-brisk/verification.json",
+      "public": "docs/evidence/leaper-brisk/verification.json",
+      "source_sha256": "6534aee576246cdf50989ac2fc6623bb063791c8a294129939d93b39c8ed5bab",
+      "public_sha256": "6534aee576246cdf50989ac2fc6623bb063791c8a294129939d93b39c8ed5bab",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-careful-v1/manifest.json",
+      "public": "docs/evidence/leaper-careful-v1/manifest.json",
+      "source_sha256": "79ca42e862387a630041643b4f6027d8abbe21d7ed2f344206c2b2fce3a03aa3",
+      "public_sha256": "79ca42e862387a630041643b4f6027d8abbe21d7ed2f344206c2b2fce3a03aa3",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-way/live-result.json",
+      "public": "docs/evidence/leaper-way/live-result.json",
+      "source_sha256": "4b03379bd20a472e91d78d8cbf351197f731c8ed01bb75810dcf41e70578c3c5",
+      "public_sha256": "4b03379bd20a472e91d78d8cbf351197f731c8ed01bb75810dcf41e70578c3c5",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-way/baseline.json",
+      "public": "docs/evidence/leaper-way/baseline.json",
+      "source_sha256": "51be440f7359fbf49dbcd344066d4b4fb1108a67441c96b5646c987ce38d8e09",
+      "public_sha256": "51be440f7359fbf49dbcd344066d4b4fb1108a67441c96b5646c987ce38d8e09",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-way/arrival-fix.json",
+      "public": "docs/evidence/leaper-way/arrival-fix.json",
+      "source_sha256": "54419c9ce86e20a2b95fc98dbde59ae5c718949d9cff50923d94daa0fa45d397",
+      "public_sha256": "54419c9ce86e20a2b95fc98dbde59ae5c718949d9cff50923d94daa0fa45d397",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-apex/verification-20260914-194752/summary.json",
+      "public": "docs/evidence/leaper-apex/verification-20260914-194752/summary.json",
+      "source_sha256": "f5bf8ce26f390138037d0ffbe132afc3bed4a69fde98ebb6813100258ea348db",
+      "public_sha256": "f5bf8ce26f390138037d0ffbe132afc3bed4a69fde98ebb6813100258ea348db",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-way/build-manifest.json",
+      "public": "docs/evidence/leaper-way/build-manifest.json",
+      "source_sha256": "1094a077c3768ad4e535fe8d3bb9eb64fefa720f04894492414623211889ba58",
+      "public_sha256": "1094a077c3768ad4e535fe8d3bb9eb64fefa720f04894492414623211889ba58",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-apex/verification-20260914-152138/summary.json",
+      "public": "docs/evidence/leaper-apex/verification-20260914-152138/summary.json",
+      "source_sha256": "6ff4a6c25cdfd65bb5a28b1d152dd6298fcb7786296d03a20539cefceefddd7f",
+      "public_sha256": "6ff4a6c25cdfd65bb5a28b1d152dd6298fcb7786296d03a20539cefceefddd7f",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-apex/robustness-build-manifest.json",
+      "public": "docs/evidence/leaper-apex/robustness-build-manifest.json",
+      "source_sha256": "0bc3644ef9b85f0c8582303a6e0ea0ced0e41c2cc03fcabb1012c6947951c092",
+      "public_sha256": "0bc3644ef9b85f0c8582303a6e0ea0ced0e41c2cc03fcabb1012c6947951c092",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-apex/verification-20260914-124359/summary.json",
+      "public": "docs/evidence/leaper-apex/verification-20260914-124359/summary.json",
+      "source_sha256": "8765755b9fdcee6abc1cf14b5114bef213902b1181526226ef127c03288d0300",
+      "public_sha256": "8765755b9fdcee6abc1cf14b5114bef213902b1181526226ef127c03288d0300",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-apex/build-manifest.json",
+      "public": "docs/evidence/leaper-apex/build-manifest.json",
+      "source_sha256": "89610230c9d4252a9c66887f29b90fbe4303614a85e4aeab2b19cdf79e28a359",
+      "public_sha256": "89610230c9d4252a9c66887f29b90fbe4303614a85e4aeab2b19cdf79e28a359",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-hunting/verification-20260914-124750/summary.json",
+      "public": "docs/evidence/leaper-hunting/verification-20260914-124750/summary.json",
+      "source_sha256": "6c6c80fef6f7b2c2370d4fd1b2a240462f839c6854f12c6313e1e95d83747cbe",
+      "public_sha256": "6c6c80fef6f7b2c2370d4fd1b2a240462f839c6854f12c6313e1e95d83747cbe",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-apex/comparison.json",
+      "public": "docs/evidence/leaper-apex/comparison.json",
+      "source_sha256": "050394a684c3b14bdeafb357bead154db378a0b968dd265cf67902294623af9a",
+      "public_sha256": "005422344ff1eb7011bce19fd7f551771ea4c3556fcb926e68ecad79788d8a6b",
+      "personal_paths_sanitized": true
+    },
+    {
+      "source": "artifacts/leaper-apex/apex-comparison.png",
+      "public": "docs/evidence/leaper-apex/apex-comparison.png",
+      "source_sha256": "777591ffbf0f76ee0abc4df51ce03b02cd0efe2fbf8d186d9c7ffb34abf708bd",
+      "public_sha256": "777591ffbf0f76ee0abc4df51ce03b02cd0efe2fbf8d186d9c7ffb34abf708bd",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-hunting/hunting-comparison.png",
+      "public": "docs/evidence/leaper-hunting/hunting-comparison.png",
+      "source_sha256": "4346971b7fe94f3f3848bcc0ec7581752ab41ad777b8c2eba8a8dfb15e5c4d1f",
+      "public_sha256": "4346971b7fe94f3f3848bcc0ec7581752ab41ad777b8c2eba8a8dfb15e5c4d1f",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/quadruped/training-and-evaluation.json",
+      "public": "docs/evidence/quadruped/training-and-evaluation.json",
+      "source_sha256": "e61fce840f2a90e88dba3ffa46b26574390887dba26e44ad4dd860114b2dfba8",
+      "public_sha256": "e61fce840f2a90e88dba3ffa46b26574390887dba26e44ad4dd860114b2dfba8",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/quadruped/saved-replay.json",
+      "public": "docs/evidence/quadruped/saved-replay.json",
+      "source_sha256": "ca16fb6d8e3dcb336ef29b06218ac1e2770dc4a2964053003386c452d7e0b053",
+      "public_sha256": "ca16fb6d8e3dcb336ef29b06218ac1e2770dc4a2964053003386c452d7e0b053",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/quadruped/held-out-qualification.json",
+      "public": "docs/evidence/quadruped/held-out-qualification.json",
+      "source_sha256": "d01812a38b8c155f4506e985dace539280a1018f044d16c695acdc087dec90b6",
+      "public_sha256": "d01812a38b8c155f4506e985dace539280a1018f044d16c695acdc087dec90b6",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-horrific/pace-comparison.png",
+      "public": "docs/evidence/leaper-horrific/pace-comparison.png",
+      "source_sha256": "5b6f237b606e25419a34222980c833bf9e04f8d7fa4d5eff5c624fdf5ee28060",
+      "public_sha256": "5b6f237b606e25419a34222980c833bf9e04f8d7fa4d5eff5c624fdf5ee28060",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-horrific/verification.json",
+      "public": "docs/evidence/leaper-horrific/verification.json",
+      "source_sha256": "0687b7217d69cecdca0f56fab37416f9dcd3106dae2f208bdacbecdf8f9be862",
+      "public_sha256": "0687b7217d69cecdca0f56fab37416f9dcd3106dae2f208bdacbecdf8f9be862",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-horrific/destination-comparison.png",
+      "public": "docs/evidence/leaper-horrific/destination-comparison.png",
+      "source_sha256": "1110a58a54adbd2c62d7357ac2721759282decfaab1e5e100a0c8633b33e1394",
+      "public_sha256": "1110a58a54adbd2c62d7357ac2721759282decfaab1e5e100a0c8633b33e1394",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-horrific/video-provenance.json",
+      "public": "docs/evidence/leaper-horrific/video-provenance.json",
+      "source_sha256": "08c56384027d9ff8eb32062e9a7e8fff2aa0cb120419be5e90acc66b9b8cf17a",
+      "public_sha256": "08c56384027d9ff8eb32062e9a7e8fff2aa0cb120419be5e90acc66b9b8cf17a",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-loop/live-result.json",
+      "public": "docs/evidence/leaper-loop/live-result.json",
+      "source_sha256": "a84f931539c6f1649d51bff15abc10bb20157da70a224589e6d6bb9ed91322a1",
+      "public_sha256": "a84f931539c6f1649d51bff15abc10bb20157da70a224589e6d6bb9ed91322a1",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-loop/baseline-pose.json",
+      "public": "docs/evidence/leaper-loop/baseline-pose.json",
+      "source_sha256": "2cc53c4e003b92432f8bc38dfe2d1e77457c98d316eecb40aa6a78ce5d6c98cb",
+      "public_sha256": "2cc53c4e003b92432f8bc38dfe2d1e77457c98d316eecb40aa6a78ce5d6c98cb",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-loop/fixed-pose.json",
+      "public": "docs/evidence/leaper-loop/fixed-pose.json",
+      "source_sha256": "0a361e924ea08c6caeaf6704d9b63c17421d6709ef5c7cba31f5ec34ab94771d",
+      "public_sha256": "0a361e924ea08c6caeaf6704d9b63c17421d6709ef5c7cba31f5ec34ab94771d",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-apex/verification-20260914-192850/summary.json",
+      "public": "docs/evidence/leaper-apex/verification-20260914-192850/summary.json",
+      "source_sha256": "82c274487e5ef24e9639fbc20491cb822f63b6e53560cf5df3428b8a8349d881",
+      "public_sha256": "82c274487e5ef24e9639fbc20491cb822f63b6e53560cf5df3428b8a8349d881",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-loop/build-manifest.json",
+      "public": "docs/evidence/leaper-loop/build-manifest.json",
+      "source_sha256": "c68ca8e9ae0198377c2a1a5d64112cbade5266a58498264f3eca1e349d2cc110",
+      "public_sha256": "c68ca8e9ae0198377c2a1a5d64112cbade5266a58498264f3eca1e349d2cc110",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-high-arcs/native-report.json",
+      "public": "docs/evidence/leaper-high-arcs/native-report.json",
+      "source_sha256": "54fd99d4916b95def27bac18d36ead25f7967187707ff6f8aaab0b4d435251bb",
+      "public_sha256": "54fd99d4916b95def27bac18d36ead25f7967187707ff6f8aaab0b4d435251bb",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-shockwave/gameplay-update-verification-03.json",
+      "public": "docs/evidence/leaper-shockwave/gameplay-update-verification-03.json",
+      "source_sha256": "a08b1be1d7e3a7196cb5f0908a94561be32634a68cb26353148bdcec287d3032",
+      "public_sha256": "a08b1be1d7e3a7196cb5f0908a94561be32634a68cb26353148bdcec287d3032",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-apex/video-provenance.json",
+      "public": "docs/evidence/leaper-apex/video-provenance.json",
+      "source_sha256": "1c38e0a7fa4a550398cfb7557e9268577cc72cb9c00eece1cc29cb38c053f647",
+      "public_sha256": "1c38e0a7fa4a550398cfb7557e9268577cc72cb9c00eece1cc29cb38c053f647",
+      "personal_paths_sanitized": false
+    },
+    {
+      "source": "artifacts/leaper-shockwave/attempt-18-vanilla.json",
+      "public": "docs/evidence/leaper-shockwave/attempt-18-vanilla.json",
+      "source_sha256": "e8c854c13d509b5c17f014632dfefaef2307c2d30aa290a9d42e2b99467a891a",
+      "public_sha256": "af9909cceaaba564f1d9aec5b6484175ab52ba95b104006b0d22c0ad4b7a421f",
+      "personal_paths_sanitized": true
+    },
+    {
+      "source": "artifacts/leaper-shockwave/attempt-18-gameplay.json",
+      "public": "docs/evidence/leaper-shockwave/attempt-18-gameplay.json",
+      "source_sha256": "595b59da12a8682c2b29bd3322c5acc5ee86d16d2b6f3e0af077a00f26873f18",
+      "public_sha256": "6d8e85db28f9f49709d47391c2b2fc0a5aa36714f047dd896261c1e78291ef5f",
+      "personal_paths_sanitized": true
+    },
+    {
+      "source": "artifacts/leaper-apex/Leaper-Apex-Gameplay.mp4",
+      "public": "docs/media/leaper-apex-gameplay.mp4",
+      "source_sha256": "8fb8ab62c18b014c7181523cb3dabaa277ba9ee6a7a7c75e449b38ed6e0235b1",
+      "public_sha256": "8fb8ab62c18b014c7181523cb3dabaa277ba9ee6a7a7c75e449b38ed6e0235b1",
+      "transcoded": false
+    },
+    {
+      "source": "artifacts/leaper-shockwave/attempt-18-vanilla.mp4",
+      "public": "docs/media/leaper-shockwave-vanilla.mp4",
+      "source_sha256": "24decf6bf9647442a37a6ccbb3b3fbd81c870b1a1ce06c30474f40a912bcb2a2",
+      "public_sha256": "24decf6bf9647442a37a6ccbb3b3fbd81c870b1a1ce06c30474f40a912bcb2a2",
+      "transcoded": false
+    },
+    {
+      "source": "artifacts/leaper-shockwave/attempt-18-gameplay.mp4",
+      "public": "docs/media/leaper-shockwave-gameplay.mp4",
+      "source_sha256": "59f61bf8694a48e28754562dca893706d2c22f9d76bdbd8e0f627f67b1a2ee25",
+      "public_sha256": "59f61bf8694a48e28754562dca893706d2c22f9d76bdbd8e0f627f67b1a2ee25",
+      "transcoded": false
+    },
+    {
+      "source": "artifacts/leaper-shockwave/attempt-18-vanilla.mp4",
+      "public": "docs/media/leaper-demo.gif",
+      "source_sha256": "24decf6bf9647442a37a6ccbb3b3fbd81c870b1a1ce06c30474f40a912bcb2a2",
+      "public_sha256": "b98ef632c001ac725dc391ed17ade856d96b0778e230566aebb2ac610ab81db4",
+      "excerpt_start_seconds": 0,
+      "excerpt_duration_seconds": 8,
+      "dimensions": [
+        800,
+        500
+      ],
+      "fps": 8,
+      "timing": "1x playback; resampled to 8 fps and 64 colors; full eight-second native recording; no synthesized frames"
+    },
+    {
+      "source": "artifacts/leaper-shockwave/attempt-18-vanilla.mp4",
+      "public": "docs/media/leaper-poster.jpg",
+      "source_sha256": "24decf6bf9647442a37a6ccbb3b3fbd81c870b1a1ce06c30474f40a912bcb2a2",
+      "public_sha256": "716b6714b3df2ea6cf3585e3eefeb8be2a6d0ee947220f69697c01cd3c411087",
+      "excerpt_timestamp_seconds": 3.3,
+      "frame_extraction_only": true
+    },
+    {
+      "source": "artifacts/leaper-behaviour/verification-20261013-135107/summary.json",
+      "public": "docs/evidence/leaper-behaviour-20261013.json",
+      "source_sha256": "40a8d84495e60490174d6956800318795f805797f0980611e2e864fad9956105",
+      "public_sha256": "40a8d84495e60490174d6956800318795f805797f0980611e2e864fad9956105",
+      "personal_paths_sanitized": false,
+      "verified_at": "2026-10-13",
+      "implementation_sha256": "11f37441c3014b0fb7203a86556a4ce9a3ef591850a5e50d4e1f742790542be6"
+    },
+    {
+      "source": "artifacts/leaper-scale/verification-20261013-135225/summary.json",
+      "public": "docs/evidence/leaper-scale-20261013.json",
+      "source_sha256": "006ca53be65bd177182fa15e16640de2373c1ac0baf7b279cf0efe5cac41eb69",
+      "public_sha256": "006ca53be65bd177182fa15e16640de2373c1ac0baf7b279cf0efe5cac41eb69",
+      "personal_paths_sanitized": false,
+      "verified_at": "2026-10-13",
+      "implementation_sha256": "11f37441c3014b0fb7203a86556a4ce9a3ef591850a5e50d4e1f742790542be6"
+    },
+    {
+      "source": "artifacts/leaper-apex/verification-20261013-135330/summary.json",
+      "public": "docs/evidence/leaper-hunting-20261013.json",
+      "source_sha256": "455bf04592cc6d827da5f5114a3528924a157805f83c9778334e3a3d1c305bbc",
+      "public_sha256": "455bf04592cc6d827da5f5114a3528924a157805f83c9778334e3a3d1c305bbc",
+      "personal_paths_sanitized": false,
+      "verified_at": "2026-10-13",
+      "implementation_sha256": "11f37441c3014b0fb7203a86556a4ce9a3ef591850a5e50d4e1f742790542be6"
+    }
+  ]
+}

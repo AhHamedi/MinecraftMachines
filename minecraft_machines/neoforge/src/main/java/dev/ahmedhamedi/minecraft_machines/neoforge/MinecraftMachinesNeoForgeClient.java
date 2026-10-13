@@ -10,5 +10,7 @@ import net.neoforged.fml.common.Mod;
 public final class MinecraftMachinesNeoForgeClient {
     public MinecraftMachinesNeoForgeClient(@SuppressWarnings("unused") IEventBus modEventBus) {
         MinecraftMachinesClient.init();
+        MinecraftMachinesLeaperShockwaveClient.init();
+        modEventBus.addListener(MinecraftMachinesLeaperFxShader::register);
     }
 }

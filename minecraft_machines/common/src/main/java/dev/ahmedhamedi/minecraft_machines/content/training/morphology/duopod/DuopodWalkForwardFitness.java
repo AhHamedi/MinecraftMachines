@@ -29,6 +29,8 @@ public final class DuopodWalkForwardFitness {
     public static final double TERMINAL_FORWARD_WEIGHT = 4.0;
     public static final double TERMINAL_SUCCESS_BONUS = 4.0;
     public static final double TERMINAL_INSTABILITY_PENALTY = 6.0;
+    /** A collapse must rank below every otherwise-comparable non-falling rollout. */
+    public static final double TERMINAL_MACHINE_FAILURE_PENALTY = 40.0;
     public static final double TERMINAL_UPRIGHT_SHORTFALL_WEIGHT = 10.0;
     public static final double TERMINAL_VERTICAL_EXCESS_WEIGHT = 10.0;
     public static final double TERMINAL_ARENA_ESCAPE_PENALTY = 20.0;
@@ -70,6 +72,7 @@ public final class DuopodWalkForwardFitness {
         final double terminalShaping = TERMINAL_FORWARD_WEIGHT * stabilityAdjustedForward
                 + (success ? TERMINAL_SUCCESS_BONUS : 0.0)
                 - (stable ? 0.0 : TERMINAL_INSTABILITY_PENALTY)
+                - (machineFailure ? TERMINAL_MACHINE_FAILURE_PENALTY : 0.0)
                 - TERMINAL_UPRIGHT_SHORTFALL_WEIGHT * uprightShortfall
                 - TERMINAL_VERTICAL_EXCESS_WEIGHT * verticalExcess
                 - (arenaEscape ? TERMINAL_ARENA_ESCAPE_PENALTY : 0.0);

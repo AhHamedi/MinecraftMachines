@@ -40,14 +40,14 @@ import java.util.UUID;
  *
  * <p>The old experiment searched arbitrary nearby world terrain independently
  * for every slot. That made controller identity inseparable from spawn-site
- * geometry. This lease replaces the bounded corridor with identical smooth
- * stone lanes, remembers every changed block, and restores the world when the
+ * geometry. This lease replaces the bounded corridor with identical stone-brick
+ * lanes, remembers every changed block, and restores the world when the
  * task closes. Block-entity positions are rejected before any mutation because
  * a {@link BlockState} snapshot cannot preserve their data safely.</p>
  */
 final class MinecraftMachinesDuopodFlatArena implements AutoCloseable {
     static final String ARENA_ID = "minecraft_machines:temporary_flat_duopod_lane_groups_v2";
-    static final String SLOT_LAYOUT_ID = "minecraft_machines:isolated_three_lane_groups_v1";
+    static final String SLOT_LAYOUT_ID = "minecraft_machines:isolated_three_lane_groups_v2";
     static final int LANE_HALF_WIDTH_BLOCKS = 5;
     static final int MINIMUM_SLOT_SPACING_BLOCKS = 12;
     static final int LANES_PER_CANDIDATE_GROUP = 3;
@@ -64,7 +64,7 @@ final class MinecraftMachinesDuopodFlatArena implements AutoCloseable {
     private static final int FORWARD_RUNOUT_PADDING_BLOCKS = 12;
     private static final double MAXIMUM_COMMAND_SPEED_BLOCKS_PER_SECOND = 1.1;
     private static final int SET_BLOCK_FLAGS = 3;
-    private static final BlockState FLOOR = Blocks.SMOOTH_STONE.defaultBlockState();
+    private static final BlockState FLOOR = Blocks.STONE_BRICKS.defaultBlockState();
     private static final BlockState AIR = Blocks.AIR.defaultBlockState();
 
     private final ServerLevel level;
@@ -260,7 +260,7 @@ final class MinecraftMachinesDuopodFlatArena implements AutoCloseable {
      * Walk-forward evaluates one candidate on exactly three speed lanes. Insert
      * one unused lane-width between candidate groups so every candidate sees
      * the same local three-lane topology as the fixed benchmark instead of an
-     * interior position in one almost-contiguous 24-lane floor.
+     * interior position in one almost-contiguous floor.
      */
     static int rightOffsetForSlot(final int slot, final int spacingBlocks) {
         if (slot < 0 || spacingBlocks < MINIMUM_SLOT_SPACING_BLOCKS) {

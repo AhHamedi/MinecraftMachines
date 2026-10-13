@@ -32,8 +32,8 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v6
 
-      - name: Run deterministic tests and compile NeoForge integration
-        run: ./gradlew :minecraft_machines:common:test :minecraft_machines:neoforge:compileJava --stacktrace
+      - name: Run deterministic tests and package NeoForge integration
+        run: ./gradlew :minecraft_machines:common:test :minecraft_machines:neoforge:jar --stacktrace
 
   python:
     name: Python protocol and evaluation
@@ -57,3 +57,13 @@ jobs:
         env:
           PYTHONPATH: training/python/src
         run: python -m unittest discover -s training/python/tests
+
+      - name: Verify synchronized eyes and scaled geometry
+        run: |
+          python tools/verify_leaper_eyes.py
+          python tools/verify_leaper_scales.py
+
+      - name: Check development launch scripts
+        run: |
+          for script in tools/run-client.sh tools/*.command; do bash -n "$script"; done
+          python tools/prepare_leaper_preview.py --target client

@@ -1,0 +1,49 @@
+{
+  "implementation_sha256": "c409dc57f1fbd49ce61604155886431d2a704c4615bc36d61027a98202e18a53",
+  "version": "apex",
+  "suites": [
+    {
+      "mode": "predator-departure-clearance",
+      "expected": 1,
+      "passed": true,
+      "failed_cases": []
+    },
+    {
+      "mode": "predator-shore-loop",
+      "expected": 1,
+      "passed": true,
+      "failed_cases": []
+    },
+    {
+      "mode": "predator-partial-support",
+      "expected": 4,
+      "passed": true,
+      "failed_cases": []
+    },
+    {
+      "mode": "predator-pounce-commands",
+      "expected": 8,
+      "passed": true,
+      "failed_cases": []
+    },
+    {
+      "mode": "predator-pounce-elevation",
+      "expected": 12,
+      "passed": true,
+      "failed_cases": []
+    },
+    {
+      "mode": "predator-hunting-regression",
+      "expected": 5,
+      "passed": true,
+      "failed_cases": []
+    }
+  ],
+  "complete": true,
+  "unit_tests": {
+    "tests": 181,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  }
+}

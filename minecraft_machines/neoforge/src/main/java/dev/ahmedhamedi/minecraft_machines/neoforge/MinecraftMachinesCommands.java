@@ -51,8 +51,11 @@ public final class MinecraftMachinesCommands {
                 .then(Commands.literal("spawn_worm")
                         .executes(context -> spawnWorm(context.getSource())))
                 .then(duopodCommands())
+                .then(MinecraftMachinesQuadrupedManager.commands())
+                .then(MinecraftMachinesLeaperManager.commands())
                 .then(trainCommands())
                 .then(wormCemCommands())
+                .then(tickRateCommand())
                 .then(Commands.literal("servo_telemetry_start")
                         .executes(context -> startServoTelemetry(context.getSource())))
                 .then(Commands.literal("servo_telemetry_stop")
@@ -75,8 +78,11 @@ public final class MinecraftMachinesCommands {
                 .then(Commands.literal("spawn_worm")
                         .executes(context -> spawnWorm(context.getSource())))
                 .then(duopodCommands())
+                .then(MinecraftMachinesQuadrupedManager.commands())
+                .then(MinecraftMachinesLeaperManager.commands())
                 .then(trainCommands())
                 .then(wormCemCommands())
+                .then(tickRateCommand())
                 .then(Commands.literal("servo_telemetry_start")
                         .executes(context -> startServoTelemetry(context.getSource())))
                 .then(Commands.literal("servo_telemetry_stop")
@@ -85,6 +91,19 @@ public final class MinecraftMachinesCommands {
                         .executes(context -> dumpServoTelemetry(context.getSource())))
                 .then(Commands.literal("stop_servo_demos")
                         .executes(context -> stopServoDemos(context.getSource()))));
+    }
+
+    private static LiteralArgumentBuilder<CommandSourceStack> tickRateCommand() {
+        return Commands.literal("tick_rate")
+                .then(Commands.argument("ticksPerSecond", DoubleArgumentType.doubleArg(1.0, 120.0))
+                        .executes(context -> {
+                            final double requested = DoubleArgumentType.getDouble(context, "ticksPerSecond");
+                            context.getSource().getServer().tickRateManager().setTickRate((float) requested);
+                            context.getSource().sendSuccess(
+                                    () -> Component.literal("Minecraft Machines simulation rate set to " + requested + " TPS."),
+                                    true);
+                            return 1;
+                        }));
     }
 
     private static LiteralArgumentBuilder<CommandSourceStack> wormCemCommands() {

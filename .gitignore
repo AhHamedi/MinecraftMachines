@@ -21,6 +21,7 @@ hs_err_pid*
 __pycache__/
 *.py[cod]
 .venv/
+.venv-assets/
 venv/
 .pytest_cache/
 .mypy_cache/
@@ -32,6 +33,12 @@ htmlcov/
 
 # Local capture footage (large and may include private desktop context)
 MinecraftMachines/*.mov
+
+# Local gameplay profiles, worlds, captures, training runs and release builds.
+# Curated public demonstrations and evidence live under docs/.
+/MinecraftMachines/
+/artifacts/
+/release/
 
 # Built artifacts
 *.jar

@@ -9,6 +9,7 @@ import dev.ahmedhamedi.minecraft_machines.content.training.api.ServoTelemetrySam
 import dev.ahmedhamedi.minecraft_machines.content.training.environment.StandingDisturbance;
 import dev.ryanhcode.sable.api.physics.mass.MassData;
 import dev.ryanhcode.sable.sublevel.ServerSubLevel;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Quaterniond;
@@ -16,6 +17,8 @@ import org.joml.Quaterniondc;
 import org.joml.Vector3d;
 import org.joml.Vector3dc;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 final class MinecraftMachinesDuopodControl {
@@ -138,6 +141,36 @@ final class MinecraftMachinesDuopodControl {
         return this.servoWorldPosition(this.rightServo());
     }
 
+    /**
+     * Returns the world centres of the six iron chassis blocks. Limb iron and honey
+     * blocks are deliberately excluded: they are the feet/legs and may touch ground.
+     */
+    List<Vec3> getChassisIronBlockPositions() {
+        final Vec3 basePosition = this.getBasePosition();
+        final Direction forward = this.duopod.modelForwardDirection();
+        final Direction back = forward.getOpposite();
+        final Direction right = forward.getClockWise();
+        final Direction left = right.getOpposite();
+        final Quaterniond spawnToCurrent = new Quaterniond(this.getBaseOrientation())
+                .mul(new Quaterniond(this.duopod.spawnOrientationView()).invert());
+        final List<Vector3d> spawnFrameOffsets = List.of(
+                new Vector3d(),
+                directionVector(left),
+                directionVector(right),
+                directionVector(back),
+                directionVector(back).add(directionVector(left)),
+                directionVector(back).add(directionVector(right)));
+        final List<Vec3> positions = new ArrayList<>(spawnFrameOffsets.size());
+        for (final Vector3d offset : spawnFrameOffsets) {
+            final Vector3d worldOffset = spawnToCurrent.transform(offset, new Vector3d());
+            positions.add(new Vec3(
+                    basePosition.x + worldOffset.x,
+                    basePosition.y + worldOffset.y,
+                    basePosition.z + worldOffset.z));
+        }
+        return List.copyOf(positions);
+    }
+
     Vec3 getAggregateCenterOfMassPosition() {
         final Vec3 fallback = this.getBasePosition();
         double weightedX = 0.0;
@@ -185,6 +218,10 @@ final class MinecraftMachinesDuopodControl {
                 && MinecraftMachinesDuopodSpawner.getServerSubLevel(this.level, this.duopod.rightChildSubLevelId()) != null
                 && this.leftServo() != null
                 && this.rightServo() != null;
+    }
+
+    private static Vector3d directionVector(final Direction direction) {
+        return new Vector3d(direction.getStepX(), direction.getStepY(), direction.getStepZ());
     }
 
     void commandNeutral() {

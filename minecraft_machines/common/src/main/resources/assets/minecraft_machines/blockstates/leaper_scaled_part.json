@@ -1,0 +1,1684 @@
+{
+  "variants": {
+    "part=0,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=0,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_alert"
+    },
+    "part=0,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_hunting"
+    },
+    "part=1,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_1_patrolling"
+    },
+    "part=1,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_1_alert"
+    },
+    "part=1,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_1_hunting"
+    },
+    "part=2": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_2_patrolling"
+    },
+    "part=3": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_3_patrolling"
+    },
+    "part=4,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_4_patrolling"
+    },
+    "part=4,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_4_alert"
+    },
+    "part=4,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_4_hunting"
+    },
+    "part=5": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_5_patrolling"
+    },
+    "part=6": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_6_patrolling"
+    },
+    "part=7": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_7_patrolling"
+    },
+    "part=8,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_8_patrolling"
+    },
+    "part=8,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_8_alert"
+    },
+    "part=8,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_8_hunting"
+    },
+    "part=9,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_9_patrolling"
+    },
+    "part=9,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_9_alert"
+    },
+    "part=9,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_9_hunting"
+    },
+    "part=10": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_10_patrolling"
+    },
+    "part=11": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_11_patrolling"
+    },
+    "part=12": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_12_patrolling"
+    },
+    "part=13": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_13_patrolling"
+    },
+    "part=14": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_14_patrolling"
+    },
+    "part=15,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_15_patrolling"
+    },
+    "part=15,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_15_alert"
+    },
+    "part=15,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_15_hunting"
+    },
+    "part=16,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_16_patrolling"
+    },
+    "part=16,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_16_alert"
+    },
+    "part=16,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_16_hunting"
+    },
+    "part=17": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_17_patrolling"
+    },
+    "part=18": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_18_patrolling"
+    },
+    "part=19": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_19_patrolling"
+    },
+    "part=20": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_20_patrolling"
+    },
+    "part=21": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_21_patrolling"
+    },
+    "part=22,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_22_patrolling"
+    },
+    "part=22,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_22_alert"
+    },
+    "part=22,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_22_hunting"
+    },
+    "part=23,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_23_patrolling"
+    },
+    "part=23,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_23_alert"
+    },
+    "part=23,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_23_hunting"
+    },
+    "part=24": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_24_patrolling"
+    },
+    "part=25": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_25_patrolling"
+    },
+    "part=26": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_26_patrolling"
+    },
+    "part=27": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_27_patrolling"
+    },
+    "part=28": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_28_patrolling"
+    },
+    "part=29,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_29_patrolling"
+    },
+    "part=29,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_29_alert"
+    },
+    "part=29,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_29_hunting"
+    },
+    "part=30,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_30_patrolling"
+    },
+    "part=30,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_30_alert"
+    },
+    "part=30,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_30_hunting"
+    },
+    "part=31": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_31_patrolling"
+    },
+    "part=32": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_32_patrolling"
+    },
+    "part=33,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_33_patrolling"
+    },
+    "part=33,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_33_alert"
+    },
+    "part=33,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_33_hunting"
+    },
+    "part=34": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_34_patrolling"
+    },
+    "part=35": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_35_patrolling"
+    },
+    "part=36": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_36_patrolling"
+    },
+    "part=37,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_37_patrolling"
+    },
+    "part=37,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_37_alert"
+    },
+    "part=37,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_37_hunting"
+    },
+    "part=38,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_38_patrolling"
+    },
+    "part=38,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_38_alert"
+    },
+    "part=38,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_38_hunting"
+    },
+    "part=39": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_39_patrolling"
+    },
+    "part=40": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_40_patrolling"
+    },
+    "part=41": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_41_patrolling"
+    },
+    "part=42": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_42_patrolling"
+    },
+    "part=43": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_43_patrolling"
+    },
+    "part=44": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_44_patrolling"
+    },
+    "part=45": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_45_patrolling"
+    },
+    "part=46": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_46_patrolling"
+    },
+    "part=47": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_47_patrolling"
+    },
+    "part=48": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_48_patrolling"
+    },
+    "part=49": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_49_patrolling"
+    },
+    "part=50": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_50_patrolling"
+    },
+    "part=51": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_51_patrolling"
+    },
+    "part=52": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_52_patrolling"
+    },
+    "part=53": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_53_patrolling"
+    },
+    "part=54": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_54_patrolling"
+    },
+    "part=55": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_55_patrolling"
+    },
+    "part=56": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_56_patrolling"
+    },
+    "part=57": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_57_patrolling"
+    },
+    "part=58": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_58_patrolling"
+    },
+    "part=59": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_59_patrolling"
+    },
+    "part=60": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_60_patrolling"
+    },
+    "part=61": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_61_patrolling"
+    },
+    "part=62": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_62_patrolling"
+    },
+    "part=63": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_63_patrolling"
+    },
+    "part=64": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_64_patrolling"
+    },
+    "part=65": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_65_patrolling"
+    },
+    "part=66": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_66_patrolling"
+    },
+    "part=67": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_67_patrolling"
+    },
+    "part=68": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_68_patrolling"
+    },
+    "part=69": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_69_patrolling"
+    },
+    "part=70": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_70_patrolling"
+    },
+    "part=71": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_71_patrolling"
+    },
+    "part=72": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_72_patrolling"
+    },
+    "part=73": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_73_patrolling"
+    },
+    "part=74": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_74_patrolling"
+    },
+    "part=75": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_75_patrolling"
+    },
+    "part=76": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_76_patrolling"
+    },
+    "part=77": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_77_patrolling"
+    },
+    "part=78": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_78_patrolling"
+    },
+    "part=79": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_79_patrolling"
+    },
+    "part=80": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_80_patrolling"
+    },
+    "part=81": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_81_patrolling"
+    },
+    "part=82": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_82_patrolling"
+    },
+    "part=83": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_83_patrolling"
+    },
+    "part=84": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_84_patrolling"
+    },
+    "part=85": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_85_patrolling"
+    },
+    "part=86": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_86_patrolling"
+    },
+    "part=87": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_87_patrolling"
+    },
+    "part=88": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_88_patrolling"
+    },
+    "part=89": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_89_patrolling"
+    },
+    "part=90": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_90_patrolling"
+    },
+    "part=91": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_91_patrolling"
+    },
+    "part=92": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_92_patrolling"
+    },
+    "part=93": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_93_patrolling"
+    },
+    "part=94": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_94_patrolling"
+    },
+    "part=95": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_95_patrolling"
+    },
+    "part=96": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_96_patrolling"
+    },
+    "part=97": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_97_patrolling"
+    },
+    "part=98": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_98_patrolling"
+    },
+    "part=99": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_99_patrolling"
+    },
+    "part=100": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_100_patrolling"
+    },
+    "part=101": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_101_patrolling"
+    },
+    "part=102": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_102_patrolling"
+    },
+    "part=103": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_103_patrolling"
+    },
+    "part=104": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_104_patrolling"
+    },
+    "part=105": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_105_patrolling"
+    },
+    "part=106": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_106_patrolling"
+    },
+    "part=107": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_107_patrolling"
+    },
+    "part=108": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_108_patrolling"
+    },
+    "part=109": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_109_patrolling"
+    },
+    "part=110": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_110_patrolling"
+    },
+    "part=111": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_111_patrolling"
+    },
+    "part=112": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_112_patrolling"
+    },
+    "part=113": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_113_patrolling"
+    },
+    "part=114": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_114_patrolling"
+    },
+    "part=115": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_115_patrolling"
+    },
+    "part=116": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_116_patrolling"
+    },
+    "part=117": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_117_patrolling"
+    },
+    "part=118": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_118_patrolling"
+    },
+    "part=119": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_119_patrolling"
+    },
+    "part=120": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_120_patrolling"
+    },
+    "part=121": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_121_patrolling"
+    },
+    "part=122": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_122_patrolling"
+    },
+    "part=123": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_123_patrolling"
+    },
+    "part=124": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_124_patrolling"
+    },
+    "part=125": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_125_patrolling"
+    },
+    "part=126": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_126_patrolling"
+    },
+    "part=127": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_127_patrolling"
+    },
+    "part=128": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_128_patrolling"
+    },
+    "part=129": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_129_patrolling"
+    },
+    "part=130": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_130_patrolling"
+    },
+    "part=131": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_131_patrolling"
+    },
+    "part=132": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_132_patrolling"
+    },
+    "part=133": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_133_patrolling"
+    },
+    "part=134": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_134_patrolling"
+    },
+    "part=135": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_135_patrolling"
+    },
+    "part=136": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_136_patrolling"
+    },
+    "part=137": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_137_patrolling"
+    },
+    "part=138": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_138_patrolling"
+    },
+    "part=139": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_139_patrolling"
+    },
+    "part=140": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_140_patrolling"
+    },
+    "part=141": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_141_patrolling"
+    },
+    "part=142": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_142_patrolling"
+    },
+    "part=143": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_143_patrolling"
+    },
+    "part=144": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_144_patrolling"
+    },
+    "part=145": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_145_patrolling"
+    },
+    "part=146": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_146_patrolling"
+    },
+    "part=147,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_147_patrolling"
+    },
+    "part=147,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_147_alert"
+    },
+    "part=147,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_147_hunting"
+    },
+    "part=148": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_148_patrolling"
+    },
+    "part=149": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_149_patrolling"
+    },
+    "part=150": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_150_patrolling"
+    },
+    "part=151": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_151_patrolling"
+    },
+    "part=152,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_152_patrolling"
+    },
+    "part=152,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_152_alert"
+    },
+    "part=152,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_152_hunting"
+    },
+    "part=153": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_153_patrolling"
+    },
+    "part=154": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_154_patrolling"
+    },
+    "part=155": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_155_patrolling"
+    },
+    "part=156": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_156_patrolling"
+    },
+    "part=157,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_157_patrolling"
+    },
+    "part=157,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_157_alert"
+    },
+    "part=157,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_157_hunting"
+    },
+    "part=158": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_158_patrolling"
+    },
+    "part=159": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_159_patrolling"
+    },
+    "part=160": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_160_patrolling"
+    },
+    "part=161": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_161_patrolling"
+    },
+    "part=162": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_162_patrolling"
+    },
+    "part=163": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_163_patrolling"
+    },
+    "part=164": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_164_patrolling"
+    },
+    "part=165": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_165_patrolling"
+    },
+    "part=166": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_166_patrolling"
+    },
+    "part=167": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_167_patrolling"
+    },
+    "part=168": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_168_patrolling"
+    },
+    "part=169": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_169_patrolling"
+    },
+    "part=170,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_170_patrolling"
+    },
+    "part=170,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_170_alert"
+    },
+    "part=170,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_170_hunting"
+    },
+    "part=171": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_171_patrolling"
+    },
+    "part=172": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_172_patrolling"
+    },
+    "part=173": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_173_patrolling"
+    },
+    "part=174": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_174_patrolling"
+    },
+    "part=175": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_175_patrolling"
+    },
+    "part=176": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_176_patrolling"
+    },
+    "part=177": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_177_patrolling"
+    },
+    "part=178": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_178_patrolling"
+    },
+    "part=179": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_179_patrolling"
+    },
+    "part=180,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_180_patrolling"
+    },
+    "part=180,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_180_alert"
+    },
+    "part=180,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_180_hunting"
+    },
+    "part=181": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_181_patrolling"
+    },
+    "part=182": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_182_patrolling"
+    },
+    "part=183": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_183_patrolling"
+    },
+    "part=184": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_184_patrolling"
+    },
+    "part=185,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_185_patrolling"
+    },
+    "part=185,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_185_alert"
+    },
+    "part=185,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_185_hunting"
+    },
+    "part=186": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_186_patrolling"
+    },
+    "part=187": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_187_patrolling"
+    },
+    "part=188": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_188_patrolling"
+    },
+    "part=189": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_189_patrolling"
+    },
+    "part=190": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_190_patrolling"
+    },
+    "part=191": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_191_patrolling"
+    },
+    "part=192": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_192_patrolling"
+    },
+    "part=193,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_193_patrolling"
+    },
+    "part=193,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_193_alert"
+    },
+    "part=193,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_193_hunting"
+    },
+    "part=194": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_194_patrolling"
+    },
+    "part=195": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_195_patrolling"
+    },
+    "part=196": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_196_patrolling"
+    },
+    "part=197": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_197_patrolling"
+    },
+    "part=198,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_198_patrolling"
+    },
+    "part=198,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_198_alert"
+    },
+    "part=198,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_198_hunting"
+    },
+    "part=199": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_199_patrolling"
+    },
+    "part=200": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_200_patrolling"
+    },
+    "part=201": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_201_patrolling"
+    },
+    "part=202": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_202_patrolling"
+    },
+    "part=203,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_203_patrolling"
+    },
+    "part=203,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_203_alert"
+    },
+    "part=203,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_203_hunting"
+    },
+    "part=204": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_204_patrolling"
+    },
+    "part=205": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_205_patrolling"
+    },
+    "part=206": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_206_patrolling"
+    },
+    "part=207": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_207_patrolling"
+    },
+    "part=208": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_208_patrolling"
+    },
+    "part=209": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_209_patrolling"
+    },
+    "part=210": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_210_patrolling"
+    },
+    "part=211": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_211_patrolling"
+    },
+    "part=212": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_212_patrolling"
+    },
+    "part=213": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_213_patrolling"
+    },
+    "part=214": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_214_patrolling"
+    },
+    "part=215": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_215_patrolling"
+    },
+    "part=216": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_216_patrolling"
+    },
+    "part=217": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_217_patrolling"
+    },
+    "part=218": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_218_patrolling"
+    },
+    "part=219": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_219_patrolling"
+    },
+    "part=220,eye_mode=patrolling": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_220_patrolling"
+    },
+    "part=220,eye_mode=alert": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_220_alert"
+    },
+    "part=220,eye_mode=hunting": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_220_hunting"
+    },
+    "part=221": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_221_patrolling"
+    },
+    "part=222": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_222_patrolling"
+    },
+    "part=223": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_223_patrolling"
+    },
+    "part=224": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_224_patrolling"
+    },
+    "part=225": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_225_patrolling"
+    },
+    "part=226": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_226_patrolling"
+    },
+    "part=227": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_227_patrolling"
+    },
+    "part=228": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_228_patrolling"
+    },
+    "part=229": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_229_patrolling"
+    },
+    "part=230": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_230_patrolling"
+    },
+    "part=231": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_231_patrolling"
+    },
+    "part=232": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_232_patrolling"
+    },
+    "part=233": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_233_patrolling"
+    },
+    "part=234": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_234_patrolling"
+    },
+    "part=235": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_235_patrolling"
+    },
+    "part=236": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_236_patrolling"
+    },
+    "part=237": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_237_patrolling"
+    },
+    "part=238": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_238_patrolling"
+    },
+    "part=239": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_239_patrolling"
+    },
+    "part=240": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_240_patrolling"
+    },
+    "part=241": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_241_patrolling"
+    },
+    "part=242": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_242_patrolling"
+    },
+    "part=243": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_243_patrolling"
+    },
+    "part=244": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_244_patrolling"
+    },
+    "part=245": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_245_patrolling"
+    },
+    "part=246": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_246_patrolling"
+    },
+    "part=247": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_247_patrolling"
+    },
+    "part=248": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_248_patrolling"
+    },
+    "part=249": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_249_patrolling"
+    },
+    "part=250": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_250_patrolling"
+    },
+    "part=251": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_251_patrolling"
+    },
+    "part=252": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_252_patrolling"
+    },
+    "part=253": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_253_patrolling"
+    },
+    "part=254": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_254_patrolling"
+    },
+    "part=255": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_255_patrolling"
+    },
+    "part=256": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_256_patrolling"
+    },
+    "part=257": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_257_patrolling"
+    },
+    "part=258": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_258_patrolling"
+    },
+    "part=259": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_259_patrolling"
+    },
+    "part=260": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_260_patrolling"
+    },
+    "part=261": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_261_patrolling"
+    },
+    "part=262": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_262_patrolling"
+    },
+    "part=263": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_263_patrolling"
+    },
+    "part=264": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_264_patrolling"
+    },
+    "part=265": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_265_patrolling"
+    },
+    "part=266": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_266_patrolling"
+    },
+    "part=267": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_267_patrolling"
+    },
+    "part=268": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_268_patrolling"
+    },
+    "part=269": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_269_patrolling"
+    },
+    "part=270": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_270_patrolling"
+    },
+    "part=271": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_271_patrolling"
+    },
+    "part=272": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_272_patrolling"
+    },
+    "part=273": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_273_patrolling"
+    },
+    "part=274": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_274_patrolling"
+    },
+    "part=275": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_275_patrolling"
+    },
+    "part=276": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_276_patrolling"
+    },
+    "part=277": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_277_patrolling"
+    },
+    "part=278": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_278_patrolling"
+    },
+    "part=279": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_279_patrolling"
+    },
+    "part=280": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_280_patrolling"
+    },
+    "part=281": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_281_patrolling"
+    },
+    "part=282": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_282_patrolling"
+    },
+    "part=283": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_283_patrolling"
+    },
+    "part=284": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_284_patrolling"
+    },
+    "part=285": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_285_patrolling"
+    },
+    "part=286": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_286_patrolling"
+    },
+    "part=287": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_287_patrolling"
+    },
+    "part=288": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_288_patrolling"
+    },
+    "part=289": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_289_patrolling"
+    },
+    "part=290": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_290_patrolling"
+    },
+    "part=291": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_291_patrolling"
+    },
+    "part=292": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_292_patrolling"
+    },
+    "part=293": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_293_patrolling"
+    },
+    "part=294": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_294_patrolling"
+    },
+    "part=295": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_295_patrolling"
+    },
+    "part=296": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_296_patrolling"
+    },
+    "part=297": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_297_patrolling"
+    },
+    "part=298": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_298_patrolling"
+    },
+    "part=299": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_299_patrolling"
+    },
+    "part=300": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_300_patrolling"
+    },
+    "part=301": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_301_patrolling"
+    },
+    "part=302": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_302_patrolling"
+    },
+    "part=303": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_303_patrolling"
+    },
+    "part=304": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_304_patrolling"
+    },
+    "part=305": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_305_patrolling"
+    },
+    "part=306": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_306_patrolling"
+    },
+    "part=307": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_307_patrolling"
+    },
+    "part=308": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_308_patrolling"
+    },
+    "part=309": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_309_patrolling"
+    },
+    "part=310": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_310_patrolling"
+    },
+    "part=311": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_311_patrolling"
+    },
+    "part=312": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_312_patrolling"
+    },
+    "part=313": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_313_patrolling"
+    },
+    "part=314": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_314_patrolling"
+    },
+    "part=315": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_315_patrolling"
+    },
+    "part=316": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_316_patrolling"
+    },
+    "part=317": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_317_patrolling"
+    },
+    "part=318": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_318_patrolling"
+    },
+    "part=319": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_319_patrolling"
+    },
+    "part=320": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_320_patrolling"
+    },
+    "part=321": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_321_patrolling"
+    },
+    "part=322": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_322_patrolling"
+    },
+    "part=323": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_323_patrolling"
+    },
+    "part=324": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_324_patrolling"
+    },
+    "part=325": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_325_patrolling"
+    },
+    "part=326": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_326_patrolling"
+    },
+    "part=327": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_327_patrolling"
+    },
+    "part=328": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_328_patrolling"
+    },
+    "part=329": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_329_patrolling"
+    },
+    "part=330": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_330_patrolling"
+    },
+    "part=331": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_331_patrolling"
+    },
+    "part=332": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_332_patrolling"
+    },
+    "part=333": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_333_patrolling"
+    },
+    "part=334": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_334_patrolling"
+    },
+    "part=335": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_335_patrolling"
+    },
+    "part=336": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_336_patrolling"
+    },
+    "part=337": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_337_patrolling"
+    },
+    "part=338": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_338_patrolling"
+    },
+    "part=339": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_339_patrolling"
+    },
+    "part=340": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_340_patrolling"
+    },
+    "part=341": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_341_patrolling"
+    },
+    "part=342": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_342_patrolling"
+    },
+    "part=343": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_343_patrolling"
+    },
+    "part=344": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_344_patrolling"
+    },
+    "part=345": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_345_patrolling"
+    },
+    "part=346": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_346_patrolling"
+    },
+    "part=347": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_347_patrolling"
+    },
+    "part=348": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_348_patrolling"
+    },
+    "part=349": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_349_patrolling"
+    },
+    "part=350": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_350_patrolling"
+    },
+    "part=351": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_351_patrolling"
+    },
+    "part=352": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_352_patrolling"
+    },
+    "part=353": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_353_patrolling"
+    },
+    "part=354": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_354_patrolling"
+    },
+    "part=355": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_355_patrolling"
+    },
+    "part=356": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_356_patrolling"
+    },
+    "part=357": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_357_patrolling"
+    },
+    "part=358": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_358_patrolling"
+    },
+    "part=359": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_359_patrolling"
+    },
+    "part=360": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_360_patrolling"
+    },
+    "part=361": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_361_patrolling"
+    },
+    "part=362": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_362_patrolling"
+    },
+    "part=363": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_363_patrolling"
+    },
+    "part=364": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_364_patrolling"
+    },
+    "part=365": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_365_patrolling"
+    },
+    "part=366": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_366_patrolling"
+    },
+    "part=367": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_367_patrolling"
+    },
+    "part=368": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_368_patrolling"
+    },
+    "part=369": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_369_patrolling"
+    },
+    "part=370": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_370_patrolling"
+    },
+    "part=371": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_371_patrolling"
+    },
+    "part=372": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_372_patrolling"
+    },
+    "part=373": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_373_patrolling"
+    },
+    "part=374": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_374_patrolling"
+    },
+    "part=375": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_375_patrolling"
+    },
+    "part=376": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_376_patrolling"
+    },
+    "part=377": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_377_patrolling"
+    },
+    "part=378": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_378_patrolling"
+    },
+    "part=379": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_379_patrolling"
+    },
+    "part=380": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_380_patrolling"
+    },
+    "part=381": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_381_patrolling"
+    },
+    "part=382": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_382_patrolling"
+    },
+    "part=383": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_383_patrolling"
+    },
+    "part=384": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_384_patrolling"
+    },
+    "part=385": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_385_patrolling"
+    },
+    "part=386": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_386_patrolling"
+    },
+    "part=387": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=388": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=389": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=390": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=391": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=392": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=393": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=394": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=395": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=396": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=397": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=398": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=399": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=400": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=401": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=402": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=403": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=404": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=405": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=406": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=407": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=408": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=409": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=410": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=411": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=412": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=413": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=414": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=415": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=416": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=417": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=418": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=419": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=420": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=421": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=422": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=423": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=424": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=425": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=426": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=427": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=428": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=429": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=430": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=431": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=432": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=433": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=434": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=435": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=436": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=437": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=438": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=439": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=440": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=441": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=442": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=443": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=444": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=445": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=446": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=447": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=448": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=449": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=450": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=451": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=452": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=453": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=454": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=455": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=456": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=457": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=458": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=459": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=460": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=461": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=462": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=463": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=464": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=465": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=466": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=467": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=468": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=469": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=470": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=471": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=472": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=473": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=474": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=475": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=476": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=477": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=478": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=479": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=480": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=481": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=482": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=483": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=484": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=485": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=486": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=487": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=488": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=489": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=490": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=491": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=492": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=493": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=494": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=495": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=496": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=497": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=498": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=499": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=500": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=501": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=502": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=503": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=504": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=505": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=506": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=507": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=508": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=509": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=510": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    },
+    "part=511": {
+      "model": "minecraft_machines:block/leaper_scaled/cell_0_patrolling"
+    }
+  }
+}

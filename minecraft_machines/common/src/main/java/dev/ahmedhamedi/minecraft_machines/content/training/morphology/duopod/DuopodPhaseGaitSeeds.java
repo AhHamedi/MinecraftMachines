@@ -10,6 +10,11 @@ public final class DuopodPhaseGaitSeeds {
 
     private static final double[][] STABLE_BASIN_PROBES = {
             // center, center delta, amplitude, amplitude delta, right phase, common phase, speed gain
+            // Symmetric high-authority support poses let the fresh population test whether the
+            // current rig needs to stand with its feet behind or ahead of its centre of mass.
+            // The stronger fall penalty then selects the surviving direction without hard-coding it.
+            {0.80, 0.00, -0.85, 0.00, 1.50, -0.10, 0.15},
+            {-0.80, 0.00, -0.85, 0.00, -1.50, 0.10, 0.15},
             {0.00, 0.00, -0.55, 0.00, 1.50, -0.20, 0.25},
             {0.00, 0.00, -0.55, 0.00, -1.50, 0.20, 0.25},
             {0.20, 0.00, -0.35, 0.10, 1.35, 0.15, 0.35},

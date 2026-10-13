@@ -51,16 +51,21 @@ subprojects {
             url = "https://maven.ryanhcode.dev/snapshots"
         }
 
-        maven {
-            url = "https://maven.ryanhcode.dev/private"
+        def privateMavenUser = System.getenv('local_maven_user') ?: project.findProperty('ryanhcodeMavenUser')
+        def privateMavenToken = System.getenv('local_maven_token') ?: project.findProperty('ryanhcodeMavenToken')
+        // Public clones resolve published dependencies without an unauthorized private lookup.
+        if (privateMavenUser && privateMavenToken) {
+            maven {
+                url = "https://maven.ryanhcode.dev/private"
 
-            authentication {
-                basic(BasicAuthentication)
-            }
+                authentication {
+                    basic(BasicAuthentication)
+                }
 
-            credentials {
-                username = System.getenv('local_maven_user') ?: project.findProperty('ryanhcodeMavenUser') ?: ''
-                password = System.getenv('local_maven_token') ?: project.findProperty('ryanhcodeMavenToken') ?: ''
+                credentials {
+                    username = privateMavenUser
+                    password = privateMavenToken
+                }
             }
         }
 

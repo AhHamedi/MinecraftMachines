@@ -8,9 +8,17 @@ evaluationDependsOn(':aeronautics:neoforge')
 
 def generatedResources = project(":minecraft_machines:common").file("src/generated/resources")
 def commonResources = project(":minecraft_machines:common").file("src/main/resources")
-def minecraftRunHeapInitial = '16G'
-def minecraftRunHeapMax = '24G'
-def minecraftRunDirectMemory = '8G'
+def minecraftRunHeapInitial = providers.gradleProperty('minecraftRunHeapInitial').getOrElse('1G')
+def minecraftRunHeapMax = providers.gradleProperty('minecraftRunHeapMax').getOrElse('4G')
+def minecraftRunDirectMemory = providers.gradleProperty('minecraftRunDirectMemory').getOrElse('2G')
+def quickPlayWorld = providers.gradleProperty('quickPlayWorld')
+def leaperScratch = providers.gradleProperty('leaperScratch').getOrElse('false') == 'true'
+def leaperNatural = providers.gradleProperty('leaperNatural').getOrElse('false') == 'true'
+def leaperDigest = java.security.MessageDigest.getInstance('SHA-256')
+def leaperSources = (fileTree('src/main/java') { include '**/MinecraftMachinesLeaper*.java'; include '**/MinecraftMachinesQuadrupedChunkLease.java' }.files
+        + project(':minecraft_machines:common').fileTree('src/main/java') { include '**/Leaper*.java' }.files).sort { rootProject.relativePath(it) }
+leaperSources.each { leaperDigest.update((rootProject.relativePath(it) + '\n').getBytes('UTF-8')); leaperDigest.update(it.bytes) }
+def leaperImplementation = java.util.HexFormat.of().formatHex(leaperDigest.digest())
 
 neoForge {
     version = neoforge_version
@@ -27,7 +35,23 @@ neoForge {
 
     runs {
         configureEach {
-            systemProperty('neoforge.enabledGameTestNamespaces', mod_id)
+            systemProperty('neoforge.enabledGameTestNamespaces', providers.gradleProperty('gameTestNamespaces').getOrElse(mod_id))
+            systemProperty('minecraft_machines.quadrupedTrain', providers.gradleProperty('quadrupedTrain').getOrElse('false'))
+            systemProperty('minecraft_machines.leaperGrip', providers.gradleProperty('leaperGrip').getOrElse('true'))
+            systemProperty('minecraft_machines.leaperBalance', providers.gradleProperty('leaperBalance').getOrElse('1'))
+            systemProperty('minecraft_machines.leaperSubsteps', providers.gradleProperty('leaperSubsteps').getOrElse('4'))
+            systemProperty('minecraft_machines.leaperTelemetry', providers.gradleProperty('leaperTelemetry').getOrElse('false'))
+            systemProperty('minecraft_machines.leaperLeap', providers.gradleProperty('leaperLeap').getOrElse('false'))
+            systemProperty('minecraft_machines.leaperClimbAssist', providers.gradleProperty('leaperClimbAssist').getOrElse('true'))
+            systemProperty('minecraft_machines.leaperAgile', providers.gradleProperty('leaperAgile').getOrElse('false'))
+            systemProperty('minecraft_machines.leaperApex', 'true')
+            systemProperty('minecraft_machines.leaperImplementationSha256', leaperImplementation)
+            systemProperty('minecraft_machines.leaperMode', providers.gradleProperty('leaperMode').getOrElse('packaged'))
+            systemProperty('minecraft_machines.leaperHighStepCandidate', providers.gradleProperty('leaperHighStepCandidate').getOrElse('false'))
+            systemProperty('minecraft_machines.leaperPopulation', providers.gradleProperty('leaperPopulation').getOrElse('8'))
+            systemProperty('minecraft_machines.leaperProfile', providers.gradleProperty('leaperProfile').getOrElse('careful'))
+            systemProperty('minecraft_machines.leaperGenerations', providers.gradleProperty('leaperGenerations').getOrElse('6'))
+            systemProperty('minecraft_machines.quadrupedNavigation', providers.gradleProperty('quadrupedNavigation').getOrElse('packaged'))
             jvmArgument "-Xms${minecraftRunHeapInitial}"
             jvmArgument "-Xmx${minecraftRunHeapMax}"
             jvmArgument "-XX:MaxDirectMemorySize=${minecraftRunDirectMemory}"
@@ -37,6 +61,12 @@ neoForge {
         client {
             client()
             gameDirectory = project.file('runs/client')
+            if (System.getProperty('os.name').toLowerCase(java.util.Locale.ROOT).contains('mac')) {
+                jvmArgument '-Xdock:name=Minecraft Machines'
+            }
+            if (quickPlayWorld.isPresent()) {
+                programArguments.addAll '--quickPlaySingleplayer', quickPlayWorld.get()
+            }
         }
 
         clientAuth {
@@ -53,7 +83,8 @@ neoForge {
 
         gameTest {
             type = "gameTestServer"
-            gameDirectory = project.file('build/gametest')
+            gameDirectory = leaperNatural ? project.file('build/leaper-natural-gametest') : leaperScratch ? project.file('build/leaper-scratch-gametest') : providers.gradleProperty('gameTestNamespaces').getOrElse(mod_id).startsWith('minecraft_machines_quadruped')
+                    ? project.file('build/quadruped-gametest') : project.file('build/gametest')
         }
 
         data {
@@ -84,4 +115,20 @@ neoForge {
 
 sourceSets.main.resources {
     srcDir generatedResources.absolutePath
+}
+
+// Physics fixtures must not inherit colliders or sublevels from an interrupted experiment.
+// Only the disposable quadruped test world is rebuilt; reports and player worlds are retained.
+tasks.named('runGameTest').configure {
+    doFirst {
+        if (providers.gradleProperty('gameTestNamespaces').getOrElse(mod_id).startsWith('minecraft_machines_quadruped')) {
+            def disposable = project.file(leaperNatural ? 'build/leaper-natural-gametest/world' : leaperScratch ? 'build/leaper-scratch-gametest/world' : 'build/quadruped-gametest/world')
+            delete disposable
+            if (leaperNatural && providers.gradleProperty('leaperMode').getOrElse('packaged') in ['predator-wilderness', 'predator-natural-tour', 'predator-survey']) {
+                def fixture = rootProject.file('artifacts/leaper-predator/natural-world-fixture/region')
+                if (!fixture.isDirectory()) throw new GradleException('Missing recorded natural-world fixture')
+                copy { from fixture; into new File(disposable, 'region') }
+            }
+        }
+    }
 }

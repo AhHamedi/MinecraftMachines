@@ -1,0 +1,20 @@
+{
+  "leaper_charge": {
+    "subtitle": "subtitles.minecraft_machines.leaper_charge",
+    "sounds": [
+      {
+        "name": "minecraft_machines:leaper/charge",
+        "attenuation_distance": 48
+      }
+    ]
+  },
+  "leaper_blast": {
+    "subtitle": "subtitles.minecraft_machines.leaper_blast",
+    "sounds": [
+      {
+        "name": "minecraft_machines:leaper/blast",
+        "attenuation_distance": 48
+      }
+    ]
+  }
+}

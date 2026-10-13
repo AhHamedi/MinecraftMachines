@@ -9,5 +9,7 @@
 *.jar binary
 *.jpg binary
 *.mov binary
+*.mp4 binary
 *.nbt binary
+*.ogg binary
 *.png binary

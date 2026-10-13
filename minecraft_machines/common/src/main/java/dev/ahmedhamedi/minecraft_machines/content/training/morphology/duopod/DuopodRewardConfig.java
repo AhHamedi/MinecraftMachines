@@ -26,7 +26,7 @@ public record DuopodRewardConfig(
             0.01,
             0.01,
             25.0,
-            15.0,
+            40.0,
             0.35,
             0.60,
             0.75,

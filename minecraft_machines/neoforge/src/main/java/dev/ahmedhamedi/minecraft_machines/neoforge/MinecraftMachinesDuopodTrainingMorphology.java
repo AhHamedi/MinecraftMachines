@@ -44,6 +44,10 @@ final class MinecraftMachinesDuopodTrainingMorphology implements TrainableMorpho
     private static final double HONEY_TIP_HALF_EXTENT_BLOCKS = 0.5;
     private static final double SERVO_HALF_EXTENT_BLOCKS = 0.5;
     private static final double SWIVEL_BEARING_CONTACT_CLEARANCE_BLOCKS = 0.08;
+    private static final double NON_LEG_IRON_FLOOR_CONTACT_CLEARANCE_BLOCKS = 0.08;
+    private static final double WALK_FORWARD_MINIMUM_NON_FOOT_CLEARANCE_BLOCKS = 0.30;
+    private static final double WALK_FORWARD_MINIMUM_BODY_UP_DOT = 0.75;
+    private static final double WALK_FORWARD_MAXIMUM_CENTER_OF_MASS_DROP_BLOCKS = 0.45;
     private static final int HONEY_GROUND_SEARCH_BLOCKS = 6;
     private static final int SPAWN_SEARCH_RADIUS_BLOCKS = 16;
     private static final int TRAINING_SPAWN_LIFT_BLOCKS = 0;
@@ -56,6 +60,7 @@ final class MinecraftMachinesDuopodTrainingMorphology implements TrainableMorpho
     private final UUID batchId;
     private final int spacingBlocks;
     private final boolean isolatedWalkForwardLaneGroups;
+    private final boolean planarConstrained;
     private final DuopodRewardCalculator rewardCalculator;
     private final DuopodStandingBalanceConfig standingConfig;
 
@@ -66,7 +71,7 @@ final class MinecraftMachinesDuopodTrainingMorphology implements TrainableMorpho
             final UUID batchId,
             final int spacingBlocks
     ) {
-        this(level, origin, forwardDirection, batchId, spacingBlocks, false);
+        this(level, origin, forwardDirection, batchId, spacingBlocks, false, false);
     }
 
     MinecraftMachinesDuopodTrainingMorphology(
@@ -76,6 +81,25 @@ final class MinecraftMachinesDuopodTrainingMorphology implements TrainableMorpho
             final UUID batchId,
             final int spacingBlocks,
             final boolean isolatedWalkForwardLaneGroups
+    ) {
+        this(
+                level,
+                origin,
+                forwardDirection,
+                batchId,
+                spacingBlocks,
+                isolatedWalkForwardLaneGroups,
+                isolatedWalkForwardLaneGroups);
+    }
+
+    MinecraftMachinesDuopodTrainingMorphology(
+            final ServerLevel level,
+            final BlockPos origin,
+            final Direction forwardDirection,
+            final UUID batchId,
+            final int spacingBlocks,
+            final boolean isolatedWalkForwardLaneGroups,
+            final boolean planarConstrained
     ) {
         if (forwardDirection.getAxis().isVertical()) {
             throw new IllegalArgumentException("Duopod forward direction must be horizontal");
@@ -90,6 +114,7 @@ final class MinecraftMachinesDuopodTrainingMorphology implements TrainableMorpho
         this.batchId = Objects.requireNonNull(batchId, "batchId");
         this.spacingBlocks = spacingBlocks;
         this.isolatedWalkForwardLaneGroups = isolatedWalkForwardLaneGroups;
+        this.planarConstrained = planarConstrained;
         this.rewardCalculator = new DuopodRewardCalculator(DuopodRewardConfig.DEFAULT);
         this.standingConfig = DuopodRewardCalculator.STANDING;
     }
@@ -116,7 +141,7 @@ final class MinecraftMachinesDuopodTrainingMorphology implements TrainableMorpho
                 requestedRightOffsetForSlot(
                         context.slotIndex(),
                         this.spacingBlocks,
-                        this.isolatedWalkForwardLaneGroups));
+                        this.isolatedWalkForwardLaneGroups || this.planarConstrained));
         final BlockPos center = MinecraftMachinesDuopodSpawner.findDuopodSpawnNear(
                 this.level,
                 requested,
@@ -142,21 +167,39 @@ final class MinecraftMachinesDuopodTrainingMorphology implements TrainableMorpho
         if (!result.success() || result.duopod() == null) {
             throw new IllegalStateException("Failed to spawn Duopod slot " + context.slotIndex() + ": " + result.message());
         }
-        return new MinecraftMachinesLiveDuopod(
+        final MinecraftMachinesLiveDuopod machine = new MinecraftMachinesLiveDuopod(
                 context.slotIndex(),
                 this.batchId,
                 new MinecraftMachinesDuopodControl(this.level, result.duopod()));
+        if (this.planarConstrained) {
+            try {
+                final MinecraftMachinesDuopodPlanarConstraint.MotionMode motionMode =
+                        DuopodTrainingScenarios.isBalanceCurriculumStage(context.curriculumStage().id())
+                                ? MinecraftMachinesDuopodPlanarConstraint.MotionMode.VERTICAL_PITCH_ONLY
+                                : MinecraftMachinesDuopodPlanarConstraint.MotionMode.PLANAR_FORWARD_UP;
+                machine.attachPlanarConstraint(MinecraftMachinesDuopodPlanarConstraint.attach(
+                        this.level,
+                        result.duopod(),
+                        motionMode));
+            } catch (final RuntimeException e) {
+                machine.control().destroy();
+                throw new IllegalStateException(
+                        "Failed to lock Duopod slot " + context.slotIndex() + " to its 2D plane: " + e.getMessage(),
+                        e);
+            }
+        }
+        return machine;
     }
 
     static int requestedRightOffsetForSlot(
             final int slot,
             final int spacingBlocks,
-            final boolean isolatedWalkForwardLaneGroups
+            final boolean coincidentSlots
     ) {
         if (slot < 0 || spacingBlocks < 0) {
             throw new IllegalArgumentException("slot and spacing must be non-negative");
         }
-        return isolatedWalkForwardLaneGroups
+        return coincidentSlots
                 ? MinecraftMachinesDuopodFlatArena.rightOffsetForSlot(slot, spacingBlocks)
                 : Math.multiplyExact(slot, spacingBlocks);
     }
@@ -215,6 +258,7 @@ final class MinecraftMachinesDuopodTrainingMorphology implements TrainableMorpho
         final boolean heldTaskFailure = this.taskFailureCondition(machine, episode, runtime)
                 && runtime.fallFailureControlSteps() >= this.taskFailureHoldControlSteps(episode);
         final boolean failure = !machine.control().isValid()
+                || !machine.isPlanarConstraintValid()
                 || this.fellTooFar(machine)
                 || heldTaskFailure;
         final double currentDistance = this.distanceToTarget(machine, episode, runtime);
@@ -297,6 +341,9 @@ final class MinecraftMachinesDuopodTrainingMorphology implements TrainableMorpho
         if (!machine.control().isValid()) {
             return MachineHealth.failure(TerminationReason.MACHINE_FAILURE, "Duopod control object is no longer valid");
         }
+        if (!machine.isPlanarConstraintValid()) {
+            return MachineHealth.failure(TerminationReason.MACHINE_FAILURE, "Duopod 2D physics constraint is no longer valid");
+        }
         if (this.fellTooFar(machine)) {
             return MachineHealth.failure(TerminationReason.MACHINE_FAILURE, "Duopod fell below its spawn height");
         }
@@ -323,15 +370,12 @@ final class MinecraftMachinesDuopodTrainingMorphology implements TrainableMorpho
         if (episode.taskMode() == EnvironmentTaskMode.BALANCE || !machine.control().isValid()) {
             return false;
         }
-        final double bodyUp = this.motionSnapshot(machine).bodyUpDotWorldUp();
-        final double centerOfMassDrop = machine.standingCenterOfMassReference().y
-                - machine.control().getAggregateCenterOfMassPosition().y;
-        return bodyUp < 0.25 && centerOfMassDrop > 0.50;
+        return this.walkForwardCollapseReason(machine) != null;
     }
 
     @Override
     public int taskFailureHoldControlSteps(final EpisodeDefinition episode) {
-        return episode.taskMode() == EnvironmentTaskMode.BALANCE ? 1 : 3;
+        return 1;
     }
 
     @Override
@@ -340,7 +384,8 @@ final class MinecraftMachinesDuopodTrainingMorphology implements TrainableMorpho
             final EpisodeDefinition episode,
             final EpisodeRuntime runtime
     ) {
-        return "Duopod remained tipped with a collapsed center of mass";
+        final String reason = this.walkForwardCollapseReason(machine);
+        return reason == null ? "Duopod left its valid standing posture" : reason;
     }
 
     @Override
@@ -507,6 +552,7 @@ final class MinecraftMachinesDuopodTrainingMorphology implements TrainableMorpho
         final double rightHoneyGroundClearance = this.honeyGroundClearance(rightHoneyTipPosition);
         final double leftServoGroundClearance = this.servoGroundClearance(leftServoPosition);
         final double rightServoGroundClearance = this.servoGroundClearance(rightServoPosition);
+        final double chassisMinimumGroundClearance = this.chassisMinimumGroundClearance(machine);
         final double leftLoad = finiteOrZero(machine.control().getLeftLoad());
         final double rightLoad = finiteOrZero(machine.control().getRightLoad());
         final double leftActualAngleDegrees = finiteOrZero(machine.control().getLeftActualAngleDegrees());
@@ -523,6 +569,10 @@ final class MinecraftMachinesDuopodTrainingMorphology implements TrainableMorpho
         final Vector3dc bodyRight = axes.right();
         final Map<String, Object> info = new LinkedHashMap<>();
         info.put("machine_id", machine.control().duopod().machineId().toString());
+        info.put("degrees_of_freedom_mode", machine.constrainedMotionModeId());
+        info.put("planar_body_constraint_count", machine.planarBodyConstraintCount());
+        info.put("valid_planar_body_constraint_count", machine.validPlanarBodyConstraintCount());
+        info.put("planar_constraint_valid", machine.isPlanarConstraintValid());
         info.put("diagnostic_task_mode", episode.taskMode().name());
         info.put("base_position_x", finiteOrZero(basePosition.x));
         info.put("base_position_y", finiteOrZero(basePosition.y));
@@ -576,6 +626,8 @@ final class MinecraftMachinesDuopodTrainingMorphology implements TrainableMorpho
         info.put("right_servo_ground_clearance_blocks", rightServoGroundClearance);
         info.put("left_swivel_bearing_floor_contact", leftServoGroundClearance <= SWIVEL_BEARING_CONTACT_CLEARANCE_BLOCKS);
         info.put("right_swivel_bearing_floor_contact", rightServoGroundClearance <= SWIVEL_BEARING_CONTACT_CLEARANCE_BLOCKS);
+        info.put("non_leg_iron_minimum_ground_clearance_blocks", chassisMinimumGroundClearance);
+        info.put("non_leg_iron_floor_contact", chassisMinimumGroundClearance <= NON_LEG_IRON_FLOOR_CONTACT_CLEARANCE_BLOCKS);
         info.put("left_honey_horizontal_distance_from_base_blocks", leftHoneyDistanceFromBase);
         info.put("right_honey_horizontal_distance_from_base_blocks", rightHoneyDistanceFromBase);
         info.put("mean_honey_horizontal_distance_from_base_blocks", (leftHoneyDistanceFromBase + rightHoneyDistanceFromBase) * 0.5);
@@ -691,6 +743,7 @@ final class MinecraftMachinesDuopodTrainingMorphology implements TrainableMorpho
     @Override
     public void destroy(final MinecraftMachinesLiveDuopod machine) {
         if (machine != null && machine.control() != null) {
+            machine.closePlanarConstraint();
             machine.control().commandNeutral();
             machine.control().destroy();
         }
@@ -942,6 +995,43 @@ final class MinecraftMachinesDuopodTrainingMorphology implements TrainableMorpho
 
     private double servoGroundClearance(final Vec3 servoPosition) {
         return this.blockGroundClearance(servoPosition, SERVO_HALF_EXTENT_BLOCKS);
+    }
+
+    private String walkForwardCollapseReason(final MinecraftMachinesLiveDuopod machine) {
+        final double chassisClearance = this.chassisMinimumGroundClearance(machine);
+        if (chassisClearance <= NON_LEG_IRON_FLOOR_CONTACT_CLEARANCE_BLOCKS) {
+            return "A non-leg Duopod iron chassis block touched the floor";
+        }
+        if (chassisClearance < WALK_FORWARD_MINIMUM_NON_FOOT_CLEARANCE_BLOCKS) {
+            return "Duopod chassis entered the near-floor collapse zone";
+        }
+        final double leftServoClearance = this.servoGroundClearance(machine.control().getLeftServoPosition());
+        final double rightServoClearance = this.servoGroundClearance(machine.control().getRightServoPosition());
+        if (Math.min(leftServoClearance, rightServoClearance) <= SWIVEL_BEARING_CONTACT_CLEARANCE_BLOCKS) {
+            return "A non-foot Duopod swivel bearing touched the floor";
+        }
+        if (Math.min(leftServoClearance, rightServoClearance) < WALK_FORWARD_MINIMUM_NON_FOOT_CLEARANCE_BLOCKS) {
+            return "A non-foot Duopod swivel bearing entered the near-floor collapse zone";
+        }
+        final MotionSnapshot snapshot = this.motionSnapshot(machine);
+        if (snapshot.bodyUpDotWorldUp() < WALK_FORWARD_MINIMUM_BODY_UP_DOT) {
+            return "Duopod chassis tilted outside the valid standing envelope";
+        }
+        final double centerOfMassDrop = this.centerOfMassBalanceMetrics(
+                machine,
+                machine.control().getAggregateCenterOfMassPosition()).heightDeltaBlocks();
+        if (centerOfMassDrop < -WALK_FORWARD_MAXIMUM_CENTER_OF_MASS_DROP_BLOCKS) {
+            return "Duopod centre of mass collapsed below standing height";
+        }
+        return null;
+    }
+
+    private double chassisMinimumGroundClearance(final MinecraftMachinesLiveDuopod machine) {
+        double minimum = Double.POSITIVE_INFINITY;
+        for (final Vec3 chassisBlockCenter : machine.control().getChassisIronBlockPositions()) {
+            minimum = Math.min(minimum, this.blockGroundClearance(chassisBlockCenter, HONEY_TIP_HALF_EXTENT_BLOCKS));
+        }
+        return Double.isFinite(minimum) ? minimum : HONEY_GROUND_SEARCH_BLOCKS;
     }
 
     private double blockGroundClearance(final Vec3 blockCenter, final double halfExtentBlocks) {

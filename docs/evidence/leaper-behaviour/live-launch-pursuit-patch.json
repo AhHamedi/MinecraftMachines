@@ -1,0 +1,24 @@
+{
+  "time": "2026-09-15T15:20:19.247822Z",
+  "original_implementation": "0164ede8533d9df7cff5bb4a805865e14c96617addcb526d61a802ec233e13b3",
+  "returning_home_before": true,
+  "behaviour_tick_before": 15225,
+  "attack_age_before": -1,
+  "position_before": [
+    -240.61388612036234,
+    68.91151630950715,
+    94.75567380216737
+  ],
+  "patched_classes": {
+    "dev.ahmedhamedi.minecraft_machines.content.leaper.LeaperBehaviour": "71ac226ec78c31dedf2716ebf652c36d7de38a7f75a303693327a8025f971e61",
+    "dev.ahmedhamedi.minecraft_machines.neoforge.MinecraftMachinesLeaperBehaviour": "95d72cc79b344370ee524d6e897e39e50f1deaad86d8fd9fd68affe4b5ad484e",
+    "dev.ahmedhamedi.minecraft_machines.neoforge.MinecraftMachinesLeaperPredatorNavigator": "81be4c13689025cdbd3450f56ad2de8e4d38123471222bf7e07da9db491cd951",
+    "dev.ahmedhamedi.minecraft_machines.neoforge.MinecraftMachinesLeaperPursuitSight": "75fad4b71ebfd1426a48e29f006b75ec2aed6dea8f355ecaafbd51341b422a3c",
+    "dev.ahmedhamedi.minecraft_machines.neoforge.MinecraftMachinesLeaperPursuitGround": "9e0a7acd44af5c1f582512a49577f71302474e458a57002dc7366819538e3fcc"
+  },
+  "attack_age_after": -1,
+  "patrol_home": "Point[x\u003d-93.97520430474756, y\u003d65.0, z\u003d102.18163172025245]",
+  "paused": false,
+  "patched": true,
+  "preserved_live_instances": true
+}

@@ -20,8 +20,10 @@ import dev.ahmedhamedi.minecraft_machines.content.training.cem.LinearTanhPolicy;
 import dev.ahmedhamedi.minecraft_machines.content.training.cem.ScoredGenome;
 import dev.ahmedhamedi.minecraft_machines.content.training.environment.EnvironmentBatchReset;
 import dev.ahmedhamedi.minecraft_machines.content.training.environment.EnvironmentBatchStep;
+import dev.ahmedhamedi.minecraft_machines.content.training.environment.CurriculumStage;
 import dev.ahmedhamedi.minecraft_machines.content.training.environment.LocomotionVectorEnvironment;
 import dev.ahmedhamedi.minecraft_machines.content.training.environment.TrainingMachineCollisionRegistry;
+import dev.ahmedhamedi.minecraft_machines.content.training.environment.TrainingSpawnContext;
 import dev.ahmedhamedi.minecraft_machines.content.training.morphology.duopod.DuopodEvaluationManifest;
 import dev.ahmedhamedi.minecraft_machines.content.training.morphology.duopod.DuopodEvaluationScenario;
 import dev.ahmedhamedi.minecraft_machines.content.training.morphology.duopod.DuopodInstance;
@@ -341,7 +343,7 @@ public class MinecraftMachinesDuopodGameTests {
 
     private static JsonObject benchmarkPublicationFixturePayload() {
         final JsonObject payload = new JsonObject();
-        payload.addProperty("format", "minecraft_machines_duopod_walk_forward_benchmark_v3");
+        payload.addProperty("format", "minecraft_machines_duopod_walk_forward_benchmark_v15_strict_supported_stance");
         payload.addProperty("format_version", 3);
         final JsonObject protocol = new JsonObject();
         protocol.addProperty("acceptance_rule", "post_warmup_stability_adjusted_anti_ballistic_v2");
@@ -358,7 +360,7 @@ public class MinecraftMachinesDuopodGameTests {
         policy.addProperty("checkpoint_run_id", UUID.nameUUIDFromBytes(
                 "benchmark-publication-fixture".getBytes(StandardCharsets.UTF_8)).toString());
         policy.addProperty("checkpoint_generation", 1);
-        policy.addProperty("checkpoint_fitness_contract", "minecraft_machines:duopod_cem_fitness_v6");
+        policy.addProperty("checkpoint_fitness_contract", "minecraft_machines:duopod_cem_fitness_v19_vertical_balance_lock");
         payload.add("policy", policy);
         return payload;
     }
@@ -446,8 +448,8 @@ public class MinecraftMachinesDuopodGameTests {
                 if (!arena.expectedSpawnCenterForSlot(lane).equals(requested.above(3))) {
                     throw new GameTestAssertException("Expected deterministic spawn center for lane " + lane);
                 }
-                if (!level.getBlockState(requested.below()).is(Blocks.SMOOTH_STONE)) {
-                    throw new GameTestAssertException("Expected smooth-stone support for lane " + lane);
+                if (!level.getBlockState(requested.below()).is(Blocks.STONE_BRICKS)) {
+                    throw new GameTestAssertException("Expected stone-brick support for lane " + lane);
                 }
                 if (!level.getBlockState(requested.above(2)).isAir()) {
                     throw new GameTestAssertException("Expected controlled clear space above lane " + lane);
@@ -757,6 +759,95 @@ public class MinecraftMachinesDuopodGameTests {
                 .thenSucceed();
     }
 
+    @GameTest(template = "empty", timeoutTicks = 180)
+    public static void planarDuopodRejectsLateralImpulse(final GameTestHelper helper) {
+        final ServerLevel level = helper.getLevel();
+        final BlockPos origin = helper.absolutePos(new BlockPos(6, 3, 6));
+        final AtomicReference<MinecraftMachinesLiveDuopod> machine = new AtomicReference<>();
+        final AtomicReference<Double> initialLateralPosition = new AtomicReference<>();
+        prepareVectorEnvironmentSpawnArea(level, origin, 1, 14, DUOPOD_FORWARD);
+
+        helper.startSequence()
+                .thenExecute(() -> {
+                    final MinecraftMachinesDuopodTrainingMorphology morphology = new MinecraftMachinesDuopodTrainingMorphology(
+                            level,
+                            origin,
+                            DUOPOD_FORWARD,
+                            UUID.randomUUID(),
+                            14,
+                            false,
+                            true);
+                    final MinecraftMachinesLiveDuopod spawned = morphology.spawn(new TrainingSpawnContext(
+                            0,
+                            1L,
+                            2L,
+                            new CurriculumStage(DuopodTrainingScenarios.WALK_FORWARD_STAGE, 0, "planar constraint test")));
+                    machine.set(spawned);
+                    if (!spawned.isPlanarConstrained()
+                            || !spawned.isPlanarConstraintValid()) {
+                        throw new GameTestAssertException("Expected the newly spawned Duopod to schedule its planar constraints");
+                    }
+                })
+                .thenExecuteAfter(3, () -> {
+                    final MinecraftMachinesLiveDuopod spawned = machine.get();
+                    if (spawned == null
+                            || spawned.planarBodyConstraintCount() != 1
+                            || spawned.validPlanarBodyConstraintCount() != 1) {
+                        throw new GameTestAssertException("Expected one valid planar chassis constraint on the settled Duopod");
+                    }
+                    initialLateralPosition.set(DuopodKinematics.horizontalLocalOffset(
+                            spawned.control().duopod().spawnPosition(),
+                            spawned.control().duopod().spawnOrientationView(),
+                            spawned.control().duopod().modelForwardDirection(),
+                            spawned.control().getBasePosition()).right());
+                    final Direction rightDirection = spawned.control().duopod().modelRightDirection();
+                    final Vector3d lateralImpulse = new Vector3d(
+                            rightDirection.getStepX(),
+                            rightDirection.getStepY(),
+                            rightDirection.getStepZ());
+                    spawned.control().duopod().spawnOrientationView().transform(lateralImpulse);
+                    lateralImpulse.normalize().mul(10.0);
+                    if (!MinecraftMachinesDuopodSpawner.applyLinearAndAngularImpulse(
+                            level,
+                            spawned.control().duopod().baseSubLevelId(),
+                            lateralImpulse,
+                            new Vector3d())) {
+                        throw new GameTestAssertException("Expected the lateral test impulse to reach the Duopod base body");
+                    }
+                })
+                .thenExecuteAfter(40, () -> {
+                    final MinecraftMachinesLiveDuopod spawned = machine.get();
+                    try {
+                        if (spawned == null || !spawned.isPlanarConstraintValid()) {
+                            throw new GameTestAssertException("Expected the Duopod planar chassis constraint to remain valid; valid="
+                                    + (spawned == null ? 0 : spawned.validPlanarBodyConstraintCount())
+                                    + " controlValid=" + (spawned != null && spawned.control().isValid()));
+                        }
+                        if (spawned.planarBodyConstraintCount() != 1
+                                || spawned.validPlanarBodyConstraintCount() != 1) {
+                            throw new GameTestAssertException("Expected one valid planar chassis constraint on the settled Duopod");
+                        }
+                        final DuopodKinematics.LocalOffset displacement = DuopodKinematics.horizontalLocalOffset(
+                                spawned.control().duopod().spawnPosition(),
+                                spawned.control().duopod().spawnOrientationView(),
+                                spawned.control().duopod().modelForwardDirection(),
+                                spawned.control().getBasePosition());
+                        final double lateralDelta = displacement.right() - initialLateralPosition.get();
+                        if (Math.abs(lateralDelta) > 0.05) {
+                            throw new GameTestAssertException(
+                                    "Expected the solver-locked Duopod to remain in its 2D plane after a lateral impulse; delta="
+                                            + lateralDelta);
+                        }
+                    } finally {
+                        if (spawned != null) {
+                            spawned.closePlanarConstraint();
+                            spawned.control().destroy();
+                        }
+                    }
+                })
+                .thenSucceed();
+    }
+
     @GameTest(template = "empty", timeoutTicks = 180, batch = "duopodTrainingCollision")
     public static void sameBatchDuopodsSuppressEachOtherButKeepWorldContacts(final GameTestHelper helper) {
         final ServerLevel level = helper.getLevel();
@@ -766,13 +857,23 @@ public class MinecraftMachinesDuopodGameTests {
         helper.startSequence()
                 .thenExecute(() -> {
                     final BlockPos origin = helper.absolutePos(new BlockPos(6, 3, 6));
-                    prepareVectorEnvironmentSpawnArea(level, origin, 2, 14, DUOPOD_FORWARD);
+                    prepareVectorEnvironmentSpawnArea(level, origin, 1, 14, DUOPOD_FORWARD);
+                    final MinecraftMachinesDuopodFlatArena arena = MinecraftMachinesDuopodFlatArena.prepare(
+                            level,
+                            origin,
+                            DUOPOD_FORWARD,
+                            2,
+                            14,
+                            2,
+                            1);
                     final MinecraftMachinesDuopodTrainingMorphology morphology = new MinecraftMachinesDuopodTrainingMorphology(
                             level,
                             origin,
                             DUOPOD_FORWARD,
                             batchId,
-                            14);
+                            14,
+                            true,
+                            true);
                     environment.set(new LocomotionVectorEnvironment<>(
                             morphology,
                             2,
@@ -784,9 +885,21 @@ public class MinecraftMachinesDuopodGameTests {
                                     0,
                                     2,
                                     slot)));
-                    environment.get().resetAll();
+                    final EnvironmentBatchReset reset = environment.get().resetAll();
                     if (countTrainingEntries(level, batchId) != 6) {
-                        throw new GameTestAssertException("Expected vector environment reset to register two same-batch Duopods");
+                        throw new GameTestAssertException("Expected vector reset to register two same-batch Duopods");
+                    }
+                    final Map<String, Object> firstInfo = reset.infos().get(0);
+                    final Map<String, Object> secondInfo = reset.infos().get(1);
+                    for (final String coordinate : List.of("base_position_x", "base_position_y", "base_position_z")) {
+                        final double first = ((Number) firstInfo.get(coordinate)).doubleValue();
+                        final double second = ((Number) secondInfo.get(coordinate)).doubleValue();
+                        final double expectedOffset = coordinate.equals("base_position_x") ? 14.0 : 0.0;
+                        if (Math.abs(second - first - expectedOffset) > 1.0e-6) {
+                            throw new GameTestAssertException(
+                                    "Expected prepared lane spacing for " + coordinate
+                                            + "; first=" + first + " second=" + second);
+                        }
                     }
                     final BlockSubLevelCollisionCallback callback = WormCollisionCallback.wrap(null);
                     try {
@@ -811,6 +924,7 @@ public class MinecraftMachinesDuopodGameTests {
                         }
                     } finally {
                         environment.get().close();
+                        arena.close();
                     }
                 })
                 .thenExecuteAfter(5, () -> {
@@ -1364,7 +1478,7 @@ public class MinecraftMachinesDuopodGameTests {
                 .withCurriculumStage(DuopodTrainingScenarios.WALK_FORWARD_STAGE)
                 .toJson();
         final JsonObject walkFitnessMetadata = walkTrainingMetadata.getAsJsonObject("walkForwardTerminalFitness");
-        if (!"minecraft_machines:duopod_cem_fitness_v6".equals(
+        if (!"minecraft_machines:duopod_cem_fitness_v19_vertical_balance_lock".equals(
                 walkFitnessMetadata.get("fitnessContract").getAsString())
                 || !MinecraftMachinesDuopodFlatArena.ARENA_ID.equals(
                 walkTrainingMetadata.get("trainingArena").getAsString())
@@ -1373,7 +1487,7 @@ public class MinecraftMachinesDuopodGameTests {
                 || walkFitnessMetadata.get("maximumPeakVerticalExcursionBlocks").getAsDouble()
                 != DuopodWalkForwardFitness.MAXIMUM_PEAK_VERTICAL_EXCURSION_BLOCKS
                 || !walkFitnessMetadata.has("terminalArenaEscapePenalty")) {
-            throw new GameTestAssertException("Expected walk-forward checkpoint config to declare the v6 anti-ballistic, arena-escape, and grouped-layout gate");
+            throw new GameTestAssertException("Expected walk-forward checkpoint config to declare the planar anti-ballistic, arena-escape, and grouped-layout gate");
         }
         if (MinecraftMachinesDuopodCemTrainer.Config.DEFAULT.withPopulationSize(8).eliteCount() != 2) {
             throw new GameTestAssertException("Expected command-sized CEM populations to retain at least two elites");
@@ -1596,8 +1710,8 @@ public class MinecraftMachinesDuopodGameTests {
                         throw new GameTestAssertException(
                                 "Expected checkpoint discovery and optimizer seed provenance to remain explicit");
                     }
-                    if (!"minecraft_machines:duopod_cem_fitness_v6".equals(json.get("fitnessContract").getAsString())) {
-                        throw new GameTestAssertException("Expected checkpoint scores to declare the v6 exact-layout fitness contract");
+                    if (!"minecraft_machines:duopod_cem_fitness_v19_vertical_balance_lock".equals(json.get("fitnessContract").getAsString())) {
+                        throw new GameTestAssertException("Expected checkpoint scores to declare the planar walk-forward fitness contract");
                     }
                     if (json.getAsJsonObject("trainingConfig").get("chunkActivationTimeoutTicks").getAsInt()
                             != MinecraftMachinesDuopodCemTrainer.TRAINING_CHUNK_ACTIVATION_TIMEOUT_TICKS) {
@@ -1688,7 +1802,7 @@ public class MinecraftMachinesDuopodGameTests {
                             config);
                     if (v2ContractRestart.generation() != 0
                             || v2ContractRestart.bestFitness() != Double.NEGATIVE_INFINITY) {
-                        throw new GameTestAssertException("Expected v2 fitness scores to restart instead of exact-resuming under the v6 contract");
+                        throw new GameTestAssertException("Expected v2 fitness scores to restart instead of exact-resuming under the planar walk-forward contract");
                     }
                     final JsonObject legacyWithoutFitnessContract = json.deepCopy();
                     legacyWithoutFitnessContract.remove("fitnessContract");
@@ -2146,6 +2260,8 @@ public class MinecraftMachinesDuopodGameTests {
                 assertBridgeObservationPayload(createdReset, handle, "create reset");
                 final String initialScenario = createdReset.getAsJsonArray("infos")
                         .get(0).getAsJsonObject().get("curriculum_stage_description").getAsString();
+                final long initialEpisodeId = createdReset.getAsJsonArray("infos")
+                        .get(0).getAsJsonObject().get("episode_id").getAsLong();
                 if (!createdPayload.get("lockstep").getAsBoolean()
                         || !createdPayload.get("physicsPaused").getAsBoolean()) {
                     throw new IllegalStateException("CREATE_SESSION did not advertise paused lockstep physics");
@@ -2213,8 +2329,13 @@ public class MinecraftMachinesDuopodGameTests {
                         assertBridgeEnvelope(reset, BridgeMessageType.RESET_ALL, handle);
                         assertBridgeObservationPayload(reset.payload(), handle, "explicit reset");
                         final JsonObject resetInfo = reset.payload().getAsJsonArray("infos").get(0).getAsJsonObject();
-                        if (resetInfo.get("curriculum_stage_index").getAsInt() != 1
-                                || initialScenario.equals(resetInfo.get("curriculum_stage_description").getAsString())) {
+                        if (resetInfo.get("episode_id").getAsLong() == initialEpisodeId) {
+                            throw new IllegalStateException("one-slot bridge did not advance to a fresh curriculum episode");
+                        }
+                        if (!step.terminated()[0]
+                                && !step.truncated()[0]
+                                && (resetInfo.get("curriculum_stage_index").getAsInt() != 1
+                                || initialScenario.equals(resetInfo.get("curriculum_stage_description").getAsString()))) {
                             throw new IllegalStateException("one-slot bridge did not rotate to the next curriculum scenario");
                         }
                         final JsonObject closePayload = new JsonObject();

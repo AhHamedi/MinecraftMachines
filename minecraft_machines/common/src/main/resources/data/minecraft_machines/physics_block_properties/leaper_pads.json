@@ -1,0 +1,8 @@
+{
+  "selector": "minecraft_machines:leaper_part",
+  "priority": 100,
+  "properties": {},
+  "overrides": {
+    "part=43": { "sable:friction": 1.65 }
+  }
+}

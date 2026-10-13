@@ -67,6 +67,22 @@ public final class MinecraftMachinesBlocks {
             .loot((p, b) -> p.add(b, LootTable.lootTable()))
             .register();
 
+    public static final BlockEntry<dev.ahmedhamedi.minecraft_machines.content.leaper.LeaperPartBlock> LEAPER_PART = REGISTRATE
+            .block("leaper_part", dev.ahmedhamedi.minecraft_machines.content.leaper.LeaperPartBlock::new)
+            .initialProperties(SharedProperties::netheriteMetal)
+            .properties(p -> p.noOcclusion().strength(-1.0f, 3600000.0f))
+            .blockstate((ctx, prov) -> {})
+            .lang("Leaper Armour")
+            .register();
+
+    public static final BlockEntry<dev.ahmedhamedi.minecraft_machines.content.leaper.LeaperScaledPartBlock> LEAPER_SCALED_PART = REGISTRATE
+            .block("leaper_scaled_part", dev.ahmedhamedi.minecraft_machines.content.leaper.LeaperScaledPartBlock::new)
+            .initialProperties(SharedProperties::netheriteMetal)
+            .properties(p -> p.noOcclusion().strength(-1.0f, 3600000.0f))
+            .blockstate((ctx, prov) -> {})
+            .lang("Scaled Leaper Armour")
+            .register();
+
     private MinecraftMachinesBlocks() {
     }
 

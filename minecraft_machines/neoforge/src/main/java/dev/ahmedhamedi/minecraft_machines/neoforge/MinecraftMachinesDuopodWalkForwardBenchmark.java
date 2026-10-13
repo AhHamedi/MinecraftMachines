@@ -58,10 +58,10 @@ import java.util.UUID;
 final class MinecraftMachinesDuopodWalkForwardBenchmark {
     static final int DEFAULT_MAX_CONTROL_STEPS = 200;
     static final int DEFAULT_CONTROL_TICKS = 4;
-    static final int DEFAULT_SPAWN_WARMUP_TICKS = 20;
+    static final int DEFAULT_SPAWN_WARMUP_TICKS = 2;
 
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
-    private static final String FORMAT = "minecraft_machines_duopod_walk_forward_benchmark_v3";
+    private static final String FORMAT = "minecraft_machines_duopod_walk_forward_benchmark_v15_strict_supported_stance";
     private static final int FORMAT_VERSION = 3;
     private static final String ACCEPTANCE_RULE = "post_warmup_stability_adjusted_anti_ballistic_v2";
     private static final int ACCEPTANCE_RULE_VERSION = 2;

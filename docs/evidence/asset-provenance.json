@@ -1,0 +1,52 @@
+{
+  "checked_at": "2026-10-13",
+  "origin": "Original procedural Minecraft Machines assets; no sampled reference-game media",
+  "license": "LICENSE.md",
+  "dependencies": "tools/requirements-assets.txt",
+  "entries": [
+    {
+      "asset": "minecraft_machines/common/src/main/resources/assets/minecraft_machines/textures/particle/leaper_glow.png",
+      "sha256": "76582e6d4adeec5788d245940b4b621c8696646169307bae4bf91681a5667ee3",
+      "generator": "tools/generate_leaper_particles.py",
+      "reproduction_check": "byte-identical output"
+    },
+    {
+      "asset": "minecraft_machines/common/src/main/resources/assets/minecraft_machines/textures/particle/leaper_mist.png",
+      "sha256": "843eb3e5250deb96783ad7cd433d8014a31a244d06eb9b112be5cdc6b87cb55f",
+      "generator": "tools/generate_leaper_particles.py",
+      "reproduction_check": "byte-identical output"
+    },
+    {
+      "asset": "minecraft_machines/common/src/main/resources/assets/minecraft_machines/textures/particle/leaper_glow.png.mcmeta",
+      "sha256": "744695a9bf2559346c3adc641195aa7472ffc02afe117f08cb67f36a7096bd85",
+      "generator": "tools/generate_leaper_particles.py",
+      "reproduction_check": "byte-identical output"
+    },
+    {
+      "asset": "minecraft_machines/common/src/main/resources/assets/minecraft_machines/textures/particle/leaper_mist.png.mcmeta",
+      "sha256": "744695a9bf2559346c3adc641195aa7472ffc02afe117f08cb67f36a7096bd85",
+      "generator": "tools/generate_leaper_particles.py",
+      "reproduction_check": "byte-identical output"
+    },
+    {
+      "asset": "minecraft_machines/common/src/main/resources/assets/minecraft_machines/sounds/leaper/charge.ogg",
+      "sha256": "96b02ebe533684c43704715aa5ef873775914197e28c29d8f93cd08ba1476dd4",
+      "generator": "tools/generate_leaper_sounds.py",
+      "reproduction_check": "identical decoded float32 little-endian PCM; OGG container headers may differ",
+      "decoded_pcm_sha256": "a6b6aae49503ea2bc1b526cabaa9fb440b53c64f601197aa33af88c515e5abb8"
+    },
+    {
+      "asset": "minecraft_machines/common/src/main/resources/assets/minecraft_machines/sounds/leaper/blast.ogg",
+      "sha256": "258a7552bd308e54cf537bcc0486f8cb77ff84c7a1f67291eabde0c6b3e7b12d",
+      "generator": "tools/generate_leaper_sounds.py",
+      "reproduction_check": "identical decoded float32 little-endian PCM; OGG container headers may differ",
+      "decoded_pcm_sha256": "09ea04fdd95bd6ecd3df0401cfae6115eadad1099b99bed193955bbd52db325e"
+    },
+    {
+      "asset": "minecraft_machines/common/src/main/resources/assets/minecraft_machines/sounds.json",
+      "sha256": "5200f49b9b6415043357b3fbd5ad3e86e238394b4bcd13ee4720ccb5754049b8",
+      "generator": "tools/generate_leaper_sounds.py",
+      "reproduction_check": "byte-identical output"
+    }
+  ]
+}

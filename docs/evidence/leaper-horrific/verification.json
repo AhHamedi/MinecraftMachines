@@ -1,0 +1,281 @@
+{
+  "status": "complete: physics qualification, live controls, native video and release verified",
+  "standard_preserved": true,
+  "standard_48_trial_replay_identical": true,
+  "gait_trials_passed": 16,
+  "gait_training_completed_episodes": 352,
+  "translation_speeds": [
+    {
+      "command": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "speed": 6.019089808264982,
+      "minimum_up": 0.9948619496346849,
+      "anchor_error": 0.008217184048218362,
+      "slip_per_foot_second": 0.9422893308117676
+    },
+    {
+      "command": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "speed": 5.061044105508445,
+      "minimum_up": 0.9798693112770641,
+      "anchor_error": 0.005189140754673125,
+      "slip_per_foot_second": 0.7986564654794212
+    },
+    {
+      "command": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "speed": 5.9955526446141505,
+      "minimum_up": 0.9929633701987853,
+      "anchor_error": 0.011021893115951252,
+      "slip_per_foot_second": 0.4685129098698346
+    },
+    {
+      "command": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "speed": 5.9767799750935895,
+      "minimum_up": 0.9885509510170819,
+      "anchor_error": 0.01304508436919155,
+      "slip_per_foot_second": 0.3834820568763727
+    },
+    {
+      "command": [
+        0.7,
+        0.7,
+        0.0
+      ],
+      "speed": 4.22206652978387,
+      "minimum_up": 0.9930246634637198,
+      "anchor_error": 0.006898151924485067,
+      "slip_per_foot_second": 0.6284443437059564
+    },
+    {
+      "command": [
+        0.7,
+        -0.7,
+        0.0
+      ],
+      "speed": 4.048424077279501,
+      "minimum_up": 0.9930844578936888,
+      "anchor_error": 0.006807753899037787,
+      "slip_per_foot_second": 0.6943322591178421
+    }
+  ],
+  "max_motor_test_tilt_degrees": 11.515908479268868,
+  "max_motor_test_anchor_error": 0.01304508436919155,
+  "max_motor_test_hard_limit_violation": 0.0,
+  "cadence_multiplier": 0.8,
+  "joint_slew_rad_s": 3.5,
+  "motor_power_multiplier": 2,
+  "motor_stiffness": 200000,
+  "motor_damping": 11313.70849898476,
+  "motor_force_cap": 300000,
+  "foot_friction": 1.65,
+  "scope": "clear flat ground; no leap or obstacle traversal",
+  "comparison": {
+    "arrivals": 48,
+    "passed": 48,
+    "five_second_hold": true,
+    "mean_error_blocks": 0.2121429373078284,
+    "max_error_blocks": 0.44232374422802184,
+    "mean_arrival_seconds": 9.616666666666664,
+    "max_tilt_degrees": 11.00154397660329,
+    "max_anchor_error_blocks": 0.009749046340813512,
+    "gait_primitive_trials": 16,
+    "ground": "clear flat ground"
+  },
+  "navigation_training_episodes": 512,
+  "point_trials": 96,
+  "successful_point_trials": 96,
+  "mean_error_blocks": 0.21098942592476908,
+  "max_error_blocks": 0.44232374422802184,
+  "mean_arrival_seconds": 9.48229166666666,
+  "max_point_tilt_degrees": 11.36702822994444,
+  "max_point_anchor_error_blocks": 0.009749046340813512,
+  "routes": {
+    "speed_at_stop_command": 5.493134434903986,
+    "retargeted_in_motion": true,
+    "stop_drift": 3.3774381911958398,
+    "anchor_error": [
+      0.008229483756537152,
+      0.006097890138718993,
+      0.007708127960070568,
+      0.007838191169305786
+    ],
+    "validated": true,
+    "speed_at_retarget": 6.175557014518123,
+    "minimum_up": [
+      0.9935681245551368,
+      0.9741187080565732,
+      0.9955408081761189,
+      0.967107137717582
+    ]
+  },
+  "release": {
+    "path": "release/MinecraftMachines-Leaper-Horrific.jar",
+    "sha256": "bd3b1f78726415c6b77f201b633626cc021935cf9c45c2ee3992027079dd730c",
+    "all_three_model_resources_match": true
+  },
+  "unit_tests": {
+    "tests": 111,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "pace_switch": {
+    "validated": true,
+    "trials": [
+      {
+        "limit_violation": 0.0,
+        "passed": true,
+        "anchor_error": 0.006545039382231734,
+        "stop_drift": 3.471459113639038,
+        "minimum_up": 0.9956006711018521,
+        "to": "horrific",
+        "from": "standard",
+        "switch_tick": 307
+      },
+      {
+        "limit_violation": 0.0,
+        "passed": true,
+        "anchor_error": 0.007440441805009856,
+        "stop_drift": 3.3171436375563057,
+        "minimum_up": 0.9932832140766046,
+        "to": "standard",
+        "from": "horrific",
+        "switch_tick": 330
+      },
+      {
+        "limit_violation": 0.0,
+        "passed": true,
+        "anchor_error": 0.006662349856228999,
+        "stop_drift": 3.327585923030392,
+        "minimum_up": 0.9962923091734237,
+        "to": "horrific",
+        "from": "standard",
+        "switch_tick": 353
+      },
+      {
+        "limit_violation": 0.0,
+        "passed": true,
+        "anchor_error": 0.007373548055741614,
+        "stop_drift": 3.0902530295810036,
+        "minimum_up": 0.9934031697415308,
+        "to": "standard",
+        "from": "horrific",
+        "switch_tick": 376
+      }
+    ]
+  },
+  "long_range": {
+    "start": [
+      0.499908983707428,
+      9.02450180053711,
+      0.5005270838737488
+    ],
+    "goal": [
+      0.499908983707428,
+      -95.49947291612625
+    ],
+    "goal_offset": [
+      0.0,
+      -96.0
+    ],
+    "initial_heading": 0.7,
+    "push": true,
+    "success": true,
+    "failed": false,
+    "reason": "",
+    "final_error": 0.2493174687604359,
+    "arrival_seconds": 26.25,
+    "minimum_up": 0.9924064467095038,
+    "anchor_error": 0.006160873865761567,
+    "path": 104.22388522965618,
+    "max_hold_error": 0.24931987669041322,
+    "peak_speed": 7.148468545948795
+  },
+  "live": {
+    "date": "2026-09-07",
+    "window_id": 4896,
+    "process_id": 61894,
+    "world": "Leaper Articulation Lab",
+    "tick_rate": 20,
+    "default_standard_confirmed": true,
+    "actual_stick_raycast": {
+      "distance_blocks": 9.6,
+      "target": [
+        0.5,
+        -9.11
+      ],
+      "arrival_error_blocks_rounded": 0.34
+    },
+    "recorded_sprint": {
+      "distance_blocks_rounded": 79.6,
+      "target": [
+        0.5,
+        -89.0
+      ],
+      "goal_time_local": "02:51:20",
+      "arrival_time_local": "02:51:45",
+      "arrival_error_blocks_rounded": 0.25
+    },
+    "actual_shift_right_click_stop": true,
+    "standard_and_horrific_switches": true,
+    "final_state": "Horrific hold, free camera, stick selected, HUD visible",
+    "final_status_tilt_degrees_rounded": 0.38,
+    "final_status_anchor_error_blocks_rounded": 0.0005,
+    "evidence": "live-client.log",
+    "screenshot": "live-ready.png"
+  },
+  "video": {
+    "source": "leaper-horrific-native.mov",
+    "source_sha256": "76aac57125d7073c42e6fa47856eed9d38d8e9553496b0cd0311eb5b81796691",
+    "output": "leaper-horrific.mp4",
+    "output_sha256": "9ad59825ac2bda5cdd5f0d3ee91a0e78c384f8db8667ed1d5efc9193719bd0e3",
+    "capture": "Native macOS screencapture of Minecraft window 4896",
+    "creation_time_utc": "2026-09-06T22:51:18Z",
+    "source_duration_seconds": 40.0,
+    "resolution": [
+      1920,
+      1200
+    ],
+    "source_average_fps": 57.68,
+    "output_fps": 30,
+    "game_tick_rate": 20,
+    "playback_speed": 1.0,
+    "synthetic_frames": false,
+    "audio": false,
+    "encoding": "libx264 CRF 20; fps=30,scale=1920:-2; yuv420p; faststart; no time remapping",
+    "review_frames_seconds": [
+      4,
+      9,
+      15,
+      24,
+      35
+    ],
+    "full_decode_passed": true,
+    "decode_log": "video-decode.log",
+    "model_sha256": "d34406ca91bf04ae2b4ffa3e0881ecb09d099e3bd72759b008eefc3eb2701374",
+    "release_sha256": "bd3b1f78726415c6b77f201b633626cc021935cf9c45c2ee3992027079dd730c",
+    "recorded_goal": [
+      0.5,
+      -89.0
+    ],
+    "arrival_error_blocks_rounded": 0.25
+  },
+  "preserved_archive_files_verified": {
+    "leaper-brisk": 45,
+    "leaper-careful-v1": 9
+  }
+}

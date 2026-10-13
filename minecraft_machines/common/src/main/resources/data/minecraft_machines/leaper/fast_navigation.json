@@ -1,0 +1,58 @@
+{
+  "validated": true,
+  "contract": "leaper_12dof_v1",
+  "gait_policy": "leaper_radial_ik_v1",
+  "navigation_policy": "leaper_point_holonomic_v1",
+  "foot_friction": 1.65,
+  "pace": "fast",
+  "cadence_multiplier": 3.0,
+  "joint_slew_rad_s": 1.8,
+  "geometry_sha256": "f37e8dc338c24af005c711ff5f249ee4fcc307398b8131ecdca5e858911447d5",
+  "gait": [
+    0.9954333040660887,
+    1.2052730621287093,
+    -0.42574445244392156,
+    -0.6395271459091915,
+    -0.21351742204093707,
+    -0.5768224250726315,
+    0.04824169413834051,
+    0.09854606524372292,
+    -0.6638823268541967,
+    -0.8223138880656212
+  ],
+  "navigation": [
+    1.0905428537064683,
+    0.7764863696813699,
+    -0.4988128408951478,
+    -1.3595747284636512,
+    -0.48722682550115853,
+    2.0531880491180856,
+    0.4587774989232841,
+    0.5716684417189402,
+    0.6482811819542086,
+    -0.11937892649196666
+  ],
+  "training": {
+    "method": "seeded cross-entropy parameter search in native Sable physics",
+    "gait_seed": 2026090712,
+    "gait_generations": 16,
+    "gait_population": 8,
+    "navigation_seed": 2026090713,
+    "navigation_generations": 16,
+    "navigation_population": 8,
+    "physics_control_seconds": 0.05,
+    "destination_control_seconds": 0.1
+  },
+  "qualification": {
+    "arrivals": 48,
+    "passed": 48,
+    "five_second_hold": true,
+    "mean_error_blocks": 0.08474350723837885,
+    "max_error_blocks": 0.1554146194306999,
+    "mean_arrival_seconds": 10.837500000000004,
+    "max_tilt_degrees": 4.5242998671227594,
+    "max_anchor_error_blocks": 0.009092291102152882,
+    "gait_primitive_trials": 16,
+    "ground": "clear flat ground"
+  }
+}

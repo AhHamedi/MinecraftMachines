@@ -1,0 +1,20 @@
+{
+  "extra_lift": 1.4,
+  "shoulder_maximum": 1.4,
+  "knee_maximum": 1.65,
+  "terrain_aware_sweep": true,
+  "adaptive_lift": false,
+  "world_swing": false,
+  "post_clearance_lift": true,
+  "pace_lift": true,
+  "slow_damping": 0.02,
+  "fresh_support": true,
+  "flat_cadence": 0,
+  "clear_ground_gain": 1,
+  "clearance_pause": 0,
+  "exposed_surfaces": true,
+  "adaptive_footholds": false,
+  "world_swing_height": true,
+  "stance_compression": 0,
+  "shoulder_minimum": -1.4
+}

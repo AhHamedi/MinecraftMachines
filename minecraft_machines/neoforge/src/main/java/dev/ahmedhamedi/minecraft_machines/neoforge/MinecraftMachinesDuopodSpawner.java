@@ -43,7 +43,9 @@ import java.util.UUID;
 
 final class MinecraftMachinesDuopodSpawner {
     private static final double SERVO_LIMIT_DEGREES = 60.0;
-    private static final double SERVO_MAX_SPEED_DEG_PER_SECOND = 90.0;
+    // A support correction must arrive before the front-heavy chassis reaches
+    // the floor; 90 degrees/s was too slow at the 60-TPS training rate.
+    private static final double SERVO_MAX_SPEED_DEG_PER_SECOND = 360.0;
     private static final double SERVO_STIFFNESS = 800.0;
     private static final double SERVO_DAMPING = 350.0;
     private static final double SERVO_MAX_TORQUE = 75_000.0;

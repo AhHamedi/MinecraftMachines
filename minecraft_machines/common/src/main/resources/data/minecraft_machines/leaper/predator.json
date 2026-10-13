@@ -1,0 +1,2465 @@
+{
+  "validated": true,
+  "policy": "leaper_predator_clearance_v10",
+  "contract": "leaper_12dof_precise_predator_v2",
+  "genome": [
+    -0.37362042892889413,
+    0.11060773516301729,
+    -1.2891970673752633,
+    -1.2240031056840661,
+    0.9472381867165925,
+    0.18254224673964797,
+    -0.11617414988558242,
+    0.5485042775309453,
+    -0.09272610664049524,
+    -0.2513722116722142,
+    -0.035162430766055644,
+    0.37245977699951316,
+    -0.34055885680566717,
+    -0.08127411101962237,
+    -0.0686631352038479,
+    -0.32438162441045604,
+    0.5043134697900276,
+    0.21409385325635683,
+    -0.9603864687972065,
+    -0.382857495144473
+  ],
+  "parameters": {
+    "stride": 3.5714147225734454,
+    "period": 1.1663095764925109,
+    "duty": 0.5397517454728454,
+    "radius": 4.603459815421928,
+    "body_height": 3.31697111456031,
+    "swing_lift": 1.7034601677906134,
+    "phase_lr": 0.49421728447256486,
+    "phase_fb": 0.5599278030570282,
+    "step_clearance": 0.73527711771292,
+    "height_tracking": 3.507583744843636,
+    "pitch_alignment": 0.4824260268199069,
+    "roll_alignment": 0.6780706891788957,
+    "vertical_damping": 0.0012053487767997029,
+    "landing_prediction": 0.4135069660284554,
+    "stance_feedback": 0.46572228434560475,
+    "foothold_radius": 0.6119219485661692,
+    "motor_power": 6.3965081188682,
+    "motor_slew": 5.921763306193632,
+    "stride_adaptation": 0.051110159411749616,
+    "swing_feedback": 0.31740676799725975
+  },
+  "balance_gain": 1,
+  "physics_substeps": 4,
+  "contact_grip": true,
+  "implementation_sha256": "25f7b11c6a5c96462bbfe4d75ae189b036d758ae1f4e6f4e3a098756dffa50da",
+  "resource_sha256": {
+    "geometry.json": "f37e8dc338c24af005c711ff5f249ee4fcc307398b8131ecdca5e858911447d5",
+    "navigation.json": "391628d03ec45ae84255ee7581e7214fa21425f7f635e01ff24bdb63797f5c19",
+    "fast_navigation.json": "08a7b91b2074df24a3c8cb3ef7310f467266e744144bc8bb3e1a858c1a691fd8",
+    "horrific_navigation.json": "d34406ca91bf04ae2b4ffa3e0881ecb09d099e3bd72759b008eefc3eb2701374",
+    "collision_geometry.json": "4101a5c756ae9b9ffdbab0f3fd5dadcd179c4c77ab25314ec69e4cf77788cd13"
+  },
+  "evidence_sha256": {
+    "artifacts/leaper-clearance/baseline-model.json": "8d770f5f22219abd14c91d0cf6bb58adb8cacee0e66e105371a470be8830caa8",
+    "artifacts/leaper-clearance/final-surface-sensing.log": "eb49320d05dd9c01f0a6a365ea53099d37c088ab8908303dfbf7d99f04a6f283",
+    "artifacts/leaper-clearance/timing-candidate.json": "18e47773a3aae596b9729dde535f8b66193755f1da16b294739074c25fb22690",
+    "artifacts/leaper-clearance/timing-training.json": "af6aaa473bb98fa4ef01db525498b500479217feba843a01150957e9ffdf2546",
+    "artifacts/leaper-clearance/release-candidate.json": "9ffbac4b8d479fa231d6259f642e197b1b6fdbf90b494f1e0284afacaf6579e2",
+    "artifacts/leaper-clearance/timing-training-source.zip": "859052e5067dd6670bfc01b0ba8afdac659fc406a32c37afabc5423fcd63121b",
+    "artifacts/leaper-clearance/pre-retarget-source.zip": "c399fb946b5fdc511b824604ec5d42ec9e0ea7cccc95fadf90d51190cb51f1bb",
+    "artifacts/leaper-clearance/pre-lifecycle-source.zip": "aa933c1084eda378bed5a870b84d831c413a6c906340123a073de26112238594",
+    "artifacts/leaper-clearance/qualified-source.zip": "90ce7bb2ecf9edecfb58eaaf1e205a0a0d03a5116091db9757eaace2333171b6",
+    "artifacts/leaper-clearance/timing-training.log": "3ea8a7a4695a705bf990527fa3bc59836a7bd699bae06e7ba1297e3e0b7ec91c",
+    "artifacts/leaper-clearance/final-certification.json": "4e8962c0e8c5fa9fa5ff163796df558ca771f7d1337ac4df4017ec65e592bd4a",
+    "artifacts/leaper-clearance/final-certification.log": "e375d2ceaa71b2e37bb0245f580f6db7ff1f4de3e36137cd5b316c8019374e28",
+    "artifacts/leaper-clearance/final-challenge.json": "0c246e5c58ec38272c43ea279f3c4af37ae589e86c80203bb7645c9ee4108f26",
+    "artifacts/leaper-clearance/final-challenge.log": "134fe093bd74f2e8fa5789bba21339a57572e1ca58348185b0c959084b625c33",
+    "artifacts/leaper-clearance/final-interaction.json": "3d973e0daa6599405a7817bece73534450c850511591e0d197a8559891e150f3",
+    "artifacts/leaper-clearance/final-interaction.log": "10bd8177b9d9a465b3b93a16178fb1a622a3241f0de5e43e180b3e2af6cb2b53",
+    "artifacts/leaper-clearance/final-wilderness.json": "baeaa3dc65ab2332100319fad5ee16c4face51de22f55d6e56e2403ea8fc876b",
+    "artifacts/leaper-clearance/final-wilderness.log": "eeb1015e37e12fae0258b38d6d29e531d3b7a56d2355f375a2f5155307f4bd73",
+    "artifacts/leaper-clearance/final-natural-tour.json": "bde0c4adf022381c8ac9cb17408b49f4d2116da880021a6077992b37711c5151",
+    "artifacts/leaper-clearance/final-natural-tour.log": "092f050515e00eaeefd086bf741e0cf33c48020094d4d7601d736771d906b8dd",
+    "artifacts/leaper-clearance/final-baseline-certification.json": "1735ebf105ebb2c467ef15e2cd836c993ae8645c01ea9e06c4875bf9a0f80749",
+    "artifacts/leaper-clearance/final-baseline-certification.log": "c0fbbf609a6a57c2d8edb3434034fdc4e29873fc87e34a599c950e72ba04d67f",
+    "artifacts/leaper-clearance/final-baseline-challenge.json": "a8fc313fdb59dd584e8a95c0bd471cd05e02203c519ceef7d7df6233167907db",
+    "artifacts/leaper-clearance/final-baseline-challenge.log": "262ea34e3b7829108ef46d99d89c10e00780e2bd72d09c59e7f600948c0bc0d0",
+    "artifacts/leaper-clearance/training-winner-certification.json": "47def2ad54506fdbfb84cbd82fd10b1ded750a152042939670dadcdeb15669b8",
+    "artifacts/leaper-clearance/training-winner-certification.log": "0cbd1126d23f2e9b5505470c5ad92cf38fbc64cc86ea33e0a2db229450e3181d",
+    "artifacts/leaper-clearance/training-winner-challenge.json": "df7ae9acc0280bb45710d470baf9cf05536c910c8d731aaccc70af2219bcc240",
+    "artifacts/leaper-clearance/training-winner-challenge.log": "3d497522bad7073db3cd21ddc1354f2b4ec2ced1c9d26e74451ef54d25a3264f",
+    "minecraft_machines/common/build/test-results/test/TEST-dev.ahmedhamedi.minecraft_machines.content.servo.ServoJointMathTest.xml": "7505cfd422a9745ab069df4cba78e970e1588b0815d24617dee476e25c61340b",
+    "minecraft_machines/common/build/test-results/test/TEST-dev.ahmedhamedi.minecraft_machines.content.training.DuopodEvaluationSanityTest.xml": "13dc9c12248e3c8e9ad5f2ab432133954c9c5d970be041757e1f5708207cfb31",
+    "minecraft_machines/common/build/test-results/test/TEST-dev.ahmedhamedi.minecraft_machines.content.training.DuopodWalkForwardBenchmarkAcceptanceTest.xml": "4967762b0f2fd0cbb6ec0477b09ccc74e9de6bb8c9a6755cf32f08ef941b24d2",
+    "minecraft_machines/common/build/test-results/test/TEST-dev.ahmedhamedi.minecraft_machines.content.training.FirstTerminalSnapshotTest.xml": "dc0086c08f8a1980e38e5080238116fe7038947b9bb97a1e31b5126406cda9a4",
+    "minecraft_machines/common/build/test-results/test/TEST-dev.ahmedhamedi.minecraft_machines.content.training.LeaperGaitTest.xml": "f4c8c504005f7f2a52826396fa511bf465219c2701b2c8daf02b90fa4d511030",
+    "minecraft_machines/common/build/test-results/test/TEST-dev.ahmedhamedi.minecraft_machines.content.training.LeaperMotionWindowTest.xml": "0cef2f7b63c2aff2abff723dc510d1bde36155974aae44dbaa66fcf62ab9d522",
+    "minecraft_machines/common/build/test-results/test/TEST-dev.ahmedhamedi.minecraft_machines.content.training.LeaperNavigationTest.xml": "a48c9154ecc4a8e64ae21baac6a205bf2c4a93124c1954375e8afa083b50db2c",
+    "minecraft_machines/common/build/test-results/test/TEST-dev.ahmedhamedi.minecraft_machines.content.training.LeaperPredatorPlannerTest.xml": "633638b5b2f218839a51464d198251e355a402f32e315ac6ca8eb7d03498220e",
+    "minecraft_machines/common/build/test-results/test/TEST-dev.ahmedhamedi.minecraft_machines.content.training.LeaperSwingClearanceTest.xml": "bf64e9e5d1e3c11c94155629ab33abf971fb12dfd4c3d6d50d261afe2b52f9b5",
+    "minecraft_machines/common/build/test-results/test/TEST-dev.ahmedhamedi.minecraft_machines.content.training.LeaperTerrainPlannerTest.xml": "5e05dd8cc0362a0a3a6b7c52f9bf0e3dc018bc4b0ac8634590c651fdc71e9bb3",
+    "minecraft_machines/common/build/test-results/test/TEST-dev.ahmedhamedi.minecraft_machines.content.training.LeaperTravelWindowTest.xml": "f00487a0dc4c2a49d4632b4d7c2128c71c8620a2770ea6eab6f9535b0c6aa180",
+    "minecraft_machines/common/build/test-results/test/TEST-dev.ahmedhamedi.minecraft_machines.content.training.LocomotionVectorEnvironmentTest.xml": "1174deed54ff1a1c843add256ebded2cbb27b12b68411bcc107898748a4845f1",
+    "minecraft_machines/common/build/test-results/test/TEST-dev.ahmedhamedi.minecraft_machines.content.training.QuadrupedGaitPolicyTest.xml": "367c61216c1ba8dab0e2933773cddb9576f60b676b42da0fc27d4aa9fd164c9d",
+    "minecraft_machines/common/build/test-results/test/TEST-dev.ahmedhamedi.minecraft_machines.content.training.QuadrupedNavigationTest.xml": "7ac24de20466a579a066930b72b78530d31a0969238971544b30bfeda904b3b2",
+    "minecraft_machines/common/build/test-results/test/TEST-dev.ahmedhamedi.minecraft_machines.content.training.TrainingCoreTest.xml": "b6e70fbba63be75550fa1c08adaec5caa1221e84d83c05312c02e089ad9b1629",
+    "minecraft_machines/common/build/test-results/test/TEST-dev.ahmedhamedi.minecraft_machines.content.worm.training.WormCemTrainingTest.xml": "8ca311f0193a512d119ff507d73a988b1749642491f5086302da4970dba84532",
+    "artifacts/leaper-clearance/checkpoint-validation.json": "ceebb7ca1d4b5b9ccb796470b4208a83ba977c768b2f87a2a0b5f6e590b15a4e",
+    "artifacts/leaper-clearance/summarize_checkpoints.py": "3806f5e8b0e5a7ba6f2a14a83b26967859a514b6dfe6274927edb7fe92af124e",
+    "artifacts/leaper-clearance/generation-one-candidate.json": "b997d2a7afda3d577d18574ced7879c0677d2b9dfa9902460d83a7c374e46c36",
+    "artifacts/leaper-clearance/drop-generation-one-certification.json": "a2352f208781653f065edff736d8d09d390bd6d5e2f4d1d7caaa9d1212aebf41",
+    "artifacts/leaper-clearance/drop-generation-one-certification.log": "835a699832db0ec1a5a5d5588ea8dff3f5c663fb39dc48eda60ed268debba7c8",
+    "artifacts/leaper-clearance/drop-generation-one-challenge.json": "94e51c4584b16592e25e95242ac86c5ff17bb0953a67e4967567f708ae104a06",
+    "artifacts/leaper-clearance/drop-generation-one-challenge.log": "5e2f3c75e589f6de5a63f0f93f515782c4a3b27e76df0aaad85c335208c26dff",
+    "artifacts/leaper-clearance/drop-generation-one-wilderness.json": "e81818ff19669a3c5d74cb581b500c1b1b3d7c27f6b693b37543180f14d1e445",
+    "artifacts/leaper-clearance/drop-generation-one-natural-tour.json": "e869f2a1a36f72af929713281cc17f5bcb6e1d62070e9c8a49d5ebc25e4efcce",
+    "artifacts/leaper-clearance/drop-clearance-interaction.json": "d30b31436c22e8ed905f903816d17df88dffea0d8822631c29b97f3830adbe30",
+    "artifacts/leaper-clearance/drop-clearance-interaction.log": "350387b08bbb545ad801aeb99e706236a9646a868da89ed2a7cae2e0d7aad078",
+    "artifacts/leaper-clearance/drop-generation-two-certification.json": "660bb63c453e1db71b430fd2cab068c90b212deee073aaf9bb76152117a9febb",
+    "artifacts/leaper-clearance/drop-generation-two-certification.log": "3c65d250e91847f9e38c9ae5f8d190b34159adfc20f87bb08e6c11921de28e4c",
+    "artifacts/leaper-clearance/drop-generation-two-challenge.json": "c158c61b4ec969a3b3c0aafb25f15b5181a13139872467d827d3bf2a36b5a23f",
+    "artifacts/leaper-clearance/drop-generation-two-challenge.log": "3ab96c2ae2148c88a68bd671bc4944eef2bbdb60043259a61d2661d6e073d156",
+    "artifacts/leaper-clearance/drop-generation-two-interaction.json": "9dcbaa50c7381d5086edf17b2fcc0bc0cafda5ce94c02c568d5785b0727e35c6",
+    "artifacts/leaper-clearance/drop-generation-two-interaction.log": "7c7c1c0ceaf1d5f982fe2d787a469474eed029e9d1b655a81e49b515fd595d6d",
+    "artifacts/leaper-clearance/generation-zero-candidate.json": "5aeed9fa4a38934bdfd1cb527ed5b1d0413da47ec142d47f182ad756d996b7c2",
+    "artifacts/leaper-clearance/drop-generation-zero-certification.json": "8e9e8f2e225ce5ae4d1ac6672ad8fd5534c7706738a6a4719bfd1a670290ba0d",
+    "artifacts/leaper-clearance/drop-generation-zero-certification.log": "ea5b0bf27b5b71f7061b2c2f331dec77069772e4c2cd939c07d0544a5a91553d",
+    "artifacts/leaper-clearance/drop-generation-zero-challenge.json": "952e779d0f26707ce0070177f0be61f2c6b88064370bd35b1dfe7204ddfb9bfe",
+    "artifacts/leaper-clearance/drop-generation-zero-challenge.log": "d7319fca3fc6e5105af3509ab9dc1aa4dd07b12988893e729458f344951cbdde",
+    "artifacts/leaper-clearance/drop-generation-zero-interaction.json": "8fe12e8cfa59412d265d757d1263aaeeebd9f489d0ae68f3bc60c3542452fe47",
+    "artifacts/leaper-clearance/drop-generation-zero-interaction.log": "6d609344638f702a02baec833af863317a5211ffc2e35ce3255de037f86a941b",
+    "artifacts/leaper-clearance/trained-g0c4-candidate.json": "68dd635acb9749ae6012426bfc5734eadaebc4d969aa7023871317e8db9150d7",
+    "artifacts/leaper-clearance/drop-g0c4-challenge.json": "fd8304d14c8c074055ca0e28cb06e569458eb50defe44d46b0423045caa37d48",
+    "artifacts/leaper-clearance/drop-g0c4-challenge.log": "9f2d9a5ef9a2c1bad350963f40632cfffb1582c2c1ef4087fb631bb4e49a0e9b",
+    "artifacts/leaper-clearance/trained-g1c3-candidate.json": "9ffbac4b8d479fa231d6259f642e197b1b6fdbf90b494f1e0284afacaf6579e2",
+    "artifacts/leaper-clearance/drop-g1c3-certification.json": "c8284747ea66ad82b3175f2ff25c3f8593be1a29374a032a7f794899fe7277f8",
+    "artifacts/leaper-clearance/drop-g1c3-certification.log": "3b2c2fcc9777626944e9d43c12cd04705f7a6bf0609875896bb6bfe0a5a17c02",
+    "artifacts/leaper-clearance/drop-g1c3-challenge.json": "e3834fc60851aa63d1284a05d7ed49e8477986ca05d0ae89866398d0d7cec8ec",
+    "artifacts/leaper-clearance/drop-g1c3-challenge.log": "ac3e0218e35c061eaa7f4a7193e3742424887174666a6098850922e73398d7b9",
+    "artifacts/leaper-clearance/drop-g1c3-interaction.json": "6faf90e706ccd61f7774065c71b2856a03f26bb0a882e04dfd08bbf28f2f1778",
+    "artifacts/leaper-clearance/drop-g1c3-interaction.log": "6c5382e4c3ee897e3b600741ae25a22c7d6904f40b103cc2374576645c4827fa",
+    "artifacts/leaper-clearance/pre-lifecycle-certification.json": "8ceb9e0ff4cc7833176870ab8ed93cdea66310daffe9063bf5a9b51a4a81f1ca",
+    "artifacts/leaper-clearance/pre-lifecycle-certification.log": "b0ae14d5c0383e56f7790a6ee1eb2729779a4bfcd6389ea30a4da66fd27573db",
+    "artifacts/leaper-clearance/pre-lifecycle-challenge.json": "e40d8a143002ae957edc95989c204617d895be5b235247981c4c7f7fd3172fa2",
+    "artifacts/leaper-clearance/pre-lifecycle-challenge.log": "95978816552afb08a1f0b873a56674e6666d189974240ceb53f1263c0e48551c",
+    "artifacts/leaper-clearance/pre-lifecycle-interaction.json": "dfb5c8159049a8c5bd1998c349483f966fd6b89d8171f88a1ac097459467ed16",
+    "artifacts/leaper-clearance/pre-lifecycle-interaction.log": "a4f3dec612dce9f78de82e4d75a2ebf46ad2dd1360abecc83cd6e85236e3b51f",
+    "artifacts/leaper-clearance/pre-lifecycle-natural-tour.json": "ce9b5178fd3c5ec6ecdebd1ba1ac1cbfbfe457794907f6e2e5dae6a83fb59899",
+    "artifacts/leaper-clearance/pre-lifecycle-natural-tour.log": "8269e8f08b5b98e8381a63df3aff9fb3c1f42b24c6f6530a77cdf0c1730b4f78",
+    "artifacts/leaper-clearance/pre-lifecycle-wilderness.json": "66480605347bd5099ed05739fbe047194e371b69a3c7294197fa60020ed471a1",
+    "artifacts/leaper-clearance/pre-lifecycle-wilderness.log": "4daafe6802df357bbdc383e040f780334a04c62afd26cfa00e6d5ad56a52f916"
+  },
+  "architecture": "Engineered early swing clearance and synchronized Cartesian servo targets with CEM-tuned stride, period and duty, followed by descent-clearance and pending-retarget refinements; original motor caps and joint limits retained",
+  "learning": {
+    "method": "Native Sable CEM over three timing parameters of the 20-parameter gait, combined with engineered swing clearance and synchronized Cartesian servo targets",
+    "completed_new_episodes": 96,
+    "completed_new_cem_episodes": 96,
+    "population": 8,
+    "generations": 3,
+    "tasks_per_candidate": 4,
+    "mutated_indices": [
+      0,
+      1,
+      2
+    ],
+    "mutated_parameters": [
+      "stride",
+      "period",
+      "duty"
+    ],
+    "fixed_parameters": 17,
+    "training_seed": 2026090759001,
+    "training_selection": {
+      "artifact": "artifacts/leaper-clearance/timing-candidate.json",
+      "sha256": "18e47773a3aae596b9729dde535f8b66193755f1da16b294739074c25fb22690",
+      "implementation_sha256": "4be084249f34f6933ed38f182ec4eeacfb69d28f648797121ef8c33fd30bab4e",
+      "generation_zero_based": 2,
+      "candidate_zero_based": 3,
+      "genome": [
+        -0.33368568964379725,
+        0.18300680078444193,
+        -1.207374631283937,
+        -1.2240031056840661,
+        0.9472381867165925,
+        0.18254224673964797,
+        -0.11617414988558242,
+        0.5485042775309453,
+        -0.09272610664049524,
+        -0.2513722116722142,
+        -0.035162430766055644,
+        0.37245977699951316,
+        -0.34055885680566717,
+        -0.08127411101962237,
+        -0.0686631352038479,
+        -0.32438162441045604,
+        0.5043134697900276,
+        0.21409385325635683,
+        -0.9603864687972065,
+        -0.382857495144473
+      ],
+      "training_tasks_completed": 4,
+      "training_tasks_passed": 4,
+      "training_score": 3745.095967487572,
+      "training_failures": [],
+      "released": false,
+      "broader_validation": {
+        "stage": "before_descent_refinement",
+        "implementation_sha256": "4be084249f34f6933ed38f182ec4eeacfb69d28f648797121ef8c33fd30bab4e",
+        "reports": {
+          "certification": {
+            "artifact": "artifacts/leaper-clearance/training-winner-certification.json",
+            "sha256": "47def2ad54506fdbfb84cbd82fd10b1ded750a152042939670dadcdeb15669b8",
+            "log_artifact": "artifacts/leaper-clearance/training-winner-certification.log",
+            "log_sha256": "0cbd1126d23f2e9b5505470c5ad92cf38fbc64cc86ea33e0a2db229450e3181d",
+            "cases": 72,
+            "build_successful": false,
+            "passed": 71,
+            "failures": [
+              {
+                "case_index_zero_based": 50,
+                "course": {
+                  "name": "broken-blocks",
+                  "kind": 3,
+                  "rise": 1.0,
+                  "tread": 3.0,
+                  "angle": 0.3,
+                  "heading": 0.1,
+                  "pace": "careful",
+                  "distance": 48.0,
+                  "seed": 1550
+                },
+                "reason": "timeout",
+                "error": 3.3231305333494716,
+                "ticks": 2080
+              }
+            ]
+          },
+          "challenge": {
+            "artifact": "artifacts/leaper-clearance/training-winner-challenge.json",
+            "sha256": "df7ae9acc0280bb45710d470baf9cf05536c910c8d731aaccc70af2219bcc240",
+            "log_artifact": "artifacts/leaper-clearance/training-winner-challenge.log",
+            "log_sha256": "3d497522bad7073db3cd21ddc1354f2b4ec2ced1c9d26e74451ef54d25a3264f",
+            "cases": 18,
+            "build_successful": true,
+            "passed": 17,
+            "failures": [
+              {
+                "case_index_zero_based": 0,
+                "course": {
+                  "name": "triple-riser-up",
+                  "kind": 0,
+                  "rise": 3.0,
+                  "tread": 3.0,
+                  "angle": 0.0,
+                  "heading": 0.0,
+                  "pace": "horrific",
+                  "distance": 48.0,
+                  "seed": 29071
+                },
+                "reason": "timeout",
+                "error": 35.23889652660192,
+                "ticks": 2080
+              }
+            ]
+          }
+        }
+      }
+    },
+    "release_checkpoint": {
+      "artifact": "artifacts/leaper-clearance/release-candidate.json",
+      "sha256": "9ffbac4b8d479fa231d6259f642e197b1b6fdbf90b494f1e0284afacaf6579e2",
+      "implementation_sha256": "4be084249f34f6933ed38f182ec4eeacfb69d28f648797121ef8c33fd30bab4e",
+      "generation_zero_based": 1,
+      "candidate_zero_based": 3,
+      "genome": [
+        -0.37362042892889413,
+        0.11060773516301729,
+        -1.2891970673752633,
+        -1.2240031056840661,
+        0.9472381867165925,
+        0.18254224673964797,
+        -0.11617414988558242,
+        0.5485042775309453,
+        -0.09272610664049524,
+        -0.2513722116722142,
+        -0.035162430766055644,
+        0.37245977699951316,
+        -0.34055885680566717,
+        -0.08127411101962237,
+        -0.0686631352038479,
+        -0.32438162441045604,
+        0.5043134697900276,
+        0.21409385325635683,
+        -0.9603864687972065,
+        -0.382857495144473
+      ],
+      "training_tasks_completed": 4,
+      "training_tasks_passed": 4,
+      "training_score": 2841.049476472242,
+      "training_failures": [],
+      "selection_method": "Retained checkpoint selected after broader validation of post-training engineering refinements",
+      "selection_reason": "Before the engineering refinements, the training-score winner recorded 71/72 certification passes on source 4be084249f34f6933ed38f182ec4eeacfb69d28f648797121ef8c33fd30bab4e. After the descent-clearance and pending-retarget refinements, the retained generation-1 candidate-3 checkpoint passed the full 97-case qualification and at least 17/18 stress cases on final source 25f7b11c6a5c96462bbfe4d75ae189b036d758ae1f4e6f4e3a098756dffa50da."
+    },
+    "training_implementation_sha256": "4be084249f34f6933ed38f182ec4eeacfb69d28f648797121ef8c33fd30bab4e",
+    "post_training_refinement": {
+      "description": "When early clearance is enabled, extra baseline lift measures obstacle height above the higher of departure and landing, instead of their mean; a pure descent no longer adds lift as if it were an obstacle above the path.",
+      "pending_retarget": "A valid destination request can wait for a supported starting stance while the previous route continues. Retrying installs the exact requested goal; stop cancels the request, invalid input preserves it, and pending requests cannot report arrival at the old goal. Native qualification requires the pending-request and actual-new-goal checks.",
+      "pending_lifecycle": "The pending deadline triggers a final planning attempt independently of the retry timer, and old-goal holding is disabled while a request is pending. These lifecycle corrections followed the archived pre-lifecycle validation and require fresh final-source qualification.",
+      "pending_retry_interval_ticks": 10,
+      "pending_request_deadline_ticks": 200,
+      "included_in_cem": false,
+      "new_cem_episodes": 0,
+      "implementation_sha256": "25f7b11c6a5c96462bbfe4d75ae189b036d758ae1f4e6f4e3a098756dffa50da"
+    },
+    "inherited_policy": "leaper_predator_precise_v9",
+    "inherited_cem_history": {
+      "method": "Native Sable cross-entropy optimization of 20 bounded gait and actuator parameters",
+      "completed_new_episodes": 256,
+      "population": 8,
+      "generations": 4,
+      "training_seed": 202609071337,
+      "selected_generation_zero_based": 3,
+      "selected_candidate_zero_based": 3,
+      "selected_training_tasks_passed": 8,
+      "training_implementation_sha256": "00b1d738c98255b9fb082551f30bce731193275e700c77f2598de1b57025bdb2",
+      "qualification_note": "Cadence conditioning, braking and gameplay lifecycle were refined after optimization and then separately qualified. Planning, sensing and IK are engineered; this is not end-to-end neural RL."
+    },
+    "qualification_note": "Only stride, period and duty were fine-tuned in 96 native development episodes; the other 17 genome entries remain exact. Descent clearance and pending retargeting were engineered after CEM and qualified on the final source. Training-score selection and the checkpoint released after broader validation are recorded separately. Qualification courses informed checkpoint selection and refinement, so they are not an untouched holdout. This is not end-to-end neural RL."
+  },
+  "physics": {
+    "control_hz": 20,
+    "native_substeps_hz": 80,
+    "body_count": 13,
+    "limited_native_joints": 12,
+    "yaw_joint_limit_rad": 0.9,
+    "shoulder_joint_limit_rad": 1.05,
+    "knee_joint_limit_rad": 1.2,
+    "foot_friction": 1.65,
+    "max_joint_motor_force": 959476.2178302299,
+    "joint_slew_rad_s": 5.921763306193632,
+    "attitude_assistance": "Finite native pitch/roll torque, all translation and yaw free; no vertical support motor or travel teleportation",
+    "foot_grip_constraints_enabled": true,
+    "foot_grip_horizontal_force_cap": 100000,
+    "foot_grip_stiffness": 200000,
+    "foot_grip_damping": 10000,
+    "foot_grip_contact_tolerance": 0.32,
+    "foot_grip_vertical_axis_free": true,
+    "precise_collision": "Disjoint cuboid union of the authored blocky model; independently checked against OBJ occupancy",
+    "collision_partition_checks": 21240
+  },
+  "qualification": {
+    "current_cases": 97,
+    "current_passed": 97,
+    "routes": 72,
+    "interaction_cases": 6,
+    "recorded_wilderness_journeys": 6,
+    "natural_dune_circuit_legs": 13,
+    "common_unit_tests": 144,
+    "skipped_unit_tests": 0,
+    "stress_cases": 18,
+    "stress_passed": 18,
+    "baseline_stress_passed": 17,
+    "stress_failures": [],
+    "arrival_hold_seconds": 2,
+    "mean_error": 0.5173898975976735,
+    "maximum_error": 0.8424326726398502,
+    "maximum_anchor_error": 0.07129827118091761,
+    "maximum_joint_violation": 0.006718029970561146,
+    "stop_drift": 1.3727802754886809,
+    "paired_comparison": {
+      "certification": {
+        "overall": {
+          "pairs": 72,
+          "baseline_passed": 72,
+          "final_passed": 72,
+          "both_succeeded": 72,
+          "gained_successes": 0,
+          "lost_successes": 0,
+          "arrival_seconds": {
+            "pairs": 72,
+            "baseline_mean": 22.647916666666667,
+            "final_mean": 21.640972222222224,
+            "mean_paired_delta": -1.0069444444444446,
+            "baseline_max": 97.4,
+            "final_max": 51.650000000000006
+          },
+          "progress_speed": {
+            "pairs": 72,
+            "baseline_mean": 2.68108120088832,
+            "final_mean": 2.5831463093292624,
+            "mean_paired_delta": -0.0979348915590579,
+            "baseline_max": 4.948453608247422,
+            "final_max": 4.571428571428571
+          },
+          "backward_travel": {
+            "pairs": 72,
+            "baseline_mean": 5.6312108314819875,
+            "final_mean": 3.376236819660109,
+            "mean_paired_delta": -2.2549740118218784,
+            "baseline_max": 58.27582082142773,
+            "final_max": 35.07622043369183
+          },
+          "worst_reverse_speed": {
+            "pairs": 72,
+            "baseline_mean": 5.338625848670591,
+            "final_mean": 3.37478615378398,
+            "mean_paired_delta": -1.963839694886611,
+            "baseline_max": 22.605015199822624,
+            "final_max": 10.791478875122497
+          },
+          "kickbacks_over_4bps": {
+            "pairs": 72,
+            "baseline_mean": 1.875,
+            "final_mean": 0.8333333333333334,
+            "mean_paired_delta": -1.0416666666666667,
+            "baseline_max": 21,
+            "final_max": 12
+          },
+          "median_paired_speed_gain_percent": -4.9118267203373644,
+          "total_journey_time_reduction_percent": 4.446079784135149
+        },
+        "by_pace": {
+          "careful": {
+            "pairs": 12,
+            "baseline_passed": 12,
+            "final_passed": 12,
+            "both_succeeded": 12,
+            "gained_successes": 0,
+            "lost_successes": 0,
+            "arrival_seconds": {
+              "pairs": 12,
+              "baseline_mean": 36.78333333333334,
+              "final_mean": 36.52916666666667,
+              "mean_paired_delta": -0.25416666666666704,
+              "baseline_max": 91.35000000000001,
+              "final_max": 51.650000000000006
+            },
+            "progress_speed": {
+              "pairs": 12,
+              "baseline_mean": 1.4815706852661539,
+              "final_mean": 1.3746879161703078,
+              "mean_paired_delta": -0.10688276909584592,
+              "baseline_max": 1.8461538461538463,
+              "final_max": 1.7422867513611615
+            },
+            "backward_travel": {
+              "pairs": 12,
+              "baseline_mean": 1.9462546437854515,
+              "final_mean": 2.4887796175883365,
+              "mean_paired_delta": 0.542524973802885,
+              "baseline_max": 7.110250113632388,
+              "final_max": 6.767911659816391
+            },
+            "worst_reverse_speed": {
+              "pairs": 12,
+              "baseline_mean": 3.0632103043823307,
+              "final_mean": 2.4294312502234816,
+              "mean_paired_delta": -0.6337790541588488,
+              "baseline_max": 9.292548416086227,
+              "final_max": 5.440540720200705
+            },
+            "kickbacks_over_4bps": {
+              "pairs": 12,
+              "baseline_mean": 0.3333333333333333,
+              "final_mean": 0.4166666666666667,
+              "mean_paired_delta": 0.08333333333333333,
+              "baseline_max": 2,
+              "final_max": 2
+            },
+            "median_paired_speed_gain_percent": -7.844616042684438,
+            "total_journey_time_reduction_percent": 0.6909832351608802
+          },
+          "fast": {
+            "pairs": 12,
+            "baseline_passed": 12,
+            "final_passed": 12,
+            "both_succeeded": 12,
+            "gained_successes": 0,
+            "lost_successes": 0,
+            "arrival_seconds": {
+              "pairs": 12,
+              "baseline_mean": 20.566666666666666,
+              "final_mean": 20.212500000000002,
+              "mean_paired_delta": -0.3541666666666667,
+              "baseline_max": 40.400000000000006,
+              "final_max": 30.25
+            },
+            "progress_speed": {
+              "pairs": 12,
+              "baseline_mean": 2.549131533159411,
+              "final_mean": 2.5007600329644797,
+              "mean_paired_delta": -0.04837150019493144,
+              "baseline_max": 3.310344827586207,
+              "final_max": 3.2
+            },
+            "backward_travel": {
+              "pairs": 12,
+              "baseline_mean": 3.7775275686143077,
+              "final_mean": 2.3249575108059957,
+              "mean_paired_delta": -1.4525700578083118,
+              "baseline_max": 18.42536118149006,
+              "final_max": 15.112912365155195
+            },
+            "worst_reverse_speed": {
+              "pairs": 12,
+              "baseline_mean": 3.7148887263457713,
+              "final_mean": 3.1042133348033127,
+              "mean_paired_delta": -0.6106753915424586,
+              "baseline_max": 9.087808641159715,
+              "final_max": 8.855061549020588
+            },
+            "kickbacks_over_4bps": {
+              "pairs": 12,
+              "baseline_mean": 1.25,
+              "final_mean": 0.5,
+              "mean_paired_delta": -0.75,
+              "baseline_max": 8,
+              "final_max": 4
+            },
+            "median_paired_speed_gain_percent": -3.975012771858122,
+            "total_journey_time_reduction_percent": 1.7220421393841168
+          },
+          "horrific": {
+            "pairs": 48,
+            "baseline_passed": 48,
+            "final_passed": 48,
+            "both_succeeded": 48,
+            "gained_successes": 0,
+            "lost_successes": 0,
+            "arrival_seconds": {
+              "pairs": 48,
+              "baseline_mean": 19.634375000000002,
+              "final_mean": 18.276041666666668,
+              "mean_paired_delta": -1.3583333333333336,
+              "baseline_max": 97.4,
+              "final_max": 47.400000000000006
+            },
+            "progress_speed": {
+              "pairs": 48,
+              "baseline_mean": 3.013946246726089,
+              "final_mean": 2.9058574767101963,
+              "mean_paired_delta": -0.1080887700158925,
+              "baseline_max": 4.948453608247422,
+              "final_max": 4.571428571428571
+            },
+            "backward_travel": {
+              "pairs": 48,
+              "baseline_mean": 7.015870694123041,
+              "final_mean": 3.8609209473915804,
+              "mean_paired_delta": -3.154949746731461,
+              "baseline_max": 58.27582082142773,
+              "final_max": 35.07622043369183
+            },
+            "worst_reverse_speed": {
+              "pairs": 48,
+              "baseline_mean": 6.313414015323861,
+              "final_mean": 3.678768084419272,
+              "mean_paired_delta": -2.6346459309045898,
+              "baseline_max": 22.605015199822624,
+              "final_max": 10.791478875122497
+            },
+            "kickbacks_over_4bps": {
+              "pairs": 48,
+              "baseline_mean": 2.4166666666666665,
+              "final_mean": 1.0208333333333333,
+              "mean_paired_delta": -1.3958333333333333,
+              "baseline_max": 21,
+              "final_max": 12
+            },
+            "median_paired_speed_gain_percent": -2.808971207133637,
+            "total_journey_time_reduction_percent": 6.918138893309978
+          }
+        },
+        "by_kind": {
+          "0": {
+            "pairs": 12,
+            "baseline_passed": 12,
+            "final_passed": 12,
+            "both_succeeded": 12,
+            "gained_successes": 0,
+            "lost_successes": 0,
+            "arrival_seconds": {
+              "pairs": 12,
+              "baseline_mean": 26.937500000000004,
+              "final_mean": 26.954166666666666,
+              "mean_paired_delta": 0.01666666666666557,
+              "baseline_max": 60.5,
+              "final_max": 47.400000000000006
+            },
+            "progress_speed": {
+              "pairs": 12,
+              "baseline_mean": 2.2474174449268296,
+              "final_mean": 2.00287032874926,
+              "mean_paired_delta": -0.24454711617756983,
+              "baseline_max": 4.485981308411215,
+              "final_max": 2.831858407079646
+            },
+            "backward_travel": {
+              "pairs": 12,
+              "baseline_mean": 14.476547142911116,
+              "final_mean": 8.38158882041184,
+              "mean_paired_delta": -6.0949583224992745,
+              "baseline_max": 58.27582082142773,
+              "final_max": 35.07622043369183
+            },
+            "worst_reverse_speed": {
+              "pairs": 12,
+              "baseline_mean": 9.038206551273758,
+              "final_mean": 6.017149315912799,
+              "mean_paired_delta": -3.021057235360958,
+              "baseline_max": 22.373761288836278,
+              "final_max": 10.21782989293478
+            },
+            "kickbacks_over_4bps": {
+              "pairs": 12,
+              "baseline_mean": 4.833333333333333,
+              "final_mean": 2.3333333333333335,
+              "mean_paired_delta": -2.5,
+              "baseline_max": 21,
+              "final_max": 12
+            },
+            "median_paired_speed_gain_percent": -13.320562987851092,
+            "total_journey_time_reduction_percent": -0.06187161639596983
+          },
+          "1": {
+            "pairs": 12,
+            "baseline_passed": 12,
+            "final_passed": 12,
+            "both_succeeded": 12,
+            "gained_successes": 0,
+            "lost_successes": 0,
+            "arrival_seconds": {
+              "pairs": 12,
+              "baseline_mean": 16.454166666666666,
+              "final_mean": 17.229166666666668,
+              "mean_paired_delta": 0.7750000000000002,
+              "baseline_max": 31.8,
+              "final_max": 31.950000000000003
+            },
+            "progress_speed": {
+              "pairs": 12,
+              "baseline_mean": 3.2731932300951345,
+              "final_mean": 3.0877999938829896,
+              "mean_paired_delta": -0.18539323621214504,
+              "baseline_max": 4.948453608247422,
+              "final_max": 4.465116279069767
+            },
+            "backward_travel": {
+              "pairs": 12,
+              "baseline_mean": 0.8307725775222411,
+              "final_mean": 0.4489131418371573,
+              "mean_paired_delta": -0.3818594356850838,
+              "baseline_max": 3.7757946195993126,
+              "final_max": 2.8036331717677268
+            },
+            "worst_reverse_speed": {
+              "pairs": 12,
+              "baseline_mean": 2.073694639924388,
+              "final_mean": 1.3871346216162828,
+              "mean_paired_delta": -0.6865600183081048,
+              "baseline_max": 9.242685775651301,
+              "final_max": 2.916770166639978
+            },
+            "kickbacks_over_4bps": {
+              "pairs": 12,
+              "baseline_mean": 0.25,
+              "final_mean": 0,
+              "mean_paired_delta": -0.25,
+              "baseline_max": 2,
+              "final_max": 0
+            },
+            "median_paired_speed_gain_percent": -6.2420878371798665,
+            "total_journey_time_reduction_percent": -4.710053178019757
+          },
+          "3": {
+            "pairs": 6,
+            "baseline_passed": 6,
+            "final_passed": 6,
+            "both_succeeded": 6,
+            "gained_successes": 0,
+            "lost_successes": 0,
+            "arrival_seconds": {
+              "pairs": 6,
+              "baseline_mean": 44.90833333333334,
+              "final_mean": 22.791666666666668,
+              "mean_paired_delta": -22.116666666666667,
+              "baseline_max": 97.4,
+              "final_max": 35.95
+            },
+            "progress_speed": {
+              "pairs": 6,
+              "baseline_mean": 1.8014415289477448,
+              "final_mean": 2.2129155033061356,
+              "mean_paired_delta": 0.4114739743583909,
+              "baseline_max": 3.028391167192429,
+              "final_max": 2.6301369863013697
+            },
+            "backward_travel": {
+              "pairs": 6,
+              "baseline_mean": 6.723429886058099,
+              "final_mean": 4.481284650480942,
+              "mean_paired_delta": -2.2421452355771585,
+              "baseline_max": 14.398973210146435,
+              "final_max": 12.738218790218523
+            },
+            "worst_reverse_speed": {
+              "pairs": 6,
+              "baseline_mean": 8.349210449161097,
+              "final_mean": 5.0084266531511,
+              "mean_paired_delta": -3.340783796009997,
+              "baseline_max": 16.69965138569785,
+              "final_max": 10.791478875122497
+            },
+            "kickbacks_over_4bps": {
+              "pairs": 6,
+              "baseline_mean": 2.8333333333333335,
+              "final_mean": 0.8333333333333334,
+              "mean_paired_delta": -2,
+              "baseline_max": 9,
+              "final_max": 2
+            },
+            "median_paired_speed_gain_percent": 13.748983594011577,
+            "total_journey_time_reduction_percent": 49.24846910372982
+          },
+          "9": {
+            "pairs": 6,
+            "baseline_passed": 6,
+            "final_passed": 6,
+            "both_succeeded": 6,
+            "gained_successes": 0,
+            "lost_successes": 0,
+            "arrival_seconds": {
+              "pairs": 6,
+              "baseline_mean": 14.366666666666667,
+              "final_mean": 15.083333333333334,
+              "mean_paired_delta": 0.7166666666666671,
+              "baseline_max": 26.55,
+              "final_max": 27.55
+            },
+            "progress_speed": {
+              "pairs": 6,
+              "baseline_mean": 3.7034270036347543,
+              "final_mean": 3.5111222317329935,
+              "mean_paired_delta": -0.19230477190176098,
+              "baseline_max": 4.705882352941176,
+              "final_max": 4.444444444444444
+            },
+            "backward_travel": {
+              "pairs": 6,
+              "baseline_mean": 0.036492913168391844,
+              "final_mean": 0.1638542587042518,
+              "mean_paired_delta": 0.12736134553585995,
+              "baseline_max": 0.07327868604018968,
+              "final_max": 0.3337295375784044
+            },
+            "worst_reverse_speed": {
+              "pairs": 6,
+              "baseline_mean": 0.29865375114506393,
+              "final_mean": 1.2546346697576791,
+              "mean_paired_delta": 0.9559809186126152,
+              "baseline_max": 0.6907059474692243,
+              "final_max": 2.6735451834405497
+            },
+            "kickbacks_over_4bps": {
+              "pairs": 6,
+              "baseline_mean": 0,
+              "final_mean": 0,
+              "mean_paired_delta": 0,
+              "baseline_max": 0,
+              "final_max": 0
+            },
+            "median_paired_speed_gain_percent": -3.4815486993345357,
+            "total_journey_time_reduction_percent": -4.988399071925742
+          },
+          "10": {
+            "pairs": 6,
+            "baseline_passed": 6,
+            "final_passed": 6,
+            "both_succeeded": 6,
+            "gained_successes": 0,
+            "lost_successes": 0,
+            "arrival_seconds": {
+              "pairs": 6,
+              "baseline_mean": 19.75,
+              "final_mean": 21.308333333333334,
+              "mean_paired_delta": 1.5583333333333333,
+              "baseline_max": 30.650000000000002,
+              "final_max": 40.45
+            },
+            "progress_speed": {
+              "pairs": 6,
+              "baseline_mean": 2.643449406952913,
+              "final_mean": 2.5618742407475916,
+              "mean_paired_delta": -0.0815751662053215,
+              "baseline_max": 4.033613445378151,
+              "final_max": 3.4532374100719423
+            },
+            "backward_travel": {
+              "pairs": 6,
+              "baseline_mean": 4.013700752705245,
+              "final_mean": 3.909197761858238,
+              "mean_paired_delta": -0.10450299084700637,
+              "baseline_max": 13.315846947592588,
+              "final_max": 18.248405272426414
+            },
+            "worst_reverse_speed": {
+              "pairs": 6,
+              "baseline_mean": 7.317841546169717,
+              "final_mean": 3.2063015774814843,
+              "mean_paired_delta": -4.111539968688232,
+              "baseline_max": 18.35811007720309,
+              "final_max": 8.690293865598376
+            },
+            "kickbacks_over_4bps": {
+              "pairs": 6,
+              "baseline_mean": 0.6666666666666666,
+              "final_mean": 0.5,
+              "mean_paired_delta": -0.16666666666666666,
+              "baseline_max": 1,
+              "final_max": 3
+            },
+            "median_paired_speed_gain_percent": -5.4145324743591345,
+            "total_journey_time_reduction_percent": -7.890295358649779
+          },
+          "11": {
+            "pairs": 6,
+            "baseline_passed": 6,
+            "final_passed": 6,
+            "both_succeeded": 6,
+            "gained_successes": 0,
+            "lost_successes": 0,
+            "arrival_seconds": {
+              "pairs": 6,
+              "baseline_mean": 24.225,
+              "final_mean": 25.950000000000003,
+              "mean_paired_delta": 1.7249999999999996,
+              "baseline_max": 29.85,
+              "final_max": 43.7
+            },
+            "progress_speed": {
+              "pairs": 6,
+              "baseline_mean": 2.0366994371337093,
+              "final_mean": 1.982533200223304,
+              "mean_paired_delta": -0.054166236910405376,
+              "baseline_max": 2.474226804123711,
+              "final_max": 2.341463414634146
+            },
+            "backward_travel": {
+              "pairs": 6,
+              "baseline_mean": 16.448976066806058,
+              "final_mean": 7.98595210249388,
+              "mean_paired_delta": -8.46302396431218,
+              "baseline_max": 38.90734322011774,
+              "final_max": 12.703918425189809
+            },
+            "worst_reverse_speed": {
+              "pairs": 6,
+              "baseline_mean": 10.60304887850993,
+              "final_mean": 5.765368874335053,
+              "mean_paired_delta": -4.837680004174878,
+              "baseline_max": 22.605015199822624,
+              "final_max": 6.952192485884569
+            },
+            "kickbacks_over_4bps": {
+              "pairs": 6,
+              "baseline_mean": 6,
+              "final_mean": 3,
+              "mean_paired_delta": -3,
+              "baseline_max": 11,
+              "final_max": 5
+            },
+            "median_paired_speed_gain_percent": -3.751807477793845,
+            "total_journey_time_reduction_percent": -7.120743034055699
+          },
+          "12": {
+            "pairs": 6,
+            "baseline_passed": 6,
+            "final_passed": 6,
+            "both_succeeded": 6,
+            "gained_successes": 0,
+            "lost_successes": 0,
+            "arrival_seconds": {
+              "pairs": 6,
+              "baseline_mean": 25.475,
+              "final_mean": 28.1,
+              "mean_paired_delta": 2.625,
+              "baseline_max": 47.150000000000006,
+              "final_max": 51.650000000000006
+            },
+            "progress_speed": {
+              "pairs": 6,
+              "baseline_mean": 2.4582668728769406,
+              "final_mean": 2.2121656623709818,
+              "mean_paired_delta": -0.2461012105059586,
+              "baseline_max": 3.284457478005865,
+              "final_max": 2.8282828282828283
+            },
+            "backward_travel": {
+              "pairs": 6,
+              "baseline_mean": 3.2972292229441855,
+              "final_mean": 2.361485706602346,
+              "mean_paired_delta": -0.9357435163418395,
+              "baseline_max": 5.3879554439318005,
+              "final_max": 3.6931657118477905
+            },
+            "worst_reverse_speed": {
+              "pairs": 6,
+              "baseline_mean": 4.329378812076801,
+              "final_mean": 2.776200900681777,
+              "mean_paired_delta": -1.5531779113950237,
+              "baseline_max": 6.402622076719069,
+              "final_max": 3.6929422496720603
+            },
+            "kickbacks_over_4bps": {
+              "pairs": 6,
+              "baseline_mean": 0.8333333333333334,
+              "final_mean": 0,
+              "mean_paired_delta": -0.8333333333333334,
+              "baseline_max": 2,
+              "final_max": 0
+            },
+            "median_paired_speed_gain_percent": -11.300688394105618,
+            "total_journey_time_reduction_percent": -10.304219823356231
+          },
+          "13": {
+            "pairs": 6,
+            "baseline_passed": 6,
+            "final_passed": 6,
+            "both_succeeded": 6,
+            "gained_successes": 0,
+            "lost_successes": 0,
+            "arrival_seconds": {
+              "pairs": 6,
+              "baseline_mean": 20.44166666666667,
+              "final_mean": 19.908333333333335,
+              "mean_paired_delta": -0.5333333333333338,
+              "baseline_max": 33.300000000000004,
+              "final_max": 35.7
+            },
+            "progress_speed": {
+              "pairs": 6,
+              "baseline_mean": 2.515357447693694,
+              "final_mean": 2.670713728120889,
+              "mean_paired_delta": 0.155356280427195,
+              "baseline_max": 3.287671232876712,
+              "final_max": 3.4285714285714284
+            },
+            "backward_travel": {
+              "pairs": 6,
+              "baseline_mean": 2.9340981590173465,
+              "final_mean": 1.6398528509469426,
+              "mean_paired_delta": -1.2942453080704042,
+              "baseline_max": 5.29121043543908,
+              "final_max": 3.057420129393965
+            },
+            "worst_reverse_speed": {
+              "pairs": 6,
+              "baseline_mean": 4.994246612035268,
+              "final_mean": 3.051678301031009,
+              "mean_paired_delta": -1.9425683110042593,
+              "baseline_max": 10.456868513420838,
+              "final_max": 5.242639400341256
+            },
+            "kickbacks_over_4bps": {
+              "pairs": 6,
+              "baseline_mean": 0.8333333333333334,
+              "final_mean": 0.5,
+              "mean_paired_delta": -0.3333333333333333,
+              "baseline_max": 3,
+              "final_max": 1
+            },
+            "median_paired_speed_gain_percent": 0.74697235832486,
+            "total_journey_time_reduction_percent": 2.609050142682434
+          },
+          "14": {
+            "pairs": 6,
+            "baseline_passed": 6,
+            "final_passed": 6,
+            "both_succeeded": 6,
+            "gained_successes": 0,
+            "lost_successes": 0,
+            "arrival_seconds": {
+              "pairs": 6,
+              "baseline_mean": 20.533333333333335,
+              "final_mean": 22.225,
+              "mean_paired_delta": 1.691666666666667,
+              "baseline_max": 37.1,
+              "final_max": 38.85
+            },
+            "progress_speed": {
+              "pairs": 6,
+              "baseline_mean": 2.5563884400229826,
+              "final_mean": 2.34764341681321,
+              "mean_paired_delta": -0.20874502320977306,
+              "baseline_max": 3.127035830618892,
+              "final_max": 3.127035830618892
+            },
+            "backward_travel": {
+              "pairs": 6,
+              "baseline_mean": 3.0061968115103808,
+              "final_mean": 2.1553760251734295,
+              "mean_paired_delta": -0.8508207863369514,
+              "baseline_max": 6.032238448544864,
+              "final_max": 4.072778843376704
+            },
+            "worst_reverse_speed": {
+              "pairs": 6,
+              "baseline_mean": 4.4432985873019915,
+              "final_mean": 3.3401053331212935,
+              "mean_paired_delta": -1.1031932541806972,
+              "baseline_max": 8.736725266234794,
+              "final_max": 5.387805760467309
+            },
+            "kickbacks_over_4bps": {
+              "pairs": 6,
+              "baseline_mean": 0.8333333333333334,
+              "final_mean": 0.5,
+              "mean_paired_delta": -0.3333333333333333,
+              "baseline_max": 3,
+              "final_max": 2
+            },
+            "median_paired_speed_gain_percent": -6.4189189189189255,
+            "total_journey_time_reduction_percent": -8.238636363636353
+          },
+          "15": {
+            "pairs": 6,
+            "baseline_passed": 6,
+            "final_passed": 6,
+            "both_succeeded": 6,
+            "gained_successes": 0,
+            "lost_successes": 0,
+            "arrival_seconds": {
+              "pairs": 6,
+              "baseline_mean": 15.291666666666668,
+              "final_mean": 15.958333333333334,
+              "mean_paired_delta": 0.666666666666667,
+              "baseline_max": 26.0,
+              "final_max": 27.950000000000003
+            },
+            "progress_speed": {
+              "pairs": 6,
+              "baseline_mean": 3.4167229233531744,
+              "final_mean": 3.317447083371543,
+              "mean_paired_delta": -0.09927583998163132,
+              "baseline_max": 4.383561643835616,
+              "final_max": 4.571428571428571
+            },
+            "backward_travel": {
+              "pairs": 6,
+              "baseline_mean": 0.4997667247074259,
+              "final_mean": 0.15683455516328204,
+              "mean_paired_delta": -0.34293216954414385,
+              "baseline_max": 2.5525627889279145,
+              "final_max": 0.32790811264181696
+            },
+            "worst_reverse_speed": {
+              "pairs": 6,
+              "baseline_mean": 1.5040291652509363,
+              "final_mean": 1.2861496607902019,
+              "mean_paired_delta": -0.2178795044607343,
+              "baseline_max": 5.705457242166982,
+              "final_max": 2.6019650435461497
+            },
+            "kickbacks_over_4bps": {
+              "pairs": 6,
+              "baseline_mean": 0.3333333333333333,
+              "final_mean": 0,
+              "mean_paired_delta": -0.3333333333333333,
+              "baseline_max": 2,
+              "final_max": 0
+            },
+            "median_paired_speed_gain_percent": -2.7632296781233023,
+            "total_journey_time_reduction_percent": -4.3596730245231585
+          }
+        }
+      },
+      "challenge": {
+        "overall": {
+          "pairs": 18,
+          "baseline_passed": 17,
+          "final_passed": 18,
+          "both_succeeded": 17,
+          "gained_successes": 1,
+          "lost_successes": 0,
+          "arrival_seconds": {
+            "pairs": 17,
+            "baseline_mean": 28.288235294117648,
+            "final_mean": 36.95588235294118,
+            "mean_paired_delta": 8.66764705882353,
+            "baseline_max": 71.95,
+            "final_max": 85.65
+          },
+          "progress_speed": {
+            "pairs": 17,
+            "baseline_mean": 2.194378220257215,
+            "final_mean": 1.7224550552238602,
+            "mean_paired_delta": -0.47192316503335485,
+            "baseline_max": 4.485981308411215,
+            "final_max": 3.650190114068441
+          },
+          "backward_travel": {
+            "pairs": 18,
+            "baseline_mean": 17.449987468126135,
+            "final_mean": 8.974616792383559,
+            "mean_paired_delta": -8.475370675742578,
+            "baseline_max": 199.53759615124184,
+            "final_max": 32.358192979935275
+          },
+          "worst_reverse_speed": {
+            "pairs": 18,
+            "baseline_mean": 6.013172549930337,
+            "final_mean": 5.990219610008828,
+            "mean_paired_delta": -0.022952939921508177,
+            "baseline_max": 16.290154093060398,
+            "final_max": 20.146676808249964
+          },
+          "kickbacks_over_4bps": {
+            "pairs": 18,
+            "baseline_mean": 5.111111111111111,
+            "final_mean": 1.9444444444444444,
+            "mean_paired_delta": -3.1666666666666665,
+            "baseline_max": 52,
+            "final_max": 9
+          },
+          "median_paired_speed_gain_percent": -19.696969696969703,
+          "total_journey_time_reduction_percent": -30.640465793304262
+        },
+        "by_pace": {
+          "careful": {
+            "pairs": 6,
+            "baseline_passed": 6,
+            "final_passed": 6,
+            "both_succeeded": 6,
+            "gained_successes": 0,
+            "lost_successes": 0,
+            "arrival_seconds": {
+              "pairs": 6,
+              "baseline_mean": 44.150000000000006,
+              "final_mean": 55.61666666666667,
+              "mean_paired_delta": 11.466666666666667,
+              "baseline_max": 71.95,
+              "final_max": 85.65
+            },
+            "progress_speed": {
+              "pairs": 6,
+              "baseline_mean": 1.2244669930556076,
+              "final_mean": 0.934801185466859,
+              "mean_paired_delta": -0.2896658075887487,
+              "baseline_max": 1.7081850533807827,
+              "final_max": 1.276595744680851
+            },
+            "backward_travel": {
+              "pairs": 6,
+              "baseline_mean": 8.980762888458012,
+              "final_mean": 13.096680172818331,
+              "mean_paired_delta": 4.115917284360321,
+              "baseline_max": 30.52191892094534,
+              "final_max": 32.358192979935275
+            },
+            "worst_reverse_speed": {
+              "pairs": 6,
+              "baseline_mean": 4.691483250679091,
+              "final_mean": 4.093626751444983,
+              "mean_paired_delta": -0.597856499234108,
+              "baseline_max": 8.303923338957622,
+              "final_max": 5.997436001232432
+            },
+            "kickbacks_over_4bps": {
+              "pairs": 6,
+              "baseline_mean": 2,
+              "final_mean": 2.3333333333333335,
+              "mean_paired_delta": 0.3333333333333333,
+              "baseline_max": 6,
+              "final_max": 9
+            },
+            "median_paired_speed_gain_percent": -31.518529408004902,
+            "total_journey_time_reduction_percent": -25.972064930162354
+          },
+          "horrific": {
+            "pairs": 12,
+            "baseline_passed": 11,
+            "final_passed": 12,
+            "both_succeeded": 11,
+            "gained_successes": 1,
+            "lost_successes": 0,
+            "arrival_seconds": {
+              "pairs": 11,
+              "baseline_mean": 19.636363636363637,
+              "final_mean": 26.77727272727273,
+              "mean_paired_delta": 7.1409090909090915,
+              "baseline_max": 35.2,
+              "final_max": 56.650000000000006
+            },
+            "progress_speed": {
+              "pairs": 11,
+              "baseline_mean": 2.7234207078217283,
+              "final_mean": 2.1520844387276794,
+              "mean_paired_delta": -0.5713362690940491,
+              "baseline_max": 4.485981308411215,
+              "final_max": 3.650190114068441
+            },
+            "backward_travel": {
+              "pairs": 12,
+              "baseline_mean": 21.6845997579602,
+              "final_mean": 6.913585102166173,
+              "mean_paired_delta": -14.771014655794028,
+              "baseline_max": 199.53759615124184,
+              "final_max": 17.80456663550773
+            },
+            "worst_reverse_speed": {
+              "pairs": 12,
+              "baseline_mean": 6.674017199555959,
+              "final_mean": 6.938516039290751,
+              "mean_paired_delta": 0.2644988397347917,
+              "baseline_max": 16.290154093060398,
+              "final_max": 20.146676808249964
+            },
+            "kickbacks_over_4bps": {
+              "pairs": 12,
+              "baseline_mean": 6.666666666666667,
+              "final_mean": 1.75,
+              "mean_paired_delta": -4.916666666666667,
+              "baseline_max": 52,
+              "final_max": 5
+            },
+            "median_paired_speed_gain_percent": -18.63117870722433,
+            "total_journey_time_reduction_percent": -36.36574074074075
+          }
+        },
+        "by_kind": {
+          "0": {
+            "pairs": 3,
+            "baseline_passed": 2,
+            "final_passed": 3,
+            "both_succeeded": 2,
+            "gained_successes": 1,
+            "lost_successes": 0,
+            "arrival_seconds": {
+              "pairs": 2,
+              "baseline_mean": 46.0,
+              "final_mean": 46.25,
+              "mean_paired_delta": 0.2500000000000018,
+              "baseline_max": 71.95,
+              "final_max": 53.7
+            },
+            "progress_speed": {
+              "pairs": 2,
+              "baseline_mean": 1.530572456974312,
+              "final_mean": 1.0654840753326038,
+              "mean_paired_delta": -0.4650883816417083,
+              "baseline_max": 2.3940149625935163,
+              "final_max": 1.2371134020618555
+            },
+            "backward_travel": {
+              "pairs": 3,
+              "baseline_mean": 72.54886935726759,
+              "final_mean": 11.708438707974395,
+              "mean_paired_delta": -60.8404306492932,
+              "baseline_max": 199.53759615124184,
+              "final_max": 17.80456663550773
+            },
+            "worst_reverse_speed": {
+              "pairs": 3,
+              "baseline_mean": 10.572572665221223,
+              "final_mean": 9.104596135355656,
+              "mean_paired_delta": -1.467976529865567,
+              "baseline_max": 16.290154093060398,
+              "final_max": 11.907034116862242
+            },
+            "kickbacks_over_4bps": {
+              "pairs": 3,
+              "baseline_mean": 19,
+              "final_mean": 3,
+              "mean_paired_delta": -16,
+              "baseline_max": 52,
+              "final_max": 5
+            },
+            "median_paired_speed_gain_percent": -7.169819923592313,
+            "total_journey_time_reduction_percent": -0.5434782608695565
+          },
+          "1": {
+            "pairs": 3,
+            "baseline_passed": 3,
+            "final_passed": 3,
+            "both_succeeded": 3,
+            "gained_successes": 0,
+            "lost_successes": 0,
+            "arrival_seconds": {
+              "pairs": 3,
+              "baseline_mean": 19.35,
+              "final_mean": 28.166666666666668,
+              "mean_paired_delta": 8.816666666666666,
+              "baseline_max": 28.1,
+              "final_max": 41.1
+            },
+            "progress_speed": {
+              "pairs": 3,
+              "baseline_mean": 2.714474361556883,
+              "final_mean": 2.006858390731601,
+              "mean_paired_delta": -0.7076159708252823,
+              "baseline_max": 3.4163701067615655,
+              "final_max": 3.1475409836065573
+            },
+            "backward_travel": {
+              "pairs": 3,
+              "baseline_mean": 0.48570308506547355,
+              "final_mean": 5.047710063926468,
+              "mean_paired_delta": 4.562006978860994,
+              "baseline_max": 0.5509876817434687,
+              "final_max": 10.641910962088936
+            },
+            "worst_reverse_speed": {
+              "pairs": 3,
+              "baseline_mean": 2.9870942166267556,
+              "final_mean": 3.7987685489041008,
+              "mean_paired_delta": 0.8116743322773454,
+              "baseline_max": 3.737397656474669,
+              "final_max": 7.5509840642759105
+            },
+            "kickbacks_over_4bps": {
+              "pairs": 3,
+              "baseline_mean": 0,
+              "final_mean": 0.3333333333333333,
+              "mean_paired_delta": 0.3333333333333333,
+              "baseline_max": 0,
+              "final_max": 1
+            },
+            "median_paired_speed_gain_percent": -31.630170316301697,
+            "total_journey_time_reduction_percent": -45.564168819982754
+          },
+          "3": {
+            "pairs": 6,
+            "baseline_passed": 6,
+            "final_passed": 6,
+            "both_succeeded": 6,
+            "gained_successes": 0,
+            "lost_successes": 0,
+            "arrival_seconds": {
+              "pairs": 6,
+              "baseline_mean": 32.65833333333334,
+              "final_mean": 47.40833333333334,
+              "mean_paired_delta": 14.750000000000002,
+              "baseline_max": 58.75,
+              "final_max": 85.65
+            },
+            "progress_speed": {
+              "pairs": 6,
+              "baseline_mean": 1.7591231230243896,
+              "final_mean": 1.3322621325895907,
+              "mean_paired_delta": -0.42686099043479897,
+              "baseline_max": 2.7906976744186047,
+              "final_max": 2.2695035460992905
+            },
+            "backward_travel": {
+              "pairs": 6,
+              "baseline_mean": 11.11160026458178,
+              "final_mean": 13.178852168478723,
+              "mean_paired_delta": 2.0672519038969432,
+              "baseline_max": 30.52191892094534,
+              "final_max": 32.358192979935275
+            },
+            "worst_reverse_speed": {
+              "pairs": 6,
+              "baseline_mean": 6.285044771869283,
+              "final_mean": 5.646817062028305,
+              "mean_paired_delta": -0.6382277098409782,
+              "baseline_max": 13.331047175691193,
+              "final_max": 6.773620690269459
+            },
+            "kickbacks_over_4bps": {
+              "pairs": 6,
+              "baseline_mean": 3.8333333333333335,
+              "final_mean": 3.3333333333333335,
+              "mean_paired_delta": -0.5,
+              "baseline_max": 10,
+              "final_max": 9
+            },
+            "median_paired_speed_gain_percent": -34.60037010880524,
+            "total_journey_time_reduction_percent": -45.16458280173514
+          },
+          "4": {
+            "pairs": 3,
+            "baseline_passed": 3,
+            "final_passed": 3,
+            "both_succeeded": 3,
+            "gained_successes": 0,
+            "lost_successes": 0,
+            "arrival_seconds": {
+              "pairs": 3,
+              "baseline_mean": 19.433333333333334,
+              "final_mean": 21.46666666666667,
+              "mean_paired_delta": 2.0333333333333328,
+              "baseline_max": 35.45,
+              "final_max": 37.6
+            },
+            "progress_speed": {
+              "pairs": 3,
+              "baseline_mean": 3.263539446161043,
+              "final_mean": 2.814423125077603,
+              "mean_paired_delta": -0.4491163210834402,
+              "baseline_max": 4.485981308411215,
+              "final_max": 3.650190114068441
+            },
+            "backward_travel": {
+              "pairs": 3,
+              "baseline_mean": 0.25170172361984167,
+              "final_mean": 0.5771811276827735,
+              "mean_paired_delta": 0.32547940406293185,
+              "baseline_max": 0.5455140403898215,
+              "final_max": 1.0046047137580192
+            },
+            "worst_reverse_speed": {
+              "pairs": 3,
+              "baseline_mean": 1.0876909066212312,
+              "final_mean": 1.859675959702005,
+              "mean_paired_delta": 0.7719850530807738,
+              "baseline_max": 1.8633079243185722,
+              "final_max": 2.5041578661666093
+            },
+            "kickbacks_over_4bps": {
+              "pairs": 3,
+              "baseline_mean": 0,
+              "final_mean": 0,
+              "mean_paired_delta": 0,
+              "baseline_max": 0,
+              "final_max": 0
+            },
+            "median_paired_speed_gain_percent": -10.989010989010984,
+            "total_journey_time_reduction_percent": -10.463121783876495
+          },
+          "11": {
+            "pairs": 3,
+            "baseline_passed": 3,
+            "final_passed": 3,
+            "both_succeeded": 3,
+            "gained_successes": 0,
+            "lost_successes": 0,
+            "arrival_seconds": {
+              "pairs": 3,
+              "baseline_mean": 25.533333333333335,
+              "final_mean": 34.13333333333333,
+              "mean_paired_delta": 8.600000000000001,
+              "baseline_max": 29.25,
+              "final_max": 47.95
+            },
+            "progress_speed": {
+              "pairs": 3,
+              "baseline_mean": 1.9181682230413057,
+              "final_mean": 1.5644501483917541,
+              "mean_paired_delta": -0.3537180746495516,
+              "baseline_max": 2.302158273381295,
+              "final_max": 2.2377622377622375
+            },
+            "backward_travel": {
+              "pairs": 3,
+              "baseline_mean": 9.190450113640358,
+              "final_mean": 10.15666651776027,
+              "mean_paired_delta": 0.9662164041199119,
+              "baseline_max": 19.1638663447694,
+              "final_max": 15.390142246782286
+            },
+            "worst_reverse_speed": {
+              "pairs": 3,
+              "baseline_mean": 8.861587967374245,
+              "final_mean": 9.884642892034599,
+              "mean_paired_delta": 1.0230549246603553,
+              "baseline_max": 13.71609792393349,
+              "final_max": 20.146676808249964
+            },
+            "kickbacks_over_4bps": {
+              "pairs": 3,
+              "baseline_mean": 4,
+              "final_mean": 1.6666666666666667,
+              "mean_paired_delta": -2.3333333333333335,
+              "baseline_max": 10,
+              "final_max": 3
+            },
+            "median_paired_speed_gain_percent": -19.696969696969703,
+            "total_journey_time_reduction_percent": -33.68146214099219
+          }
+        }
+      }
+    },
+    "baseline_implementation_sha256": "4be084249f34f6933ed38f182ec4eeacfb69d28f648797121ef8c33fd30bab4e",
+    "final_implementation_sha256": "25f7b11c6a5c96462bbfe4d75ae189b036d758ae1f4e6f4e3a098756dffa50da",
+    "comparison_scope": "Identical-course full-system comparison across the recorded training/baseline and final sources: original v9 genome with both swing features disabled versus the released generation-1 candidate-3 genome with both enabled and the post-training descent-clearance and pending-retarget refinements. The descent correction applies only when early clearance is enabled and would be inactive under the baseline flags; pending retargeting is separate navigator behavior and the tested source versions remain distinct. This does not isolate individual feature, timing or refinement effects. Time/speed use only pairs where both succeeded; reverse-motion summaries include every pair and observation durations can differ.",
+    "reverse_motion_definition": "Opposite-goal motion proxy, sampled after 80 settle ticks, outside navigator back-outs and more than 3 blocks from goal. Kickbacks count entries above 4 blocks/s reverse speed. These are not measured collision impulses.",
+    "scope": "97 native qualification cases plus 18 development stress cases and 90 fresh original-v9 baseline route trials, following 96 three-parameter CEM development episodes. Another 72 certification and 18 stress trials document the training winner before the descent refinement on the training source and informed checkpoint selection and engineering refinement.",
+    "limits": "Stress suite is a development benchmark, not unseen validation. No leap, swimming, wall climbing or universal terrain guarantee; loaded bounded-horizon route planning and large physical footprint."
+  },
+  "early_clearance": true,
+  "coordinated_swing": true,
+  "shoulder_maximum": 1.05,
+  "source_sha256": {
+    "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/leaper/LeaperPartBlock.java": "f0d31ddac20312a0d89188fa202a3b59965740dd3e9b6c27f9ffdd002b663d6d",
+    "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperGait.java": "d17087a9773ad70a7d0f42e6946bb8107ef0a538cae8ac95504face2e8b3123c",
+    "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperMotionWindow.java": "19b9f333af80551f423d68ad0a50a010fa5ef37386a2c45dc0b129249e077451",
+    "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperPointController.java": "7272df5d2c24e821a139427ac14076a0d84cc54e194059ea32e7d9af7f55162c",
+    "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperPredatorPlanner.java": "22179881ebb55556b4f27b1524c675057221e46dc6e7d6b6d82a47a27a162f69",
+    "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperSwingClearance.java": "07478a33698341e0985b37a97f1a3b2474321f1ef4a2e244c8f41d6ebb2e4024",
+    "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperTerrainPlanner.java": "9afd5fd02fef6c96f15d587eeb9f6c68d318169c0f62926baf2d0189107f7219",
+    "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperTravelWindow.java": "d7304bc4962f60ec4925a4c418058f5cbec70b24a5d322bb9a81975a9c80cf5f",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaper.java": "34e15434a8c2bc4cd4d90d1ac695f35d70a990caab42cb0b443aef7c8078daec",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperClearanceExperiments.java": "c68ca5be0cf49dcae994dd64d311daafbe63463b687f2dc4f6008756095ed04e",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperClearanceTuning.java": "d7ebf14a5237b10ff3b3eac7986e0056439d7473d763b8a0b5fd0cfbfadc0c59",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperEpisode.java": "61e4ac5615f46e071f7821c601670b0963cd83c47ba0c2a5f5828e7b7053478f",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperGaitQualification.java": "46dd43a1c4ff567ceb2597811a079cc0f7304ef8da6c80ea2b24aeeb3d0286fd",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperGameTests.java": "c599b5b578a34068f5e5f84d0d04d851d10165b23b0cc5099619be85b319d107",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperLearning.java": "248ce37d628cd26e4da12b26c8e5145d4c7ea2fbf3de5212839d253351776eb3",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperLongRangeTest.java": "7f63fa9c7d8266ac87fcdbb1cd6d0a2abcaaf8ec6d80491a9e292319e11b49e4",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperManager.java": "370e3c0e8a8b1edf272ef60e21781703436c0dd48b78b369349e7dcf1526d678",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperModel.java": "cca392d24e7cd76cb515d39173e4ce9a6fc17cd8da4c63ec8daccb4654b3ea6b",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperNavigationTests.java": "f311d728ff32921e5e56a171593814b59f5292ec6ccf62367f59d81853e2046b",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperNavigationTrainer.java": "e4e1057c23458c66debcdf7f6620b2fe187124e6e53b6dac85bad76945411326",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPaceTests.java": "3416c3dffce59017a4c82444a0128cb2620619ef7e0c0f83e321c9aa3b3ee09e",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPhysicsLease.java": "2bdddd0faeadb1873f1a7bb7a73dbd9be6117377ef3089216ffeb3f1aeb7bf48",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorControl.java": "21581035e7551ef7c31902638ca58e56c434bb508d38d27ad8aa4422697e0ccd",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorExperiments.java": "af6c661744728450d886b659428fb35628f265d04b5ddea622ab59434a0efa38",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorInteractionTests.java": "54633febb9cf67b59bbd3061ec820a624655abf4771bbf88d1b52f5e16a7b69d",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorMap.java": "3790409887d6be19d86e612a77f953b221bfc1bcaa54355d82706bb86cda0bd4",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorNavigator.java": "d6523019c7490d216b05f7140747bb9ee30beb492f4fdca1b1d67d4361d4d8ca",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorPolicy.java": "87d48a0e2e8dde5e91d1a150ffcb46bb7f761c73b9e17e539d821f2cb1b36831",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorRouteTests.java": "1c7a0a89fbe0ff54449f1785d81f999050b7e833a9f90578963a0d89e4f781eb",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorWildernessTests.java": "e49ac6e627ee221ebe42eafd420e5e5d9c0ce43927f12882ff38d5a3da0d03b1",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperRouteTests.java": "f5396c8a1bcd13f0ea149dcbfffb8e03ff405b8d86f5914f806e51c083fe932d",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperSpeedProbe.java": "e8e7a000fcfb7a363f4639864dd23056eaa97f24b98a7d248285f56b06c8e585",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperStick.java": "306195e2838fd2c2ff3baf90772557ec244e94094d636ebc2aa092813b66e01a",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainControl.java": "95d84d475e6e5aecf2f1d1ca9668abe6907fab8abd53d580fed87ac85adbdd5f",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainCourse.java": "8db427c9acbc0b2cf1f7a7863bffff7a6da7c045ee5fb63f7e47d75a2cc085b5",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainEpisode.java": "db9423e960453f3c7b1b8fb1d173d8d0403a61935869ec9fe0866505988ead4d",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainExperiments.java": "f8e7d452089b0c193ead03e3a33a17a5ea75412cfdf1a4d7d6f4fed020fad47d",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainInteractionTests.java": "7404278365be81067f035dcad8d2d9152adb2ad99e77820d408f8724a1b824f7",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainMap.java": "520e201f40f1e333784c4e30f52dc61932179d03ef01cafa16cf6260f12d3a10",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainNavigator.java": "15c36fb978de0815d700d1b28b6094421fa850364217573267c6027810c470e8",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainOptimization.java": "6c66ed23350af0a3824f094813062372454189d96e65792d11264e0807a4eac5",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainParameters.java": "175e1b5cc3ded1cfdc11fe293a3c40720356019f3138cbe443fce51182cf892d",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainTests.java": "f6ca8759f34fc430adfd88d74fb0f02a880a17dc85815980a666715198634f79",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTrainer.java": "3270db41580820950ec01a1a96a396cf9393f0e5cd49fee145dd9d1bde2e25c4",
+    "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesQuadrupedChunkLease.java": "4e05c26bb5a30fff3dd8429413dc230b3b685a745473b7dbdb99f566967484ef",
+    "minecraft_machines/common/src/test/java/dev/ahmedhamedi/minecraft_machines/content/servo/ServoJointMathTest.java": "926ada938baded17b53b1af6834e6aadea0e335e58929246cc26ed9afc28821f",
+    "minecraft_machines/common/src/test/java/dev/ahmedhamedi/minecraft_machines/content/training/DuopodEvaluationSanityTest.java": "56224c0ba87849ec799427efbaecd1e86a63fa886c1eaf6a82f9897dd99180d4",
+    "minecraft_machines/common/src/test/java/dev/ahmedhamedi/minecraft_machines/content/training/DuopodWalkForwardBenchmarkAcceptanceTest.java": "d5190fbd62f545323dac80415b94bb86bae15dda8e5ad8be024a1cc6312ea630",
+    "minecraft_machines/common/src/test/java/dev/ahmedhamedi/minecraft_machines/content/training/FirstTerminalSnapshotTest.java": "8ec356778e4b095a0a8809ac033e524d2a10215bbde55afb138922d054c0e562",
+    "minecraft_machines/common/src/test/java/dev/ahmedhamedi/minecraft_machines/content/training/LeaperGaitTest.java": "0975d5ec7b05fa30814813b54cd08b7a4ae3bb634ff5604ed2c417bbfaf2b427",
+    "minecraft_machines/common/src/test/java/dev/ahmedhamedi/minecraft_machines/content/training/LeaperMotionWindowTest.java": "7447f0e710fb137f440dbb591cbe1a47961957c672963fdcc218f031f4bb6734",
+    "minecraft_machines/common/src/test/java/dev/ahmedhamedi/minecraft_machines/content/training/LeaperNavigationTest.java": "c164750e592af64ad8e0c3597db6d7bc1b9b7de6bf203444425b3013982bbb1d",
+    "minecraft_machines/common/src/test/java/dev/ahmedhamedi/minecraft_machines/content/training/LeaperPredatorPlannerTest.java": "a32c300c315d9554170553534f52aa8b7a0d92fb8e46f279837d9e261e70dae5",
+    "minecraft_machines/common/src/test/java/dev/ahmedhamedi/minecraft_machines/content/training/LeaperSwingClearanceTest.java": "0a373fc4ea7496d7d4585090965132a575c59864a93b03c263d8e92eb33a0ac2",
+    "minecraft_machines/common/src/test/java/dev/ahmedhamedi/minecraft_machines/content/training/LeaperTerrainPlannerTest.java": "62a8a5da29a520200b2c4aa90bcc12844c634f5f3de879bb4f6f6313dda65e3c",
+    "minecraft_machines/common/src/test/java/dev/ahmedhamedi/minecraft_machines/content/training/LeaperTravelWindowTest.java": "7f2acee9fce6263133bad24ecfc75146271f19c283792b5124d0b60da723b924",
+    "minecraft_machines/common/src/test/java/dev/ahmedhamedi/minecraft_machines/content/training/LocomotionVectorEnvironmentTest.java": "c09c42005d76f2634ef104a5628daf156934ec6d9ae78fb534e410684a8cf22a",
+    "minecraft_machines/common/src/test/java/dev/ahmedhamedi/minecraft_machines/content/training/QuadrupedGaitPolicyTest.java": "4babcf7668486a945611addf0685510868d936afe4004b4eb77255cd1ed17dae",
+    "minecraft_machines/common/src/test/java/dev/ahmedhamedi/minecraft_machines/content/training/QuadrupedNavigationTest.java": "287b91b0f59736ceae2293919f375e166fc1eaa8914eb1a98aada2630fc37488",
+    "minecraft_machines/common/src/test/java/dev/ahmedhamedi/minecraft_machines/content/training/TrainingCoreTest.java": "8e0a6803ec29a034fdd964009880b410fe84e687de1e465de10a89fc2cb30fe8",
+    "minecraft_machines/common/src/test/java/dev/ahmedhamedi/minecraft_machines/content/worm/training/WormCemTrainingTest.java": "4e9ebf22c424ac13fb1001683f96e7735cedff298f25b86470f28389517d1ee8"
+  },
+  "source_provenance": {
+    "training_and_fresh_baseline": {
+      "implementation_sha256": "4be084249f34f6933ed38f182ec4eeacfb69d28f648797121ef8c33fd30bab4e",
+      "archive": "artifacts/leaper-clearance/timing-training-source.zip",
+      "source_sha256": {
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/leaper/LeaperPartBlock.java": "f0d31ddac20312a0d89188fa202a3b59965740dd3e9b6c27f9ffdd002b663d6d",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperGait.java": "d17087a9773ad70a7d0f42e6946bb8107ef0a538cae8ac95504face2e8b3123c",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperMotionWindow.java": "19b9f333af80551f423d68ad0a50a010fa5ef37386a2c45dc0b129249e077451",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperPointController.java": "7272df5d2c24e821a139427ac14076a0d84cc54e194059ea32e7d9af7f55162c",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperPredatorPlanner.java": "22179881ebb55556b4f27b1524c675057221e46dc6e7d6b6d82a47a27a162f69",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperSwingClearance.java": "c584ad493167a3379da24f8a9c2ff2b90e53ac66e0cc8f154a1bdfed8aad3df8",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperTerrainPlanner.java": "9afd5fd02fef6c96f15d587eeb9f6c68d318169c0f62926baf2d0189107f7219",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperTravelWindow.java": "d7304bc4962f60ec4925a4c418058f5cbec70b24a5d322bb9a81975a9c80cf5f",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaper.java": "34e15434a8c2bc4cd4d90d1ac695f35d70a990caab42cb0b443aef7c8078daec",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperClearanceExperiments.java": "c68ca5be0cf49dcae994dd64d311daafbe63463b687f2dc4f6008756095ed04e",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperClearanceTuning.java": "d7ebf14a5237b10ff3b3eac7986e0056439d7473d763b8a0b5fd0cfbfadc0c59",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperEpisode.java": "61e4ac5615f46e071f7821c601670b0963cd83c47ba0c2a5f5828e7b7053478f",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperGaitQualification.java": "46dd43a1c4ff567ceb2597811a079cc0f7304ef8da6c80ea2b24aeeb3d0286fd",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperGameTests.java": "c599b5b578a34068f5e5f84d0d04d851d10165b23b0cc5099619be85b319d107",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperLearning.java": "248ce37d628cd26e4da12b26c8e5145d4c7ea2fbf3de5212839d253351776eb3",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperLongRangeTest.java": "7f63fa9c7d8266ac87fcdbb1cd6d0a2abcaaf8ec6d80491a9e292319e11b49e4",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperManager.java": "144506653923c8f680b14fa5a875cb5110296abbbc4cf054ca798a07e5356d4d",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperModel.java": "cca392d24e7cd76cb515d39173e4ce9a6fc17cd8da4c63ec8daccb4654b3ea6b",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperNavigationTests.java": "f311d728ff32921e5e56a171593814b59f5292ec6ccf62367f59d81853e2046b",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperNavigationTrainer.java": "e4e1057c23458c66debcdf7f6620b2fe187124e6e53b6dac85bad76945411326",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPaceTests.java": "3416c3dffce59017a4c82444a0128cb2620619ef7e0c0f83e321c9aa3b3ee09e",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPhysicsLease.java": "2bdddd0faeadb1873f1a7bb7a73dbd9be6117377ef3089216ffeb3f1aeb7bf48",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorControl.java": "3c43f096ad49d3f479df45ecf6585086c384e463b833cced480fe58cf2dd34db",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorExperiments.java": "af6c661744728450d886b659428fb35628f265d04b5ddea622ab59434a0efa38",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorInteractionTests.java": "691a1d385cf47b3017bdf05ebf41c04da6db54a34f917e43b7ffa2a73358ae3d",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorMap.java": "3790409887d6be19d86e612a77f953b221bfc1bcaa54355d82706bb86cda0bd4",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorNavigator.java": "07e4ce380621a7ef3322ca01be2e7a068492e988b5aeb7a2efdc630d72d67728",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorPolicy.java": "87d48a0e2e8dde5e91d1a150ffcb46bb7f761c73b9e17e539d821f2cb1b36831",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorRouteTests.java": "1c7a0a89fbe0ff54449f1785d81f999050b7e833a9f90578963a0d89e4f781eb",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorWildernessTests.java": "e49ac6e627ee221ebe42eafd420e5e5d9c0ce43927f12882ff38d5a3da0d03b1",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperRouteTests.java": "f5396c8a1bcd13f0ea149dcbfffb8e03ff405b8d86f5914f806e51c083fe932d",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperSpeedProbe.java": "e8e7a000fcfb7a363f4639864dd23056eaa97f24b98a7d248285f56b06c8e585",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperStick.java": "306195e2838fd2c2ff3baf90772557ec244e94094d636ebc2aa092813b66e01a",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainControl.java": "95d84d475e6e5aecf2f1d1ca9668abe6907fab8abd53d580fed87ac85adbdd5f",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainCourse.java": "8db427c9acbc0b2cf1f7a7863bffff7a6da7c045ee5fb63f7e47d75a2cc085b5",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainEpisode.java": "db9423e960453f3c7b1b8fb1d173d8d0403a61935869ec9fe0866505988ead4d",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainExperiments.java": "f8e7d452089b0c193ead03e3a33a17a5ea75412cfdf1a4d7d6f4fed020fad47d",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainInteractionTests.java": "7404278365be81067f035dcad8d2d9152adb2ad99e77820d408f8724a1b824f7",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainMap.java": "520e201f40f1e333784c4e30f52dc61932179d03ef01cafa16cf6260f12d3a10",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainNavigator.java": "15c36fb978de0815d700d1b28b6094421fa850364217573267c6027810c470e8",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainOptimization.java": "6c66ed23350af0a3824f094813062372454189d96e65792d11264e0807a4eac5",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainParameters.java": "175e1b5cc3ded1cfdc11fe293a3c40720356019f3138cbe443fce51182cf892d",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainTests.java": "f6ca8759f34fc430adfd88d74fb0f02a880a17dc85815980a666715198634f79",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTrainer.java": "3270db41580820950ec01a1a96a396cf9393f0e5cd49fee145dd9d1bde2e25c4",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesQuadrupedChunkLease.java": "4e05c26bb5a30fff3dd8429413dc230b3b685a745473b7dbdb99f566967484ef"
+      }
+    },
+    "descent_refinement_before_retarget": {
+      "implementation_sha256": "bf9ca43ba717b09f26087cd5f00368479677542739dbb123ee851bf521aa3cb0",
+      "archive": "artifacts/leaper-clearance/pre-retarget-source.zip",
+      "source_sha256": {
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/leaper/LeaperPartBlock.java": "f0d31ddac20312a0d89188fa202a3b59965740dd3e9b6c27f9ffdd002b663d6d",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperGait.java": "d17087a9773ad70a7d0f42e6946bb8107ef0a538cae8ac95504face2e8b3123c",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperMotionWindow.java": "19b9f333af80551f423d68ad0a50a010fa5ef37386a2c45dc0b129249e077451",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperPointController.java": "7272df5d2c24e821a139427ac14076a0d84cc54e194059ea32e7d9af7f55162c",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperPredatorPlanner.java": "22179881ebb55556b4f27b1524c675057221e46dc6e7d6b6d82a47a27a162f69",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperSwingClearance.java": "07478a33698341e0985b37a97f1a3b2474321f1ef4a2e244c8f41d6ebb2e4024",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperTerrainPlanner.java": "9afd5fd02fef6c96f15d587eeb9f6c68d318169c0f62926baf2d0189107f7219",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperTravelWindow.java": "d7304bc4962f60ec4925a4c418058f5cbec70b24a5d322bb9a81975a9c80cf5f",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaper.java": "34e15434a8c2bc4cd4d90d1ac695f35d70a990caab42cb0b443aef7c8078daec",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperClearanceExperiments.java": "c68ca5be0cf49dcae994dd64d311daafbe63463b687f2dc4f6008756095ed04e",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperClearanceTuning.java": "d7ebf14a5237b10ff3b3eac7986e0056439d7473d763b8a0b5fd0cfbfadc0c59",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperEpisode.java": "61e4ac5615f46e071f7821c601670b0963cd83c47ba0c2a5f5828e7b7053478f",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperGaitQualification.java": "46dd43a1c4ff567ceb2597811a079cc0f7304ef8da6c80ea2b24aeeb3d0286fd",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperGameTests.java": "c599b5b578a34068f5e5f84d0d04d851d10165b23b0cc5099619be85b319d107",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperLearning.java": "248ce37d628cd26e4da12b26c8e5145d4c7ea2fbf3de5212839d253351776eb3",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperLongRangeTest.java": "7f63fa9c7d8266ac87fcdbb1cd6d0a2abcaaf8ec6d80491a9e292319e11b49e4",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperManager.java": "144506653923c8f680b14fa5a875cb5110296abbbc4cf054ca798a07e5356d4d",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperModel.java": "cca392d24e7cd76cb515d39173e4ce9a6fc17cd8da4c63ec8daccb4654b3ea6b",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperNavigationTests.java": "f311d728ff32921e5e56a171593814b59f5292ec6ccf62367f59d81853e2046b",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperNavigationTrainer.java": "e4e1057c23458c66debcdf7f6620b2fe187124e6e53b6dac85bad76945411326",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPaceTests.java": "3416c3dffce59017a4c82444a0128cb2620619ef7e0c0f83e321c9aa3b3ee09e",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPhysicsLease.java": "2bdddd0faeadb1873f1a7bb7a73dbd9be6117377ef3089216ffeb3f1aeb7bf48",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorControl.java": "21581035e7551ef7c31902638ca58e56c434bb508d38d27ad8aa4422697e0ccd",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorExperiments.java": "af6c661744728450d886b659428fb35628f265d04b5ddea622ab59434a0efa38",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorInteractionTests.java": "691a1d385cf47b3017bdf05ebf41c04da6db54a34f917e43b7ffa2a73358ae3d",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorMap.java": "3790409887d6be19d86e612a77f953b221bfc1bcaa54355d82706bb86cda0bd4",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorNavigator.java": "07e4ce380621a7ef3322ca01be2e7a068492e988b5aeb7a2efdc630d72d67728",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorPolicy.java": "87d48a0e2e8dde5e91d1a150ffcb46bb7f761c73b9e17e539d821f2cb1b36831",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorRouteTests.java": "1c7a0a89fbe0ff54449f1785d81f999050b7e833a9f90578963a0d89e4f781eb",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorWildernessTests.java": "e49ac6e627ee221ebe42eafd420e5e5d9c0ce43927f12882ff38d5a3da0d03b1",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperRouteTests.java": "f5396c8a1bcd13f0ea149dcbfffb8e03ff405b8d86f5914f806e51c083fe932d",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperSpeedProbe.java": "e8e7a000fcfb7a363f4639864dd23056eaa97f24b98a7d248285f56b06c8e585",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperStick.java": "306195e2838fd2c2ff3baf90772557ec244e94094d636ebc2aa092813b66e01a",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainControl.java": "95d84d475e6e5aecf2f1d1ca9668abe6907fab8abd53d580fed87ac85adbdd5f",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainCourse.java": "8db427c9acbc0b2cf1f7a7863bffff7a6da7c045ee5fb63f7e47d75a2cc085b5",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainEpisode.java": "db9423e960453f3c7b1b8fb1d173d8d0403a61935869ec9fe0866505988ead4d",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainExperiments.java": "f8e7d452089b0c193ead03e3a33a17a5ea75412cfdf1a4d7d6f4fed020fad47d",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainInteractionTests.java": "7404278365be81067f035dcad8d2d9152adb2ad99e77820d408f8724a1b824f7",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainMap.java": "520e201f40f1e333784c4e30f52dc61932179d03ef01cafa16cf6260f12d3a10",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainNavigator.java": "15c36fb978de0815d700d1b28b6094421fa850364217573267c6027810c470e8",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainOptimization.java": "6c66ed23350af0a3824f094813062372454189d96e65792d11264e0807a4eac5",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainParameters.java": "175e1b5cc3ded1cfdc11fe293a3c40720356019f3138cbe443fce51182cf892d",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainTests.java": "f6ca8759f34fc430adfd88d74fb0f02a880a17dc85815980a666715198634f79",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTrainer.java": "3270db41580820950ec01a1a96a396cf9393f0e5cd49fee145dd9d1bde2e25c4",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesQuadrupedChunkLease.java": "4e05c26bb5a30fff3dd8429413dc230b3b685a745473b7dbdb99f566967484ef"
+      }
+    },
+    "retarget_before_lifecycle_fixes": {
+      "implementation_sha256": "1774267ac7825c4e3de6b486e5f0a98e0ab3c0039253778d335e1ca522b3f56d",
+      "archive": "artifacts/leaper-clearance/pre-lifecycle-source.zip",
+      "source_sha256": {
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/leaper/LeaperPartBlock.java": "f0d31ddac20312a0d89188fa202a3b59965740dd3e9b6c27f9ffdd002b663d6d",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperGait.java": "d17087a9773ad70a7d0f42e6946bb8107ef0a538cae8ac95504face2e8b3123c",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperMotionWindow.java": "19b9f333af80551f423d68ad0a50a010fa5ef37386a2c45dc0b129249e077451",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperPointController.java": "7272df5d2c24e821a139427ac14076a0d84cc54e194059ea32e7d9af7f55162c",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperPredatorPlanner.java": "22179881ebb55556b4f27b1524c675057221e46dc6e7d6b6d82a47a27a162f69",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperSwingClearance.java": "07478a33698341e0985b37a97f1a3b2474321f1ef4a2e244c8f41d6ebb2e4024",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperTerrainPlanner.java": "9afd5fd02fef6c96f15d587eeb9f6c68d318169c0f62926baf2d0189107f7219",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperTravelWindow.java": "d7304bc4962f60ec4925a4c418058f5cbec70b24a5d322bb9a81975a9c80cf5f",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaper.java": "34e15434a8c2bc4cd4d90d1ac695f35d70a990caab42cb0b443aef7c8078daec",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperClearanceExperiments.java": "c68ca5be0cf49dcae994dd64d311daafbe63463b687f2dc4f6008756095ed04e",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperClearanceTuning.java": "d7ebf14a5237b10ff3b3eac7986e0056439d7473d763b8a0b5fd0cfbfadc0c59",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperEpisode.java": "61e4ac5615f46e071f7821c601670b0963cd83c47ba0c2a5f5828e7b7053478f",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperGaitQualification.java": "46dd43a1c4ff567ceb2597811a079cc0f7304ef8da6c80ea2b24aeeb3d0286fd",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperGameTests.java": "c599b5b578a34068f5e5f84d0d04d851d10165b23b0cc5099619be85b319d107",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperLearning.java": "248ce37d628cd26e4da12b26c8e5145d4c7ea2fbf3de5212839d253351776eb3",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperLongRangeTest.java": "7f63fa9c7d8266ac87fcdbb1cd6d0a2abcaaf8ec6d80491a9e292319e11b49e4",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperManager.java": "370e3c0e8a8b1edf272ef60e21781703436c0dd48b78b369349e7dcf1526d678",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperModel.java": "cca392d24e7cd76cb515d39173e4ce9a6fc17cd8da4c63ec8daccb4654b3ea6b",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperNavigationTests.java": "f311d728ff32921e5e56a171593814b59f5292ec6ccf62367f59d81853e2046b",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperNavigationTrainer.java": "e4e1057c23458c66debcdf7f6620b2fe187124e6e53b6dac85bad76945411326",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPaceTests.java": "3416c3dffce59017a4c82444a0128cb2620619ef7e0c0f83e321c9aa3b3ee09e",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPhysicsLease.java": "2bdddd0faeadb1873f1a7bb7a73dbd9be6117377ef3089216ffeb3f1aeb7bf48",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorControl.java": "21581035e7551ef7c31902638ca58e56c434bb508d38d27ad8aa4422697e0ccd",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorExperiments.java": "af6c661744728450d886b659428fb35628f265d04b5ddea622ab59434a0efa38",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorInteractionTests.java": "54633febb9cf67b59bbd3061ec820a624655abf4771bbf88d1b52f5e16a7b69d",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorMap.java": "3790409887d6be19d86e612a77f953b221bfc1bcaa54355d82706bb86cda0bd4",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorNavigator.java": "05cd716028ee1638d8cbd7b692282fe057355b813c2c6bf8689d6dcd35766ab7",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorPolicy.java": "87d48a0e2e8dde5e91d1a150ffcb46bb7f761c73b9e17e539d821f2cb1b36831",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorRouteTests.java": "1c7a0a89fbe0ff54449f1785d81f999050b7e833a9f90578963a0d89e4f781eb",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorWildernessTests.java": "e49ac6e627ee221ebe42eafd420e5e5d9c0ce43927f12882ff38d5a3da0d03b1",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperRouteTests.java": "f5396c8a1bcd13f0ea149dcbfffb8e03ff405b8d86f5914f806e51c083fe932d",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperSpeedProbe.java": "e8e7a000fcfb7a363f4639864dd23056eaa97f24b98a7d248285f56b06c8e585",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperStick.java": "306195e2838fd2c2ff3baf90772557ec244e94094d636ebc2aa092813b66e01a",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainControl.java": "95d84d475e6e5aecf2f1d1ca9668abe6907fab8abd53d580fed87ac85adbdd5f",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainCourse.java": "8db427c9acbc0b2cf1f7a7863bffff7a6da7c045ee5fb63f7e47d75a2cc085b5",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainEpisode.java": "db9423e960453f3c7b1b8fb1d173d8d0403a61935869ec9fe0866505988ead4d",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainExperiments.java": "f8e7d452089b0c193ead03e3a33a17a5ea75412cfdf1a4d7d6f4fed020fad47d",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainInteractionTests.java": "7404278365be81067f035dcad8d2d9152adb2ad99e77820d408f8724a1b824f7",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainMap.java": "520e201f40f1e333784c4e30f52dc61932179d03ef01cafa16cf6260f12d3a10",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainNavigator.java": "15c36fb978de0815d700d1b28b6094421fa850364217573267c6027810c470e8",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainOptimization.java": "6c66ed23350af0a3824f094813062372454189d96e65792d11264e0807a4eac5",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainParameters.java": "175e1b5cc3ded1cfdc11fe293a3c40720356019f3138cbe443fce51182cf892d",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainTests.java": "f6ca8759f34fc430adfd88d74fb0f02a880a17dc85815980a666715198634f79",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTrainer.java": "3270db41580820950ec01a1a96a396cf9393f0e5cd49fee145dd9d1bde2e25c4",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesQuadrupedChunkLease.java": "4e05c26bb5a30fff3dd8429413dc230b3b685a745473b7dbdb99f566967484ef"
+      }
+    },
+    "final_qualification": {
+      "implementation_sha256": "25f7b11c6a5c96462bbfe4d75ae189b036d758ae1f4e6f4e3a098756dffa50da",
+      "archive": "artifacts/leaper-clearance/qualified-source.zip",
+      "source_sha256": {
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/leaper/LeaperPartBlock.java": "f0d31ddac20312a0d89188fa202a3b59965740dd3e9b6c27f9ffdd002b663d6d",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperGait.java": "d17087a9773ad70a7d0f42e6946bb8107ef0a538cae8ac95504face2e8b3123c",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperMotionWindow.java": "19b9f333af80551f423d68ad0a50a010fa5ef37386a2c45dc0b129249e077451",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperPointController.java": "7272df5d2c24e821a139427ac14076a0d84cc54e194059ea32e7d9af7f55162c",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperPredatorPlanner.java": "22179881ebb55556b4f27b1524c675057221e46dc6e7d6b6d82a47a27a162f69",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperSwingClearance.java": "07478a33698341e0985b37a97f1a3b2474321f1ef4a2e244c8f41d6ebb2e4024",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperTerrainPlanner.java": "9afd5fd02fef6c96f15d587eeb9f6c68d318169c0f62926baf2d0189107f7219",
+        "minecraft_machines/common/src/main/java/dev/ahmedhamedi/minecraft_machines/content/training/morphology/LeaperTravelWindow.java": "d7304bc4962f60ec4925a4c418058f5cbec70b24a5d322bb9a81975a9c80cf5f",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaper.java": "34e15434a8c2bc4cd4d90d1ac695f35d70a990caab42cb0b443aef7c8078daec",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperClearanceExperiments.java": "c68ca5be0cf49dcae994dd64d311daafbe63463b687f2dc4f6008756095ed04e",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperClearanceTuning.java": "d7ebf14a5237b10ff3b3eac7986e0056439d7473d763b8a0b5fd0cfbfadc0c59",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperEpisode.java": "61e4ac5615f46e071f7821c601670b0963cd83c47ba0c2a5f5828e7b7053478f",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperGaitQualification.java": "46dd43a1c4ff567ceb2597811a079cc0f7304ef8da6c80ea2b24aeeb3d0286fd",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperGameTests.java": "c599b5b578a34068f5e5f84d0d04d851d10165b23b0cc5099619be85b319d107",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperLearning.java": "248ce37d628cd26e4da12b26c8e5145d4c7ea2fbf3de5212839d253351776eb3",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperLongRangeTest.java": "7f63fa9c7d8266ac87fcdbb1cd6d0a2abcaaf8ec6d80491a9e292319e11b49e4",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperManager.java": "370e3c0e8a8b1edf272ef60e21781703436c0dd48b78b369349e7dcf1526d678",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperModel.java": "cca392d24e7cd76cb515d39173e4ce9a6fc17cd8da4c63ec8daccb4654b3ea6b",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperNavigationTests.java": "f311d728ff32921e5e56a171593814b59f5292ec6ccf62367f59d81853e2046b",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperNavigationTrainer.java": "e4e1057c23458c66debcdf7f6620b2fe187124e6e53b6dac85bad76945411326",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPaceTests.java": "3416c3dffce59017a4c82444a0128cb2620619ef7e0c0f83e321c9aa3b3ee09e",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPhysicsLease.java": "2bdddd0faeadb1873f1a7bb7a73dbd9be6117377ef3089216ffeb3f1aeb7bf48",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorControl.java": "21581035e7551ef7c31902638ca58e56c434bb508d38d27ad8aa4422697e0ccd",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorExperiments.java": "af6c661744728450d886b659428fb35628f265d04b5ddea622ab59434a0efa38",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorInteractionTests.java": "54633febb9cf67b59bbd3061ec820a624655abf4771bbf88d1b52f5e16a7b69d",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorMap.java": "3790409887d6be19d86e612a77f953b221bfc1bcaa54355d82706bb86cda0bd4",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorNavigator.java": "d6523019c7490d216b05f7140747bb9ee30beb492f4fdca1b1d67d4361d4d8ca",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorPolicy.java": "87d48a0e2e8dde5e91d1a150ffcb46bb7f761c73b9e17e539d821f2cb1b36831",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorRouteTests.java": "1c7a0a89fbe0ff54449f1785d81f999050b7e833a9f90578963a0d89e4f781eb",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperPredatorWildernessTests.java": "e49ac6e627ee221ebe42eafd420e5e5d9c0ce43927f12882ff38d5a3da0d03b1",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperRouteTests.java": "f5396c8a1bcd13f0ea149dcbfffb8e03ff405b8d86f5914f806e51c083fe932d",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperSpeedProbe.java": "e8e7a000fcfb7a363f4639864dd23056eaa97f24b98a7d248285f56b06c8e585",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperStick.java": "306195e2838fd2c2ff3baf90772557ec244e94094d636ebc2aa092813b66e01a",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainControl.java": "95d84d475e6e5aecf2f1d1ca9668abe6907fab8abd53d580fed87ac85adbdd5f",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainCourse.java": "8db427c9acbc0b2cf1f7a7863bffff7a6da7c045ee5fb63f7e47d75a2cc085b5",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainEpisode.java": "db9423e960453f3c7b1b8fb1d173d8d0403a61935869ec9fe0866505988ead4d",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainExperiments.java": "f8e7d452089b0c193ead03e3a33a17a5ea75412cfdf1a4d7d6f4fed020fad47d",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainInteractionTests.java": "7404278365be81067f035dcad8d2d9152adb2ad99e77820d408f8724a1b824f7",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainMap.java": "520e201f40f1e333784c4e30f52dc61932179d03ef01cafa16cf6260f12d3a10",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainNavigator.java": "15c36fb978de0815d700d1b28b6094421fa850364217573267c6027810c470e8",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainOptimization.java": "6c66ed23350af0a3824f094813062372454189d96e65792d11264e0807a4eac5",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainParameters.java": "175e1b5cc3ded1cfdc11fe293a3c40720356019f3138cbe443fce51182cf892d",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTerrainTests.java": "f6ca8759f34fc430adfd88d74fb0f02a880a17dc85815980a666715198634f79",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesLeaperTrainer.java": "3270db41580820950ec01a1a96a396cf9393f0e5cd49fee145dd9d1bde2e25c4",
+        "minecraft_machines/neoforge/src/main/java/dev/ahmedhamedi/minecraft_machines/neoforge/MinecraftMachinesQuadrupedChunkLease.java": "4e05c26bb5a30fff3dd8429413dc230b3b685a745473b7dbdb99f566967484ef"
+      }
+    }
+  },
+  "development_history": {
+    "scope": "Optional checkpoint-validation.json history, checked against its raw candidate and report artifacts. Failures and incomplete evaluations are preserved; these are validation trials, not additional CEM episodes or independent release qualification. Final report aliases must not be counted again.",
+    "manifest": {
+      "note": "Development checkpoint selection after the descent-clearance refinement. These trials informed selection; they are not an untouched holdout. Counts are per report and must not be added to duplicated final report aliases. A missing report is incomplete/unrun, not a pass. Source hashes distinguish the unformatted preliminary interaction run from the final frozen implementation. Earlier variants and CEM reports remain separately archived.",
+      "checkpoints": {
+        "g1c6": {
+          "candidate_artifact": "generation-one-candidate.json",
+          "genome": [
+            -0.28715667621614843,
+            0.22729563567890634,
+            -1.2603752226255371,
+            -1.2240031056840661,
+            0.9472381867165925,
+            0.18254224673964797,
+            -0.11617414988558242,
+            0.5485042775309453,
+            -0.09272610664049524,
+            -0.2513722116722142,
+            -0.035162430766055644,
+            0.37245977699951316,
+            -0.34055885680566717,
+            -0.08127411101962237,
+            -0.0686631352038479,
+            -0.32438162441045604,
+            0.5043134697900276,
+            0.21409385325635683,
+            -0.9603864687972065,
+            -0.382857495144473
+          ],
+          "parameters": {
+            "stride": 3.6645811316422643,
+            "period": 1.2087977202783873,
+            "duty": 0.5408365469591006,
+            "radius": 4.603459815421928,
+            "body_height": 3.31697111456031,
+            "swing_lift": 1.7034601677906134,
+            "phase_lr": 0.49421728447256486,
+            "phase_fb": 0.5599278030570282,
+            "step_clearance": 0.73527711771292,
+            "height_tracking": 3.507583744843636,
+            "pitch_alignment": 0.4824260268199069,
+            "roll_alignment": 0.6780706891788957,
+            "vertical_damping": 0.0012053487767997029,
+            "landing_prediction": 0.4135069660284554,
+            "stance_feedback": 0.46572228434560475,
+            "foothold_radius": 0.6119219485661692,
+            "motor_power": 6.3965081188682,
+            "motor_slew": 5.921763306193632,
+            "stride_adaptation": 0.051110159411749616,
+            "swing_feedback": 0.31740676799725975
+          },
+          "evaluations": [
+            {
+              "artifact": "drop-generation-one-certification.json",
+              "complete": true,
+              "sha256": "a2352f208781653f065edff736d8d09d390bd6d5e2f4d1d7caaa9d1212aebf41",
+              "implementation_sha256": "bf9ca43ba717b09f26087cd5f00368479677542739dbb123ee851bf521aa3cb0",
+              "cases": 72,
+              "passed": 71,
+              "failures": [
+                {
+                  "index": 42,
+                  "case": {
+                    "name": "two-block-ridges",
+                    "kind": 11,
+                    "rise": 2.0,
+                    "tread": 3.0,
+                    "angle": 1.8,
+                    "heading": -2.2,
+                    "pace": "horrific",
+                    "distance": 48.0,
+                    "seed": 1542
+                  },
+                  "reason": "physical failure",
+                  "error": 30.52596572769492,
+                  "anchor_error": 0.12220202055036113
+                }
+              ]
+            },
+            {
+              "artifact": "drop-generation-one-challenge.json",
+              "complete": true,
+              "sha256": "94e51c4584b16592e25e95242ac86c5ff17bb0953a67e4967567f708ae104a06",
+              "implementation_sha256": "bf9ca43ba717b09f26087cd5f00368479677542739dbb123ee851bf521aa3cb0",
+              "cases": 18,
+              "passed": 17,
+              "failures": [
+                {
+                  "index": 7,
+                  "case": {
+                    "name": "triple-riser-down",
+                    "kind": 1,
+                    "rise": 3.0,
+                    "tread": 3.0,
+                    "angle": 0.8,
+                    "heading": -0.4,
+                    "pace": "horrific",
+                    "distance": 48.0,
+                    "seed": 29078
+                  },
+                  "reason": "timeout",
+                  "error": 0.46979412423373584,
+                  "anchor_error": 0.05940570587037286
+                }
+              ]
+            },
+            {
+              "artifact": "drop-generation-one-wilderness.json",
+              "complete": true,
+              "sha256": "e81818ff19669a3c5d74cb581b500c1b1b3d7c27f6b693b37543180f14d1e445",
+              "implementation_sha256": "bf9ca43ba717b09f26087cd5f00368479677542739dbb123ee851bf521aa3cb0",
+              "cases": 6,
+              "passed": 6,
+              "failures": []
+            },
+            {
+              "artifact": "drop-generation-one-natural-tour.json",
+              "complete": true,
+              "sha256": "e869f2a1a36f72af929713281cc17f5bcb6e1d62070e9c8a49d5ebc25e4efcce",
+              "implementation_sha256": "bf9ca43ba717b09f26087cd5f00368479677542739dbb123ee851bf521aa3cb0",
+              "cases": 13,
+              "passed": 13,
+              "failures": []
+            },
+            {
+              "artifact": "drop-clearance-interaction.json",
+              "complete": true,
+              "sha256": "d30b31436c22e8ed905f903816d17df88dffea0d8822631c29b97f3830adbe30",
+              "implementation_sha256": "10e41780f1be70350275110aed4929cda3f12449a3cebe706454e62bf161bfb2",
+              "cases": 6,
+              "passed": 6,
+              "failures": []
+            }
+          ]
+        },
+        "g2c3": {
+          "candidate_artifact": "timing-candidate.json",
+          "genome": [
+            -0.33368568964379725,
+            0.18300680078444193,
+            -1.207374631283937,
+            -1.2240031056840661,
+            0.9472381867165925,
+            0.18254224673964797,
+            -0.11617414988558242,
+            0.5485042775309453,
+            -0.09272610664049524,
+            -0.2513722116722142,
+            -0.035162430766055644,
+            0.37245977699951316,
+            -0.34055885680566717,
+            -0.08127411101962237,
+            -0.0686631352038479,
+            -0.32438162441045604,
+            0.5043134697900276,
+            0.21409385325635683,
+            -0.9603864687972065,
+            -0.382857495144473
+          ],
+          "parameters": {
+            "stride": 3.613805638222039,
+            "period": 1.1928715304879791,
+            "duty": 0.542975367505834,
+            "radius": 4.603459815421928,
+            "body_height": 3.31697111456031,
+            "swing_lift": 1.7034601677906134,
+            "phase_lr": 0.49421728447256486,
+            "phase_fb": 0.5599278030570282,
+            "step_clearance": 0.73527711771292,
+            "height_tracking": 3.507583744843636,
+            "pitch_alignment": 0.4824260268199069,
+            "roll_alignment": 0.6780706891788957,
+            "vertical_damping": 0.0012053487767997029,
+            "landing_prediction": 0.4135069660284554,
+            "stance_feedback": 0.46572228434560475,
+            "foothold_radius": 0.6119219485661692,
+            "motor_power": 6.3965081188682,
+            "motor_slew": 5.921763306193632,
+            "stride_adaptation": 0.051110159411749616,
+            "swing_feedback": 0.31740676799725975
+          },
+          "evaluations": [
+            {
+              "artifact": "drop-generation-two-certification.json",
+              "complete": true,
+              "sha256": "660bb63c453e1db71b430fd2cab068c90b212deee073aaf9bb76152117a9febb",
+              "implementation_sha256": "bf9ca43ba717b09f26087cd5f00368479677542739dbb123ee851bf521aa3cb0",
+              "cases": 72,
+              "passed": 72,
+              "failures": []
+            },
+            {
+              "artifact": "drop-generation-two-challenge.json",
+              "complete": true,
+              "sha256": "c158c61b4ec969a3b3c0aafb25f15b5181a13139872467d827d3bf2a36b5a23f",
+              "implementation_sha256": "bf9ca43ba717b09f26087cd5f00368479677542739dbb123ee851bf521aa3cb0",
+              "cases": 18,
+              "passed": 16,
+              "failures": [
+                {
+                  "index": 1,
+                  "case": {
+                    "name": "triple-riser-down",
+                    "kind": 1,
+                    "rise": 3.0,
+                    "tread": 3.0,
+                    "angle": 0.0,
+                    "heading": 0.0,
+                    "pace": "horrific",
+                    "distance": 48.0,
+                    "seed": 29072
+                  },
+                  "reason": "timeout",
+                  "error": 3.7365710723635774,
+                  "anchor_error": 0.05186898199620107
+                },
+                {
+                  "index": 14,
+                  "case": {
+                    "name": "rubble-three-high",
+                    "kind": 3,
+                    "rise": 1.5,
+                    "tread": 2.0,
+                    "angle": -0.6,
+                    "heading": 0.9,
+                    "pace": "careful",
+                    "distance": 48.0,
+                    "seed": 29085
+                  },
+                  "reason": "physical failure",
+                  "error": 10.270815161595577,
+                  "anchor_error": 0.12329933250373232
+                }
+              ]
+            },
+            {
+              "artifact": "drop-generation-two-interaction.json",
+              "complete": true,
+              "sha256": "9dcbaa50c7381d5086edf17b2fcc0bc0cafda5ce94c02c568d5785b0727e35c6",
+              "implementation_sha256": "bf9ca43ba717b09f26087cd5f00368479677542739dbb123ee851bf521aa3cb0",
+              "cases": 6,
+              "passed": 6,
+              "failures": []
+            }
+          ]
+        },
+        "g0c1": {
+          "candidate_artifact": "generation-zero-candidate.json",
+          "genome": [
+            -0.4951993520139382,
+            -0.013334123541080477,
+            -1.2824746787307677,
+            -1.2240031056840661,
+            0.9472381867165925,
+            0.18254224673964797,
+            -0.11617414988558242,
+            0.5485042775309453,
+            -0.09272610664049524,
+            -0.2513722116722142,
+            -0.035162430766055644,
+            0.37245977699951316,
+            -0.34055885680566717,
+            -0.08127411101962237,
+            -0.0686631352038479,
+            -0.32438162441045604,
+            0.5043134697900276,
+            0.21409385325635683,
+            -0.9603864687972065,
+            -0.382857495144473
+          ],
+          "parameters": {
+            "stride": 3.45,
+            "period": 1.12,
+            "duty": 0.54,
+            "radius": 4.603459815421928,
+            "body_height": 3.31697111456031,
+            "swing_lift": 1.7034601677906134,
+            "phase_lr": 0.49421728447256486,
+            "phase_fb": 0.5599278030570282,
+            "step_clearance": 0.73527711771292,
+            "height_tracking": 3.507583744843636,
+            "pitch_alignment": 0.4824260268199069,
+            "roll_alignment": 0.6780706891788957,
+            "vertical_damping": 0.0012053487767997029,
+            "landing_prediction": 0.4135069660284554,
+            "stance_feedback": 0.46572228434560475,
+            "foothold_radius": 0.6119219485661692,
+            "motor_power": 6.3965081188682,
+            "motor_slew": 5.921763306193632,
+            "stride_adaptation": 0.051110159411749616,
+            "swing_feedback": 0.31740676799725975
+          },
+          "evaluations": [
+            {
+              "artifact": "drop-generation-zero-certification.json",
+              "complete": true,
+              "sha256": "8e9e8f2e225ce5ae4d1ac6672ad8fd5534c7706738a6a4719bfd1a670290ba0d",
+              "implementation_sha256": "bf9ca43ba717b09f26087cd5f00368479677542739dbb123ee851bf521aa3cb0",
+              "cases": 72,
+              "passed": 72,
+              "failures": []
+            },
+            {
+              "artifact": "drop-generation-zero-challenge.json",
+              "complete": true,
+              "sha256": "952e779d0f26707ce0070177f0be61f2c6b88064370bd35b1dfe7204ddfb9bfe",
+              "implementation_sha256": "bf9ca43ba717b09f26087cd5f00368479677542739dbb123ee851bf521aa3cb0",
+              "cases": 18,
+              "passed": 17,
+              "failures": [
+                {
+                  "index": 1,
+                  "case": {
+                    "name": "triple-riser-down",
+                    "kind": 1,
+                    "rise": 3.0,
+                    "tread": 3.0,
+                    "angle": 0.0,
+                    "heading": 0.0,
+                    "pace": "horrific",
+                    "distance": 48.0,
+                    "seed": 29072
+                  },
+                  "reason": "timeout",
+                  "error": 1.0027989327640356,
+                  "anchor_error": 0.06075377532165197
+                }
+              ]
+            },
+            {
+              "artifact": "drop-generation-zero-interaction.json",
+              "complete": true,
+              "sha256": "8fe12e8cfa59412d265d757d1263aaeeebd9f489d0ae68f3bc60c3542452fe47",
+              "implementation_sha256": "bf9ca43ba717b09f26087cd5f00368479677542739dbb123ee851bf521aa3cb0",
+              "cases": 6,
+              "passed": 5,
+              "failures": [
+                {
+                  "index": 2,
+                  "case": "retarget-pond",
+                  "reason": "Retarget rejected",
+                  "error": null,
+                  "anchor_error": 0.042679889568489095
+                }
+              ]
+            }
+          ]
+        },
+        "g0c4": {
+          "candidate_artifact": "trained-g0c4-candidate.json",
+          "genome": [
+            -0.10667725671656958,
+            0.22837935318859415,
+            -1.190215919974563,
+            -1.2240031056840661,
+            0.9472381867165925,
+            0.18254224673964797,
+            -0.11617414988558242,
+            0.5485042775309453,
+            -0.09272610664049524,
+            -0.2513722116722142,
+            -0.035162430766055644,
+            0.37245977699951316,
+            -0.34055885680566717,
+            -0.08127411101962237,
+            -0.0686631352038479,
+            -0.32438162441045604,
+            0.5043134697900276,
+            0.21409385325635683,
+            -0.9603864687972065,
+            -0.382857495144473
+          ],
+          "parameters": {
+            "stride": 3.872470688088546,
+            "period": 1.2091837275757291,
+            "duty": 0.5437095849648369,
+            "radius": 4.603459815421928,
+            "body_height": 3.31697111456031,
+            "swing_lift": 1.7034601677906134,
+            "phase_lr": 0.49421728447256486,
+            "phase_fb": 0.5599278030570282,
+            "step_clearance": 0.73527711771292,
+            "height_tracking": 3.507583744843636,
+            "pitch_alignment": 0.4824260268199069,
+            "roll_alignment": 0.6780706891788957,
+            "vertical_damping": 0.0012053487767997029,
+            "landing_prediction": 0.4135069660284554,
+            "stance_feedback": 0.46572228434560475,
+            "foothold_radius": 0.6119219485661692,
+            "motor_power": 6.3965081188682,
+            "motor_slew": 5.921763306193632,
+            "stride_adaptation": 0.051110159411749616,
+            "swing_feedback": 0.31740676799725975
+          },
+          "evaluations": [
+            {
+              "artifact": "drop-g0c4-challenge.json",
+              "complete": true,
+              "sha256": "fd8304d14c8c074055ca0e28cb06e569458eb50defe44d46b0423045caa37d48",
+              "implementation_sha256": "bf9ca43ba717b09f26087cd5f00368479677542739dbb123ee851bf521aa3cb0",
+              "cases": 18,
+              "passed": 15,
+              "failures": [
+                {
+                  "index": 5,
+                  "case": {
+                    "name": "tight-broken-ground",
+                    "kind": 3,
+                    "rise": 1.0,
+                    "tread": 1.0,
+                    "angle": 0.0,
+                    "heading": 0.0,
+                    "pace": "horrific",
+                    "distance": 48.0,
+                    "seed": 29076
+                  },
+                  "reason": "physical failure",
+                  "error": 5.575415097272927,
+                  "anchor_error": 0.1456590853416842
+                },
+                {
+                  "index": 7,
+                  "case": {
+                    "name": "triple-riser-down",
+                    "kind": 1,
+                    "rise": 3.0,
+                    "tread": 3.0,
+                    "angle": 0.8,
+                    "heading": -0.4,
+                    "pace": "horrific",
+                    "distance": 48.0,
+                    "seed": 29078
+                  },
+                  "reason": "physical failure",
+                  "error": 49.41475070489751,
+                  "anchor_error": 0.06713516418330796
+                },
+                {
+                  "index": 12,
+                  "case": {
+                    "name": "triple-riser-up",
+                    "kind": 0,
+                    "rise": 3.0,
+                    "tread": 3.0,
+                    "angle": -0.6,
+                    "heading": 0.9,
+                    "pace": "careful",
+                    "distance": 48.0,
+                    "seed": 29083
+                  },
+                  "reason": "timeout",
+                  "error": 34.81402623256824,
+                  "anchor_error": 0.058223689561370875
+                }
+              ]
+            }
+          ]
+        },
+        "g1c3": {
+          "candidate_artifact": "trained-g1c3-candidate.json",
+          "genome": [
+            -0.37362042892889413,
+            0.11060773516301729,
+            -1.2891970673752633,
+            -1.2240031056840661,
+            0.9472381867165925,
+            0.18254224673964797,
+            -0.11617414988558242,
+            0.5485042775309453,
+            -0.09272610664049524,
+            -0.2513722116722142,
+            -0.035162430766055644,
+            0.37245977699951316,
+            -0.34055885680566717,
+            -0.08127411101962237,
+            -0.0686631352038479,
+            -0.32438162441045604,
+            0.5043134697900276,
+            0.21409385325635683,
+            -0.9603864687972065,
+            -0.382857495144473
+          ],
+          "parameters": {
+            "stride": 3.5714147225734454,
+            "period": 1.1663095764925109,
+            "duty": 0.5397517454728454,
+            "radius": 4.603459815421928,
+            "body_height": 3.31697111456031,
+            "swing_lift": 1.7034601677906134,
+            "phase_lr": 0.49421728447256486,
+            "phase_fb": 0.5599278030570282,
+            "step_clearance": 0.73527711771292,
+            "height_tracking": 3.507583744843636,
+            "pitch_alignment": 0.4824260268199069,
+            "roll_alignment": 0.6780706891788957,
+            "vertical_damping": 0.0012053487767997029,
+            "landing_prediction": 0.4135069660284554,
+            "stance_feedback": 0.46572228434560475,
+            "foothold_radius": 0.6119219485661692,
+            "motor_power": 6.3965081188682,
+            "motor_slew": 5.921763306193632,
+            "stride_adaptation": 0.051110159411749616,
+            "swing_feedback": 0.31740676799725975
+          },
+          "evaluations": [
+            {
+              "artifact": "drop-g1c3-certification.json",
+              "complete": true,
+              "sha256": "c8284747ea66ad82b3175f2ff25c3f8593be1a29374a032a7f794899fe7277f8",
+              "implementation_sha256": "bf9ca43ba717b09f26087cd5f00368479677542739dbb123ee851bf521aa3cb0",
+              "cases": 72,
+              "passed": 72,
+              "failures": []
+            },
+            {
+              "artifact": "drop-g1c3-challenge.json",
+              "complete": true,
+              "sha256": "e3834fc60851aa63d1284a05d7ed49e8477986ca05d0ae89866398d0d7cec8ec",
+              "implementation_sha256": "bf9ca43ba717b09f26087cd5f00368479677542739dbb123ee851bf521aa3cb0",
+              "cases": 18,
+              "passed": 18,
+              "failures": []
+            },
+            {
+              "artifact": "drop-g1c3-interaction.json",
+              "complete": true,
+              "sha256": "6faf90e706ccd61f7774065c71b2856a03f26bb0a882e04dfd08bbf28f2f1778",
+              "implementation_sha256": "bf9ca43ba717b09f26087cd5f00368479677542739dbb123ee851bf521aa3cb0",
+              "cases": 6,
+              "passed": 5,
+              "failures": [
+                {
+                  "index": 2,
+                  "case": "retarget-pond",
+                  "reason": "Retarget rejected",
+                  "error": null,
+                  "anchor_error": 0.04334647070806561
+                }
+              ]
+            },
+            {
+              "artifact": "drop-g1c3-wilderness.json",
+              "complete": false
+            },
+            {
+              "artifact": "drop-g1c3-natural-tour.json",
+              "complete": false
+            }
+          ]
+        }
+      }
+    },
+    "pre_lifecycle_validation": [
+      {
+        "artifact": "artifacts/leaper-clearance/pre-lifecycle-certification.json",
+        "sha256": "8ceb9e0ff4cc7833176870ab8ed93cdea66310daffe9063bf5a9b51a4a81f1ca",
+        "implementation_sha256": "1774267ac7825c4e3de6b486e5f0a98e0ab3c0039253778d335e1ca522b3f56d",
+        "genome": [
+          -0.37362042892889413,
+          0.11060773516301729,
+          -1.2891970673752633,
+          -1.2240031056840661,
+          0.9472381867165925,
+          0.18254224673964797,
+          -0.11617414988558242,
+          0.5485042775309453,
+          -0.09272610664049524,
+          -0.2513722116722142,
+          -0.035162430766055644,
+          0.37245977699951316,
+          -0.34055885680566717,
+          -0.08127411101962237,
+          -0.0686631352038479,
+          -0.32438162441045604,
+          0.5043134697900276,
+          0.21409385325635683,
+          -0.9603864687972065,
+          -0.382857495144473
+        ],
+        "cases": 72,
+        "passed": 72
+      },
+      {
+        "artifact": "artifacts/leaper-clearance/pre-lifecycle-challenge.json",
+        "sha256": "e40d8a143002ae957edc95989c204617d895be5b235247981c4c7f7fd3172fa2",
+        "implementation_sha256": "1774267ac7825c4e3de6b486e5f0a98e0ab3c0039253778d335e1ca522b3f56d",
+        "genome": [
+          -0.37362042892889413,
+          0.11060773516301729,
+          -1.2891970673752633,
+          -1.2240031056840661,
+          0.9472381867165925,
+          0.18254224673964797,
+          -0.11617414988558242,
+          0.5485042775309453,
+          -0.09272610664049524,
+          -0.2513722116722142,
+          -0.035162430766055644,
+          0.37245977699951316,
+          -0.34055885680566717,
+          -0.08127411101962237,
+          -0.0686631352038479,
+          -0.32438162441045604,
+          0.5043134697900276,
+          0.21409385325635683,
+          -0.9603864687972065,
+          -0.382857495144473
+        ],
+        "cases": 18,
+        "passed": 18
+      },
+      {
+        "artifact": "artifacts/leaper-clearance/pre-lifecycle-interaction.json",
+        "sha256": "dfb5c8159049a8c5bd1998c349483f966fd6b89d8171f88a1ac097459467ed16",
+        "implementation_sha256": "1774267ac7825c4e3de6b486e5f0a98e0ab3c0039253778d335e1ca522b3f56d",
+        "genome": [
+          -0.37362042892889413,
+          0.11060773516301729,
+          -1.2891970673752633,
+          -1.2240031056840661,
+          0.9472381867165925,
+          0.18254224673964797,
+          -0.11617414988558242,
+          0.5485042775309453,
+          -0.09272610664049524,
+          -0.2513722116722142,
+          -0.035162430766055644,
+          0.37245977699951316,
+          -0.34055885680566717,
+          -0.08127411101962237,
+          -0.0686631352038479,
+          -0.32438162441045604,
+          0.5043134697900276,
+          0.21409385325635683,
+          -0.9603864687972065,
+          -0.382857495144473
+        ],
+        "cases": 6,
+        "passed": 6
+      },
+      {
+        "artifact": "artifacts/leaper-clearance/pre-lifecycle-natural-tour.json",
+        "sha256": "ce9b5178fd3c5ec6ecdebd1ba1ac1cbfbfe457794907f6e2e5dae6a83fb59899",
+        "implementation_sha256": "1774267ac7825c4e3de6b486e5f0a98e0ab3c0039253778d335e1ca522b3f56d",
+        "genome": [
+          -0.37362042892889413,
+          0.11060773516301729,
+          -1.2891970673752633,
+          -1.2240031056840661,
+          0.9472381867165925,
+          0.18254224673964797,
+          -0.11617414988558242,
+          0.5485042775309453,
+          -0.09272610664049524,
+          -0.2513722116722142,
+          -0.035162430766055644,
+          0.37245977699951316,
+          -0.34055885680566717,
+          -0.08127411101962237,
+          -0.0686631352038479,
+          -0.32438162441045604,
+          0.5043134697900276,
+          0.21409385325635683,
+          -0.9603864687972065,
+          -0.382857495144473
+        ],
+        "cases": 13,
+        "passed": 13
+      },
+      {
+        "artifact": "artifacts/leaper-clearance/pre-lifecycle-wilderness.json",
+        "sha256": "66480605347bd5099ed05739fbe047194e371b69a3c7294197fa60020ed471a1",
+        "implementation_sha256": "1774267ac7825c4e3de6b486e5f0a98e0ab3c0039253778d335e1ca522b3f56d",
+        "genome": [
+          -0.37362042892889413,
+          0.11060773516301729,
+          -1.2891970673752633,
+          -1.2240031056840661,
+          0.9472381867165925,
+          0.18254224673964797,
+          -0.11617414988558242,
+          0.5485042775309453,
+          -0.09272610664049524,
+          -0.2513722116722142,
+          -0.035162430766055644,
+          0.37245977699951316,
+          -0.34055885680566717,
+          -0.08127411101962237,
+          -0.0686631352038479,
+          -0.32438162441045604,
+          0.5043134697900276,
+          0.21409385325635683,
+          -0.9603864687972065,
+          -0.382857495144473
+        ],
+        "cases": 6,
+        "passed": 6
+      }
+    ]
+  },
+  "packaging_sha256": {
+    "tools/package_leaper_clearance.py": "f7ae454e0470b912ab747285707694915ab0bdbb194ed19cf997a0891542e35b",
+    "tools/package_leaper_predator.py": "b7927f25955c54e36cbc9ed4831aa032c3b995f3c85c843f35f6c675a66c26e4",
+    "minecraft_machines/common/src/main/resources/data/minecraft_machines/physics_block_properties/leaper_pads.json": "d62ace2ee7df28fad25c9f7e63adc3560f11c6a8762149976ddd14c051f0b9a4"
+  }
+}

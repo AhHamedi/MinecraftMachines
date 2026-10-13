@@ -1,0 +1,34 @@
+{
+  "version": "leaper-apex-standing-launch",
+  "implementation_sha256": "fee49c40c30364ade664dcb848196cfba50962427a4e5986339e57b11968f66d",
+  "jar": "MinecraftMachines-Leaper-Apex-Shoreline-Fix.jar",
+  "jar_sha256": "df6dfd22bc63d04135924780e28b2d1f39989e65a45f2d502c3d2bcb2f50528e",
+  "development_preview": true,
+  "verification_complete": true,
+  "unit_tests": {
+    "tests": 181,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "native_checks": 67,
+  "native_verification": "../leaper-apex/verification-20260914-192850/summary.json",
+  "launch": "tools/Run Leaper Apex.command",
+  "runtime_properties": {
+    "leaperMode": "predator-preview",
+    "leaperProfile": "horrific",
+    "leaperHighStepCandidate": true,
+    "leaperAgile": true,
+    "leaperLeap": true,
+    "leaperApex": true
+  },
+  "inputs": {
+    "horrific-predator-candidate.json": "e2bf8423a6abfd160ceb3bdc7b9eafb15f50325c2437126c1ab96cc3af932767",
+    "horrific-predator-highstep-settings.json": "5cbb82dd113e5ef2763bd3e8b5fe6310b0c2d6524cc23f3d328f571ff4662d6b"
+  },
+  "total_native_checks": 93,
+  "regression_fixtures": {
+    "minecraft_machines/common/src/main/resources/data/minecraft_machines/leaper/fixtures/shore-pose.json": "85ef274842008f2dae0474764bfa7a530cff8ab09dba327901bcddf45459d687",
+    "minecraft_machines/common/src/main/resources/data/minecraft_machines/leaper/fixtures/shore-loop.nbt": "03e069ec5cec2f953dbddee971d4ced63cdc809237503e90034bd53b27d8f090"
+  }
+}

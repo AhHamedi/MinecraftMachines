@@ -1,0 +1,43 @@
+{
+  "version": "leaper-apex-departure-and-arrival",
+  "implementation_sha256": "c409dc57f1fbd49ce61604155886431d2a704c4615bc36d61027a98202e18a53",
+  "jar": "MinecraftMachines-Leaper-Apex-Departure-Fix.jar",
+  "jar_sha256": "6963280c1b418b7a92313efe41adddc25f6ce5e8c5c9b8874d0d8c43d172c2a7",
+  "development_preview": true,
+  "verification_complete": true,
+  "unit_tests": {
+    "tests": 181,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "native_checks": 31,
+  "native_verification": "../leaper-apex/verification-20260914-194752/summary.json",
+  "launch": "tools/Run Leaper Apex.command",
+  "runtime_properties": {
+    "leaperMode": "predator-preview",
+    "leaperProfile": "horrific",
+    "leaperHighStepCandidate": true,
+    "leaperAgile": true,
+    "leaperLeap": true,
+    "leaperApex": true
+  },
+  "inputs": {
+    "horrific-predator-candidate.json": "e2bf8423a6abfd160ceb3bdc7b9eafb15f50325c2437126c1ab96cc3af932767",
+    "horrific-predator-highstep-settings.json": "5cbb82dd113e5ef2763bd3e8b5fe6310b0c2d6524cc23f3d328f571ff4662d6b"
+  },
+  "total_native_checks": 93,
+  "regression_fixtures": {
+    "minecraft_machines/common/src/main/resources/data/minecraft_machines/leaper/fixtures/shore-pose.json": "85ef274842008f2dae0474764bfa7a530cff8ab09dba327901bcddf45459d687",
+    "minecraft_machines/common/src/main/resources/data/minecraft_machines/leaper/fixtures/way-pose.json": "7a5a2c5ed6fdf49c96eefeb72f589d67325ad9ea806049f4d1a3bcd9d11788f0",
+    "minecraft_machines/common/src/main/resources/data/minecraft_machines/leaper/fixtures/shore-loop.nbt": "03e069ec5cec2f953dbddee971d4ced63cdc809237503e90034bd53b27d8f090"
+  },
+  "verification_scope": [
+    "predator-departure-clearance",
+    "predator-shore-loop",
+    "predator-partial-support",
+    "predator-pounce-commands",
+    "predator-pounce-elevation",
+    "predator-hunting-regression"
+  ]
+}

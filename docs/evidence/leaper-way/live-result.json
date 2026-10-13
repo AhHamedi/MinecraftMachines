@@ -1,0 +1,29 @@
+{
+  "original_goal": [
+    -301.198183430511,
+    64.0,
+    7.520596749192152
+  ],
+  "final_goal": [
+    -301.198183430511,
+    64.0,
+    7.520596749192152
+  ],
+  "arrived": true,
+  "holding": true,
+  "route_blocked": false,
+  "distance": 0.7080115784699268,
+  "reason": "Arrived on supported footing",
+  "supports": 3,
+  "new_launches": 1,
+  "new_aborts": 0,
+  "patched_classes": {
+    "MinecraftMachinesLeaperLeap": "ce4dbbc69ca6b895be7fa3024406b6e0e2ce75f4ac4189708cec19582ffe2a61",
+    "MinecraftMachinesLeaperLeap$Search": "dc99b055b7ab7cc61b707ec8673b9c4424bcf263d2355f23d481b87d90bb6664",
+    "MinecraftMachinesLeaperManager": "c00faeb47219232c2dfae9a990c9d72ab266c634c43b8a72c62249892ef5654c",
+    "MinecraftMachinesLeaperPredatorNavigator": "a61503b10caae934492306bb7c35dfd9560f73192ca1060d0ea19407d68cd7b2"
+  },
+  "world_terrain_edits": false,
+  "rig_teleported": false,
+  "restart_required": false
+}

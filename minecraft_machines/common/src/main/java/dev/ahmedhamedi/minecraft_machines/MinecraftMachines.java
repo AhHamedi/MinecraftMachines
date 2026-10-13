@@ -34,6 +34,8 @@ public final class MinecraftMachines {
 
         MinecraftMachinesBlocks.register();
         MinecraftMachinesBlockEntityTypes.register();
+        getRegistrate().addRawLang("subtitles.minecraft_machines.leaper_charge", "Leaper charging");
+        getRegistrate().addRawLang("subtitles.minecraft_machines.leaper_blast", "Leaper concussive blast");
 
         LOGGER.info("{} loaded with Create Aeronautics ({}) and Sable available", MOD_NAME, Aeronautics.MOD_ID);
     }

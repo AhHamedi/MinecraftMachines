@@ -1,0 +1,1 @@
+{"loader": "neoforge:obj", "model": "minecraft_machines:models/block/leaper_scaled/cell_314.obj", "mtl_override": "minecraft_machines:models/block/leaper_scaled/leaper_patrolling.mtl", "automatic_culling": false, "shade_quads": true, "emissive_ambient": true, "ambientocclusion": false, "textures": {"particle": "minecraft:block/polished_deepslate"}}

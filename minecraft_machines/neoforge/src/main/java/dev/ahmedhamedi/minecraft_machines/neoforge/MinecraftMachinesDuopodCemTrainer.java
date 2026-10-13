@@ -36,6 +36,7 @@ import dev.ahmedhamedi.minecraft_machines.content.training.morphology.duopod.Duo
 import dev.ahmedhamedi.minecraft_machines.content.training.morphology.duopod.DuopodPhaseGaitSeeds;
 import dev.ahmedhamedi.minecraft_machines.content.training.morphology.duopod.DuopodInstance;
 import dev.ahmedhamedi.minecraft_machines.content.training.morphology.duopod.DuopodKinematics;
+import dev.ahmedhamedi.minecraft_machines.content.training.morphology.duopod.DuopodRewardCalculator;
 import dev.ahmedhamedi.minecraft_machines.content.training.morphology.duopod.DuopodSchemas;
 import dev.ahmedhamedi.minecraft_machines.content.training.morphology.duopod.DuopodTrainingScenarios;
 import dev.ahmedhamedi.minecraft_machines.content.training.morphology.duopod.DuopodWalkForwardFitness;
@@ -87,13 +88,15 @@ public final class MinecraftMachinesDuopodCemTrainer {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
     private static final String LINEAR_TANH_POLICY_TYPE = "linear_tanh";
     private static final String LEGACY_PHASE_GAIT_POLICY_TYPE = "duopod_phase_gait_v1";
-    static final String CEM_FITNESS_CONTRACT = "minecraft_machines:duopod_cem_fitness_v6";
+    static final String CEM_FITNESS_CONTRACT = "minecraft_machines:duopod_cem_fitness_v19_vertical_balance_lock";
     private static final String UNKNOWN_FITNESS_CONTRACT = "legacy_unknown";
     static final int TRAINING_CHUNK_ACTIVATION_TIMEOUT_TICKS = 600;
     private static final double PHASE_GAIT_INITIAL_STD = 0.85;
     private static final double LOOK_TARGET_MAX_DISTANCE_BLOCKS = 96.0;
     private static final int LOOK_TARGET_UPDATE_INTERVAL_TICKS = 2;
-    private static final int INITIAL_ACTION_RAMP_CONTROL_STEPS = 5;
+    // A fresh Duopod can fall within 10-13 physics ticks.  Do not dilute its
+    // first learned support posture across five four-tick control steps.
+    private static final int INITIAL_ACTION_RAMP_CONTROL_STEPS = 0;
     private static final double CEM_INITIAL_WEIGHT_STD = 0.18;
     private static final double CEM_INITIAL_BIAS_STD = 0.45;
     private static final double CEM_SEEDED_RESTART_STD = 0.04;
@@ -1814,7 +1817,11 @@ public final class MinecraftMachinesDuopodCemTrainer {
         double total = 0.0;
         final Object components = info.get("reward_components");
         if (components instanceof final Map<?, ?> map) {
-            for (final Object value : map.values()) {
+            for (final Map.Entry<?, ?> entry : map.entrySet()) {
+                if (isRewardDiagnosticComponent(entry.getKey())) {
+                    continue;
+                }
+                final Object value = entry.getValue();
                 if (value instanceof final Number number) {
                     final double component = number.doubleValue();
                     if (Double.isFinite(component) && component < 0.0) {
@@ -1830,7 +1837,11 @@ public final class MinecraftMachinesDuopodCemTrainer {
         double total = 0.0;
         final Object components = info.get("reward_components");
         if (components instanceof final Map<?, ?> map) {
-            for (final Object value : map.values()) {
+            for (final Map.Entry<?, ?> entry : map.entrySet()) {
+                if (isRewardDiagnosticComponent(entry.getKey())) {
+                    continue;
+                }
+                final Object value = entry.getValue();
                 if (value instanceof final Number number) {
                     final double component = number.doubleValue();
                     if (Double.isFinite(component) && component > 0.0) {
@@ -1840,6 +1851,24 @@ public final class MinecraftMachinesDuopodCemTrainer {
             }
         }
         return total;
+    }
+
+    private static boolean isRewardDiagnosticComponent(final Object key) {
+        return "action_rate".equals(key)
+                || "action_magnitude".equals(key)
+                || "action_disagreement".equals(key)
+                || "orientation_error".equals(key)
+                || "support_error".equals(key)
+                || "honey_ground_error".equals(key)
+                || "angular_error".equals(key)
+                || "linear_motion_error".equals(key)
+                || "balance_error".equals(key)
+                || "center_of_mass_height_delta".equals(key)
+                || "center_of_mass_height_score".equals(key)
+                || "center_of_mass_drift_error".equals(key)
+                || "recovery_progress".equals(key)
+                || "servo_ground_risk".equals(key)
+                || "load_penalty".equals(key);
     }
 
     private static String format(final double value) {
@@ -1908,7 +1937,9 @@ public final class MinecraftMachinesDuopodCemTrainer {
             int spawnWarmupTicks
     ) {
         public static final int DEFAULT_MAX_CONCURRENT_SLOTS = 32;
-        public static final int DEFAULT_SPAWN_WARMUP_TICKS = 20;
+        // One tick permits the deferred planar constraint to bind; the second gives
+        // the first observation a settled frame without surrendering the recovery window.
+        public static final int DEFAULT_SPAWN_WARMUP_TICKS = 2;
         public static final int DEFAULT_ELITE_COUNT = 8;
         public static final int MINIMUM_SAFE_SPACING_BLOCKS = 12;
         public static final Config DEFAULT = new Config(
@@ -2188,9 +2219,12 @@ public final class MinecraftMachinesDuopodCemTrainer {
                 terminalFitness.addProperty("terminalForwardWeight", DuopodWalkForwardFitness.TERMINAL_FORWARD_WEIGHT);
                 terminalFitness.addProperty("terminalSuccessBonus", DuopodWalkForwardFitness.TERMINAL_SUCCESS_BONUS);
                 terminalFitness.addProperty("terminalInstabilityPenalty", DuopodWalkForwardFitness.TERMINAL_INSTABILITY_PENALTY);
+                terminalFitness.addProperty("terminalMachineFailurePenalty", DuopodWalkForwardFitness.TERMINAL_MACHINE_FAILURE_PENALTY);
                 terminalFitness.addProperty("terminalUprightShortfallWeight", DuopodWalkForwardFitness.TERMINAL_UPRIGHT_SHORTFALL_WEIGHT);
                 terminalFitness.addProperty("terminalVerticalExcessWeight", DuopodWalkForwardFitness.TERMINAL_VERTICAL_EXCESS_WEIGHT);
                 terminalFitness.addProperty("terminalArenaEscapePenalty", DuopodWalkForwardFitness.TERMINAL_ARENA_ESCAPE_PENALTY);
+                terminalFitness.addProperty("uprightSurvivalRewardPerSecond", DuopodRewardCalculator.WALK_FORWARD_UPRIGHT_SURVIVAL_REWARD_PER_SECOND);
+                terminalFitness.addProperty("uprightTwoFootContactRewardPerSecond", DuopodRewardCalculator.WALK_FORWARD_TWO_FOOT_CONTACT_REWARD_PER_SECOND);
                 terminalFitness.addProperty("worstSpeedWeight", ScoredGenome.WORST_SCORE_WEIGHT);
                 json.add("walkForwardTerminalFitness", terminalFitness);
             } else {
@@ -2509,7 +2543,8 @@ public final class MinecraftMachinesDuopodCemTrainer {
                         this.forwardDirection,
                         this.batchId,
                         this.flatArena == null ? this.config.spacingBlocks() : this.flatArena.slotSpacingBlocks(),
-                        this.flatArena != null);
+                        this.flatArena != null,
+                        this.flatArena != null || DuopodTrainingScenarios.isBalanceCurriculumStage(this.config.curriculumStage()));
                 this.environment = new LocomotionVectorEnvironment<>(
                         morphology,
                         this.currentBatchSlotCount,
@@ -4473,7 +4508,7 @@ public final class MinecraftMachinesDuopodCemTrainer {
         private Component message() {
             final double n = Math.max(1, this.samples);
             return Component.literal(String.format(Locale.ROOT,
-                    "Goal F/L/Y %.2f/%.2f/%.2f | Actual %.2f/%.2f/%.2f | Reward %+.3f Good %+.3f Bad %+.3f | Err %.2f/%.2f/%.2f",
+                    "Goal F/L/Y %.2f/%.2f/%.2f | Actual %.2f/%.2f/%.2f | Reward %+.3f Benefit +%.3f Cost %.3f | Err %.2f/%.2f/%.2f",
                     this.desiredForward / n,
                     this.desiredLateral / n,
                     this.desiredYaw / n,
@@ -4482,7 +4517,7 @@ public final class MinecraftMachinesDuopodCemTrainer {
                     this.actualYaw / n,
                     this.reward / n,
                     this.positiveComponents / n,
-                    this.negativeComponents / n,
+                    -this.negativeComponents / n,
                     this.forwardError / n,
                     this.lateralError / n,
                     this.yawError / n));
@@ -4564,7 +4599,9 @@ public final class MinecraftMachinesDuopodCemTrainer {
                     origin,
                     forwardDirection,
                     UUID.randomUUID(),
-                    0);
+                    0,
+                    false,
+                    DuopodTrainingScenarios.WALK_FORWARD_STAGE.equals(stage));
             final MinecraftMachinesLiveDuopod machine = morphology.spawn(new TrainingSpawnContext(
                     0,
                     0L,

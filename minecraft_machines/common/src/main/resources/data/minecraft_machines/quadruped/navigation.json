@@ -1,0 +1,1896 @@
+{
+  "morphology": "sable_quadruped_8dof_v1",
+  "gait_policy": "quadruped_signed_stride_body_feedback_v1",
+  "navigation_policy": "quadruped_point_displacement_feedback_v2",
+  "seed": 2026090602,
+  "training_complete": true,
+  "validated": true,
+  "generations": 28,
+  "population": 16,
+  "best_training_score": 92.02458362855738,
+  "gait_genome": [
+    0.8275689556330651,
+    0.48965479649906285,
+    -1.1540971438545433,
+    -1.0127700558796147,
+    0.7949524740542562,
+    0.7444337572520145,
+    -0.08729898629301519,
+    -0.5722364840224303,
+    -0.012321257182184932,
+    -0.08597599586128457
+  ],
+  "navigation_genome": [
+    -0.1304967891743284,
+    -0.004007634578051792,
+    0.11952193973795566,
+    0.5612167460910262,
+    0.4069615405136249,
+    -0.027630615378780664,
+    -1.161551074909733,
+    -0.31282267608696057,
+    -0.043616009784741436,
+    0.076077794062572
+  ],
+  "training_goals": [
+    [
+      0.0,
+      -24.0
+    ],
+    [
+      20.0,
+      12.0
+    ],
+    [
+      -17.0,
+      4.0
+    ],
+    [
+      2.5,
+      -1.5
+    ],
+    [
+      0.0,
+      3.0
+    ]
+  ],
+  "history": [
+    {
+      "generation": 0,
+      "generation_best": 90.6174068205416,
+      "best_score": 90.6174068205416,
+      "mean_score": 89.73258569737821
+    },
+    {
+      "generation": 1,
+      "generation_best": 90.78650437896567,
+      "best_score": 90.78650437896567,
+      "mean_score": 90.19321358668104
+    },
+    {
+      "generation": 2,
+      "generation_best": 91.56630365683492,
+      "best_score": 91.56630365683492,
+      "mean_score": 90.55776961106905
+    },
+    {
+      "generation": 3,
+      "generation_best": 91.30443168669345,
+      "best_score": 91.56630365683492,
+      "mean_score": 90.61713534345299
+    },
+    {
+      "generation": 4,
+      "generation_best": 91.70675037142738,
+      "best_score": 91.70675037142738,
+      "mean_score": 90.84614318473712
+    },
+    {
+      "generation": 5,
+      "generation_best": 91.55969717544085,
+      "best_score": 91.70675037142738,
+      "mean_score": 90.85629720404546
+    },
+    {
+      "generation": 6,
+      "generation_best": 91.55428057261997,
+      "best_score": 91.70675037142738,
+      "mean_score": 91.07789874317503
+    },
+    {
+      "generation": 7,
+      "generation_best": 91.31230111354706,
+      "best_score": 91.70675037142738,
+      "mean_score": 90.9409376422767
+    },
+    {
+      "generation": 8,
+      "generation_best": 91.88285545080808,
+      "best_score": 91.88285545080808,
+      "mean_score": 91.04877384145469
+    },
+    {
+      "generation": 9,
+      "generation_best": 91.52946401722856,
+      "best_score": 91.88285545080808,
+      "mean_score": 90.98395497377741
+    },
+    {
+      "generation": 10,
+      "generation_best": 91.52611926684003,
+      "best_score": 91.88285545080808,
+      "mean_score": 91.04955044271625
+    },
+    {
+      "generation": 11,
+      "generation_best": 91.49307275420037,
+      "best_score": 91.88285545080808,
+      "mean_score": 90.89984961947975
+    },
+    {
+      "generation": 12,
+      "generation_best": 91.70992152055027,
+      "best_score": 91.88285545080808,
+      "mean_score": 91.0586100426737
+    },
+    {
+      "generation": 13,
+      "generation_best": 91.44295022736165,
+      "best_score": 91.88285545080808,
+      "mean_score": 91.01932105097254
+    },
+    {
+      "generation": 14,
+      "generation_best": 91.7716445895976,
+      "best_score": 91.88285545080808,
+      "mean_score": 91.10335039181973
+    },
+    {
+      "generation": 15,
+      "generation_best": 91.62323156806616,
+      "best_score": 91.88285545080808,
+      "mean_score": 90.87882891968559
+    },
+    {
+      "generation": 16,
+      "generation_best": 91.55785062647506,
+      "best_score": 91.88285545080808,
+      "mean_score": 90.95257337947352
+    },
+    {
+      "generation": 17,
+      "generation_best": 91.71513236186415,
+      "best_score": 91.88285545080808,
+      "mean_score": 91.16837729053545
+    },
+    {
+      "generation": 18,
+      "generation_best": 91.69783982793612,
+      "best_score": 91.88285545080808,
+      "mean_score": 91.06389788502025
+    },
+    {
+      "generation": 19,
+      "generation_best": 91.60680243191008,
+      "best_score": 91.88285545080808,
+      "mean_score": 91.05057181900071
+    },
+    {
+      "generation": 20,
+      "generation_best": 91.34601025066551,
+      "best_score": 91.88285545080808,
+      "mean_score": 90.83690289212264
+    },
+    {
+      "generation": 21,
+      "generation_best": 91.49259993104648,
+      "best_score": 91.88285545080808,
+      "mean_score": 91.16088055097973
+    },
+    {
+      "generation": 22,
+      "generation_best": 91.66637346472275,
+      "best_score": 91.88285545080808,
+      "mean_score": 91.04933200700711
+    },
+    {
+      "generation": 23,
+      "generation_best": 91.5579517765457,
+      "best_score": 91.88285545080808,
+      "mean_score": 91.09386631473718
+    },
+    {
+      "generation": 24,
+      "generation_best": 91.70336880624029,
+      "best_score": 91.88285545080808,
+      "mean_score": 91.23550237917755
+    },
+    {
+      "generation": 25,
+      "generation_best": 92.02458362855738,
+      "best_score": 92.02458362855738,
+      "mean_score": 91.21624955718733
+    },
+    {
+      "generation": 26,
+      "generation_best": 91.7764194595195,
+      "best_score": 92.02458362855738,
+      "mean_score": 91.27150095936825
+    },
+    {
+      "generation": 27,
+      "generation_best": 91.53775850411292,
+      "best_score": 92.02458362855738,
+      "mean_score": 90.97853325994384
+    }
+  ],
+  "baseline": [],
+  "qualification": {
+    "seed": 2026090702,
+    "policy": "quadruped_point_displacement_feedback_v2",
+    "position_tolerance_blocks": 0.75,
+    "settled_speed_limit": 0.15,
+    "hold_seconds": 5,
+    "deadline_seconds": 90,
+    "parameters_changed": false,
+    "navigation_genome": [
+      -0.1304967891743284,
+      -0.004007634578051792,
+      0.11952193973795566,
+      0.5612167460910262,
+      0.4069615405136249,
+      -0.027630615378780664,
+      -1.161551074909733,
+      -0.31282267608696057,
+      -0.043616009784741436,
+      0.076077794062572
+    ],
+    "gait_genome": [
+      0.8275689556330651,
+      0.48965479649906285,
+      -1.1540971438545433,
+      -1.0127700558796147,
+      0.7949524740542562,
+      0.7444337572520145,
+      -0.08729898629301519,
+      -0.5722364840224303,
+      -0.012321257182184932,
+      -0.08597599586128457
+    ],
+    "trials": [
+      {
+        "scenario": "compass_0",
+        "goal_offset": [
+          0.0,
+          -24.0
+        ],
+        "initial_heading_degrees": 0.0,
+        "surface": "block.minecraft.smooth_stone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.06018942886893521,
+        "minimum_up_dot": 0.9994020387719607,
+        "maximum_hold_error_blocks": 0.06020239837286734,
+        "final_speed_blocks_per_second": 6.7630125441274506e-06,
+        "path_blocks": 24.392137740065483,
+        "arrival_seconds": 20.700000000000003,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "compass_45",
+        "goal_offset": [
+          16.97056274847714,
+          -16.970562748477143
+        ],
+        "initial_heading_degrees": 0.0,
+        "surface": "block.minecraft.grass_block",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.06383197440064214,
+        "minimum_up_dot": 0.9992324000425735,
+        "maximum_hold_error_blocks": 0.06477073654159597,
+        "final_speed_blocks_per_second": 0.00022204056808238998,
+        "path_blocks": 26.042348563062127,
+        "arrival_seconds": 28.0,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "compass_90",
+        "goal_offset": [
+          24.0,
+          -1.4695761589768238e-15
+        ],
+        "initial_heading_degrees": 0.0,
+        "surface": "block.minecraft.oak_planks",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.13559682907072315,
+        "minimum_up_dot": 0.9980112331001781,
+        "maximum_hold_error_blocks": 0.13558115477295943,
+        "final_speed_blocks_per_second": 2.596846210961006e-05,
+        "path_blocks": 27.442385628507125,
+        "arrival_seconds": 30.900000000000002,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "compass_135",
+        "goal_offset": [
+          16.970562748477143,
+          16.97056274847714
+        ],
+        "initial_heading_degrees": 0.0,
+        "surface": "block.minecraft.cobblestone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.11384511803490899,
+        "minimum_up_dot": 0.999078505301262,
+        "maximum_hold_error_blocks": 0.11387284625720782,
+        "final_speed_blocks_per_second": 0.0001024703687257036,
+        "path_blocks": 26.444357535226853,
+        "arrival_seconds": 30.3,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "compass_180",
+        "goal_offset": [
+          2.9391523179536475e-15,
+          24.0
+        ],
+        "initial_heading_degrees": 0.0,
+        "surface": "block.minecraft.smooth_stone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.13066153465302374,
+        "minimum_up_dot": 0.9991569990254054,
+        "maximum_hold_error_blocks": 0.1306706196471246,
+        "final_speed_blocks_per_second": 2.763239152045198e-06,
+        "path_blocks": 29.11684765383359,
+        "arrival_seconds": 33.800000000000004,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "compass_225",
+        "goal_offset": [
+          -16.97056274847714,
+          16.970562748477143
+        ],
+        "initial_heading_degrees": 0.0,
+        "surface": "block.minecraft.grass_block",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.10055657851536016,
+        "minimum_up_dot": 0.9990532084054391,
+        "maximum_hold_error_blocks": 0.10051280547718036,
+        "final_speed_blocks_per_second": 7.065979773653382e-05,
+        "path_blocks": 28.176508841340294,
+        "arrival_seconds": 29.700000000000003,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "compass_270",
+        "goal_offset": [
+          -24.0,
+          4.408728476930472e-15
+        ],
+        "initial_heading_degrees": 0.0,
+        "surface": "block.minecraft.oak_planks",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.07749504982997833,
+        "minimum_up_dot": 0.999068363842692,
+        "maximum_hold_error_blocks": 0.07749056254162975,
+        "final_speed_blocks_per_second": 8.183624303126164e-06,
+        "path_blocks": 26.999103568268755,
+        "arrival_seconds": 31.8,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "compass_315",
+        "goal_offset": [
+          -16.970562748477143,
+          -16.970562748477136
+        ],
+        "initial_heading_degrees": 0.0,
+        "surface": "block.minecraft.cobblestone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.1046968265421983,
+        "minimum_up_dot": 0.9995407272791426,
+        "maximum_hold_error_blocks": 0.10467166931917783,
+        "final_speed_blocks_per_second": 3.4338403868098505e-05,
+        "path_blocks": 24.64781142999991,
+        "arrival_seconds": 23.400000000000002,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_0",
+        "goal_offset": [
+          8.717981457417299,
+          -0.11134296775811761
+        ],
+        "initial_heading_degrees": 138.72653810220254,
+        "surface": "block.minecraft.smooth_stone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.08665504465680048,
+        "minimum_up_dot": 0.9996315595715949,
+        "maximum_hold_error_blocks": 0.08661004187667948,
+        "final_speed_blocks_per_second": 5.838752127373632e-05,
+        "path_blocks": 10.14771809482015,
+        "arrival_seconds": 17.1,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_1",
+        "goal_offset": [
+          -5.416893537496258,
+          23.241069308034024
+        ],
+        "initial_heading_degrees": -92.803016535538,
+        "surface": "block.minecraft.grass_block",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.08803660592605413,
+        "minimum_up_dot": 0.9990403254834069,
+        "maximum_hold_error_blocks": 0.08783853456729579,
+        "final_speed_blocks_per_second": 8.244657805527563e-05,
+        "path_blocks": 25.517978844434946,
+        "arrival_seconds": 26.3,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_2",
+        "goal_offset": [
+          6.196328342246262,
+          6.56426735765003
+        ],
+        "initial_heading_degrees": 6.7696640730305795,
+        "surface": "block.minecraft.oak_planks",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.11993002735546003,
+        "minimum_up_dot": 0.9989578548581187,
+        "maximum_hold_error_blocks": 0.11983376316945789,
+        "final_speed_blocks_per_second": 9.366379440514495e-05,
+        "path_blocks": 12.111597537067475,
+        "arrival_seconds": 21.8,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_3",
+        "goal_offset": [
+          -13.261502539083853,
+          8.058391608012483
+        ],
+        "initial_heading_degrees": -15.433634361561513,
+        "surface": "block.minecraft.cobblestone",
+        "disturbed": true,
+        "success": true,
+        "final_error_blocks": 0.011517617349068573,
+        "minimum_up_dot": 0.9991296672031851,
+        "maximum_hold_error_blocks": 0.011715411538075846,
+        "final_speed_blocks_per_second": 3.390893403581549e-05,
+        "path_blocks": 20.202331788200794,
+        "arrival_seconds": 27.3,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_4",
+        "goal_offset": [
+          -5.830151566899876,
+          -24.96750013774296
+        ],
+        "initial_heading_degrees": 90.32960413941383,
+        "surface": "block.minecraft.smooth_stone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.12040786086873877,
+        "minimum_up_dot": 0.9990848006763069,
+        "maximum_hold_error_blocks": 0.12042843779223021,
+        "final_speed_blocks_per_second": 2.072347799588187e-05,
+        "path_blocks": 28.995930373528243,
+        "arrival_seconds": 31.0,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_5",
+        "goal_offset": [
+          -12.593866607799699,
+          9.150394794915572
+        ],
+        "initial_heading_degrees": -99.51396328295948,
+        "surface": "block.minecraft.grass_block",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.058253893496150254,
+        "minimum_up_dot": 0.9996742761968388,
+        "maximum_hold_error_blocks": 0.05844827297493476,
+        "final_speed_blocks_per_second": 7.77338144013842e-05,
+        "path_blocks": 17.434863177328218,
+        "arrival_seconds": 22.200000000000003,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_6",
+        "goal_offset": [
+          -9.328848560664104,
+          9.318886732831661
+        ],
+        "initial_heading_degrees": -174.37395731173947,
+        "surface": "block.minecraft.oak_planks",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.05941698276018348,
+        "minimum_up_dot": 0.9990668738966021,
+        "maximum_hold_error_blocks": 0.059296405566345384,
+        "final_speed_blocks_per_second": 9.990045120765936e-05,
+        "path_blocks": 14.84706497005494,
+        "arrival_seconds": 20.400000000000002,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_7",
+        "goal_offset": [
+          -1.8288344539609673,
+          14.55315530656048
+        ],
+        "initial_heading_degrees": 93.66950503505565,
+        "surface": "block.minecraft.cobblestone",
+        "disturbed": true,
+        "success": true,
+        "final_error_blocks": 0.05172110127784556,
+        "minimum_up_dot": 0.9995144950725199,
+        "maximum_hold_error_blocks": 0.05174808162573958,
+        "final_speed_blocks_per_second": 3.1769768625679555e-10,
+        "path_blocks": 17.408321826038296,
+        "arrival_seconds": 24.8,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_8",
+        "goal_offset": [
+          -5.844583153965766,
+          27.31190541834764
+        ],
+        "initial_heading_degrees": -159.8643287641273,
+        "surface": "block.minecraft.smooth_stone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.04248113915538991,
+        "minimum_up_dot": 0.999159909584598,
+        "maximum_hold_error_blocks": 0.04247213311546378,
+        "final_speed_blocks_per_second": 1.2053638139974466e-06,
+        "path_blocks": 28.30541946029005,
+        "arrival_seconds": 23.1,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_9",
+        "goal_offset": [
+          -24.622277021186644,
+          -13.161729660760232
+        ],
+        "initial_heading_degrees": -108.3815465585955,
+        "surface": "block.minecraft.grass_block",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.04949902293321474,
+        "minimum_up_dot": 0.9995832792108764,
+        "maximum_hold_error_blocks": 0.04947908455111533,
+        "final_speed_blocks_per_second": 1.171481142685013e-05,
+        "path_blocks": 29.581301790281245,
+        "arrival_seconds": 29.1,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_10",
+        "goal_offset": [
+          -11.519633867187851,
+          23.70775028197702
+        ],
+        "initial_heading_degrees": 127.26402246638371,
+        "surface": "block.minecraft.oak_planks",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.07196759097476409,
+        "minimum_up_dot": 0.9989892227018247,
+        "maximum_hold_error_blocks": 0.0719540143393249,
+        "final_speed_blocks_per_second": 8.25359834644921e-06,
+        "path_blocks": 28.340556217129272,
+        "arrival_seconds": 30.200000000000003,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_11",
+        "goal_offset": [
+          -10.67411286639716,
+          -6.391147551802207
+        ],
+        "initial_heading_degrees": 144.3139166358308,
+        "surface": "block.minecraft.cobblestone",
+        "disturbed": true,
+        "success": true,
+        "final_error_blocks": 0.0655416637231171,
+        "minimum_up_dot": 0.9991124654251733,
+        "maximum_hold_error_blocks": 0.06552484263027897,
+        "final_speed_blocks_per_second": 2.147722900808064e-06,
+        "path_blocks": 16.398516788999796,
+        "arrival_seconds": 25.900000000000002,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_12",
+        "goal_offset": [
+          -12.201624747131099,
+          5.733202360361105
+        ],
+        "initial_heading_degrees": 82.46828854124136,
+        "surface": "block.minecraft.smooth_stone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.022360166157736585,
+        "minimum_up_dot": 0.999118260524809,
+        "maximum_hold_error_blocks": 0.022202404542515302,
+        "final_speed_blocks_per_second": 0.00022779116733894598,
+        "path_blocks": 17.809974583058086,
+        "arrival_seconds": 29.1,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_13",
+        "goal_offset": [
+          2.392225767036026,
+          24.876424657200946
+        ],
+        "initial_heading_degrees": -159.40169424636466,
+        "surface": "block.minecraft.grass_block",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.07711949123021357,
+        "minimum_up_dot": 0.9992296056856309,
+        "maximum_hold_error_blocks": 0.07690573165960453,
+        "final_speed_blocks_per_second": 7.732624669387216e-05,
+        "path_blocks": 25.794200435342706,
+        "arrival_seconds": 24.200000000000003,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_14",
+        "goal_offset": [
+          -6.201789671471176,
+          10.432005596662774
+        ],
+        "initial_heading_degrees": 53.10864485367419,
+        "surface": "block.minecraft.oak_planks",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.0963856664533892,
+        "minimum_up_dot": 0.9990536896377603,
+        "maximum_hold_error_blocks": 0.09714373458723044,
+        "final_speed_blocks_per_second": 9.141727225050455e-05,
+        "path_blocks": 15.212480041426417,
+        "arrival_seconds": 25.8,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_15",
+        "goal_offset": [
+          28.630180511285428,
+          -4.148998325979832
+        ],
+        "initial_heading_degrees": 3.0052258708295008,
+        "surface": "block.minecraft.cobblestone",
+        "disturbed": true,
+        "success": true,
+        "final_error_blocks": 0.039184080897557524,
+        "minimum_up_dot": 0.9981793756862211,
+        "maximum_hold_error_blocks": 0.03922221872931524,
+        "final_speed_blocks_per_second": 6.689702032408472e-05,
+        "path_blocks": 31.99411734354971,
+        "arrival_seconds": 32.7,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_16",
+        "goal_offset": [
+          -10.883231235681821,
+          19.217323865291437
+        ],
+        "initial_heading_degrees": 179.8354404765218,
+        "surface": "block.minecraft.smooth_stone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.09211816211670552,
+        "minimum_up_dot": 0.9994765400737992,
+        "maximum_hold_error_blocks": 0.0921349425990263,
+        "final_speed_blocks_per_second": 1.5624672804773487e-05,
+        "path_blocks": 22.838614275840005,
+        "arrival_seconds": 21.6,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_17",
+        "goal_offset": [
+          -10.294804953436081,
+          -5.436072466363447
+        ],
+        "initial_heading_degrees": -80.35315471619869,
+        "surface": "block.minecraft.grass_block",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.03665019885193191,
+        "minimum_up_dot": 0.9993153998890737,
+        "maximum_hold_error_blocks": 0.03654219903404092,
+        "final_speed_blocks_per_second": 3.352774382321866e-05,
+        "path_blocks": 12.718161646865878,
+        "arrival_seconds": 16.5,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_18",
+        "goal_offset": [
+          3.7305702922924984,
+          9.197314144333006
+        ],
+        "initial_heading_degrees": 36.4117168890594,
+        "surface": "block.minecraft.oak_planks",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.1302227039903349,
+        "minimum_up_dot": 0.9991158685099065,
+        "maximum_hold_error_blocks": 0.13008537642496754,
+        "final_speed_blocks_per_second": 0.00012082310085204067,
+        "path_blocks": 12.421419066055599,
+        "arrival_seconds": 21.8,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_19",
+        "goal_offset": [
+          9.923196971078047,
+          5.907509653760883
+        ],
+        "initial_heading_degrees": -135.31255368236964,
+        "surface": "block.minecraft.cobblestone",
+        "disturbed": true,
+        "success": true,
+        "final_error_blocks": 0.10544828110206135,
+        "minimum_up_dot": 0.99922841218335,
+        "maximum_hold_error_blocks": 0.10535778930052171,
+        "final_speed_blocks_per_second": 8.38875311348833e-06,
+        "path_blocks": 15.637591739628133,
+        "arrival_seconds": 27.0,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_20",
+        "goal_offset": [
+          -22.628563185170545,
+          17.702906097629732
+        ],
+        "initial_heading_degrees": -91.4992272114281,
+        "surface": "block.minecraft.smooth_stone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.04629609283295606,
+        "minimum_up_dot": 0.9991944006146262,
+        "maximum_hold_error_blocks": 0.046228242989911586,
+        "final_speed_blocks_per_second": 1.0643911610827828e-05,
+        "path_blocks": 30.700786903233315,
+        "arrival_seconds": 29.8,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_21",
+        "goal_offset": [
+          7.546741870595599,
+          23.65901189533547
+        ],
+        "initial_heading_degrees": -84.91930617929785,
+        "surface": "block.minecraft.grass_block",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.1043372830681958,
+        "minimum_up_dot": 0.9994143054183555,
+        "maximum_hold_error_blocks": 0.10479282752019586,
+        "final_speed_blocks_per_second": 8.082838603147684e-05,
+        "path_blocks": 28.003761418325016,
+        "arrival_seconds": 30.400000000000002,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_22",
+        "goal_offset": [
+          -20.340193539024494,
+          8.71269655353194
+        ],
+        "initial_heading_degrees": 17.969553925822055,
+        "surface": "block.minecraft.oak_planks",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.04164216419372202,
+        "minimum_up_dot": 0.9993411878197325,
+        "maximum_hold_error_blocks": 0.04164856802155135,
+        "final_speed_blocks_per_second": 2.3798999514409233e-10,
+        "path_blocks": 25.615023220759227,
+        "arrival_seconds": 28.900000000000002,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_23",
+        "goal_offset": [
+          -15.227916618468644,
+          -19.89225339478347
+        ],
+        "initial_heading_degrees": -44.33405163443364,
+        "surface": "block.minecraft.cobblestone",
+        "disturbed": true,
+        "success": true,
+        "final_error_blocks": 0.14696263083684213,
+        "minimum_up_dot": 0.9994169688276916,
+        "maximum_hold_error_blocks": 0.14696263083684213,
+        "final_speed_blocks_per_second": 2.991091826769584e-07,
+        "path_blocks": 25.403564170514667,
+        "arrival_seconds": 20.6,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_24",
+        "goal_offset": [
+          -12.00379762347984,
+          3.161752061567772
+        ],
+        "initial_heading_degrees": 102.39556082459463,
+        "surface": "block.minecraft.smooth_stone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.15861846953971415,
+        "minimum_up_dot": 0.9988868935228278,
+        "maximum_hold_error_blocks": 0.15904814799428388,
+        "final_speed_blocks_per_second": 2.586187434061947e-05,
+        "path_blocks": 16.147610693329394,
+        "arrival_seconds": 25.5,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_25",
+        "goal_offset": [
+          5.2443641953566855,
+          20.155773188783208
+        ],
+        "initial_heading_degrees": -135.67999757739818,
+        "surface": "block.minecraft.grass_block",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.04813153165237751,
+        "minimum_up_dot": 0.9991719488864053,
+        "maximum_hold_error_blocks": 0.04808879021852348,
+        "final_speed_blocks_per_second": 2.853809300184547e-05,
+        "path_blocks": 23.294253052354215,
+        "arrival_seconds": 27.3,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_26",
+        "goal_offset": [
+          0.7165148532075215,
+          -30.758598291325328
+        ],
+        "initial_heading_degrees": 151.32097558512794,
+        "surface": "block.minecraft.oak_planks",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.11541359232834093,
+        "minimum_up_dot": 0.9993243902098452,
+        "maximum_hold_error_blocks": 0.11550774248494909,
+        "final_speed_blocks_per_second": 6.307405956834047e-06,
+        "path_blocks": 35.8745874341273,
+        "arrival_seconds": 40.1,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_27",
+        "goal_offset": [
+          9.482800888224327,
+          5.975209581125392
+        ],
+        "initial_heading_degrees": -97.56626606478353,
+        "surface": "block.minecraft.cobblestone",
+        "disturbed": true,
+        "success": true,
+        "final_error_blocks": 0.12869916917762028,
+        "minimum_up_dot": 0.998880386588818,
+        "maximum_hold_error_blocks": 0.1287188545659654,
+        "final_speed_blocks_per_second": 2.708177633541593e-06,
+        "path_blocks": 14.42392400791873,
+        "arrival_seconds": 24.400000000000002,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_28",
+        "goal_offset": [
+          15.776107397487323,
+          -10.778253293466651
+        ],
+        "initial_heading_degrees": 109.8478326141208,
+        "surface": "block.minecraft.smooth_stone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.037525690592536964,
+        "minimum_up_dot": 0.9993453858738854,
+        "maximum_hold_error_blocks": 0.037554363467786,
+        "final_speed_blocks_per_second": 7.194085725724423e-05,
+        "path_blocks": 20.475614590642508,
+        "arrival_seconds": 23.400000000000002,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_29",
+        "goal_offset": [
+          -12.355198416124916,
+          -23.125212462487916
+        ],
+        "initial_heading_degrees": 124.19248850322168,
+        "surface": "block.minecraft.grass_block",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.08915846711100876,
+        "minimum_up_dot": 0.9993833718852521,
+        "maximum_hold_error_blocks": 0.08915846711100876,
+        "final_speed_blocks_per_second": 1.088112998637615e-06,
+        "path_blocks": 30.468193472657884,
+        "arrival_seconds": 34.800000000000004,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_30",
+        "goal_offset": [
+          13.468083325403857,
+          4.8987513968367855
+        ],
+        "initial_heading_degrees": 41.76522471497777,
+        "surface": "block.minecraft.oak_planks",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.059147080249062386,
+        "minimum_up_dot": 0.9978491007960962,
+        "maximum_hold_error_blocks": 0.05904751834499062,
+        "final_speed_blocks_per_second": 2.9456452596062896e-05,
+        "path_blocks": 18.309786510406834,
+        "arrival_seconds": 24.8,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_31",
+        "goal_offset": [
+          8.728903586316722,
+          2.770096783028002
+        ],
+        "initial_heading_degrees": 53.523901154304035,
+        "surface": "block.minecraft.cobblestone",
+        "disturbed": true,
+        "success": true,
+        "final_error_blocks": 0.10111216242172201,
+        "minimum_up_dot": 0.998181610514233,
+        "maximum_hold_error_blocks": 0.10107313065334667,
+        "final_speed_blocks_per_second": 3.0258937914933447e-05,
+        "path_blocks": 12.633481486809996,
+        "arrival_seconds": 22.8,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_32",
+        "goal_offset": [
+          -28.322820996470902,
+          1.830618814088084
+        ],
+        "initial_heading_degrees": 150.76892716058504,
+        "surface": "block.minecraft.smooth_stone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.13832137362352934,
+        "minimum_up_dot": 0.9982774449917252,
+        "maximum_hold_error_blocks": 0.1383856269283978,
+        "final_speed_blocks_per_second": 1.0046830019608042e-05,
+        "path_blocks": 33.45964386576909,
+        "arrival_seconds": 37.9,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_33",
+        "goal_offset": [
+          -16.589758450556662,
+          18.605296147083013
+        ],
+        "initial_heading_degrees": -145.44944508289262,
+        "surface": "block.minecraft.grass_block",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.08197260099341076,
+        "minimum_up_dot": 0.9993916768645366,
+        "maximum_hold_error_blocks": 0.08185683889569832,
+        "final_speed_blocks_per_second": 3.908282003976055e-05,
+        "path_blocks": 25.2868760299767,
+        "arrival_seconds": 21.1,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_34",
+        "goal_offset": [
+          7.882597689067351,
+          7.071493992141642
+        ],
+        "initial_heading_degrees": 8.578523884741397,
+        "surface": "block.minecraft.oak_planks",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.08166186825117573,
+        "minimum_up_dot": 0.9977971261248132,
+        "maximum_hold_error_blocks": 0.08161874618784566,
+        "final_speed_blocks_per_second": 5.444109509426909e-05,
+        "path_blocks": 15.74939214828593,
+        "arrival_seconds": 23.3,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_35",
+        "goal_offset": [
+          -22.01976503727835,
+          5.568468974411188
+        ],
+        "initial_heading_degrees": -73.76235571031006,
+        "surface": "block.minecraft.cobblestone",
+        "disturbed": true,
+        "success": true,
+        "final_error_blocks": 0.03737451762483205,
+        "minimum_up_dot": 0.9992699120708136,
+        "maximum_hold_error_blocks": 0.037392778287758825,
+        "final_speed_blocks_per_second": 7.905512501295559e-08,
+        "path_blocks": 23.78964296882501,
+        "arrival_seconds": 23.400000000000002,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_36",
+        "goal_offset": [
+          -13.671954979309495,
+          -4.011243918895775
+        ],
+        "initial_heading_degrees": -131.1479227850733,
+        "surface": "block.minecraft.smooth_stone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.10692755998155809,
+        "minimum_up_dot": 0.9989378656422357,
+        "maximum_hold_error_blocks": 0.10694591164230743,
+        "final_speed_blocks_per_second": 8.999424263158912e-05,
+        "path_blocks": 15.57194532779416,
+        "arrival_seconds": 21.1,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_37",
+        "goal_offset": [
+          -25.575206539926096,
+          -1.7107889552681257
+        ],
+        "initial_heading_degrees": -67.1794660958877,
+        "surface": "block.minecraft.grass_block",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.06161195677264969,
+        "minimum_up_dot": 0.999259104044177,
+        "maximum_hold_error_blocks": 0.06153064470835306,
+        "final_speed_blocks_per_second": 2.2967011441332032e-05,
+        "path_blocks": 26.459063885879523,
+        "arrival_seconds": 24.0,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_38",
+        "goal_offset": [
+          -1.718085973873845,
+          16.242091564023376
+        ],
+        "initial_heading_degrees": 38.596871625124216,
+        "surface": "block.minecraft.oak_planks",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.04300236009593161,
+        "minimum_up_dot": 0.9995239482656855,
+        "maximum_hold_error_blocks": 0.04300236009593161,
+        "final_speed_blocks_per_second": 1.847110218128927e-10,
+        "path_blocks": 18.710851579026514,
+        "arrival_seconds": 25.900000000000002,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_39",
+        "goal_offset": [
+          -16.11393881093962,
+          18.333909088496966
+        ],
+        "initial_heading_degrees": 138.57367056789465,
+        "surface": "block.minecraft.cobblestone",
+        "disturbed": true,
+        "success": true,
+        "final_error_blocks": 0.030469433517623674,
+        "minimum_up_dot": 0.9987004004931176,
+        "maximum_hold_error_blocks": 0.030474141295978585,
+        "final_speed_blocks_per_second": 4.441464776070348e-05,
+        "path_blocks": 26.53172839406154,
+        "arrival_seconds": 28.8,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_40",
+        "goal_offset": [
+          2.0770988261264858,
+          9.899128293530534
+        ],
+        "initial_heading_degrees": 14.001352583543769,
+        "surface": "block.minecraft.smooth_stone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.031249025490051804,
+        "minimum_up_dot": 0.998756925391286,
+        "maximum_hold_error_blocks": 0.03125437282773711,
+        "final_speed_blocks_per_second": 1.2293532337024146e-05,
+        "path_blocks": 16.364087992940643,
+        "arrival_seconds": 25.900000000000002,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_41",
+        "goal_offset": [
+          -18.641843308570344,
+          -2.6133817137414392
+        ],
+        "initial_heading_degrees": 70.4543607457969,
+        "surface": "block.minecraft.grass_block",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.0609467309234119,
+        "minimum_up_dot": 0.9989504173678562,
+        "maximum_hold_error_blocks": 0.06123502078494846,
+        "final_speed_blocks_per_second": 0.00010023627280096116,
+        "path_blocks": 22.655612569932035,
+        "arrival_seconds": 30.5,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_42",
+        "goal_offset": [
+          -16.01937847069976,
+          25.90662267724866
+        ],
+        "initial_heading_degrees": -28.127987958934803,
+        "surface": "block.minecraft.oak_planks",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.08483962889805399,
+        "minimum_up_dot": 0.9982851945183948,
+        "maximum_hold_error_blocks": 0.084906183286346,
+        "final_speed_blocks_per_second": 3.413336617383687e-05,
+        "path_blocks": 35.55259400227061,
+        "arrival_seconds": 33.800000000000004,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_43",
+        "goal_offset": [
+          25.667653364867647,
+          3.2638360372814423
+        ],
+        "initial_heading_degrees": 118.91160724981467,
+        "surface": "block.minecraft.cobblestone",
+        "disturbed": true,
+        "success": true,
+        "final_error_blocks": 0.14789334794449174,
+        "minimum_up_dot": 0.999027947452915,
+        "maximum_hold_error_blocks": 0.14789650812395022,
+        "final_speed_blocks_per_second": 4.4198054692825675e-06,
+        "path_blocks": 27.311308195639608,
+        "arrival_seconds": 26.1,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_44",
+        "goal_offset": [
+          16.84738769901477,
+          -13.150852650900967
+        ],
+        "initial_heading_degrees": -15.376313657954691,
+        "surface": "block.minecraft.smooth_stone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.13267825899438995,
+        "minimum_up_dot": 0.9983693403180618,
+        "maximum_hold_error_blocks": 0.13273930279574989,
+        "final_speed_blocks_per_second": 1.6682615657280763e-06,
+        "path_blocks": 24.339347609711705,
+        "arrival_seconds": 25.900000000000002,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_45",
+        "goal_offset": [
+          0.9176009373470343,
+          -17.491750015053046
+        ],
+        "initial_heading_degrees": 141.3558258513168,
+        "surface": "block.minecraft.grass_block",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.054957285204620496,
+        "minimum_up_dot": 0.9987480149452622,
+        "maximum_hold_error_blocks": 0.05495278078919839,
+        "final_speed_blocks_per_second": 6.066037326559384e-05,
+        "path_blocks": 22.55912081567443,
+        "arrival_seconds": 28.3,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_46",
+        "goal_offset": [
+          -8.314508091343434,
+          -1.937693083645745
+        ],
+        "initial_heading_degrees": -53.60369510783498,
+        "surface": "block.minecraft.oak_planks",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.07239815771216376,
+        "minimum_up_dot": 0.9995223279248436,
+        "maximum_hold_error_blocks": 0.07224180097918421,
+        "final_speed_blocks_per_second": 9.059969973761737e-05,
+        "path_blocks": 10.15126641061627,
+        "arrival_seconds": 16.400000000000002,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_47",
+        "goal_offset": [
+          -22.996736720978454,
+          -7.269091577103357
+        ],
+        "initial_heading_degrees": 1.9783527546447404,
+        "surface": "block.minecraft.cobblestone",
+        "disturbed": true,
+        "success": true,
+        "final_error_blocks": 0.08090799825783244,
+        "minimum_up_dot": 0.9993518569231489,
+        "maximum_hold_error_blocks": 0.08090264830499265,
+        "final_speed_blocks_per_second": 8.464013012260481e-07,
+        "path_blocks": 27.02272248357129,
+        "arrival_seconds": 29.200000000000003,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_48",
+        "goal_offset": [
+          0.09293308623827609,
+          -12.9209660978649
+        ],
+        "initial_heading_degrees": 27.580509097258503,
+        "surface": "block.minecraft.smooth_stone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.15810685643099442,
+        "minimum_up_dot": 0.9994380959334284,
+        "maximum_hold_error_blocks": 0.1581654949316654,
+        "final_speed_blocks_per_second": 6.149668161099204e-05,
+        "path_blocks": 13.728008267591292,
+        "arrival_seconds": 17.2,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_49",
+        "goal_offset": [
+          -0.6756225684687834,
+          -16.804524524591372
+        ],
+        "initial_heading_degrees": 95.2049014788387,
+        "surface": "block.minecraft.grass_block",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.02116380175802299,
+        "minimum_up_dot": 0.9989905339198029,
+        "maximum_hold_error_blocks": 0.021293740955848347,
+        "final_speed_blocks_per_second": 3.198527419901386e-05,
+        "path_blocks": 20.49754003337406,
+        "arrival_seconds": 26.400000000000002,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_50",
+        "goal_offset": [
+          0.30421477058581753,
+          16.92457577516493
+        ],
+        "initial_heading_degrees": 148.93141752495598,
+        "surface": "block.minecraft.oak_planks",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.06759596946078547,
+        "minimum_up_dot": 0.9983806222713929,
+        "maximum_hold_error_blocks": 0.06756538990881061,
+        "final_speed_blocks_per_second": 3.548330000560161e-05,
+        "path_blocks": 18.35052282662219,
+        "arrival_seconds": 21.200000000000003,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_51",
+        "goal_offset": [
+          25.305939959131187,
+          3.8802448284320183
+        ],
+        "initial_heading_degrees": -140.64690250775632,
+        "surface": "block.minecraft.cobblestone",
+        "disturbed": true,
+        "success": true,
+        "final_error_blocks": 0.07769398527541431,
+        "minimum_up_dot": 0.9989330458884093,
+        "maximum_hold_error_blocks": 0.07770754310672093,
+        "final_speed_blocks_per_second": 7.736835073129984e-08,
+        "path_blocks": 28.334398379529997,
+        "arrival_seconds": 28.8,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_52",
+        "goal_offset": [
+          -19.549619275721646,
+          7.824502694041947
+        ],
+        "initial_heading_degrees": -124.49028264863671,
+        "surface": "block.minecraft.smooth_stone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.09662673013392802,
+        "minimum_up_dot": 0.9988648670821092,
+        "maximum_hold_error_blocks": 0.09661755495006288,
+        "final_speed_blocks_per_second": 4.0156548647475026e-05,
+        "path_blocks": 21.893463791503326,
+        "arrival_seconds": 21.1,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_53",
+        "goal_offset": [
+          -16.876169318418203,
+          1.8578528773739058
+        ],
+        "initial_heading_degrees": -4.794662011264399,
+        "surface": "block.minecraft.grass_block",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.07155041911936727,
+        "minimum_up_dot": 0.9994404953292595,
+        "maximum_hold_error_blocks": 0.07146698314178218,
+        "final_speed_blocks_per_second": 1.6473570489322537e-05,
+        "path_blocks": 20.291491380594536,
+        "arrival_seconds": 24.8,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_54",
+        "goal_offset": [
+          27.244970508560392,
+          -9.251797172163801
+        ],
+        "initial_heading_degrees": -127.23503644887037,
+        "surface": "block.minecraft.oak_planks",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.15048806539995463,
+        "minimum_up_dot": 0.9992166676051347,
+        "maximum_hold_error_blocks": 0.15048806539995463,
+        "final_speed_blocks_per_second": 6.01081123678142e-06,
+        "path_blocks": 31.477507090320795,
+        "arrival_seconds": 33.5,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_55",
+        "goal_offset": [
+          -8.22148826810678,
+          -29.35946031855343
+        ],
+        "initial_heading_degrees": 16.243098699578976,
+        "surface": "block.minecraft.cobblestone",
+        "disturbed": true,
+        "success": true,
+        "final_error_blocks": 0.14565703168757108,
+        "minimum_up_dot": 0.9989784448056875,
+        "maximum_hold_error_blocks": 0.14565703168757108,
+        "final_speed_blocks_per_second": 1.501153015121623e-08,
+        "path_blocks": 31.815182217280775,
+        "arrival_seconds": 29.200000000000003,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_56",
+        "goal_offset": [
+          -11.090049881339706,
+          2.9269913498792235
+        ],
+        "initial_heading_degrees": -63.10723000354274,
+        "surface": "block.minecraft.smooth_stone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.07118582750197724,
+        "minimum_up_dot": 0.999573604360196,
+        "maximum_hold_error_blocks": 0.07121778319393823,
+        "final_speed_blocks_per_second": 5.72185462787725e-06,
+        "path_blocks": 12.841106393316124,
+        "arrival_seconds": 18.3,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_57",
+        "goal_offset": [
+          3.333099268136707,
+          7.415052142368701
+        ],
+        "initial_heading_degrees": 10.132243339379478,
+        "surface": "block.minecraft.grass_block",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.12612013988735163,
+        "minimum_up_dot": 0.9987069716813249,
+        "maximum_hold_error_blocks": 0.12618328811526044,
+        "final_speed_blocks_per_second": 2.7536128015583683e-06,
+        "path_blocks": 13.83179332085123,
+        "arrival_seconds": 24.400000000000002,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_58",
+        "goal_offset": [
+          -21.716070128678002,
+          11.594497465091186
+        ],
+        "initial_heading_degrees": -69.24208908839536,
+        "surface": "block.minecraft.oak_planks",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.06663684076607186,
+        "minimum_up_dot": 0.9992784627292435,
+        "maximum_hold_error_blocks": 0.06655954468871937,
+        "final_speed_blocks_per_second": 3.9165338593515044e-05,
+        "path_blocks": 26.48363349029169,
+        "arrival_seconds": 27.0,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_59",
+        "goal_offset": [
+          28.189975639563478,
+          1.7188781209827761
+        ],
+        "initial_heading_degrees": -166.5110099960159,
+        "surface": "block.minecraft.cobblestone",
+        "disturbed": true,
+        "success": true,
+        "final_error_blocks": 0.09635683684861404,
+        "minimum_up_dot": 0.9993909237911176,
+        "maximum_hold_error_blocks": 0.09635688203077458,
+        "final_speed_blocks_per_second": 9.090741882201841e-06,
+        "path_blocks": 31.011619876379466,
+        "arrival_seconds": 31.6,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_60",
+        "goal_offset": [
+          -11.508701890167,
+          -2.0259728566087554
+        ],
+        "initial_heading_degrees": -36.3443365370277,
+        "surface": "block.minecraft.smooth_stone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.09296263558251758,
+        "minimum_up_dot": 0.9994699434407736,
+        "maximum_hold_error_blocks": 0.09298416370753214,
+        "final_speed_blocks_per_second": 0.00013024946875178303,
+        "path_blocks": 13.24491785373649,
+        "arrival_seconds": 19.0,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_61",
+        "goal_offset": [
+          20.82897868596891,
+          1.7509602517798668
+        ],
+        "initial_heading_degrees": 44.6578647722358,
+        "surface": "block.minecraft.grass_block",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.12559870493157152,
+        "minimum_up_dot": 0.9990827255610434,
+        "maximum_hold_error_blocks": 0.1255154104158218,
+        "final_speed_blocks_per_second": 4.3380574550837775e-05,
+        "path_blocks": 22.226530966692543,
+        "arrival_seconds": 23.6,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_62",
+        "goal_offset": [
+          -12.381987677987718,
+          24.12872310448503
+        ],
+        "initial_heading_degrees": 173.33497557768766,
+        "surface": "block.minecraft.oak_planks",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.05983194346092822,
+        "minimum_up_dot": 0.9991491886965875,
+        "maximum_hold_error_blocks": 0.0599419756432213,
+        "final_speed_blocks_per_second": 1.3582249360959415e-07,
+        "path_blocks": 28.05313859366699,
+        "arrival_seconds": 26.5,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "random_63",
+        "goal_offset": [
+          1.76752408217681,
+          -16.65939538263982
+        ],
+        "initial_heading_degrees": -55.26508505921282,
+        "surface": "block.minecraft.cobblestone",
+        "disturbed": true,
+        "success": true,
+        "final_error_blocks": 0.052019900995983144,
+        "minimum_up_dot": 0.9984155418864403,
+        "maximum_hold_error_blocks": 0.05195956560469155,
+        "final_speed_blocks_per_second": 2.2456929562220688e-05,
+        "path_blocks": 20.29935541003698,
+        "arrival_seconds": 23.5,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "near_0",
+        "goal_offset": [
+          0.15252931822172175,
+          -0.4761667849428567
+        ],
+        "initial_heading_degrees": 0.0,
+        "surface": "block.minecraft.smooth_stone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.05675112013825631,
+        "minimum_up_dot": 0.9999389767671786,
+        "maximum_hold_error_blocks": 0.05664230364178456,
+        "final_speed_blocks_per_second": 6.612738026683306e-05,
+        "path_blocks": 0.6617586738857321,
+        "arrival_seconds": 3.6,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "near_1",
+        "goal_offset": [
+          0.8891105557064614,
+          -0.45769249472910023
+        ],
+        "initial_heading_degrees": 59.99999999999999,
+        "surface": "block.minecraft.grass_block",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.10829499811890606,
+        "minimum_up_dot": 0.9999082234345198,
+        "maximum_hold_error_blocks": 0.10820222960658264,
+        "final_speed_blocks_per_second": 5.902338125575899e-05,
+        "path_blocks": 1.0782649400764128,
+        "arrival_seconds": 4.1000000000000005,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "near_2",
+        "goal_offset": [
+          1.9046671397714268,
+          0.610117272886887
+        ],
+        "initial_heading_degrees": 119.99999999999999,
+        "surface": "block.minecraft.oak_planks",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.008565060235141335,
+        "minimum_up_dot": 0.9997964130341922,
+        "maximum_hold_error_blocks": 0.008513932953896172,
+        "final_speed_blocks_per_second": 0.0001257497281306973,
+        "path_blocks": 2.457937532261217,
+        "arrival_seconds": 7.2,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "near_3",
+        "goal_offset": [
+          1.8307699789164011,
+          3.5564422228258454
+        ],
+        "initial_heading_degrees": 180.0,
+        "surface": "block.minecraft.cobblestone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.055863672047134307,
+        "minimum_up_dot": 0.9995054929934264,
+        "maximum_hold_error_blocks": 0.05591375891844595,
+        "final_speed_blocks_per_second": 2.7778199153340407e-10,
+        "path_blocks": 4.397236448775585,
+        "arrival_seconds": 10.100000000000001,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "near_4",
+        "goal_offset": [
+          -0.15252931822172172,
+          0.4761667849428567
+        ],
+        "initial_heading_degrees": 239.99999999999997,
+        "surface": "block.minecraft.smooth_stone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.05933773493714061,
+        "minimum_up_dot": 0.9996040526399964,
+        "maximum_hold_error_blocks": 0.0594212243951403,
+        "final_speed_blocks_per_second": 4.003812641410981e-05,
+        "path_blocks": 2.6508360840557197,
+        "arrival_seconds": 8.200000000000001,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "near_5",
+        "goal_offset": [
+          -0.8891105557064611,
+          0.45769249472910073
+        ],
+        "initial_heading_degrees": 300.0,
+        "surface": "block.minecraft.grass_block",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.1552820756482066,
+        "minimum_up_dot": 0.9995494062017548,
+        "maximum_hold_error_blocks": 0.15530760528725515,
+        "final_speed_blocks_per_second": 1.6267736780417518e-05,
+        "path_blocks": 3.783341704674398,
+        "arrival_seconds": 11.8,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "near_6",
+        "goal_offset": [
+          -1.9046671397714272,
+          -0.6101172728868859
+        ],
+        "initial_heading_degrees": 360.0,
+        "surface": "block.minecraft.oak_planks",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.035157261620149795,
+        "minimum_up_dot": 0.9993844375577485,
+        "maximum_hold_error_blocks": 0.03507568932902461,
+        "final_speed_blocks_per_second": 7.021743650162886e-05,
+        "path_blocks": 3.166583481051416,
+        "arrival_seconds": 10.0,
+        "fell_or_left_arena": false
+      },
+      {
+        "scenario": "near_7",
+        "goal_offset": [
+          -1.8307699789164031,
+          -3.5564422228258445
+        ],
+        "initial_heading_degrees": 420.0,
+        "surface": "block.minecraft.cobblestone",
+        "disturbed": false,
+        "success": true,
+        "final_error_blocks": 0.07535769317245021,
+        "minimum_up_dot": 0.9983210350467294,
+        "maximum_hold_error_blocks": 0.07533383500950354,
+        "final_speed_blocks_per_second": 2.3637501322298644e-10,
+        "path_blocks": 8.59695501050552,
+        "arrival_seconds": 22.400000000000002,
+        "fell_or_left_arena": false
+      }
+    ]
+  },
+  "route_qualification": {
+    "accepted": 4,
+    "total": 4,
+    "routes": [
+      {
+        "route": "square",
+        "success": true,
+        "completed_points": 4,
+        "final_error_blocks": 0.03766598472260813,
+        "minimum_up_dot": 0.9987841142377731,
+        "arrivals": [
+          {
+            "waypoint": 0,
+            "goal_offset": [
+              20.0,
+              0.0
+            ],
+            "arrival_seconds": 25.200000000000003,
+            "error_blocks": 0.03281112599749101
+          },
+          {
+            "waypoint": 1,
+            "goal_offset": [
+              20.0,
+              20.0
+            ],
+            "arrival_seconds": 51.400000000000006,
+            "error_blocks": 0.13900086654620242
+          },
+          {
+            "waypoint": 2,
+            "goal_offset": [
+              0.0,
+              20.0
+            ],
+            "arrival_seconds": 81.30000000000001,
+            "error_blocks": 0.06778525882000792
+          },
+          {
+            "waypoint": 3,
+            "goal_offset": [
+              0.0,
+              0.0
+            ],
+            "arrival_seconds": 120.60000000000001,
+            "error_blocks": 0.03766976795156807
+          }
+        ]
+      },
+      {
+        "route": "zigzag",
+        "success": true,
+        "completed_points": 6,
+        "final_error_blocks": 0.07374293651386322,
+        "minimum_up_dot": 0.9977743715976,
+        "arrivals": [
+          {
+            "waypoint": 0,
+            "goal_offset": [
+              0.0,
+              -20.0
+            ],
+            "arrival_seconds": 18.7,
+            "error_blocks": 0.08093401280518855
+          },
+          {
+            "waypoint": 1,
+            "goal_offset": [
+              16.0,
+              8.0
+            ],
+            "arrival_seconds": 56.6,
+            "error_blocks": 0.06823890535732617
+          },
+          {
+            "waypoint": 2,
+            "goal_offset": [
+              -16.0,
+              8.0
+            ],
+            "arrival_seconds": 94.30000000000001,
+            "error_blocks": 0.09916759002936068
+          },
+          {
+            "waypoint": 3,
+            "goal_offset": [
+              0.0,
+              0.0
+            ],
+            "arrival_seconds": 125.30000000000001,
+            "error_blocks": 0.14350059055216874
+          },
+          {
+            "waypoint": 4,
+            "goal_offset": [
+              20.0,
+              0.0
+            ],
+            "arrival_seconds": 145.9,
+            "error_blocks": 0.028978671108077354
+          },
+          {
+            "waypoint": 5,
+            "goal_offset": [
+              -20.0,
+              0.0
+            ],
+            "arrival_seconds": 193.5,
+            "error_blocks": 0.07371729455178562
+          }
+        ]
+      },
+      {
+        "route": "tight_square",
+        "success": true,
+        "completed_points": 4,
+        "final_error_blocks": 0.09162957082519524,
+        "minimum_up_dot": 0.9988449218193707,
+        "arrivals": [
+          {
+            "waypoint": 0,
+            "goal_offset": [
+              2.0,
+              0.0
+            ],
+            "arrival_seconds": 11.3,
+            "error_blocks": 0.03970759411087807
+          },
+          {
+            "waypoint": 1,
+            "goal_offset": [
+              2.0,
+              2.0
+            ],
+            "arrival_seconds": 26.3,
+            "error_blocks": 0.12939589157828943
+          },
+          {
+            "waypoint": 2,
+            "goal_offset": [
+              0.0,
+              2.0
+            ],
+            "arrival_seconds": 41.300000000000004,
+            "error_blocks": 0.01882974138879729
+          },
+          {
+            "waypoint": 3,
+            "goal_offset": [
+              0.0,
+              0.0
+            ],
+            "arrival_seconds": 91.5,
+            "error_blocks": 0.09162957082519524
+          }
+        ]
+      },
+      {
+        "route": "retarget_stop_resume",
+        "success": true,
+        "completed_points": 2,
+        "final_error_blocks": 0.02276097871288665,
+        "minimum_up_dot": 0.9986729553869362,
+        "stopping_drift_blocks": 0.05229900924708809,
+        "arrivals": [
+          {
+            "waypoint": 0,
+            "goal_offset": [
+              -18.0,
+              4.0
+            ],
+            "arrival_seconds": 50.800000000000004,
+            "error_blocks": 0.055041944172499184
+          },
+          {
+            "waypoint": 1,
+            "goal_offset": [
+              0.0,
+              0.0
+            ],
+            "arrival_seconds": 81.2,
+            "error_blocks": 0.02276097871288665
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "Minecraft 1.21.1 / Sable 2.0.0 / Rapier",
+  "world_constraints": false,
+  "locomotion_teleports": false,
+  "physics_step_seconds": 0.05,
+  "control_period_seconds": 0.1,
+  "gait_training_model_sha256": "e61fce840f2a90e88dba3ffa46b26574390887dba26e44ad4dd860114b2dfba8"
+}

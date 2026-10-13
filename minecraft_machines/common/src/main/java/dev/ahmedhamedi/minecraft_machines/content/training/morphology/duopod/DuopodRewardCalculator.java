@@ -6,6 +6,20 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public final class DuopodRewardCalculator {
+    /**
+     * Positive dense credit for remaining upright during walk-forward training.
+     * The multiplier is the smooth upright score, so a tipping chassis earns
+     * progressively less and floor contact still ends the episode immediately.
+     */
+    // At 60 TPS a 240-tick trial still represents twelve simulated seconds but
+    // completes in roughly four wall-clock seconds. Make every simulated upright
+    // second conspicuously valuable during selection.
+    public static final double WALK_FORWARD_UPRIGHT_SURVIVAL_REWARD_PER_SECOND = 6.0;
+    public static final double WALK_FORWARD_TWO_FOOT_CONTACT_REWARD_PER_SECOND = 4.0;
+    private static final double WALK_FORWARD_HONEY_CONTACT_SCALE_BLOCKS = 0.14;
+    private static final double WALK_FORWARD_MAXIMUM_POSTURE_DROP_BLOCKS = 0.45;
+    private static final double WALK_FORWARD_NON_FOOT_CLEARANCE_START_BLOCKS = 0.30;
+    private static final double WALK_FORWARD_NON_FOOT_CLEARANCE_FULL_BLOCKS = 0.75;
     public static final DuopodStandingBalanceConfig STANDING = DuopodStandingBalanceConfig.DEFAULT;
     private static final double CENTER_OF_MASS_HEIGHT_SCALE_BLOCKS = 1.0;
     private static final double CENTER_OF_MASS_DRIFT_SCALE_BLOCKS = 0.45;
@@ -38,6 +52,13 @@ public final class DuopodRewardCalculator {
         final double lateralTrackingReward = input.deltaSeconds() * 0.20 * lateralTracking;
         final double yawTrackingReward = input.deltaSeconds() * 0.30 * yawTracking;
         final double uprightReward = input.deltaSeconds() * 0.10 * (upright - 1.0);
+        final double standingQuality = validStandingQuality(input, upright);
+        final double uprightSurvival = input.deltaSeconds()
+                * WALK_FORWARD_UPRIGHT_SURVIVAL_REWARD_PER_SECOND * standingQuality;
+        final double twoFootContact = standingQuality * honeyContactScore(input.leftHoneyGroundClearance())
+                * honeyContactScore(input.rightHoneyGroundClearance());
+        final double twoFootContactReward = input.deltaSeconds()
+                * WALK_FORWARD_TWO_FOOT_CONTACT_REWARD_PER_SECOND * twoFootContact;
         final double alivePenalty = input.deltaSeconds() * this.config.commandAlivePenalty();
         final double actionRatePenalty = this.config.commandActionRatePenalty() * actionRate;
         final double total = forwardProgress
@@ -45,6 +66,8 @@ public final class DuopodRewardCalculator {
                 + lateralTrackingReward
                 + yawTrackingReward
                 + uprightReward
+                + uprightSurvival
+                + twoFootContactReward
                 - alivePenalty
                 - actionRatePenalty
                 - launch
@@ -56,6 +79,8 @@ public final class DuopodRewardCalculator {
         components.put("lateral_tracking", lateralTrackingReward);
         components.put("yaw_tracking", yawTrackingReward);
         components.put("upright", uprightReward);
+        components.put("upright_survival", uprightSurvival);
+        components.put("two_foot_contact_reward", twoFootContactReward);
         components.put("action_rate", actionRate);
         components.put("action_rate_penalty", -actionRatePenalty);
         components.put("alive_penalty", -alivePenalty);
@@ -74,6 +99,13 @@ public final class DuopodRewardCalculator {
         final double progress = input.previousDistanceToTarget() - input.currentDistanceToTarget();
         final double success = input.targetReached() ? this.config.successBonus() : 0.0;
         final double failure = failurePenalty(input);
+        final double standingQuality = validStandingQuality(input, upright);
+        final double uprightSurvival = input.deltaSeconds()
+                * WALK_FORWARD_UPRIGHT_SURVIVAL_REWARD_PER_SECOND * standingQuality;
+        final double twoFootContact = standingQuality * honeyContactScore(input.leftHoneyGroundClearance())
+                * honeyContactScore(input.rightHoneyGroundClearance());
+        final double twoFootContactReward = input.deltaSeconds()
+                * WALK_FORWARD_TWO_FOOT_CONTACT_REWARD_PER_SECOND * twoFootContact;
         final double total = 4.0 * progress
                 + input.deltaSeconds() * (
                 0.25 * forwardTracking
@@ -81,6 +113,8 @@ public final class DuopodRewardCalculator {
                         + 0.15 * yawTracking
                         + 0.02 * (upright - 1.0)
                         - this.config.pointAlivePenalty())
+                + uprightSurvival
+                + twoFootContactReward
                 - this.config.pointActionRatePenalty() * actionRate
                 - launch
                 + success
@@ -91,6 +125,8 @@ public final class DuopodRewardCalculator {
         components.put("lateral_tracking", input.deltaSeconds() * 0.10 * lateralTracking);
         components.put("yaw_tracking", input.deltaSeconds() * 0.15 * yawTracking);
         components.put("upright", input.deltaSeconds() * 0.02 * (upright - 1.0));
+        components.put("upright_survival", uprightSurvival);
+        components.put("two_foot_contact_reward", twoFootContactReward);
         components.put("action_rate", actionRate);
         components.put("action_rate_penalty", -this.config.pointActionRatePenalty() * actionRate);
         components.put("progress", 4.0 * progress);
@@ -363,6 +399,28 @@ public final class DuopodRewardCalculator {
 
     private static double denseErrorReward(final double normalizedSquaredError, final double sharpness) {
         return 1.0 / (1.0 + sharpness * Math.sqrt(Math.max(0.0, normalizedSquaredError)));
+    }
+
+    private static double honeyContactScore(final double groundClearanceBlocks) {
+        final double normalizedClearance = Math.abs(groundClearanceBlocks)
+                / WALK_FORWARD_HONEY_CONTACT_SCALE_BLOCKS;
+        return Math.exp(-square(normalizedClearance));
+    }
+
+    private static double validStandingQuality(final DuopodRewardInput input, final double upright) {
+        final double heightQuality = clamp(
+                1.0 + input.centerOfMassHeightDeltaBlocks() / WALK_FORWARD_MAXIMUM_POSTURE_DROP_BLOCKS,
+                0.0,
+                1.0);
+        final double minimumNonFootClearance = Math.min(
+                input.leftServoGroundClearance(),
+                input.rightServoGroundClearance());
+        final double clearanceQuality = clamp(
+                (minimumNonFootClearance - WALK_FORWARD_NON_FOOT_CLEARANCE_START_BLOCKS)
+                        / (WALK_FORWARD_NON_FOOT_CLEARANCE_FULL_BLOCKS - WALK_FORWARD_NON_FOOT_CLEARANCE_START_BLOCKS),
+                0.0,
+                1.0);
+        return upright * heightQuality * clearanceQuality;
     }
 
     private static double standingCenterOfMassHeightScore(final DuopodRewardInput input) {

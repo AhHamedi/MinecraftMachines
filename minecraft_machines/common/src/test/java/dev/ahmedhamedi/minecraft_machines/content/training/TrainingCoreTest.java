@@ -99,7 +99,7 @@ class TrainingCoreTest {
         assertEquals(7, policy.genomeSize());
         assertEquals(2, policy.actionSize());
         assertEquals(DuopodSchemas.observationSpec().size(), policy.observationSize());
-        assertEquals("duopod_phase_gait_v2", DuopodPhaseGaitPolicy.POLICY_TYPE);
+        assertEquals("duopod_phase_gait_v3_posture_range", DuopodPhaseGaitPolicy.POLICY_TYPE);
         assertArrayEquals(new double[]{0.0, 0.0}, policy.action(genome, phaseZero), 1.0e-10);
 
         final double[] moved = policy.action(genome, phaseQuarter);
@@ -157,7 +157,7 @@ class TrainingCoreTest {
         final List<double[]> first = DuopodPhaseGaitSeeds.stableBasinProbes();
         final List<double[]> second = DuopodPhaseGaitSeeds.stableBasinProbes();
 
-        assertEquals(8, first.size());
+        assertEquals(10, first.size());
         assertEquals(first.size(), second.size());
         for (int probe = 0; probe < first.size(); probe++) {
             assertTrue(first.get(probe) != second.get(probe));
@@ -180,7 +180,7 @@ class TrainingCoreTest {
         assertEquals(probes.size(), probes.stream().map(Arrays::toString).distinct().count());
         assertTrue(probes.stream().anyMatch(probe -> probe[0] < 0.0));
         assertTrue(probes.stream().anyMatch(probe -> probe[0] > 0.0));
-        assertTrue(probes.stream().allMatch(probe -> probe[2] >= -0.55 && probe[2] <= -0.20));
+        assertTrue(probes.stream().allMatch(probe -> probe[2] >= -0.85 && probe[2] <= -0.20));
         assertTrue(probes.stream().anyMatch(probe -> probe[4] < 0.0));
         assertTrue(probes.stream().anyMatch(probe -> probe[4] > 0.0));
         assertTrue(probes.stream().allMatch(probe -> Math.abs(Math.tanh(probe[4])) >= 0.85));
@@ -673,11 +673,33 @@ class TrainingCoreTest {
         final RewardBreakdown following = calculator.commandTracking(commandRewardInput(0.8, 0.0, 0.0, walkForward));
         final RewardBreakdown movingBackward = calculator.commandTracking(commandRewardInput(-0.8, 0.0, 0.0, walkForward));
 
-        assertTrue(stationary.total() < 0.0, "doing nothing must not collect most of the available locomotion reward");
+        assertTrue(stationary.components().get("upright_survival") > 0.0,
+                "an upright stationary machine should receive survival credit");
+        assertTrue(stationary.components().get("two_foot_contact_reward") > 0.0,
+                "an upright machine with both honey feet planted should receive support credit");
         assertTrue(following.total() > stationary.total() + 0.05);
         assertTrue(movingBackward.total() < stationary.total());
         assertTrue(following.components().get("forward_progress") > 0.0);
         assertEquals(0.0, stationary.components().get("forward_progress"), 1.0e-10);
+    }
+
+    @Test
+    void commandRewardRejectsLowShimmyAsStandingCredit() {
+        final DuopodRewardCalculator calculator = new DuopodRewardCalculator(DuopodRewardConfig.DEFAULT);
+        final LocomotionCommand walkForward = new LocomotionCommand(0.8, 0.0, 0.0);
+
+        final RewardBreakdown standing = calculator.commandTracking(
+                commandRewardInput(0.0, 0.0, 0.0, walkForward, 0.0, 2.0));
+        final RewardBreakdown collapsedHeight = calculator.commandTracking(
+                commandRewardInput(0.0, 0.0, 0.0, walkForward, -0.45, 2.0));
+        final RewardBreakdown nearFloorBearing = calculator.commandTracking(
+                commandRewardInput(0.0, 0.0, 0.0, walkForward, 0.0, 0.30));
+
+        assertTrue(standing.components().get("upright_survival") > 0.0);
+        assertEquals(0.0, collapsedHeight.components().get("upright_survival"), 1.0e-10);
+        assertEquals(0.0, collapsedHeight.components().get("two_foot_contact_reward"), 1.0e-10);
+        assertEquals(0.0, nearFloorBearing.components().get("upright_survival"), 1.0e-10);
+        assertEquals(0.0, nearFloorBearing.components().get("two_foot_contact_reward"), 1.0e-10);
     }
 
     @Test
@@ -1328,6 +1350,17 @@ class TrainingCoreTest {
             final double yawRate,
             final LocomotionCommand command
     ) {
+        return commandRewardInput(forwardVelocity, lateralVelocity, yawRate, command, 0.0, 2.0);
+    }
+
+    private static DuopodRewardInput commandRewardInput(
+            final double forwardVelocity,
+            final double lateralVelocity,
+            final double yawRate,
+            final LocomotionCommand command,
+            final double centerOfMassHeightDelta,
+            final double servoGroundClearance
+    ) {
         return new DuopodRewardInput(
                 command,
                 forwardVelocity,
@@ -1341,8 +1374,8 @@ class TrainingCoreTest {
                 0.0,
                 0.0,
                 0.0,
-                2.0,
-                2.0,
+                servoGroundClearance,
+                servoGroundClearance,
                 1.0,
                 1.0,
                 0.0,
@@ -1355,7 +1388,7 @@ class TrainingCoreTest {
                 0.0,
                 0.0,
                 0.0,
-                0.0,
+                centerOfMassHeightDelta,
                 0.0,
                 0.0,
                 DuopodRewardCalculator.STANDING.targetStandingHeightAboveSpawnBlocks(),
